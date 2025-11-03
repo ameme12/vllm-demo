@@ -1,0 +1,28 @@
+server:
+  base_url: "http://localhost:8000/v1"
+  api_key: ""
+
+model: "Qwen/Qwen2.5-1.5B-Instruct"
+
+decoding: 
+  max_tokens: 8
+  temperature: 0.0
+  top_p: 1.0
+
+dataset:
+  path: "data/CARROT-Task/ChineseRecipes/test_set.tsv"
+  format: tsv
+  max_examples: 100  
+
+# prompt template for the LLM
+prompt:
+  system: "You match Chinese recipes to the best English recipe."
+  instruction: "You will see a Chinese recipe (title + ingredients) and several English recipe options. Choose the ONE best matching option and answer ONLY with its number."
+
+
+metrics:
+  exact_match: true 
+  normalize_space: true
+  lowercase: true
+
+output_dir: "outputs/carrot_rank_test"

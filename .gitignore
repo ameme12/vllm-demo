@@ -1,38 +1,7 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.egg-info/
-.dist/
-build/
-dist/
+data/*
+!data/CARROT-Task/
+!data/CARROT-Task/README.md
+!data/CARROT-Task/VERSION.txt
 
-# uv / venv
 .venv/
-.python-version
-.uv/
-
-# Jupyter
-.ipynb_checkpoints/
-# IDEs
-.vscode/
-.idea/
-
-# Local data & caches
-*.log
-.DS_Store
-
-# Hugging Face / model caches (don’t version huge files)
-huggingface/
-cache/
-.data/
-.checkpoints/
-
-# Project outputs (keep reports only)
-outputs/*
-!outputs/**/report.md
-
-# SLURM logs (kept on scratch usually)
-slurm-*.out
-IGN
+scratch/

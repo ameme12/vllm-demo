@@ -1,0 +1,3 @@
+[submodule "vendors/CARROT"]
+	path = vendors/CARROT
+	url = https://github.com/TenneyHu/CARROT

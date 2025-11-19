@@ -8,4 +8,4 @@ scratch/
 
 # in .gitignore (append these lines)
 .python-version
-slurm-*.out
+slurm-*.outdata/CARROT-Task/

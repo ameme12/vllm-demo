@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = "==3.11.*"
 dependencies = [
     "cmake>=4.1.2",
+    "datasets>=4.4.1",
     "gitpython>=3.1.45",
     "ninja>=1.13.0",
     "setuptools>=80.9.0",

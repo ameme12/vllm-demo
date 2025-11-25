@@ -1,0 +1,274 @@
+"""
+BLEnD Task Implementation
+Dataset: nayeon212/BLEnD on HuggingFace
+"""
+
+from pathlib import Path
+from typing import Dict, List, Any
+from base_task import BaseTask
+
+COUNTRY_NAME = {
+        'US': 'US',  # United States
+        'UK': 'UK',  # United Kingdom
+        'CN': 'China',  # China
+        'ES': 'Spain',  # Spain
+        'MX': 'Mexico',  # Mexico
+        'ID': 'Indonesia',  # Indonesia
+        'KR': 'South_Korea',  # South Korea
+        'KP': 'North_Korea',  # North Korea
+        'GR': 'Greece',  # Greece
+        'IR': 'Iran',  # Iran
+        'DZ': 'Algeria',  # Algeria
+        'AZ': 'Azerbaijan',  # Azerbaijan
+        'JB': 'West_Java',  # West Java
+        'AS': 'Assam',  # Assam
+        'NG': 'Northern_Nigeria',  # Northern Nigeria
+        'ET': 'Ethiopia',  # Ethiopia
+    }
+
+class BLEnDBaseTask(BaseTask):
+
+    '''
+    Common BLEnD condig and helpers share by short-answer and MCQ tasks
+    '''
+
+    def __init__(self, name: str, dataset_path: Path, config: Dict[str, Any]):
+        super().__init__(name, dataset_path, config)
+
+        self.blend_config = config.get("blend_config", 'short-answer-questions')
+        self.culture = config.get("culture", 'KR') #default South Korea
+        self.use_english = config.get("use_english", True)
+
+        if self.culture not in COUNTRY_NAME:
+            raise ValueError(
+                f"This culture is not in this dataset: {self.culture}"
+                f"Expected one of: {list(COUNTRY_NAME.keys())}"
+            )
+
+    def load_dataset(self):
+        pass
+
+    def get_country_name(self) -> str:
+        return COUNTRY_NAME[self.culture]
+
+    def _convert_sample(self, item: Dict[str, Any]) -> Dict[str, Any]:
+        pass
+
+    def prepare_prompts(self, sample: Dict) -> str:
+        pass
+
+    def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
+        pass
+
+class BLEnDShortAnswerTask(BLEnDBaseTask):
+
+    '''
+    BLEnD short answer question task
+    short-answer-questions: Simple QandA
+
+            columns: ID, Topic, Source, Question, Translation
+            
+            Cultures included (Split):
+            - United States US
+            - United Kingdom UK
+            - Chine CN
+            - Spain ES
+            - Mexico MX
+            - Indonesia ID
+            - South Korea KR
+            - North Korea KP
+            - Greece GR
+            - Iran IR
+            - Algeria DZ
+            - Azerbaijan AZ
+            - West Java JB
+            - Assam AS
+            - Northern Nigeria NG
+            - Ethiopia ET
+    '''
+
+    def __init__(self, dataset_path: Path, config: Dict[str, Any]):
+        # Force short-answer config
+        config = {**config, "blend_config": "short-answer-questions"}
+        super().__init__("BLEnD-short-answer", dataset_path, config)
+
+
+    def load_dataset(self):
+
+        '''Load the BLEnD dataset based on the specified configuration and culture.'''
+
+        try:
+            from datasets import load_dataset
+        except ImportError:
+            raise ImportError("Please install the 'datasets' : uv add datasets")
+        
+        #loading the dataset for the Short answer for selected country
+
+        print(f"Loading BLEnD dataset with config: {self.blend_config}, culture: {self.culture}, Language: {'English' if self.use_english else 'Local'}")
+
+        ds = load_dataset("nayeon212/BLEnD", "short-answer-questions")
+
+        if self.culture not in ds:
+            available = list(ds.keys())
+            raise ValueError(f"Culture '{self.culture}' not found in dataset. Available cultures: {available}")
+
+        ds_as = ds[self.culture]
+        print(f"  ✓ Loaded {len(ds_as)} short-answer samples for {self.culture}")
+        print("  Sample questions:")
+        for i in range(min(5, len(ds_as))):
+            row = ds_as[i]
+            question = row["Translation"] if self.use_english else row["Question"]
+            print(f"    [{i}] ID={row['ID']}  ->  {question}")
+      
+
+        self.dataset = ds_as
+
+    def _convert_sample(self, item: Dict[str, Any]) -> Dict[str, Any]:
+        pass
+
+    def prepare_prompts(self, sample: Dict) -> str:
+        pass
+
+    def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
+        pass
+        
+        #example of question
+        # What is a common snack for preschool kids in Assam?
+
+class BLEnDMCQTask(BLEnDBaseTask):
+
+    '''
+    Task for BLEnD: Cultural knowledge benchmark
+    multiple-choice-questions: MCQ format
+
+        single 'test split with column 'country' to filter by culture
+
+        columns: MCQID, ID, country, prompt, choices, coice_countries, answer_idx
+        
+    '''
+
+    def __init__(self, dataset_path: Path, config: Dict[str, Any]):
+        # Force MCQ config
+        config = {**config, "blend_config": "multiple-choice-questions"}
+        super().__init__("BLEnD-MCQ", dataset_path, config)
+
+    def load_dataset(self):
+
+        '''Load the BLEnD mcq dataset based on the specified configuration and culture.'''
+
+        try:
+            from datasets import load_dataset
+        except ImportError:
+            raise ImportError("Please install the 'datasets' : uv add datasets")
+        
+        target_country = self.get_country_name()
+        print(
+            f"[MCQ] Loading BLEnD MCQs: culture={self.culture} "
+            f"({target_country})"
+        )
+
+        #loading mcq dataset 
+
+        print(f"Loading BLEnD dataset with config: {self.blend_config}, culture: {self.culture}, Language: {'English' if self.use_english else 'Local'}")
+
+        mcq_ds = load_dataset("nayeon212/BLEnD", "multiple-choice-questions")
+        mcq_data = mcq_ds['test'].filter(lambda x: x['country'] == target_country)
+        
+        print(f"  ✓ Loaded {len(mcq_data)} MCQ samples for country={target_country}")
+
+        if len(mcq_data) == 0:
+            print("  ⚠ No MCQ samples found for this country. "
+                  "Check COUNTRY_NAME mapping or 'country' column values.")
+        else:
+            print("  Sample MCQ questions:")
+            for i in range(min(3, len(mcq_data))):
+                row = mcq_data[i]
+                print(f"    [{i}] MCQID={row.get('MCQID', 'N/A')}")
+                print(f"         prompt:       {row['prompt']}")
+                print(f"         choices:      {row['choices']}")
+                print(f"         answer_idx:   {row['answer_idx']}\n")
+
+        self.dataset = mcq_data
+
+    def _convert_sample(self, item: Dict[str, Any]) -> Dict[str, Any]:
+        pass
+
+    def prepare_prompts(self, sample: Dict) -> str:
+        pass
+
+    def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
+        pass
+
+        
+        '''
+        dataset = load_dataset("nayeon212/BLEnD", self.blend_config, split=self.culture)
+
+        if self.culture not in dataset:
+            available = list(dataset.keys())
+            raise ValueError(f"Culture '{self.culture}' not found in dataset. Available cultures: {available}")
+
+        
+        culture_data = dataset[self.culture]
+        print(f"  ✓ Loaded {len(culture_data)} samples")
+
+
+        print("  Sample questions:")
+        max_to_show = min(5, len(culture_data))
+        for i in range(max_to_show):
+            row = culture_data[i]
+
+            if self.use_english and "en_question" in row:
+                q = row["en_question"]
+            elif "question" in row:
+                q = row["question"]
+            else:
+                q = row.get("question_en") or "<no question field>"
+
+            print(f"    [{i}] ID={row.get('ID', 'N/A')}  ->  {q}")
+
+        self.dataset = culture_data
+
+        '''
+
+        '''
+        test_samples = []
+        for item in culture_data:
+            sample = self._convert_sample(item)
+            test_samples.append(sample)
+
+        self.dataset = {'test': test_samples}
+
+        '''
+
+    
+
+
+def create_blend_task(dataset_path: Path, config: Dict[str, Any]) -> BLEnDBaseTask:
+    '''Factory function to create a BLEnD task based on the configuration.'''
+
+    blend_config = config.get("blend_config", "short-answer-questions")
+
+    if blend_config == "short-answer-questions":
+        return BLEnDShortAnswerTask(dataset_path, config)
+    elif blend_config == "multiple-choice-questions":
+        return BLEnDMCQTask(dataset_path, config)
+    else:
+        raise ValueError(
+            f"Unknown BLEnD config: {blend_config}. "
+            "Expected 'short-answer-questions' or 'multiple-choice-questions'."
+        )
+
+if __name__ == "__main__":
+    # Example config: change these to test different setups
+    config = {
+        # "blend_config": "short-answer-questions",
+        "blend_config": "multiple-choice-questions",
+        "culture": "DZ",          # e.g. "US", "KR", "AS", ...
+        "use_english": True,
+    }
+
+    task = create_blend_task(dataset_path=Path("."), config=config)
+    task.load_dataset()
+
+
+

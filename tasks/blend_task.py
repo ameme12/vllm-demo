@@ -143,7 +143,7 @@ class BLEnDMCQTask(BLEnDBaseTask):
 
         single 'test split with column 'country' to filter by culture
 
-        columns: MCQID, ID, country, prompt, choices, coice_countries, answer_idx
+        columns: MCQID, ID, country, prompt, choices, choice_countries, answer_idx
         
     '''
 
@@ -191,54 +191,57 @@ class BLEnDMCQTask(BLEnDBaseTask):
         self.dataset = mcq_data
 
     def _convert_sample(self, item: Dict[str, Any]) -> Dict[str, Any]:
-        pass
+        '''
+        Convert a dataset item into the standardized format.
+
+        Args:
+            item (Dict[str, Any]): Raw item from the dataset
+        
+        Returns:
+            Dict[str, Any]: Dictionary with standardized keys
+        '''
+
+        return{
+            "mcq_id": item["MCQID"],
+            "id": item["ID"],
+            "country": item["country"],
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "choice_countries": item["choice_countries"],
+            "answer_idx": item["answer_idx"],   
+        }
+
+
 
     def prepare_prompts(self, sample: Dict) -> str:
-        pass
+        '''
+        Prepare the prompt for the MCQ for the LLM.
+
+        Args:
+            sample: Converted sample dictionary from _convert_sample
+
+        returns:
+            str: Formatted prompt string with multiple choice options
+
+
+        ex:
+        What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {"answer_choice":""}
+
+            A. chocolate paste
+            B. egg
+            C. fruit
+            D. jam sandwiches
+
+            Answer:
+        
+        '''
+
+        full_prompt = sample["prompt"]
+        return full_prompt
+
 
     def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
         pass
-
-        
-        '''
-        dataset = load_dataset("nayeon212/BLEnD", self.blend_config, split=self.culture)
-
-        if self.culture not in dataset:
-            available = list(dataset.keys())
-            raise ValueError(f"Culture '{self.culture}' not found in dataset. Available cultures: {available}")
-
-        
-        culture_data = dataset[self.culture]
-        print(f"  ✓ Loaded {len(culture_data)} samples")
-
-
-        print("  Sample questions:")
-        max_to_show = min(5, len(culture_data))
-        for i in range(max_to_show):
-            row = culture_data[i]
-
-            if self.use_english and "en_question" in row:
-                q = row["en_question"]
-            elif "question" in row:
-                q = row["question"]
-            else:
-                q = row.get("question_en") or "<no question field>"
-
-            print(f"    [{i}] ID={row.get('ID', 'N/A')}  ->  {q}")
-
-        self.dataset = culture_data
-
-        '''
-
-        '''
-        test_samples = []
-        for item in culture_data:
-            sample = self._convert_sample(item)
-            test_samples.append(sample)
-
-        self.dataset = {'test': test_samples}
-
-        '''
 
     
 
@@ -269,6 +272,7 @@ if __name__ == "__main__":
 
     task = create_blend_task(dataset_path=Path("."), config=config)
     task.load_dataset()
+    task.prepare_prompts(task._convert_sample(task.dataset[0]))  # Example prompt prep
 
 
 

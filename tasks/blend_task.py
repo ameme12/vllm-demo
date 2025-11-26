@@ -225,7 +225,8 @@ class BLEnDMCQTask(BLEnDBaseTask):
 
 
         ex:
-        What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {"answer_choice":""}
+        What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). 
+        Provide as JSON format: {"answer_choice":""}
 
             A. chocolate paste
             B. egg
@@ -241,7 +242,50 @@ class BLEnDMCQTask(BLEnDBaseTask):
 
 
     def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
-        pass
+        '''
+        Evaluate the model's MCQ response against the ground truth.
+
+        Args:
+            prediction: Model's predicted answer choice (e.g., "A", "B", "C", "D") in json format
+            ground_truth: Dictionary with answer_idx and other metadata
+
+        Returns:
+            Dictionary with metric scores
+
+        '''
+
+        import json
+
+        predicted_idx = -1
+        #try to parse as JSON
+
+        try:
+            json_response = json.loads(prediction)
+            if "answer_choice" in json_response:
+                predicted_letter = json_response["answer_choice"]
+                predicted_idx = 1
+        except (json.JSONDecodeError, ValueError, KeyError):
+            pass
+
+        if predicted_idx == -1:
+            print("LLM response could not be parsed correctly.")
+            return {"accuracy": 0.0}
+
+        if isinstance(ground_truth, dict):
+            correct_letter = ground_truth["answer_idx"].upper()
+        else:
+            correct_letter = ground_truth.upper()
+
+        is_correct = (predicted_letter == correct_letter)
+
+        #calculate accuracy
+        #should i add anything to this ?
+
+        return {
+            "accuracy": 1.0 if is_correct else 0.0,
+            "exact_match": 1.0 if is_correct else 0.0
+        }
+        
 
     
 
@@ -262,6 +306,8 @@ def create_blend_task(dataset_path: Path, config: Dict[str, Any]) -> BLEnDBaseTa
         )
 
 if __name__ == "__main__":
+
+    import json
     # Example config: change these to test different setups
     config = {
         # "blend_config": "short-answer-questions",
@@ -272,7 +318,41 @@ if __name__ == "__main__":
 
     task = create_blend_task(dataset_path=Path("."), config=config)
     task.load_dataset()
-    task.prepare_prompts(task._convert_sample(task.dataset[0]))  # Example prompt prep
 
-
-
+    if len(task.dataset) > 0:
+        sample_item = task.dataset[0]
+        converted = task._convert_sample(sample_item)
+        prompt = task.prepare_prompts(converted)
+        print("\n" + "="*60)
+        print("EXAMPLE USAGE:")
+        print("="*60)
+        print("\nConverted Sample:")
+        print(converted)
+        print("\nGenerated Prompt:")
+        print(prompt)
+        
+        # For MCQ, show evaluation example
+        if isinstance(task, BLEnDMCQTask):
+            # Simulate a correct answer
+            answer = task.dataset[0]["answer_idx"]
+            print(answer)
+            correct_answer = json.dumps({"answer_choice": answer})
+            print(correct_answer)
+            predicted_letter = json.loads(correct_answer)["answer_choice"]
+            print(predicted_letter)
+            
+            metrics = task.evaluate_response(correct_answer, converted)
+            print("\nEvaluation Metrics (correct answer):")
+            print(metrics)
+            
+            # Simulate an incorrect answer
+            
+            answer_2 = task.dataset[1]["answer_idx"]
+            wrong_answer = json.dumps({"answer_choice": answer_2})
+            predicted_letter = json.loads(wrong_answer)["answer_choice"]
+            print(predicted_letter)
+            
+            metrics = task.evaluate_response(wrong_answer, converted)
+            print("\nEvaluation Metrics (wrong answer):")
+            print(metrics)
+            

@@ -5,7 +5,7 @@ Dataset: nayeon212/BLEnD on HuggingFace
 
 from pathlib import Path
 from typing import Dict, List, Any
-from base_task import BaseTask
+from tasks.base_task import BaseTask
 
 COUNTRY_NAME = {
         'US': 'US',  # United States
@@ -269,6 +269,7 @@ class BLEnDMCQTask(BLEnDBaseTask):
 
         if predicted_idx == -1:
             print("LLM response could not be parsed correctly.")
+            print(f"Response received: {prediction}")
             return {"accuracy": 0.0}
 
         if isinstance(ground_truth, dict):

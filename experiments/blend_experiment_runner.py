@@ -168,14 +168,16 @@ class ExperimentRunner:
         
         # Process in batches
         for i in tqdm(range(0, len(dataset), batch_size), desc="Processing batches"):
-            batch_items = dataset[i:i+batch_size]
+            batch_indices = range(i, min(i+batch_size, len(dataset)))
             
             # Convert samples and prepare prompts
             batch_samples = []
             batch_prompts = []
             
-            for item in batch_items:
+            for idx in batch_indices:
+                item = dataset[idx]
                 sample = task._convert_sample(item)
+                
                 prompt = task.prepare_prompts(sample)
                 batch_samples.append(sample)
                 batch_prompts.append(prompt)

@@ -262,7 +262,7 @@ class BLEnDMCQTask(BLEnDBaseTask):
         try:
             json_response = json.loads(prediction)
             if "answer_choice" in json_response:
-                predicted_letter = json_response["answer_choice"]
+                predicted_letter = json_response["answer_choice"].upper()
                 predicted_idx = 1
         except (json.JSONDecodeError, ValueError, KeyError):
             pass

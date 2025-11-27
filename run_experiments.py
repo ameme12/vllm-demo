@@ -1,5 +1,5 @@
 from pathlib import Path
-from experiments.experiment_runner import ExperimentRunner
+from experiments.blend_experiment_runner import ExperimentRunner
 import torch
 
 def main():

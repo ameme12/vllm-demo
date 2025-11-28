@@ -191,9 +191,18 @@ class ExperimentRunner:
             # Evaluate responses
             for sample, prediction in zip(batch_samples, predictions):
                 prediction = prediction.strip()
+
+                # === ADD DEBUGGING HERE ===
+                print("\n" + "="*70)
+                print("PROMPT:")
+                print(sample['prompt'] + "..." if len(sample['prompt']) > 200 else sample['prompt'])
+                print("\nPREDICTION:")
+                print(prediction)
+                print("="*70)
+                # === END DEBUGGING ===
                 
                 # Evaluate
-                metrics = task.evaluate_response(prediction, sample)
+                metrics = task.evaluate_response(prediction, sample['answer_idx'])
                 
                 # Store result
                 result = {
@@ -202,13 +211,28 @@ class ExperimentRunner:
                     'prediction': prediction,
                     'metrics': metrics
                 }
+
+                print(result['metrics'])
                 
-                # Add ground truth info for MCQ
-                if isinstance(task, BLEnDMCQTask):
-                    result['ground_truth_idx'] = sample['answer_idx']
-                    result['ground_truth_letter'] = chr(65 + sample['answer_idx'])
-                    result['choices'] = sample['choices']
-                
+                                # NEW - handle letter format
+                answer = sample['answer_idx']
+                if isinstance(answer, str):
+                    # It's a letter like "D"
+                    ground_truth_letter = answer.strip().upper()
+                    ground_truth_idx = ord(ground_truth_letter) - ord('A')
+                else:
+                    # It's already a number
+                    ground_truth_idx = int(answer)
+                    ground_truth_letter = chr(65 + ground_truth_idx)
+
+                result['ground_truth_idx'] = ground_truth_idx
+                result['ground_truth_letter'] = ground_truth_letter
+
+                        # === MORE DEBUGGING (optional) ===
+                print(f"Ground Truth: {result['ground_truth_letter']}")
+                print(f"Accuracy: {metrics['accuracy']}")
+                # === END ===
+
                 results.append(result)
         
         return results

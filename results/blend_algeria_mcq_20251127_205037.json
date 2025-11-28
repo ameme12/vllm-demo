@@ -1,0 +1,649 @@
+{
+  "experiment_name": "blend_algeria_mcq",
+  "timestamp": "20251127_205037",
+  "config": {
+    "experiment_name": "blend_algeria_mcq",
+    "task": {
+      "name": "blend_cultural_knowledge",
+      "type": "blend",
+      "config": {
+        "blend_config": "multiple-choice-questions",
+        "culture": "DZ",
+        "use_english": true
+      }
+    },
+    "model": {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": 50,
+      "batch_size": 10
+    },
+    "output": {
+      "results_dir": "results",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "BLEnDMCQTask",
+  "num_samples": 50,
+  "results": [
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. egg\nC. fruit\nD. jam sandwiches\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 3,
+      "ground_truth_letter": "D"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. egg\nB. fruit\nC. jam sandwiches\nD. semolina\n\nAnswer:",
+      "prediction": "B\n\n{\n\"answer_choice\": \"B\"\n} \n\nNote: The answer is based on general knowledge and may not be specific to every preschool in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. egg\nB. fruit\nC. jam sandwiches\nD. toast\n\nAnswer:",
+      "prediction": "B\n\n{\n\"answer_choice\": \"B\"\n} \n\nNote: The answer is based on general knowledge and may not be specific to every preschool in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. egg\nB. fruit\nC. jam sandwiches\nD. noodles\n\nAnswer:",
+      "prediction": "B\n\n{\n\"answer_choice\": \"B\"\n} \n\nNote: The answer is based on general knowledge and may not be specific to every preschool in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. fruit\nC. jam sandwiches\nD. semolina\n\nAnswer:",
+      "prediction": "B {\"answer_choice\":\"fruit\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. fruit\nC. jam sandwiches\nD. toast\n\nAnswer:",
+      "prediction": "B\n\n{\"answer_choice\":\"B\"} \n\nNote: The answer is based on general knowledge and may not be specific to every region or family in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. fruit\nC. jam sandwiches\nD. noodles\n\nAnswer:",
+      "prediction": "B {\"answer_choice\":\"fruit\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. fruit\nB. jam sandwiches\nC. semolina\nD. toast\n\nAnswer:",
+      "prediction": "C {\"answer_choice\":\"semolina\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. fruit\nB. jam sandwiches\nC. noodles\nD. semolina\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\":\"D\"} \n\nNote: The answer is based on common Algerian snacks for preschool kids. Semolina is a popular snack in Algeria, especially among young children. It is often served as a sweet or savory snack, depending on the recipe.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. fruit\nB. jam sandwiches\nC. noodles\nD. toast\n\nAnswer:",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general knowledge and may not be specific to every preschool in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. egg\nC. jam sandwiches\nD. semolina\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\":\"D\"} \n\nNote: The answer is based on common Algerian snacks for preschool kids. Semolina is a popular snack in Algeria, especially among young children. It is often served as a sweet or savory snack, depending on the recipe.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. egg\nC. jam sandwiches\nD. toast\n\nAnswer:",
+      "prediction": "C\n\n{\"answer_choice\":\"C\"} \n\nNote: The answer is based on general knowledge and may not be specific to every region or family in Algeria.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. egg\nC. jam sandwiches\nD. noodles\n\nAnswer:",
+      "prediction": "C\n\n{\"answer_choice\":\"C\"} \n\nNote: The answer is based on general knowledge and may not be specific to every region or family in Algeria.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. egg\nB. jam sandwiches\nC. semolina\nD. toast\n\nAnswer:",
+      "prediction": "C\n\n{\"answer_choice\":\"semolina\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. egg\nB. jam sandwiches\nC. noodles\nD. semolina\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\":\"D\"} \n\nNote: The answer is based on common Algerian snacks for preschool kids. Semolina is a popular snack in Algeria, especially among young children. It is often served with milk or water, and is a staple food in many Algerian households.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. egg\nB. jam sandwiches\nC. noodles\nD. toast\n\nAnswer:",
+      "prediction": "B\n\n{\"answer_choice\":\"jam sandwiches\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. jam sandwiches\nC. semolina\nD. toast\n\nAnswer:",
+      "prediction": "C {\"answer_choice\":\"C\"} \n\nNote: The answer is based on common Algerian snacks for preschool kids. Semolina is a popular snack in Algeria, especially among young children. It is often served as a sweet or savory snack, depending on the recipe.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. jam sandwiches\nC. noodles\nD. semolina\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\":\"D\"} \n\nNote: The answer is based on common Algerian snacks for preschool kids. Semolina is a popular snack in Algeria, especially among young children. It is often served as a sweet or savory snack, depending on the recipe.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. chocolate paste\nB. jam sandwiches\nC. noodles\nD. toast\n\nAnswer:",
+      "prediction": "B\n\n{\"answer_choice\":\"B\"} \n\nNote: The answer is based on general knowledge and may not be specific to every region or family in Algeria.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-01",
+      "prompt": "What is a common snack for preschool kids in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. jam sandwiches\nB. noodles\nC. semolina\nD. toast\n\nAnswer:",
+      "prediction": "C {\"answer_choice\":\"semolina\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-04",
+      "prompt": "What is the most popular fruit in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. apple\nB. durian\nC. mango\nD. orange\n\nAnswer:",
+      "prediction": "D\n\nExplanation: The orange is the most popular fruit in Algeria. The country has a Mediterranean climate, which is suitable for growing oranges. Oranges are widely cultivated and consumed in Algeria, and they are a staple fruit in many Algerian households. (Source: various online sources)",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 3,
+      "ground_truth_letter": "D"
+    },
+    {
+      "sample_id": "Al-en-04",
+      "prompt": "What is the most popular fruit in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. apple\nB. durian\nC. orange\nD. pear\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"orange\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-04",
+      "prompt": "What is the most popular fruit in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. apple\nB. mango\nC. orange\nD. pear\n\nAnswer:",
+      "prediction": "B\n\nNote: The answer is based on general knowledge and may not be up-to-date or accurate. It's always a good idea to verify information through multiple sources.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-04",
+      "prompt": "What is the most popular fruit in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. durian\nB. mango\nC. orange\nD. pear\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"orange\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. churros\nB. cotton candy\nC. crisps\nD. shawarma\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: Algeria is a country in North Africa, and its culture and cuisine are influenced by Mediterranean and Middle Eastern traditions. Shawarma is a popular street food in Algeria, made from thinly sliced meat (usually lamb or chicken) served in a pita bread with vegetables and tahini sauce. It is a common snack at amusement parks and other public places in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. churros\nB. cotton candy\nC. crisps\nD. popcorn\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. churros\nB. cotton candy\nC. crisps\nD. marshmallow\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. churros\nB. cotton candy\nC. crisps\nD. french fries\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. churros\nB. cotton candy\nC. crisps\nD. tea\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cake\nB. churros\nC. cotton candy\nD. crisps\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"B\"} \n\nNote: Algeria is a country in North Africa, and the provided options are popular snack choices in many countries, but the question is asking specifically about Algeria. Churros are a popular snack in many countries, including Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. churros\nB. cookie\nC. cotton candy\nD. crisps\n\nAnswer:",
+      "prediction": "C\n\n{\"answer_choice\":\"cotton candy\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 2,
+      "ground_truth_letter": "C"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. popcorn\nD. shawarma\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: Algeria is a country in North Africa, and its culture and cuisine are influenced by Mediterranean and Middle Eastern traditions. Shawarma is a popular street food in Algeria, made from thinly sliced meat (usually lamb or chicken) served in a pita bread with vegetables and tahini sauce. It is a common snack at amusement parks and other public places in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. marshmallow\nD. shawarma\n\nAnswer:",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on Algerian culture and not a general global one. Shawarma is a popular street food in Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. french fries\nD. shawarma\n\nAnswer:",
+      "prediction": "D\n\n{\n  \"answer_choice\": \"D\"\n} \n\nNote: Algeria is a country in North Africa, and the snack I chose is a popular street food in many countries, including Algeria.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. shawarma\nD. tea\n\nAnswer:",
+      "prediction": "C\n{\"answer_choice\":\"shawarma\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cake\nB. cotton candy\nC. crisps\nD. shawarma\n\nAnswer:",
+      "prediction": "D\n{\"answer_choice\":\"shawarma\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cookie\nB. cotton candy\nC. crisps\nD. shawarma\n\nAnswer:",
+      "prediction": "D\n{\"answer_choice\":\"shawarma\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. marshmallow\nD. popcorn\n\nAnswer:",
+      "prediction": "B\n\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. french fries\nD. popcorn\n\nAnswer:",
+      "prediction": "B\n\n{\"answer_choice\":\"crisps\"} \n\nNote: The information provided is fictional and for demonstration purposes only. It is not based on real data or facts.",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. popcorn\nD. tea\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cake\nB. cotton candy\nC. crisps\nD. popcorn\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: Algeria is a country in North Africa, and the provided options are common snacks found in many amusement parks around the world. The correct answer is based on general knowledge of popular amusement park snacks.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cookie\nB. cotton candy\nC. crisps\nD. popcorn\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: Algeria is a country in North Africa, and the provided options are common snacks found in many amusement parks around the world. The correct answer is based on general knowledge and may not be specific to Algeria only.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. french fries\nD. marshmallow\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. marshmallow\nD. tea\n\nAnswer:",
+      "prediction": "B\n\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cake\nB. cotton candy\nC. crisps\nD. marshmallow\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"cotton candy\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cookie\nB. cotton candy\nC. crisps\nD. marshmallow\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"cotton candy\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cotton candy\nB. crisps\nC. french fries\nD. tea\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"crisps\"}",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 0,
+      "ground_truth_letter": "A"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cake\nB. cotton candy\nC. crisps\nD. french fries\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"bottled water\"} \nNote: Algeria is not typically known for its amusement parks, but I'll play along. In that case, cotton candy is a popular snack at many amusement parks around the world, including those in North America. However, I'll provide the answer in the requested format.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cookie\nB. cotton candy\nC. crisps\nD. french fries\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: Algeria is a country in North Africa, and the provided options are common snacks found in many amusement parks around the world. The answer is based on general knowledge and may not be specific to Algeria only.",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    },
+    {
+      "sample_id": "Al-en-09",
+      "prompt": "What is a popular snack at an amusement park in Algeria? Without any explanation, choose only one from the given alphabet choices(e.g., A, B, C). Provide as JSON format: {\"answer_choice\":\"\"}\n\nA. cake\nB. cotton candy\nC. crisps\nD. tea\n\nAnswer:",
+      "prediction": "B\n{\"answer_choice\":\"cotton candy\"}",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      },
+      "ground_truth_idx": 1,
+      "ground_truth_letter": "B"
+    }
+  ]
+}

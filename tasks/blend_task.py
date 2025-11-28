@@ -6,6 +6,8 @@ Dataset: nayeon212/BLEnD on HuggingFace
 from pathlib import Path
 from typing import Dict, List, Any
 from tasks.base_task import BaseTask
+import json
+import re  
 
 COUNTRY_NAME = {
         'US': 'US',  # United States
@@ -200,6 +202,8 @@ class BLEnDMCQTask(BLEnDBaseTask):
         Returns:
             Dict[str, Any]: Dictionary with standardized keys
         '''
+        answer_letter = item["answer_idx"].strip().upper()
+        answer_idx = ord(answer_letter) - ord('A')
 
         return{
             "mcq_id": item["MCQID"],
@@ -253,42 +257,68 @@ class BLEnDMCQTask(BLEnDBaseTask):
             Dictionary with metric scores
 
         '''
-
         import json
+        import re
 
-        predicted_idx = -1
-        #try to parse as JSON
-
+        predicted_letter = None
+        
+        # Method 1: Try JSON parsing first
         try:
-            json_response = json.loads(prediction)
-            if "answer_choice" in json_response:
-                predicted_letter = json_response["answer_choice"].upper()
-                predicted_idx = 1
+            # Clean up the prediction - sometimes has multiple lines
+            json_str = prediction.strip()
+            
+            # Try to find JSON object in the text
+            json_match = re.search(r'\{[^}]*"answer_choice"\s*:\s*"([A-D])"[^}]*\}', json_str, re.IGNORECASE)
+            if json_match:
+                predicted_letter = json_match.group(1).upper()
+            else:
+                # Try parsing the whole thing as JSON
+                json_response = json.loads(json_str)
+                if "answer_choice" in json_response:
+                    answer = json_response["answer_choice"]
+                    # Handle both "B" and "cotton candy" formats
+                    if len(answer) == 1 and answer.upper() in ['A', 'B', 'C', 'D']:
+                        predicted_letter = answer.upper()
         except (json.JSONDecodeError, ValueError, KeyError):
             pass
 
-        if predicted_idx == -1:
-            print("LLM response could not be parsed correctly.")
-            print(f"Response received: {prediction}")
-            return {"accuracy": 0.0}
+        # Method 2: If JSON failed, look for standalone letter at the start
+        if not predicted_letter:
+            # Look for letter at the very beginning (like "B\n{...}")
+            first_line = prediction.strip().split('\n')[0].strip()
+            if len(first_line) == 1 and first_line.upper() in ['A', 'B', 'C', 'D']:
+                predicted_letter = first_line.upper()
+        
+        # Method 3: Search for any A/B/C/D in the text
+        if not predicted_letter:
+            letter_match = re.search(r'\b([A-D])\b', prediction.upper())
+            if letter_match:
+                predicted_letter = letter_match.group(1)
 
+        # If still no prediction found
+        if not predicted_letter:
+            return {
+                "accuracy": 0.0,
+                "exact_match": 0.0,
+                "has_valid_format": 0.0,
+            }
+
+        # Get ground truth letter
         if isinstance(ground_truth, dict):
-            correct_letter = ground_truth["answer_idx"].upper()
+            correct_letter = ground_truth["answer_idx"].strip().upper()
         else:
-            correct_letter = ground_truth.upper()
+            correct_letter = ground_truth.strip().upper()
 
+        # Compare letters (case-insensitive)
         is_correct = (predicted_letter == correct_letter)
-
-        #calculate accuracy
-        #should i add anything to this ?
 
         return {
             "accuracy": 1.0 if is_correct else 0.0,
-            "exact_match": 1.0 if is_correct else 0.0
+            "exact_match": 1.0 if is_correct else 0.0,
+            "has_valid_format": 1.0,
         }
-        
 
-    
+        
 
 
 def create_blend_task(dataset_path: Path, config: Dict[str, Any]) -> BLEnDBaseTask:
@@ -307,8 +337,6 @@ def create_blend_task(dataset_path: Path, config: Dict[str, Any]) -> BLEnDBaseTa
         )
 
 if __name__ == "__main__":
-
-    import json
     # Example config: change these to test different setups
     config = {
         # "blend_config": "short-answer-questions",

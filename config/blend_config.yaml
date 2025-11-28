@@ -1,14 +1,13 @@
 # BLEnD Evaluation Configuration with VLLMInferenceEngine
 # Example: MCQ evaluation for Algeria
 
-experiment_name: South Korea Cultural Knowledge Evaluation
-
+experiment_name: china_qwen_2.5b
 task:
   name: blend_cultural_knowledge
   type: blend
   config:
     blend_config: multiple-choice-questions  # or "short-answer-questions"
-    culture: KR  # See culture codes below
+    culture: CN # See culture codes below
     use_english: true
 
 # Model configuration (matches VLLMConfig)
@@ -37,8 +36,8 @@ model:
   stop: null  # Stop sequences (e.g., ["\n\n", "END"])
 
 evaluation:
-  num_samples: 10000  # -1 for all samples
-  batch_size: 10
+  num_samples: -1  # -1 for all samples
+  batch_size: 32
 
 
 # Output settings

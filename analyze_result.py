@@ -4,6 +4,33 @@ import pandas as pd
 from pathlib import Path
 import numpy as np
 
+# Culture code to country name mapping
+CULTURE_NAMES = {
+    'US': 'United States',
+    'UK': 'United Kingdom',
+    'CN': 'China',
+    'ES': 'Spain',
+    'MX': 'Mexico',
+    'ID': 'Indonesia',
+    'KR': 'South Korea',
+    'KP': 'North Korea',
+    'GR': 'Greece',
+    'IR': 'Iran',
+    'DZ': 'Algeria',
+    'AZ': 'Azerbaijan',
+    'JB': 'Jordan',
+    'AS': 'Assam (India)',
+    'NG': 'Nigeria',
+    'ET': 'Ethiopia'
+}
+
+def get_culture_display_name(code):
+    """Get display name for culture (e.g., 'US (United States)')"""
+    code = code.upper()
+    if code in CULTURE_NAMES:
+        return f"{code} ({CULTURE_NAMES[code]})"
+    return code
+
 def load_summary_results(results_dir):
     """Load summary JSON files and extract aggregate metrics"""
     results = []
@@ -78,9 +105,14 @@ def load_summary_results(results_dir):
             metrics = data['aggregate_metrics']
             num_samples = data.get('total_samples', 0)
             
+            # Get full country name
+            country_name = CULTURE_NAMES.get(culture, culture)
+            
             results.append({
                 'model': model,
                 'culture': culture if culture else 'UNKNOWN',
+                'country': country_name,
+                'culture_display': get_culture_display_name(culture) if culture else 'UNKNOWN',
                 'accuracy': metrics['accuracy']['mean'] * 100,
                 'valid_format': metrics.get('has_valid_format', {}).get('mean', 1.0) * 100,
                 'num_samples': num_samples,
@@ -89,7 +121,7 @@ def load_summary_results(results_dir):
                 'file': json_file.name
             })
             
-            print(f"✓ {model:20s} | {culture:6s} | {num_samples:6,} samples | {metrics['accuracy']['mean']*100:5.1f}%")
+            print(f"✓ {model:20s} | {culture:4s} {country_name:20s} | {num_samples:6,} samples | {metrics['accuracy']['mean']*100:5.1f}%")
             
         except Exception as e:
             print(f"⚠️  Skipped {json_file.name}: {e}")
@@ -109,213 +141,60 @@ def load_summary_results(results_dir):
 
 def create_comparison_table(df):
     """Create formatted comparison tables"""
-    # Pivot table for accuracy
-    accuracy_table = df.pivot(index='culture', columns='model', values='accuracy')
+    # Pivot table for accuracy (use culture_display for better labels)
+    accuracy_table = df.pivot(index='culture_display', columns='model', values='accuracy')
     
     # Pivot table for valid format
-    format_table = df.pivot(index='culture', columns='model', values='valid_format')
+    format_table = df.pivot(index='culture_display', columns='model', values='valid_format')
     
     # Pivot table for sample counts
-    samples_table = df.pivot(index='culture', columns='model', values='num_samples')
+    samples_table = df.pivot(index='culture_display', columns='model', values='num_samples')
     
     return accuracy_table, format_table, samples_table
 
-def plot_comparison(df):
-    """Create comprehensive visualization comparing models across cultures"""
+def plot_accuracy_by_culture(df):
+    """Create standalone accuracy comparison chart"""
     
-    # Set style
     plt.style.use('seaborn-v0_8-darkgrid')
     colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
     
-    # Create figure with subplots
-    fig = plt.figure(figsize=(18, 12))
-    gs = fig.add_gridspec(3, 2, hspace=0.3, wspace=0.3)
+    # Create figure
+    fig, ax = plt.subplots(figsize=(16, 8))
     
-    # Main title
-    fig.suptitle('BLEnD Cultural Knowledge Evaluation: Llama vs Qwen', 
-                 fontsize=18, fontweight='bold', y=0.98)
-    
-    # 1. Accuracy comparison bar chart
-    ax1 = fig.add_subplot(gs[0, :])
-    accuracy_pivot = df.pivot(index='culture', columns='model', values='accuracy')
+    # Prepare data
+    accuracy_pivot = df.pivot(index='culture_display', columns='model', values='accuracy')
     x = np.arange(len(accuracy_pivot))
     width = 0.35
     
     models = accuracy_pivot.columns
     for i, model in enumerate(models):
         offset = width * (i - len(models)/2 + 0.5)
-        bars = ax1.bar(x + offset, accuracy_pivot[model], width, 
-                       label=model, alpha=0.8, color=colors[i])
+        bars = ax.bar(x + offset, accuracy_pivot[model], width, 
+                      label=model, alpha=0.85, color=colors[i],
+                      edgecolor='black', linewidth=0.5)
         
         # Add value labels on bars
         for bar in bars:
             height = bar.get_height()
             if not np.isnan(height):
-                ax1.text(bar.get_x() + bar.get_width()/2., height,
-                        f'{height:.1f}%',
-                        ha='center', va='bottom', fontsize=8)
+                ax.text(bar.get_x() + bar.get_width()/2., height + 1,
+                       f'{height:.2f}%',
+                       ha='center', va='bottom', fontsize=9, fontweight='bold')
     
-    ax1.set_title('Accuracy by Culture', fontsize=14, fontweight='bold', pad=10)
-    ax1.set_xlabel('Culture', fontsize=12, fontweight='bold')
-    ax1.set_ylabel('Accuracy (%)', fontsize=12, fontweight='bold')
-    ax1.set_xticks(x)
-    ax1.set_xticklabels(accuracy_pivot.index, rotation=0, ha='center')
-    ax1.legend(loc='upper right', fontsize=11)
-    ax1.grid(axis='y', alpha=0.3, linestyle='--')
-    ax1.axhline(y=25, color='red', linestyle='--', linewidth=2, 
-                label='Random Baseline (25%)', alpha=0.6)
-    ax1.set_ylim(0, 100)
+    ax.set_title('Cultural Knowledge Accuracy by Culture\nLlama 3.2-3B vs Qwen 2.5-3B', 
+                 fontsize=16, fontweight='bold', pad=20)
+    ax.set_xlabel('Culture (Country)', fontsize=13, fontweight='bold')
+    ax.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold')
+    ax.set_xticks(x)
+    ax.set_xticklabels(accuracy_pivot.index, rotation=45, ha='right', fontsize=10)
+    ax.legend(loc='upper right', fontsize=12, framealpha=0.9)
+    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=0.8)
+    ax.axhline(y=25, color='red', linestyle='--', linewidth=2.5, 
+               label='Random Baseline (25%)', alpha=0.7)
+    ax.set_ylim(0, 105)
     
-    # 2. Overall model comparison
-    ax2 = fig.add_subplot(gs[1, 0])
-    avg_by_model = df.groupby('model')['accuracy'].mean().sort_values(ascending=False)
-    bars = ax2.barh(range(len(avg_by_model)), avg_by_model.values, 
-                    color=colors[:len(avg_by_model)], alpha=0.8)
-    
-    # Add value labels
-    for i, (bar, val) in enumerate(zip(bars, avg_by_model.values)):
-        ax2.text(val + 1, i, f'{val:.2f}%', 
-                va='center', fontsize=11, fontweight='bold')
-    
-    ax2.set_yticks(range(len(avg_by_model)))
-    ax2.set_yticklabels(avg_by_model.index, fontsize=11)
-    ax2.set_xlabel('Average Accuracy (%)', fontsize=12, fontweight='bold')
-    ax2.set_title('Overall Performance (Avg Across Cultures)', 
-                  fontsize=14, fontweight='bold', pad=10)
-    ax2.grid(axis='x', alpha=0.3, linestyle='--')
-    ax2.set_xlim(0, 100)
-    
-    # 3. Valid format comparison
-    ax3 = fig.add_subplot(gs[1, 1])
-    format_by_model = df.groupby('model')['valid_format'].mean()
-    bars = ax3.barh(range(len(format_by_model)), format_by_model.values,
-                    color=['#2ecc71', '#27ae60'][:len(format_by_model)], alpha=0.8)
-    
-    for i, (bar, val) in enumerate(zip(bars, format_by_model.values)):
-        ax3.text(val - 5, i, f'{val:.1f}%', 
-                va='center', ha='right', fontsize=11, 
-                fontweight='bold', color='white')
-    
-    ax3.set_yticks(range(len(format_by_model)))
-    ax3.set_yticklabels(format_by_model.index, fontsize=11)
-    ax3.set_xlabel('Valid Format (%)', fontsize=12, fontweight='bold')
-    ax3.set_title('Response Format Compliance', 
-                  fontsize=14, fontweight='bold', pad=10)
-    ax3.grid(axis='x', alpha=0.3, linestyle='--')
-    ax3.set_xlim(0, 105)
-    ax3.axvline(x=100, color='green', linestyle='--', linewidth=2, alpha=0.5)
-    
-    # 4. Sample size per culture
-    ax4 = fig.add_subplot(gs[2, 0])
-    samples_by_culture = df.groupby('culture')['num_samples'].first().sort_values(ascending=True)
-    bars = ax4.barh(range(len(samples_by_culture)), samples_by_culture.values,
-                    color='#9b59b6', alpha=0.7)
-    
-    for i, (bar, val) in enumerate(zip(bars, samples_by_culture.values)):
-        ax4.text(val + 100, i, f'{val:,}', 
-                va='center', fontsize=9)
-    
-    ax4.set_yticks(range(len(samples_by_culture)))
-    ax4.set_yticklabels(samples_by_culture.index, fontsize=10)
-    ax4.set_xlabel('Number of Samples', fontsize=12, fontweight='bold')
-    ax4.set_title('Dataset Size by Culture', 
-                  fontsize=14, fontweight='bold', pad=10)
-    ax4.grid(axis='x', alpha=0.3, linestyle='--')
-    
-    # 5. Head-to-head comparison (if we have multiple models)
-    ax5 = fig.add_subplot(gs[2, 1])
-    if len(df['model'].unique()) >= 2:
-        # Create scatter plot comparing models
-        model1, model2 = sorted(df['model'].unique())[:2]
-        
-        df1 = df[df['model'] == model1].set_index('culture')['accuracy']
-        df2 = df[df['model'] == model2].set_index('culture')['accuracy']
-        
-        # Get common cultures
-        common = df1.index.intersection(df2.index)
-        
-        if len(common) > 0:
-            ax5.scatter(df1[common], df2[common], s=200, alpha=0.6, 
-                       color='#e74c3c', edgecolors='black', linewidth=1.5)
-            
-            # Add culture labels
-            for culture in common:
-                ax5.annotate(culture, (df1[culture], df2[culture]),
-                           xytext=(5, 5), textcoords='offset points',
-                           fontsize=9, fontweight='bold')
-            
-            # Add diagonal line (equal performance)
-            max_val = max(df1[common].max(), df2[common].max())
-            min_val = min(df1[common].min(), df2[common].min())
-            ax5.plot([min_val, max_val], [min_val, max_val], 
-                    'k--', alpha=0.5, linewidth=2, label='Equal Performance')
-            
-            ax5.set_xlabel(f'{model1} Accuracy (%)', fontsize=12, fontweight='bold')
-            ax5.set_ylabel(f'{model2} Accuracy (%)', fontsize=12, fontweight='bold')
-            ax5.set_title('Head-to-Head Comparison', 
-                         fontsize=14, fontweight='bold', pad=10)
-            ax5.grid(alpha=0.3, linestyle='--')
-            ax5.legend(fontsize=10)
-            ax5.set_aspect('equal')
-    else:
-        ax5.text(0.5, 0.5, 'Need 2+ models for comparison', 
-                ha='center', va='center', fontsize=12)
-        ax5.axis('off')
-    
-    return fig
-
-def create_detailed_table_plot(accuracy_table, format_table, samples_table):
-    """Create detailed table visualization"""
-    
-    fig, axes = plt.subplots(1, 3, figsize=(20, 8))
-    fig.suptitle('Detailed Results Tables', fontsize=16, fontweight='bold')
-    
-    tables_data = [
-        (accuracy_table, 'Accuracy (%)', '#3498db', axes[0]),
-        (format_table, 'Valid Format (%)', '#2ecc71', axes[1]),
-        (samples_table, 'Sample Count', '#9b59b6', axes[2])
-    ]
-    
-    for table_df, title, color, ax in tables_data:
-        ax.axis('tight')
-        ax.axis('off')
-        
-        # Prepare data
-        data = []
-        for culture in table_df.index:
-            row = [culture]
-            for model in table_df.columns:
-                val = table_df.loc[culture, model]
-                if pd.isna(val):
-                    row.append("N/A")
-                elif 'Sample' in title:
-                    row.append(f"{int(val):,}")
-                else:
-                    row.append(f"{val:.1f}%")
-            data.append(row)
-        
-        # Create table
-        table = ax.table(cellText=data,
-                        colLabels=['Culture'] + list(table_df.columns),
-                        cellLoc='center',
-                        loc='center',
-                        bbox=[0, 0, 1, 1])
-        table.auto_set_font_size(False)
-        table.set_fontsize(9)
-        table.scale(1, 2)
-        
-        # Style header
-        for i in range(len(table_df.columns) + 1):
-            table[(0, i)].set_facecolor(color)
-            table[(0, i)].set_text_props(weight='bold', color='white')
-        
-        # Alternate row colors
-        for i in range(1, len(data) + 1):
-            for j in range(len(table_df.columns) + 1):
-                if i % 2 == 0:
-                    table[(i, j)].set_facecolor('#f8f9fa')
-        
-        ax.set_title(title, fontsize=14, pad=20, fontweight='bold')
+    # Add background color
+    ax.set_facecolor('#f8f9fa')
     
     plt.tight_layout()
     return fig
@@ -333,9 +212,13 @@ def print_summary_report(df):
         print(f"  Cultures Evaluated: {len(model_df)}")
         print(f"  Total Samples: {model_df['num_samples'].sum():,}")
         print(f"  Average Accuracy: {model_df['accuracy'].mean():.2f}%")
-        print(f"  Best Culture: {model_df.loc[model_df['accuracy'].idxmax(), 'culture']} "
+        
+        best_idx = model_df['accuracy'].idxmax()
+        worst_idx = model_df['accuracy'].idxmin()
+        
+        print(f"  Best Culture: {model_df.loc[best_idx, 'culture_display']} "
               f"({model_df['accuracy'].max():.2f}%)")
-        print(f"  Worst Culture: {model_df.loc[model_df['accuracy'].idxmin(), 'culture']} "
+        print(f"  Worst Culture: {model_df.loc[worst_idx, 'culture_display']} "
               f"({model_df['accuracy'].min():.2f}%)")
         print(f"  Std Dev: {model_df['accuracy'].std():.2f}%")
         print(f"  Valid Format: {model_df['valid_format'].mean():.2f}%")
@@ -344,15 +227,190 @@ def print_summary_report(df):
     print("CULTURE-WISE BREAKDOWN")
     print("="*80)
     
-    accuracy_pivot = df.pivot(index='culture', columns='model', values='accuracy')
-    for culture in accuracy_pivot.index:
-        print(f"\n{culture}:")
-        for model in accuracy_pivot.columns:
-            val = accuracy_pivot.loc[culture, model]
-            if not pd.isna(val):
-                print(f"  {model:20s}: {val:6.2f}%")
+    # Create a mapping for display
+    culture_map = df.set_index('culture')['culture_display'].to_dict()
+    
+    for culture in sorted(df['culture'].unique()):
+        culture_display = culture_map.get(culture, culture)
+        print(f"\n{culture_display}:")
+        for model in sorted(df['model'].unique()):
+            model_data = df[(df['culture'] == culture) & (df['model'] == model)]
+            if not model_data.empty:
+                acc = model_data['accuracy'].iloc[0]
+                samples = model_data['num_samples'].iloc[0]
+                print(f"  {model:20s}: {acc:6.2f}% ({samples:,} samples)")
     
     print("\n" + "="*80 + "\n")
+
+def plot_comparison(df):
+    """Create comprehensive visualization comparing models across cultures"""
+    
+    # Set style
+    plt.style.use('seaborn-v0_8-darkgrid')
+    colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
+    
+    # Create figure with subplots (now without the top accuracy chart)
+    fig = plt.figure(figsize=(18, 10))
+    gs = fig.add_gridspec(2, 2, hspace=0.35, wspace=0.3)
+    
+    # Main title
+    fig.suptitle('BLEnD Cultural Knowledge Evaluation: Llama vs Qwen', 
+                 fontsize=18, fontweight='bold', y=0.98)
+    
+    # 1. Overall model comparison
+    ax1 = fig.add_subplot(gs[0, 0])
+    avg_by_model = df.groupby('model')['accuracy'].mean().sort_values(ascending=False)
+    bars = ax1.barh(range(len(avg_by_model)), avg_by_model.values, 
+                    color=colors[:len(avg_by_model)], alpha=0.8)
+    
+    # Add value labels
+    for i, (bar, val) in enumerate(zip(bars, avg_by_model.values)):
+        ax1.text(val + 1, i, f'{val:.2f}%', 
+                va='center', fontsize=11, fontweight='bold')
+    
+    ax1.set_yticks(range(len(avg_by_model)))
+    ax1.set_yticklabels(avg_by_model.index, fontsize=11)
+    ax1.set_xlabel('Average Accuracy (%)', fontsize=12, fontweight='bold')
+    ax1.set_title('Overall Performance (Avg Across Cultures)', 
+                  fontsize=14, fontweight='bold', pad=10)
+    ax1.grid(axis='x', alpha=0.3, linestyle='--')
+    ax1.set_xlim(0, 100)
+    
+    # 2. Valid format comparison
+    ax2 = fig.add_subplot(gs[0, 1])
+    format_by_model = df.groupby('model')['valid_format'].mean()
+    bars = ax2.barh(range(len(format_by_model)), format_by_model.values,
+                    color=['#2ecc71', '#27ae60'][:len(format_by_model)], alpha=0.8)
+    
+    for i, (bar, val) in enumerate(zip(bars, format_by_model.values)):
+        ax2.text(val - 5, i, f'{val:.2f}%', 
+                va='center', ha='right', fontsize=11, 
+                fontweight='bold', color='white')
+    
+    ax2.set_yticks(range(len(format_by_model)))
+    ax2.set_yticklabels(format_by_model.index, fontsize=11)
+    ax2.set_xlabel('Valid Format (%)', fontsize=12, fontweight='bold')
+    ax2.set_title('Response Format Compliance', 
+                  fontsize=14, fontweight='bold', pad=10)
+    ax2.grid(axis='x', alpha=0.3, linestyle='--')
+    ax2.set_xlim(0, 105)
+    ax2.axvline(x=100, color='green', linestyle='--', linewidth=2, alpha=0.5)
+    
+    # 3. Sample size per culture
+    ax3 = fig.add_subplot(gs[1, 0])
+    samples_by_culture = df.groupby('culture_display')['num_samples'].first().sort_values(ascending=True)
+    bars = ax3.barh(range(len(samples_by_culture)), samples_by_culture.values,
+                    color='#9b59b6', alpha=0.7)
+    
+    for i, (bar, val) in enumerate(zip(bars, samples_by_culture.values)):
+        ax3.text(val + 200, i, f'{val:,}', 
+                va='center', fontsize=8)
+    
+    ax3.set_yticks(range(len(samples_by_culture)))
+    ax3.set_yticklabels(samples_by_culture.index, fontsize=9)
+    ax3.set_xlabel('Number of Samples', fontsize=12, fontweight='bold')
+    ax3.set_title('Dataset Size by Culture', 
+                  fontsize=14, fontweight='bold', pad=10)
+    ax3.grid(axis='x', alpha=0.3, linestyle='--')
+    
+    # 4. Head-to-head comparison
+    ax4 = fig.add_subplot(gs[1, 1])
+    if len(df['model'].unique()) >= 2:
+        # Create scatter plot comparing models
+        model1, model2 = sorted(df['model'].unique())[:2]
+        
+        df1 = df[df['model'] == model1].set_index('culture')['accuracy']
+        df2 = df[df['model'] == model2].set_index('culture')['accuracy']
+        
+        # Get common cultures
+        common = df1.index.intersection(df2.index)
+        
+        if len(common) > 0:
+            ax4.scatter(df1[common], df2[common], s=200, alpha=0.6, 
+                       color='#e74c3c', edgecolors='black', linewidth=1.5)
+            
+            # Add culture labels
+            for culture in common:
+                country_name = CULTURE_NAMES.get(culture, culture)
+                ax4.annotate(f"{culture}\n{country_name}", (df1[culture], df2[culture]),
+                           xytext=(5, 5), textcoords='offset points',
+                           fontsize=7, fontweight='bold')
+            
+            # Add diagonal line (equal performance)
+            max_val = max(df1[common].max(), df2[common].max())
+            min_val = min(df1[common].min(), df2[common].min())
+            ax4.plot([min_val, max_val], [min_val, max_val], 
+                    'k--', alpha=0.5, linewidth=2, label='Equal Performance')
+            
+            ax4.set_xlabel(f'{model1} Accuracy (%)', fontsize=12, fontweight='bold')
+            ax4.set_ylabel(f'{model2} Accuracy (%)', fontsize=12, fontweight='bold')
+            ax4.set_title('Head-to-Head Comparison', 
+                         fontsize=14, fontweight='bold', pad=10)
+            ax4.grid(alpha=0.3, linestyle='--')
+            ax4.legend(fontsize=10)
+            ax4.set_aspect('equal')
+    else:
+        ax4.text(0.5, 0.5, 'Need 2+ models for comparison', 
+                ha='center', va='center', fontsize=12)
+        ax4.axis('off')
+    
+    return fig
+
+def create_detailed_table_plot(accuracy_table, format_table, samples_table):
+    """Create detailed table visualization"""
+    
+    fig, axes = plt.subplots(1, 3, figsize=(22, 10))
+    fig.suptitle('Detailed Results Tables', fontsize=16, fontweight='bold')
+    
+    tables_data = [
+        (accuracy_table, 'Accuracy (%)', '#3498db', axes[0]),
+        (format_table, 'Valid Format (%)', '#2ecc71', axes[1]),
+        (samples_table, 'Sample Count', '#9b59b6', axes[2])
+    ]
+    
+    for table_df, title, color, ax in tables_data:
+        ax.axis('tight')
+        ax.axis('off')
+        
+        # Prepare data
+        data = []
+        for culture_display in table_df.index:
+            row = [culture_display]
+            for model in table_df.columns:
+                val = table_df.loc[culture_display, model]
+                if pd.isna(val):
+                    row.append("N/A")
+                elif 'Sample' in title:
+                    row.append(f"{int(val):,}")
+                else:
+                    row.append(f"{val:.2f}%")  # Changed from .1f to .2f
+            data.append(row)
+        
+        # Create table
+        table = ax.table(cellText=data,
+                        colLabels=['Culture (Country)'] + list(table_df.columns),
+                        cellLoc='center',
+                        loc='center',
+                        bbox=[0, 0, 1, 1])
+        table.auto_set_font_size(False)
+        table.set_fontsize(8)
+        table.scale(1, 2.2)
+        
+        # Style header
+        for i in range(len(table_df.columns) + 1):
+            table[(0, i)].set_facecolor(color)
+            table[(0, i)].set_text_props(weight='bold', color='white')
+        
+        # Alternate row colors
+        for i in range(1, len(data) + 1):
+            for j in range(len(table_df.columns) + 1):
+                if i % 2 == 0:
+                    table[(i, j)].set_facecolor('#f8f9fa')
+        
+        ax.set_title(title, fontsize=14, pad=20, fontweight='bold')
+    
+    plt.tight_layout()
+    return fig
 
 def main():
     """Main function to generate all visualizations"""
@@ -371,7 +429,7 @@ def main():
     
     print(f"\n✓ Successfully loaded {len(df)} results")
     print(f"  Models: {', '.join(df['model'].unique())}")
-    print(f"  Cultures: {', '.join(sorted(df['culture'].unique()))}")
+    print(f"  Cultures: {', '.join(sorted(df['culture_display'].unique()))}")
     
     # Create tables
     accuracy_table, format_table, samples_table = create_comparison_table(df)
@@ -379,7 +437,7 @@ def main():
     # Print summary report
     print_summary_report(df)
     
-    # Print tables
+    # Print tables with 2 decimal places
     print("\n" + "="*80)
     print("ACCURACY TABLE")
     print("="*80)
@@ -393,19 +451,24 @@ def main():
     # Create visualizations
     print("\n📊 Creating visualizations...")
     
-    # Main comparison plot
-    fig1 = plot_comparison(df)
-    fig1.savefig('results/model_comparison.png', dpi=300, bbox_inches='tight')
+    # Standalone accuracy chart
+    fig_accuracy = plot_accuracy_by_culture(df)
+    fig_accuracy.savefig('results/accuracy_by_culture.png', dpi=300, bbox_inches='tight')
+    print("  ✓ Saved: results/accuracy_by_culture.png")
+    
+    # Main comparison plot (other metrics)
+    fig_main = plot_comparison(df)
+    fig_main.savefig('results/model_comparison.png', dpi=300, bbox_inches='tight')
     print("  ✓ Saved: results/model_comparison.png")
     
     # Detailed table plot
-    fig2 = create_detailed_table_plot(accuracy_table, format_table, samples_table)
-    fig2.savefig('results/detailed_tables.png', dpi=300, bbox_inches='tight')
+    fig_tables = create_detailed_table_plot(accuracy_table, format_table, samples_table)
+    fig_tables.savefig('results/detailed_tables.png', dpi=300, bbox_inches='tight')
     print("  ✓ Saved: results/detailed_tables.png")
     
-    # Export to CSV
-    accuracy_table.to_csv('results/accuracy_table.csv')
-    format_table.to_csv('results/format_table.csv')
+    # Export to CSV with 2 decimal places
+    accuracy_table.round(2).to_csv('results/accuracy_table.csv')
+    format_table.round(2).to_csv('results/format_table.csv')
     df.to_csv('results/all_results_summary.csv', index=False)
     print("  ✓ Saved CSV files")
     

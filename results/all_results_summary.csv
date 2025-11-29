@@ -1,17 +1,15 @@
-model,culture,accuracy,valid_format,num_samples,accuracy_min,accuracy_max,file
-Llama 3.2-3B,AS,65.4111679894801,100.0,21293,0.0,100.0,assamese_llama_3b.json
-Llama 3.2-3B,CN,79.58353748162665,100.0,20410,0.0,100.0,china_llama_3b_summary.json
-Llama 3.2-3B,ID,66.65576558309895,100.0,15289,0.0,100.0,sundanese_llama_3b_summary.json
-Llama 3.2-3B,IR,74.374064322957,100.0,19371,0.0,100.0,iran_llama_3b_summary.json
-Llama 3.2-3B,KR,74.83558001772471,100.0,21439,0.0,100.0,south_korea_llama_3b_summary.json
-Llama 3.2-3B,UK,85.7322250792322,100.0,16723,0.0,100.0,uk_llama_3b_summary.json
-Llama 3.2-3B,US,87.85398095931114,100.0,16491,0.0,100.0,us_llama_3b_summary.json
-Qwen 2.5-3B,AS,68.34640492180529,99.99530362090829,21293,0.0,100.0,assamese_qwen_2.5b_summary.json
-Qwen 2.5-3B,CN,81.35717785399315,99.98530132288094,20410,0.0,100.0,china_qwen_2.5b_summary.json
-Qwen 2.5-3B,ID,64.60854208908366,99.89534959775001,15289,0.0,100.0,sundanese_qwen_2.5b_summary.json
-Qwen 2.5-3B,IR,70.86366217541686,99.93805172680811,19371,0.0,100.0,iran_qwen_2.5b_summary.json
-Qwen 2.5-3B,KR,73.97733103223099,99.99067120667942,21439,0.0,100.0,south_korea_qwen_2.5b_summary.json
-Qwen 2.5-3B,UK,84.75751958380673,100.0,16723,0.0,100.0,uk_qwen_2.5b_summary.json
-Qwen 2.5-3B,US,86.52598386998969,99.96361651810078,16491,0.0,100.0,us_qwen_2.5b_summary.json
-Unknown,BLEND,30.0,100.0,50,0.0,100.0,blend_algeria_mcq_20251127_205037_summary.json
-Unknown,KR,75.5,100.0,10000,0.0,100.0,South Korea Cultural Knowledge Evaluation_test4_10000samp_summary.json
+model,culture,country,culture_display,accuracy,valid_format,num_samples,accuracy_min,accuracy_max,file
+Llama 3.2-3B,AS,Assam (India),AS (Assam (India)),65.4111679894801,100.0,21293,0.0,100.0,assamese_llama_3b.json
+Llama 3.2-3B,CN,China,CN (China),79.58353748162665,100.0,20410,0.0,100.0,china_llama_3b_summary.json
+Llama 3.2-3B,ID,Indonesia,ID (Indonesia),66.65576558309895,100.0,15289,0.0,100.0,sundanese_llama_3b_summary.json
+Llama 3.2-3B,IR,Iran,IR (Iran),74.374064322957,100.0,19371,0.0,100.0,iran_llama_3b_summary.json
+Llama 3.2-3B,KR,South Korea,KR (South Korea),74.83558001772471,100.0,21439,0.0,100.0,south_korea_llama_3b_summary.json
+Llama 3.2-3B,UK,United Kingdom,UK (United Kingdom),85.7322250792322,100.0,16723,0.0,100.0,uk_llama_3b_summary.json
+Llama 3.2-3B,US,United States,US (United States),87.85398095931114,100.0,16491,0.0,100.0,us_llama_3b_summary.json
+Qwen 2.5-3B,AS,Assam (India),AS (Assam (India)),68.34640492180529,99.99530362090829,21293,0.0,100.0,assamese_qwen_2.5b_summary.json
+Qwen 2.5-3B,CN,China,CN (China),81.35717785399315,99.98530132288094,20410,0.0,100.0,china_qwen_2.5b_summary.json
+Qwen 2.5-3B,ID,Indonesia,ID (Indonesia),64.60854208908366,99.89534959775001,15289,0.0,100.0,sundanese_qwen_2.5b_summary.json
+Qwen 2.5-3B,IR,Iran,IR (Iran),70.86366217541686,99.93805172680811,19371,0.0,100.0,iran_qwen_2.5b_summary.json
+Qwen 2.5-3B,KR,South Korea,KR (South Korea),73.97733103223099,99.99067120667942,21439,0.0,100.0,south_korea_qwen_2.5b_summary.json
+Qwen 2.5-3B,UK,United Kingdom,UK (United Kingdom),84.75751958380673,100.0,16723,0.0,100.0,uk_qwen_2.5b_summary.json
+Qwen 2.5-3B,US,United States,US (United States),86.52598386998969,99.96361651810078,16491,0.0,100.0,us_qwen_2.5b_summary.json

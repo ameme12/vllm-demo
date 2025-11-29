@@ -1,18 +1,18 @@
 # BLEnD Evaluation Configuration with VLLMInferenceEngine
 # Example: MCQ evaluation for Algeria
 
-experiment_name: china_qwen_2.5b
+experiment_name: sundanese_qwen_2.5b
 task:
   name: blend_cultural_knowledge
   type: blend
   config:
     blend_config: multiple-choice-questions  # or "short-answer-questions"
-    culture: CN # See culture codes below
+    culture: JB # See culture codes below
     use_english: true
 
 # Model configuration (matches VLLMConfig)
 model:
-  name: meta-llama/Llama-3.2-3B-Instruct  # HuggingFace model name
+  name: Qwen/Qwen2.5-3B-Instruct   # HuggingFace model name
   
   # vLLM Engine Configuration
   tensor_parallel_size: 1  # Number of GPUs to use

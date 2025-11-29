@@ -1,0 +1,154 @@
+# CulturalBench Evaluation Configuration with VLLMInferenceEngine
+# Example: MCQ evaluation for Japan
+
+experiment_name: culturalbench_china_qwen_2.5b
+
+task:
+  name: culturalbench_cultural_knowledge
+  type: culturalbench
+  config:
+    country: China  # Optional: Filter by specific country (see country list below)
+    # region: East Asia  # Optional: Filter by region instead of country (uncomment to use)
+    # Leave both country and region commented to load all countries
+
+# Model configuration (matches VLLMConfig)
+model:
+  name: Qwen/Qwen2.5-3B-Instruct   # HuggingFace model name
+  
+  # vLLM Engine Configuration
+  tensor_parallel_size: 1  # Number of GPUs to use
+  gpu_memory_utilization: 0.9  # Fraction of GPU memory to use
+  max_model_len: null  # Maximum sequence length (null for model default)
+  trust_remote_code: true  # Trust remote code in model
+  dtype: auto  # auto, half, float16, bfloat16, float, float32
+  quantization: null  # awq, gptq, squeezellm, fp8
+  swap_space: 4  # CPU swap space in GiB
+  enforce_eager: false  # Disable CUDA graph
+  max_num_seqs: 256  # Max sequences per iteration
+  seed: 42  # Random seed
+  
+  # Generation Parameters
+  temperature: 0.0  # 0 for deterministic
+  max_tokens: 100  # Maximum tokens to generate
+  top_p: 1.0  # Nucleus sampling
+  top_k: -1  # Top-k sampling (-1 to disable)
+  presence_penalty: 0.0  # Presence penalty
+  frequency_penalty: 0.0  # Frequency penalty
+  stop: null  # Stop sequences (e.g., ["\n\n", "END"])
+
+evaluation:
+  num_samples: -1  # -1 for all samples
+  batch_size: 32
+
+# Output settings
+output:
+  results_dir: results_culturalbench
+  save_predictions: true
+  verbose: true
+
+# ============================================================================
+# AVAILABLE COUNTRIES (use in task.config.country)
+# ============================================================================
+# 
+# North America:
+#   - Canada
+#   - United States
+# 
+# South America:
+#   - Argentina
+#   - Brazil
+#   - Chile
+#   - Mexico
+#   - Peru
+# 
+# East Europe:
+#   - Czech Republic
+#   - Poland
+#   - Romania
+#   - Ukraine
+#   - Russia
+# 
+# South Europe:
+#   - Spain
+#   - Italy
+# 
+# West Europe:
+#   - France
+#   - Germany
+#   - Netherlands
+#   - United Kingdom
+# 
+# Africa:
+#   - Egypt
+#   - Morocco
+#   - Nigeria
+#   - South Africa
+#   - Zimbabwe
+# 
+# Middle East/West Asia:
+#   - Iran
+#   - Israel
+#   - Lebanon
+#   - Saudi Arabia
+#   - Turkey
+# 
+# South Asia:
+#   - Bangladesh
+#   - India
+#   - Nepal
+#   - Pakistan
+# 
+# Southeast Asia:
+#   - Indonesia
+#   - Malaysia
+#   - Philippines
+#   - Singapore
+#   - Thailand
+#   - Vietnam
+# 
+# East Asia:
+#   - China
+#   - Hong Kong
+#   - Japan
+#   - South Korea
+#   - Taiwan
+# 
+# Oceania:
+#   - Australia
+#   - New Zealand
+#
+# ============================================================================
+# AVAILABLE REGIONS (use in task.config.region)
+# ============================================================================
+#
+#   - North America
+#   - South America
+#   - East Europe
+#   - South Europe
+#   - West Europe
+#   - Africa
+#   - Middle East/West Asia
+#   - South Asia
+#   - Southeast Asia
+#   - East Asia
+#   - Oceania
+#
+# ============================================================================
+# EXAMPLE CONFIGURATIONS
+# ============================================================================
+#
+# Example 1: Evaluate on all East Asian countries
+# task:
+#   config:
+#     region: East Asia
+#
+# Example 2: Evaluate on specific country
+# task:
+#   config:
+#     country: South Korea
+#
+# Example 3: Evaluate on all countries (default)
+# task:
+#   config: {}
+#
+# ============================================================================

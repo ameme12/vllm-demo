@@ -142,14 +142,14 @@ class CulturalBenchTask(BaseTask):
         print(f"{'='*60}")
         print(f"Config: {self.config}")
         if self.country:
-            print(f"Filter by Country: {self.country} ({self.get_region()})")
+            print(f"Filter by Country: {self.country} ({self.get_region(self.country)})")
         elif self.region:
             print(f"Filter by Region: {self.region}")
         else:
             print(f"Loading all countries")
 
 
-        ds = load_dataset("kellycyy/CulturalBench", "CulturalBench-Hard")
+        ds = load_dataset("kellycyy/CulturalBench", "CulturalBench-Easy")
         ds_split = ds['test']
 
         if self.country:
@@ -182,7 +182,10 @@ class CulturalBenchTask(BaseTask):
                     options = [x for x in ds_split if x['question_idx'] == item['question_idx']]
                     for opt in options:
                         marker = "✓" if opt['answer'] else " "
-                        print(f"  [{marker}] {opt['prompt_option']}")
+                        print(f"  [{marker}] {opt['prompt_option_a']}")
+                        print(f"  [{marker}] {opt['prompt_option_b']}")
+                        print(f"  [{marker}] {opt['prompt_option_c']}")
+                        print(f"  [{marker}] {opt['prompt_option_d']}")
                     
                     if len(questions_shown) >= 3:
                         break
@@ -191,17 +194,142 @@ class CulturalBenchTask(BaseTask):
         self.dataset = ds_split
 
 
-    def get_region(self) -> str:
-        return COUNTRY_REGIONS[self.country]
+    def get_region(self, country:str) -> str:
+        return COUNTRY_REGIONS.get(country, "Unknown")
 
     def _convert_sample(self, item: Dict[str, Any]) -> Dict[str, Any]:
-        pass
+        '''
+        Convert a dataset item into standardized format
+
+        grouped  by question_idx
+
+        args:
+
+            item : raw item from the dataset
+
+        reutrn:
+            Dict with stadardized keys
+
+        '''
+
+        return {
+            "data_idx": item["data_idx"],
+            "question_idx": item["question_idx"],
+            "prompt_question": item["prompt_question"],
+            "prompt_option_a": item["prompt_option_a"],
+            "prompt_option_b": item["prompt_option_b"],
+            "prompt_option_c": item["prompt_option_c"],
+            "prompt_option_d": item["prompt_option_d"],
+            "answer": item["answer"],
+            "country": item["country"],
+            "region": self.get_region(item["country"]),
+        }
 
     def prepare_prompts(self, sample: Dict) -> str:
-        pass
+        '''
+        Prepare MCQ prompt for the LLM
+
+        Args:
+            sample: Converted sample dictionary with all 4 options
+
+        Returns:
+            Formatted prompt string with multiple choice options
+
+         Example:
+            In the Netherlands, which of the following is an unusual common public practice?
+            Without any explanation, choose only one from the given alphabet choices (A, B, C, D).
+            Provide as JSON format: {"answer_choice":""}
+            
+            A. Cycle everywhere
+            B. Using deodorant
+            C. Tipping generously
+            D. Talking loudly on the phone
+            
+            Answer:
+        '''
+        question = sample["prompt_question"]
+        
+        # Format the prompt
+        prompt = f"{question}\n"
+        prompt += "Without any explanation, choose only one from the given alphabet choices (A, B, C, D).\n"
+        prompt += 'Provide as JSON format: {"answer_choice":""}\n\n'
+        prompt += f"A. {sample['prompt_option_a']}\n"
+        prompt += f"B. {sample['prompt_option_b']}\n"
+        prompt += f"C. {sample['prompt_option_c']}\n"
+        prompt += f"D. {sample['prompt_option_d']}\n"
+        prompt += "\nAnswer:"
+        
+        return prompt
+
 
     def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
-        pass
+        """
+        Evaluate the model's MCQ response against the ground truth.
+        
+        Args:
+            prediction: Model's predicted answer choice (e.g., "A", "B", "C", "D") in JSON format
+            ground_truth: Dictionary with answer field containing the correct letter
+        
+        Returns:
+            Dictionary with metric scores
+        """
+        predicted_letter = None
+        
+        # Method 1: Try JSON parsing first
+        try:
+            json_str = prediction.strip()
+            
+            # Search for JSON object with answer_choice
+            json_match = re.search(
+                r'\{[^}]*"answer_choice"\s*:\s*"([A-D])"[^}]*\}',
+                json_str,
+                re.IGNORECASE
+            )
+            
+            if json_match:
+                predicted_letter = json_match.group(1).upper()
+            else:
+                # Try parsing the whole response as JSON
+                json_response = json.loads(json_str)
+                if "answer_choice" in json_response:
+                    answer = json_response["answer_choice"]
+                    if len(answer) == 1 and answer.upper() in ['A', 'B', 'C', 'D']:
+                        predicted_letter = answer.upper()
+        except (json.JSONDecodeError, ValueError, KeyError):
+            pass
+
+        # Method 2: Look for standalone letter at the start
+        if not predicted_letter:
+            first_line = prediction.strip().split('\n')[0].strip()
+            if len(first_line) == 1 and first_line.upper() in ['A', 'B', 'C', 'D']:
+                predicted_letter = first_line.upper()
+        
+        # Method 3: Search for any A/B/C/D in the text
+        if not predicted_letter:
+            letter_match = re.search(r'\b([A-D])\b', prediction.upper())
+            if letter_match:
+                predicted_letter = letter_match.group(1)
+
+        # If no valid prediction found
+        if not predicted_letter:
+            return {
+                "accuracy": 0.0,
+                "exact_match": 0.0,
+                "has_valid_format": 0.0,
+            }
+
+        # Get ground truth answer
+        correct_letter = ground_truth["answer"].strip().upper()
+        
+        # Check if prediction is correct
+        is_correct = (predicted_letter == correct_letter)
+
+        return {
+            "accuracy": 1.0 if is_correct else 0.0,
+            "exact_match": 1.0 if is_correct else 0.0,
+            "has_valid_format": 1.0,
+        }
+
 
 def create_culturalbench_mcq_task(
     dataset_path: Path, 
@@ -224,7 +352,7 @@ def create_culturalbench_mcq_task(
 if __name__ == "__main__":
     # Example usage and testing
     print("\n" + "="*70)
-    print("CulturalBench MCQ Task - Example Usage")
+    print("CulturalBench Easy Task - Example Usage")
     print("="*70)
     
     # Configuration
@@ -242,12 +370,51 @@ if __name__ == "__main__":
         print("EXAMPLE WORKFLOW")
         print("="*70)
         
-        # Get first question (4 options grouped by question_idx)
-        question_idx = task.dataset[0]['question_idx']
-        question_items = [
-            item for item in task.dataset 
-            if item['question_idx'] == question_idx
-        ]
+        # Get first question
+        item = task.dataset[0]
         
-        print(f"\nProcessing question {question_idx} with {len(question_items)} options")
+        # Convert sample
+        converted_sample = task._convert_sample(item)
         
+        print("\n1. Converted Sample:")
+        print("-" * 70)
+        print(f"Question: {converted_sample['prompt_question']}")
+        print(f"A. {converted_sample['prompt_option_a']}")
+        print(f"B. {converted_sample['prompt_option_b']}")
+        print(f"C. {converted_sample['prompt_option_c']}")
+        print(f"D. {converted_sample['prompt_option_d']}")
+        print(f"Correct Answer: {converted_sample['answer']}")
+        print(f"Country: {converted_sample['country']}")
+        print(f"Region: {converted_sample['region']}")
+        
+        # Generate prompt
+        prompt = task.prepare_prompts(converted_sample)
+        
+        print("\n2. Generated Prompt:")
+        print("-" * 70)
+        print(prompt)
+        
+        # Test evaluation
+        print("\n3. Evaluation Examples:")
+        print("-" * 70)
+        
+        # Test correct answer
+        correct_response = json.dumps({"answer_choice": converted_sample['answer']})
+        print(f"\n✓ Correct Response: {correct_response}")
+        metrics = task.evaluate_response(correct_response, converted_sample)
+        print(f"  Metrics: {metrics}")
+        
+        # Test wrong answer
+        all_letters = ['A', 'B', 'C', 'D']
+        all_letters.remove(converted_sample['answer'])
+        wrong_letter = all_letters[0]
+        wrong_response = json.dumps({"answer_choice": wrong_letter})
+        print(f"\n✗ Wrong Response: {wrong_response}")
+        metrics = task.evaluate_response(wrong_response, converted_sample)
+        print(f"  Metrics: {metrics}")
+        
+        print("\n" + "="*70)
+        print("Example completed successfully!")
+        print("="*70 + "\n")
+    else:
+        print("\n⚠ No samples available for testing.")

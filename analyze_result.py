@@ -18,8 +18,8 @@ CULTURE_NAMES = {
     'IR': 'Iran',
     'DZ': 'Algeria',
     'AZ': 'Azerbaijan',
-    'JB': 'Jordan',
-    'AS': 'Assam (India)',
+    'JB': 'West Java (Sundanese)',
+    'AS': 'Assam (Assamese)',
     'NG': 'Nigeria',
     'ET': 'Ethiopia'
 }
@@ -97,7 +97,7 @@ def load_summary_results(results_dir):
                 elif culture == "US":
                     culture = "US"
                 elif "SUNDANESE" in culture:
-                    culture = "ID"  # Indonesia
+                    culture = "JB"  # Indonesia
                 elif "ASSAMESE" in culture:
                     culture = "AS"  # Assamese
             

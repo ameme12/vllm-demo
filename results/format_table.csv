@@ -1,8 +1,8 @@
 culture_display,Llama 3.2-3B,Qwen 2.5-3B
-AS (Assam (India)),100.0,100.0
+AS (Assam (Assamese)),100.0,100.0
 CN (China),100.0,99.99
-ID (Indonesia),100.0,99.9
 IR (Iran),100.0,99.94
+JB (West Java (Sundanese)),100.0,99.9
 KR (South Korea),100.0,99.99
 UK (United Kingdom),100.0,100.0
 US (United States),100.0,99.96

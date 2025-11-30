@@ -1,0 +1,1825 @@
+{
+  "experiment_name": "culturalbench_west_asia_qwen_2.5b",
+  "timestamp": "20251129_190629",
+  "config": {
+    "experiment_name": "culturalbench_west_asia_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "Middle East/West Asia"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 127,
+  "results": [
+    {
+      "sample_id": 16,
+      "question_idx": 16,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian hospitality culture, when is \"taarof\" used?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Politely offering food multiple times without the intention of actually giving it.\n(ii) Sharing a meal only with close family members as a sign of intimacy.\n(iii) Asking guests to remove their shoes before entering the home to keep it clean.\n(iv) Insisting on paying the bill in restaurants to show generosity towards guests.",
+      "prediction": "D. i, iii\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 19,
+      "question_idx": 19,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iran, what are the ages being obligated to practice Islam?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 20,
+      "question_idx": 20,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What day do families in Iran gather to celebrate Nowruz?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 21,
+      "question_idx": 21,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israel, what is an expected occurrence when a person of a specific gender reaches the ages between 11 and 13? (not including 11 and 13)",
+      "prediction": "B. Bar Mitzva\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 24,
+      "question_idx": 24,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "How do people in Lebanese culture typically welcome each other?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) A firm handshake\n(ii) A bow\n(iii) Three kisses on the cheeks\n(iv) A single kiss on the cheek.",
+      "prediction": "D. i, iii\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 35,
+      "question_idx": 35,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon, what languages are commonly spoken?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 36,
+      "question_idx": 36,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is Lebanon famous for?",
+      "prediction": "D. Tabbouleh and hummus.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 37,
+      "question_idx": 37,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "How does Lebanon culture different from Syrian culture?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nLebanon has a more diverse religious landscape compared to Syria, which is a significant cultural difference. Lebanon is home to a variety of religious groups including Christians, Muslims, Druze, and others, whereas Syria is predominantly Sunni Muslim. \n\nTherefore, the correct answer is:\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 45,
+      "question_idx": 45,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a common practice when entering a house in Saudi Arabia?",
+      "prediction": "A. Taking off their shoes before entering\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 70,
+      "question_idx": 70,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What would a guest in an indigenous Persian culture gathering for Nowruz do if offered to eat sweets?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Initially decline with courtesy\n(ii) agree at once graciously\n(iii) others considered before you\n(iv) discuss terms for agreement",
+      "prediction": "D. i, ii\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 76,
+      "question_idx": 76,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a traditional type of women's clothing worn at home in Iran?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 78,
+      "question_idx": 78,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Judaism, what ritual are females likely to participate in to achieve ritual purity?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 81,
+      "question_idx": 81,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is the most common greeting when visiting an Iranian?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Shaking hands while smiling\n(ii) Hugging each other tightly\n(iii) Kissing on the cheeks\n(iv) Offering sweet food",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 82,
+      "question_idx": 82,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon, what is the typical way to greet someone who has just arrived from abroad?",
+      "prediction": "B. Bowing slightly and shaking hands\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 83,
+      "question_idx": 83,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, how do you show respect when you visit or see elders?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 88,
+      "question_idx": 88,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabia, what is the name of the holiday characterized by making donations to charity, feasts, prayers, and family gatherings?",
+      "prediction": "A. Eid al-Fitr\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 96,
+      "question_idx": 96,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabia, is there a customary practice for men regarding financial obligations to their significant other's parents in order to get married?",
+      "prediction": "{\"answer_choice\": \"D\"} {\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 109,
+      "question_idx": 109,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What behavior should be avoided when you are in an Iranian gathering?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Eating with the left hand\n(ii) Blowing one's nose\n(iii) Giving a thumbs-up sign\n(iv) Tipping at a restaurant",
+      "prediction": "B. i, ii, iii, iv\n\n{\n  \"answer_choice\": \"B\"\n}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 110,
+      "question_idx": 110,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what is one of the traditions for celebrating the new year?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Buying new clothes and shoes to wear\n(ii) Lighting fireworks on New Year's Eve\n(iii) Making resolutions for personal improvement\n(iv) Decorating a tree with lights and ornaments.",
+      "prediction": "D. i, ii, iii, iv\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 121,
+      "question_idx": 121,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon Muslim culture during Ramadan, how is the fast traditionally broken and with whom?",
+      "prediction": "B. With the whole family, with dishes like Fatteh\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 122,
+      "question_idx": 122,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In a typical Lebanese family structure, who is generally not responsible for childrearing and household chores?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nJustification: In a typical Lebanese family structure, childrearing and household chores are generally the responsibility of the mother. However, it is not uncommon for the father to also participate in these activities. Therefore, options B and C are correct. But the question asks for the option that is not responsible, which is D. Hence, the answer is D. {\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 123,
+      "question_idx": 123,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Persian culture, how are the elderly typically treated on special occasions like the new year?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 127,
+      "question_idx": 127,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what is a common practice following the days of a person's death to honor their soul?",
+      "prediction": "D. Gathering together to read the Quran and giving out food on the 7th and 40th days after death.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 128,
+      "question_idx": 128,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what is a common gift for a couple on their wedding day to help give them a good start?",
+      "prediction": "B. Money and gold\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 129,
+      "question_idx": 129,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is considered to be rude when you visit someone in Turkish culture?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nIn Turkish culture, offering to help wash the dishes is considered to be rude. It is seen as an invasion of personal space and a sign of disrespect. The other options are not considered rude in Turkish culture. Bringing dessert is a sign of hospitality, not finishing your food is not considered rude, and giving a thumbs up is a sign of appreciation in many cultures, including Turkish. \n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 130,
+      "question_idx": 130,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish cuisine, which of these options can not be found easily?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 135,
+      "question_idx": 135,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabia's culture, when are adults expected not to leave their parents house?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 136,
+      "question_idx": 136,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabian culture, who usually pays the dowry?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 142,
+      "question_idx": 142,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, if someone you delivered an item to invites you up for a drink, what is the appropriate response?",
+      "prediction": "A. Politely decline, as accepting such invitations from strangers is uncommon.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 164,
+      "question_idx": 164,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, when is it most common for individuals to live with their parents?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 169,
+      "question_idx": 169,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi culture, how do people typically handle paying the restaurant bill when dining with friends and family?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 170,
+      "question_idx": 170,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Arabic culture, which foot is traditionally not used first when stepping into a respectful place?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 171,
+      "question_idx": 171,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabia, how should you give an item to someone?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 172,
+      "question_idx": 172,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabia, what is not preferred way to break the fast?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Eating dates and drinking a small quantity of water\n(ii) Having a cup of coffee\n(iii) Consuming a substantial feast immediately and drinking huge amount of water\n(iv) Starting with a slice of pizza",
+      "prediction": "D. {\"answer_choice\":\"ii, iii, iv\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 173,
+      "question_idx": 173,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what is considered an acceptable behavior when you are alone?",
+      "prediction": "{\"answer_choice\":\"B\"} \n\nExplanation: In Iranian culture, it is considered acceptable to blow your nose in private, such as when you are alone. However, it is not considered polite to make direct eye contact, speak loudly in public places, or wear shoes indoors. \n\nA. Wearing shoes indoors is not considered acceptable in Iranian culture.\nB. Blowing your nose is considered acceptable when you are alone.\nC. Making direct eye contact is not considered acceptable in Iranian culture.\nD.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 182,
+      "question_idx": 182,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In T\u00fcrkiye, how do people commonly greet each other?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nIn T\u00fcrkiye, people commonly greet each other with \"Merhaba\" which means \"Hello\" in English. So, the correct answer is A. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 186,
+      "question_idx": 186,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a typical meal pattern in Lebanese culture for daily meals?",
+      "prediction": "{\"answer_choice\":\"D\"} {\"answer_choice\":\"D\"} // The correct answer is D, as it aligns with the typical meal pattern in Lebanese culture where breakfast is often a big meal, lunch is skipped, and dinner is a light meal. However, the provided JSON format requires a single string, so the answer is {\"answer_choice\":\"D\"}. {\"answer_choice\": \"D\"} {\"answer_choice\": \"D\"} // The correct answer is D, as it aligns with the typical",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 201,
+      "question_idx": 201,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, which questions do we never ask when entering a crowded restaurant, coffee shop, or store?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 203,
+      "question_idx": 203,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what is not considered polite while eating?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Chewing loudly\n(ii) Eating with your hands\n(iii) Using a fork instead of chopsticks\n(iv) Asking for salt and pepper at the table.",
+      "prediction": "D. i, ii, iv\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 254,
+      "question_idx": 254,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, how should elders be addressed?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 255,
+      "question_idx": 255,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a traditional dish in Lebanon, which is known by various names in different countries?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 280,
+      "question_idx": 280,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "How do Lebanese individuals typically behave in public settings?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 305,
+      "question_idx": 305,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi culture, how do you properly serve Arabic coffee to a guest?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 308,
+      "question_idx": 308,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "Which of the following questions is/are from people in Iran?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 321,
+      "question_idx": 321,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a common dining etiquette in Turkish culture when eating out with friends or family?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 329,
+      "question_idx": 329,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, how do we show respect to elderly people during religious holidays?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 353,
+      "question_idx": 353,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israel, there is a holiday during which it is customary to wear white. Which of the following holidays is it?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 369,
+      "question_idx": 369,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, how are guests of honour typically greeted?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 382,
+      "question_idx": 382,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, what is commonly done during meal times when someone is present?",
+      "prediction": "A. Offering to share the meal with the person present\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 404,
+      "question_idx": 404,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, we celebrate Yalda Night during the winter. How do we celebrate it?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 415,
+      "question_idx": 415,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In the context of Turkish culture, what traditional act is performed during the ceremony in which the man\u2019s family requests the woman\u2019s hand in marriage?",
+      "prediction": "{\"answer_choice\": \"D\"} (Note: The provided options do not fully capture the traditional act in Turkish culture, but based on the given choices, the most fitting one is the woman's family preparing a traditional meal for the man's family as a sign of acceptance.)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 420,
+      "question_idx": 420,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, when a seller refuses to accept payment for their service, what is the expected response?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nIn Iranian culture, when a seller refuses to accept payment for their service, the expected response is to accept the gesture and not insist on payment. This is a sign of respect and understanding in the community. \n\nTherefore, the correct answer is B. Accept the gesture and do not pay. \n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 433,
+      "question_idx": 433,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Jewish culture, what is a customary wish for another person's lifespan?",
+      "prediction": "C. May you live and reach the age of 120 years old.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 439,
+      "question_idx": 439,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what is considered not polite to do loudly in public?",
+      "prediction": "B. Laughing\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 453,
+      "question_idx": 453,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Saudi Arabia, do people use their left hand or right hand to receive coffee?",
+      "prediction": "D. No specific hand preference, as long as the serving is polite.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 454,
+      "question_idx": 454,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "During an important family gathering in Saudi Arabian culture, two relatives arrive at a door at the same time. One is an elderly uncle who holds great respect within the family, and the other is a younger cousin who has recently gained significant success. What is the traditional sign of respect in this scenario?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 455,
+      "question_idx": 455,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "How do all Saudi weddings separate guests by men and women?",
+      "prediction": "{\"answer_choice\": \"B\"} {\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 481,
+      "question_idx": 481,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what methods do people typically use to greet each other?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 491,
+      "question_idx": 491,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what factors contribute to a student's final grade point?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 514,
+      "question_idx": 514,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, how are unannounced guests typically welcomed when they visit someone's home?",
+      "prediction": "B. Visitors are offered Turkish tea.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 515,
+      "question_idx": 515,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what is expected to happen when a boy's circumcision surgery takes place?",
+      "prediction": "D. The boy is celebrated by the people.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 569,
+      "question_idx": 569,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what event do the bride and her female friends and family typically participate in the day before the wedding?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"} // The correct answer is Henna Night, which is a traditional event in Turkish culture where the bride and her female friends and family participate the day before the wedding to apply henna on her hands and feet. The other options are not specific to Turkish culture or the day before the wedding. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 570,
+      "question_idx": 570,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what special kind of coffee does the bride-to-be prepare and serve to the groom-to-be during their engagement process?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 573,
+      "question_idx": 573,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, what does bride-to-be wear for Henna Party?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 574,
+      "question_idx": 574,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, what is the traditional process for a man wanting to marry his girlfriend?",
+      "prediction": "B. The boyfriend must visit the girl's family with his family to ask for her hand in marriage.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 575,
+      "question_idx": 575,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, when people want to honor their loved one's memory, celebrate a special occasion, or show gratitude for a wish that has been fulfilled, what type of food do they traditionally prepare and distribute to others?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 584,
+      "question_idx": 584,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon, when friends discuss something controversial, how might they express their thoughts and attitudes even if they are not seriously upset? All answers can happen anywhere, but one is seen as typical of the culture.",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 586,
+      "question_idx": 586,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is most common for people when having guests over in Lebanese culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 587,
+      "question_idx": 587,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon, what is the most common superstition in villages related to hospitality and guest interactions?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nJustification: In Lebanon, it is a common superstition to throw the remaining coffee beans in the soil after guests leave as a sign of hospitality and to ensure that the guest's wishes come true. This practice is believed to bring good luck and prosperity to the guest. \n\nA. Reading the bottom of Turkish coffee cups for fortune telling is a common practice in Turkey, not Lebanon.\nB. Hanging horseshoes over the doorway for good luck is a common",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 589,
+      "question_idx": 589,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israel, the family where you are staying invites you to celebrate the birthday of their son who turned 13, what is the name of the ceremony?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 628,
+      "question_idx": 628,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is the new year's celebration in Iran called?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 634,
+      "question_idx": 634,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In the context of Iranian hiring practices for a government position, what type of question is it culturally acceptable for an interviewer to ask?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 656,
+      "question_idx": 656,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon, what is a culturally significant way for men to greet each other that demonstrates respect and friendship?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 684,
+      "question_idx": 684,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is an appropriate and culturally respectful phrase to express gratitude and appreciation to the cook after enjoying a meal in Turkish culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 690,
+      "question_idx": 690,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish meal culture, which item is most likely to be served as a traditional welcome to guests?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 700,
+      "question_idx": 700,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In the context of Turkish culture, how has the tradition of Turkish tea (\u00e7ay) influenced social interactions and daily life?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 703,
+      "question_idx": 703,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In a job interview in Turkey, what question is commonly asked to male candidates to assess their eligibility?",
+      "prediction": "A. Whether they have done their military service\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 709,
+      "question_idx": 709,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In the context of Israeli culture, what is a common unique tradition for celebrating a birthday?",
+      "prediction": "{\"answer_choice\": \"C\"} {\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 716,
+      "question_idx": 716,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What dish do people in Iran typically eat on the night before the Iranian New Year?",
+      "prediction": "B. Ash\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 734,
+      "question_idx": 734,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, what is the custom regarding shoes and entering one's home?",
+      "prediction": "A. Leaving shoes at the door before entering.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 753,
+      "question_idx": 753,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israeli culture, who typically says amen during a Shabbat dinner?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 754,
+      "question_idx": 754,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a typical characteristic of weddings in Lebanese culture?",
+      "prediction": "{\"answer_choice\": \"B\"} {\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 763,
+      "question_idx": 763,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In traditional Lebanese gatherings, what is a common practice when dining out with friends or family?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 788,
+      "question_idx": 788,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is a common practice when paying for a meal during an outing in Lebanese culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 789,
+      "question_idx": 789,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iran, people should show up in the funerals:",
+      "prediction": "B. By crying loudly or even hitting themselves.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 791,
+      "question_idx": 791,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In the cultural context of Iran, who is usually responsible for training children?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nIn the cultural context of Iran, mothers are usually responsible for training children. However, it is important to note that in many cultures, both parents play a role in the upbringing of their children. Nonetheless, in Iran, mothers are often the primary caregivers and educators of their children. \n\nJSON formatted answer:\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 808,
+      "question_idx": 808,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "Ali is a Lebanese person, he just had a haircut and saw his friends and greeted them.  How did his friends respond to him?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 836,
+      "question_idx": 836,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What do passengers commonly do in Israel as a thank you when they arrive at their destination?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 889,
+      "question_idx": 889,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What do Israelis do if a siren sounds while they're driving?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 908,
+      "question_idx": 908,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What gift is likely not appropriate for German neighbors to bring when visiting a Turkish home for a housewarming in Turkish culture?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 910,
+      "question_idx": 910,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "Which ceremony is traditionally held the day before the wedding in Turkish culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 911,
+      "question_idx": 911,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "Which day in Jewish culture is it customary not to use electronics or drive cars?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 922,
+      "question_idx": 922,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, when people reach a door at the same time, what is a common politeness practice?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 927,
+      "question_idx": 927,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, how do people usually do during work lunch?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 943,
+      "question_idx": 943,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israeli culture, how do usually people interact and respond to racist comments and ideas?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 949,
+      "question_idx": 949,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What kind of celebration do families in Turkey throw for boys after they get circumcised, reflecting the cultural importance of the event?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 950,
+      "question_idx": 950,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What traditional activity takes place during a Henna Night in Turkish culture, particularly involving the bride and groom?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 957,
+      "question_idx": 957,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, which one of the following steps is traditionally not performed before a wedding?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 966,
+      "question_idx": 966,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Sandi Arabia, how are people likely to treat someone they've just met?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nThe question is about how people in Sandi Arabia are likely to treat someone they've just met. In many Middle Eastern cultures, including those in Saudi Arabia, people tend to maintain a certain level of personal space and avoid physical contact, especially with strangers. Therefore, the most appropriate answer is D. With a lot of personal space and minimal physical contact. \n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 993,
+      "question_idx": 993,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, when do children typically move out of their parents' house?",
+      "prediction": "D. When they turn 18.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 994,
+      "question_idx": 994,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, where do engineer adults who have formal education from top universities in Iran and have been independent usually live when they get older?",
+      "prediction": "B. In their own house, independently\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1023,
+      "question_idx": 1023,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iran, when do children who have graduated from the public university often become independent in their families?",
+      "prediction": "A. After they start their initial career position\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1026,
+      "question_idx": 1026,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "If you were eating with one of your male friends from Saudi Arabia, which of the following dishes would he most likely not eat?",
+      "prediction": "{\"answer_choice\":\"C\"} \n\nExplanation: Kabsa is a traditional Saudi Arabian dish made with rice, meat (usually chicken or lamb), and spices. It is typically eaten with the hands, which is a common practice in Saudi Arabia. However, Kabsa does not contain any of the ingredients that are typically found in Saudi Arabian cuisine, such as rice, meat, and spices. Therefore, a male friend from Saudi Arabia would most likely not eat Kabsa. The other dishes (",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1030,
+      "question_idx": 1030,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, how is a boy's circumcision celebrated if it occurred after his birth?",
+      "prediction": "D\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1052,
+      "question_idx": 1052,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Arab culture, what is a common practice when it comes to paying the bill at a restaurant?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Everyone tries to pay the bill themselves to show generosity.\n(ii) Split the bill equally among everyone.\n(iii) The person who extended the invitation pays the bill.\n(iv) Rotate the responsibility of paying the bill each time.",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1055,
+      "question_idx": 1055,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israel, which action is usually taken while driving a car (note that this can be either in the city or in the suburbs)?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1063,
+      "question_idx": 1063,
+      "country": "Saudi Arabia",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What are Muslim women in Saudi Arabia not allowed to do?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1065,
+      "question_idx": 1065,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What is typical for a wedding in Istanbul?",
+      "prediction": "D. A culturally informed indoor get-together\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1080,
+      "question_idx": 1080,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanese culture, when is it most common for adults to leave their parents' house?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1086,
+      "question_idx": 1086,
+      "country": "Israel",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Israeli culture, what do the opposite gender of men  at a \"Bar Mitzvah\" throw at the celebrating young boy?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1103,
+      "question_idx": 1103,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkey, which of the following is NOT a common custom when entering someone's home?",
+      "prediction": "C. Wearing your shoes inside as a sign of respect\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1113,
+      "question_idx": 1113,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iran, what is Not or so not considered impolite when attending a formal lunch invitation?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1114,
+      "question_idx": 1114,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, which gesture is not typically expected from hosts to establish rapport with guests upon their arrival?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Serving tea\n(ii) Offering a handshake\n(iii) Presenting a gift\n(iv) Giving a brief tour of the home.",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1153,
+      "question_idx": 1153,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, when are partners allowed to live together separately?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1154,
+      "question_idx": 1154,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon flat pita bread is most commonly used in what way?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1155,
+      "question_idx": 1155,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanese culture, when is knefeh traditionally eaten?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1167,
+      "question_idx": 1167,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, during sacred times, like Aid, what does the young people do to their elders?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1174,
+      "question_idx": 1174,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Persian culture, which of the following is NOT a traditional practice when eating with others?",
+      "prediction": "D\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1181,
+      "question_idx": 1181,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "What phrase would an Iranian say to people around him/her when enjoying a meal or an experience according to Iranian culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1182,
+      "question_idx": 1182,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iran, what do strangers say to someone who has broken their items typically when someone does something wrong or breaks something?  ",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1188,
+      "question_idx": 1188,
+      "country": "Turkey",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Turkish culture, what is believed to bring people good energy and luck?",
+      "prediction": "D. burning sage.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1191,
+      "question_idx": 1191,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what is a significant aspect of being a good host?  ",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1192,
+      "question_idx": 1192,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "How do people in Iran typically celebrate their New Year?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Visiting family members and relatives\n(ii) Watching fireworks at a public square\n(iii) Hosting a BBQ party in the backyard\n(iv) Going on a spring break vacation.",
+      "prediction": "A. i, ii\n\n{\"answer_choice\": \"A, i, ii\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1220,
+      "question_idx": 1220,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what is a common practice when offering something to guests?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Offering tea multiple times, even if they initially decline\n(ii) Offering a handshake as soon as they enter\n(iii) Asking the guest to help themselves from the fridge\n(iv) Waiting for the guest to ask for something before offering.",
+      "prediction": "D. i, iii, iv\n\n{\n  \"answer_choice\": \"D\"\n}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1221,
+      "question_idx": 1221,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, how should guests respond when offered tea during a home visit?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Accept the tea immediately to show appreciation.\n(ii) Refuse the tea once or twice before eventually accepting to show humility and respect.\n(iii) Insist on preparing the tea themselves as a gesture of goodwill.\n(iv) Politely decline each time to show independence and decisiveness.",
+      "prediction": "C. {\"answer_choice\":\"i, ii\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1222,
+      "question_idx": 1222,
+      "country": "Iran",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Iranian culture, what is the expected behavior when a guest is offered tea or refreshments during a home visit?",
+      "prediction": "B. The guest should accept the offer immediately without any refusal.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1223,
+      "question_idx": 1223,
+      "country": "Lebanon",
+      "region": "Middle East/West Asia",
+      "prompt_question": "In Lebanon, conversations generally include:\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Hand gestures\n(ii) Fixed eye contact\n(iii) Speaking in a low voice to show respect\n(iv) No eye contact",
+      "prediction": "C\n{\"answer_choice\":\"i, ii\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

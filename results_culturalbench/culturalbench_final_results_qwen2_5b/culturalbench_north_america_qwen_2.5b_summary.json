@@ -1,0 +1,36 @@
+{
+  "total_samples": 27,
+  "aggregate_metrics": {
+    "accuracy": {
+      "mean": 0.7777777777777778,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exact_match": {
+      "mean": 0.7777777777777778,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "has_valid_format": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "by_country": {
+    "United States": {
+      "count": 20,
+      "accuracy": 0.85
+    },
+    "Canada": {
+      "count": 7,
+      "accuracy": 0.5714285714285714
+    }
+  },
+  "by_region": {
+    "North America": {
+      "count": 27,
+      "accuracy": 0.7777777777777778
+    }
+  }
+}

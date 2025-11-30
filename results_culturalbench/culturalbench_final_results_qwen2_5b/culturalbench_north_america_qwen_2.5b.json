@@ -1,0 +1,425 @@
+{
+  "experiment_name": "culturalbench_north_america_qwen_2.5b",
+  "timestamp": "20251129_185942",
+  "config": {
+    "experiment_name": "culturalbench_north_america_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "North America"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 27,
+  "results": [
+    {
+      "sample_id": 26,
+      "question_idx": 26,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In the United States, if there is only one slice of pizza left in the last box, what is the most common action someone would take?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 141,
+      "question_idx": 141,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In Black American culture, which of the following is typically recognized as a significant aspect of its rich and diverse tapestry?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 151,
+      "question_idx": 151,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In African-American culture, when is it considered acceptable to touch a black woman's hair?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 242,
+      "question_idx": 242,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canadian culture, how might someone respond if they knock over a chair in a restaurant?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Laugh and make a joke about their clumsiness.\n(ii) Simply continue walking as if nothing happened.\n(iii) Apologize to the chair as though it were a person.\n(iv) Ignore the incident and avoid eye contact with anyone who noticed.",
+      "prediction": "C. i, ii, iii\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 421,
+      "question_idx": 421,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American culture, what is a common behavior observed in grocery store parking lots?",
+      "prediction": "A. Driving aggressively to find a parking spot\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 451,
+      "question_idx": 451,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In the USA, what is considered inappropriate when addressing a Black man?",
+      "prediction": "B. Using the term \"Nigga\"\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 452,
+      "question_idx": 452,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American culture, how do people commonly address each other in a friendly and informal setting even if they have professional titles or high social standing?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 497,
+      "question_idx": 497,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "What is a common custom in Canadian culture when someone nearly causes an accident with you?",
+      "prediction": "A. Apologizing, even if it was not your fault\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 526,
+      "question_idx": 526,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which holiday is specifically celebrated in the US culture and taken very seriously, not commonly celebrated in the same way or scale in other cultures?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 532,
+      "question_idx": 532,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "How do Canadians manage time differently across their provinces?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 625,
+      "question_idx": 625,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In African American culture, how should you behave when elders are speaking?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 678,
+      "question_idx": 678,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canadian culture, who should apologize when bumping into someone accidentally?",
+      "prediction": "A. They apologize even if they are not at fault.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 715,
+      "question_idx": 715,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "What are family reunions in black culture in United States most commonly known for?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 739,
+      "question_idx": 739,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "What is the capital city according to United States culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 740,
+      "question_idx": 740,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In which region is the state of Arizona located, according to the United States regional classification?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 821,
+      "question_idx": 821,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Quebec culture, what is a traditional meal they are known for?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 865,
+      "question_idx": 865,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In a small, picturesque village in America, what traditional event do you think the community was most looking forward to celebrating annually?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 921,
+      "question_idx": 921,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In United States, which gesture is typically used both as a greeting and a sign of agreement?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 970,
+      "question_idx": 970,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "What is something unique to American culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 971,
+      "question_idx": 971,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canada, compared to the United States, how might adolescents typically behave when navigating through a crowded public transit bus to exit?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By saying \"Sorry\" and moving through.\n(ii) By saying \"Excuse Me\" and moving through.\n(iii) By apologizing and then agressively shoving people out of the way.\n(iv) All of the Options Applied",
+      "prediction": "D\n{\"answer_choice\":\"i, iv\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 984,
+      "question_idx": 984,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which relationship would be the most peculiar for an American?",
+      "prediction": "D. An 18-year-old in a relationship with a 60 year old person\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1019,
+      "question_idx": 1019,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which of the following is the most 'drippy' in American culture",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: Crocs are known for their water-resistant and slip-resistant design, which makes them very 'drippy' in American culture, especially during rainy or wet weather. The other options (Jordans, Tank tops, and High heels) are not typically associated with being 'drippy'.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1029,
+      "question_idx": 1029,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "How do Americans usually eat their food?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1031,
+      "question_idx": 1031,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which food are young American children being naughty and disobedient sometimes told to eat?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1036,
+      "question_idx": 1036,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American culture what is more popular?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1038,
+      "question_idx": 1038,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American College culture, which of the following is seen as the coolest?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1144,
+      "question_idx": 1144,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canadian culture, how is milk usually stored and poured into a glass?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

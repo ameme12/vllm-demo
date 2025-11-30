@@ -1,0 +1,1391 @@
+{
+  "experiment_name": "culturalbench_west_europe_qwen_2.5b",
+  "timestamp": "20251129_190917",
+  "config": {
+    "experiment_name": "culturalbench_west_europe_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "West Europe"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 96,
+  "results": [
+    {
+      "sample_id": 0,
+      "question_idx": 0,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In the Netherlands, which of the following is an unusual common public practice?",
+      "prediction": "{\"answer_choice\":\"D\"} \n\nJustification: In the Netherlands, cycling is a common and encouraged mode of transportation, and using deodorant is a normal hygiene practice. Tipping is not a common practice in the Netherlands, unlike in some other countries. Talking loudly on the phone is generally considered impolite and disruptive in public spaces. Therefore, option D is the unusual common public practice in the Netherlands. {\"answer_choice\":\"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 6,
+      "question_idx": 6,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In UK culture, which sport is considered one of the most significant parts of its culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 40,
+      "question_idx": 40,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, what is typically eaten with bread and garlic ?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 48,
+      "question_idx": 48,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "How would a man say hello to his female colleague in Paris?",
+      "prediction": "C. With a kiss on the cheek\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 53,
+      "question_idx": 53,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "How do Dutch people traditionally celebrate Sinterklaas?",
+      "prediction": "{\"answer_choice\":\"B\"} \n\nExplanation: The traditional celebration of Sinterklaas in the Netherlands involves Sinterklaas, the Dutch version of Santa Claus, visiting children on December 5th, the day before Sinterklaas' feast day. On this day, Sinterklaas leaves presents for the children who have been good throughout the year. However, it's important to note that Sinterklaas is not a daily visitor, and the presents are",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 55,
+      "question_idx": 55,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Netherlands, what is the expected behavior if you cannot arrive on time for a dinner party?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 58,
+      "question_idx": 58,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, how do people generally view punctuality compared to African culture?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nJustification: In German culture, punctuality is highly valued and expected, which contradicts option C. In African cultures, punctuality is often seen as less important, and meetings may start late, which aligns with option C. Therefore, the correct answer is C. {\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 84,
+      "question_idx": 84,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "Is the communication style of the Dutch compatible with someone from a more reserved culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 87,
+      "question_idx": 87,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "What do protestant people in Northern Ireland traditionally not do to celebrate their culture?",
+      "prediction": "B. build towering infernos\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 102,
+      "question_idx": 102,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, what is the most common way of commuting to work?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Dutch culture, cycling is a very common and popular way of commuting to work. The Dutch have a strong cycling culture and infrastructure, with many bike lanes and dedicated cycling paths. This makes cycling a convenient and healthy way to commute to work. While subways, carpooling, and electric scooters are also used, cycling is the most common mode of transportation.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 112,
+      "question_idx": 112,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, what is the general attitude towards work?",
+      "prediction": "A. Viewing work as a necessary part of life that should be done efficiently and well.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 134,
+      "question_idx": 134,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "At what age do people commonly get married in German culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 140,
+      "question_idx": 140,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, how might their way of speaking be perceived by individuals from other cultures?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nJustification: In Dutch culture, their way of speaking is often perceived as indirect and ambiguous. They tend to use vague language and avoid direct confrontation, which can be confusing for individuals from other cultures. For example, they might say \"It's fine\" when they mean \"It's not good\" or \"I'm fine\" when they mean \"I'm not well.\" This indirectness can sometimes be seen as evasive or ambiguous, which can lead to",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 153,
+      "question_idx": 153,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "What does a traditional English breakfast mainly consist of?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 162,
+      "question_idx": 162,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In Germany, what is the common interaction style with service workers like cashiers?",
+      "prediction": "A. Generally, they do not engage in small talk such as asking \"how are you?\"\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 183,
+      "question_idx": 183,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, what is the proper way to say \"cheers\" when you're drinking with someone?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Look each other in the eyes when saying \"cheers\"\n(ii) Tap the bottom of your glass on the table before clinking.\n(iii) Link arms and drink the first sip.\n(iv) Raise your glass and nod before taking a sip.",
+      "prediction": "B. {\"answer_choice\":\"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 184,
+      "question_idx": 184,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In Germany, what do you receive when you return plastic bottles to a store?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 187,
+      "question_idx": 187,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, which of the following is NOT a common way to greet family, friends, and colleagues?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 223,
+      "question_idx": 223,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "What is NOT a traditional gift that Scottish families might give their neighbors on Hogmanay as part of the \"first-foot\" tradition?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 234,
+      "question_idx": 234,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, how do people traditionally handle the bill when going out for dinner together?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 241,
+      "question_idx": 241,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, how is being late perceived?",
+      "prediction": "A. It's considered rude.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 246,
+      "question_idx": 246,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What is a common dinner in Germany?",
+      "prediction": "{\"answer_choice\": \"B\"} A common dinner in Germany includes a variety of dishes, but one of the staple sides that is often served with main courses is fried potatoes. Therefore, the correct answer is B. Fried Potatoes. \n\nAnswer: {\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 267,
+      "question_idx": 267,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "What is the typical way for French individuals to greet strangers in professional settings?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nThe typical way for French individuals to greet strangers in professional settings is with a traditional greeting or respect gesture. This is often a handshake, followed by a polite nod or a slight bow. The French tend to be formal and respectful in professional settings, and a traditional greeting is the most appropriate way to greet strangers. \n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 289,
+      "question_idx": 289,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "What do the French typically buy every day for their meals, reflecting their cultural preference?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 313,
+      "question_idx": 313,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, what is the common practice regarding meals?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 314,
+      "question_idx": 314,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, what is a popular outdoor activity?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Going for walks\n(ii) Surfing\n(iii) Barbecue cookouts\n(iv) Relax in the garden",
+      "prediction": "D. i, iii, iv\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 316,
+      "question_idx": 316,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In British culture, which form of greeting is considered most polite and traditional?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 333,
+      "question_idx": 333,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, what is considered taboo to discuss at work?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nIn French culture, discussing personal life situations is considered taboo at work. While the other options may be considered inappropriate in some contexts, they are not as universally considered taboo as discussing personal life situations. \n\nTherefore, the correct answer is D. {\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 343,
+      "question_idx": 343,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "Does the German people gives direct feedback on your mistakes?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 362,
+      "question_idx": 362,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In England, what common topic of conversation do people often start with?",
+      "prediction": "A. The state of the weather today\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 368,
+      "question_idx": 368,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What do young children in Germany receive on their first day of school?",
+      "prediction": "{\"answer_choice\": \"C\"} {\"answer_choice\": \"D\"} The given options do not specify the exact gift or tradition for young children in Germany on their first day of school. However, the most common and traditional gift is a new book to start the year, which aligns with option D. Therefore, the correct answer is:\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 392,
+      "question_idx": 392,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What do German people say when they clink glasses?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 395,
+      "question_idx": 395,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, how many times people traditionally kiss each other's cheeks as a greeting?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 399,
+      "question_idx": 399,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "What is a common lunchtime choice in the Netherlands?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 402,
+      "question_idx": 402,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German workplace culture, what is the customary way to celebrate your own birthday at the office?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nIn German workplace culture, it is customary to bring a cake to share with your colleagues on your birthday. This is a common way to celebrate and show appreciation for colleagues. \n\nAnswer: {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 405,
+      "question_idx": 405,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "When do people typically start learning to drive in the UK culture?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 407,
+      "question_idx": 407,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, what is one of the most celebrated milestones in a young kid's life?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 416,
+      "question_idx": 416,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, what is the customary practice when it's someone's birthday and you're attending the celebration?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 418,
+      "question_idx": 418,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In the context of British social norms, what is the expected protocol for individuals when approaching a public service area, which emphasizes a meticulous and courteous adherence to sequential order, and how does this practice reflect broader cultural values regarding respect and fairness?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 419,
+      "question_idx": 419,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "How do friends greet each other in the Netherlands?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 446,
+      "question_idx": 446,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, how do people typically communicate their opinions?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 450,
+      "question_idx": 450,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What is a common practice regarding recycling in German culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 471,
+      "question_idx": 471,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What is not a common Saturday morning tradition in German culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 472,
+      "question_idx": 472,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In Germany, when do people usually eat cakes and drink coffee?",
+      "prediction": "C. at 15:00 o clock\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 480,
+      "question_idx": 480,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What is a common activity during the Christmas break in German culture?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nThe correct answer is A, as drinking a lot of hot white wine is a common activity during the Christmas break in German culture. However, since the instruction specifies to choose only one answer from the given options, I have provided the answer as A. \n\nAnswer: {\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 484,
+      "question_idx": 484,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In the United Kingdom, what is the common practice among friends when going to a pub?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 485,
+      "question_idx": 485,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "What do visitors in Scotland often think they can hunt and eat?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 486,
+      "question_idx": 486,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, how do people typically handle timings for appointments or plans?",
+      "prediction": "A. They are usually on point or even some minutes early.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 487,
+      "question_idx": 487,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, how is money typically handled?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nJustification: In German culture, people usually handle money very carefully. This is reflected in their frugal habits, saving, and careful planning for the future. They tend to avoid unnecessary spending and are more likely to save money rather than spend it freely. Therefore, option B is the most accurate choice. Options A, C, and D do not align with the typical German approach to money management. \n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 516,
+      "question_idx": 516,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, what is the expected response if you knock on your friend's door when they do not expect you?",
+      "prediction": "A. Come in, coffee?\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 518,
+      "question_idx": 518,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "What do the people celebrate every 8 December in Francce?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 528,
+      "question_idx": 528,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What might upset a German colleague deeply valuing confidentiality if asked about their salary?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 565,
+      "question_idx": 565,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "How can one celebrate Scottish culture?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nThe correct answer is A, as eating haggis on Burns Night is a way to celebrate Scottish culture. The other options are not related to Scottish culture. \n\nHere's the JSON format as requested:\n\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 585,
+      "question_idx": 585,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, who is expected to provide the birthday cake during a birthday celebration?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 588,
+      "question_idx": 588,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, what is a common expectation for Sundays?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In German culture, Sundays are often seen as a day of rest and family time. Therefore, having guests or family over is a common expectation for Sundays. Refraining from making noise, mowing the lawn, and playing loud music outside are not typical expectations for Sundays in German culture. \n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 598,
+      "question_idx": 598,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, when is patriotism most notably expressed?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 605,
+      "question_idx": 605,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "How do Dutch people typically communicate in a way that might be perceived as rude by foreigners?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 610,
+      "question_idx": 610,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "How do we typically greet each other in England?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In England, people typically greet each other with a hug and a handshake. This is a common and friendly way to greet someone. \n\nA. Bowing to each other is a common greeting in some Asian countries, but not in England.\nC. Touching noses is a greeting in some South Asian countries, but not in England.\nD. A high five is a common greeting in some sports and among friends, but not in England. \n\nTherefore",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 630,
+      "question_idx": 630,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In the UK, what traditional dish is commonly enjoyed every Friday?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 646,
+      "question_idx": 646,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "Where can I read the following sentence? Arr\u00eate. C'est ici l'empire de la mort!",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 647,
+      "question_idx": 647,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "Most French people participate in this activity at least once or twice a day, whether with family, friends, or colleagues, and it is less familiar to many Anglo-Saxons. What is it?",
+      "prediction": "C. Cheek kissing\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 706,
+      "question_idx": 706,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In England, how do people typically greet each other when they meet?",
+      "prediction": "B. With a firm handshake.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 710,
+      "question_idx": 710,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In the Netherlands, what is a common greeting practice?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Shaking hands firmly while maintaining eye contact\n(ii) Kissing three times on each other's cheek\n(iii) Bowing slightly while making eye contact\n(iv) Offering a high-five or fist bump.",
+      "prediction": "D. i, iii\n\n{\n  \"answer_choice\": \"D\"\n}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 718,
+      "question_idx": 718,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, a few people claim drinking water from the tap is not tasty. Do locals in Germany share the same belief?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 727,
+      "question_idx": 727,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, what is commonly consumed with meals?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) coffee\n(ii) wine\n(iii) beer\n(iv) bread",
+      "prediction": "B\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 733,
+      "question_idx": 733,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "Why isn't the Welsh language and culture a compulsory education subject in Wales?",
+      "prediction": "{\"answer_choice\": \"D\"} {\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 743,
+      "question_idx": 743,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In Scottish culture, what is a humorous myth that locals might jokingly tell about Haggis?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 744,
+      "question_idx": 744,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In the United Kingdom, under what circumstances is it uncommon for people to cross the road?",
+      "prediction": "B. Anytime, disregarding traffic and traffic light\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 748,
+      "question_idx": 748,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, what is commonly eaten with every meal?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 752,
+      "question_idx": 752,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In Germany when someone sets up a casually arranged coffee date with a friend someone just made for 5 pm and arrives late without giving proper reasons why, how will another person of the same culture view this? In this case there wasn't a priorisation of flexible scheduling but rather a concrete plan.",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 792,
+      "question_idx": 792,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In UK culture, what is a traditional dish for Sunday lunch?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 809,
+      "question_idx": 809,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Netherlands, what's uncommon to do when someone has a birthday?",
+      "prediction": "D. Congratulating no one\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 811,
+      "question_idx": 811,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In England, how is it customary to behave on public transport?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 812,
+      "question_idx": 812,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In English culture, how important is Christmas considered to be?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 813,
+      "question_idx": 813,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In English culture, what is the primary association with the term \"football\"?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 833,
+      "question_idx": 833,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, which of the following actions would be considered inappropriate during \"Ruhezeit\"?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 834,
+      "question_idx": 834,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "What activity might you participate in to observe a German Christmas tradition?",
+      "prediction": "A. Decorating a Christmas tree with tinsel and ornaments.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 835,
+      "question_idx": 835,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "You're attending a German family gathering in September, and you notice children excitedly receiving colorful, cone-shaped containers. What tradition are they likely celebrating?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 844,
+      "question_idx": 844,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In the Netherlands, what is the common way to greet someone when meeting them for the first time?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nThe common way to greet someone when meeting them for the first time in the Netherlands is by kissing on both cheeks, which corresponds to option C. \n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 846,
+      "question_idx": 846,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "How do people in the Netherlands usually greet people they know?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) With three kisses on the cheek.\n(ii) With a firm handshake.\n(iii) With two kisses on the cheek.\n(iv) With a high five.",
+      "prediction": "D. i, ii\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 870,
+      "question_idx": 870,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "Why would a foreigner hate a Dutch person after having asked them a question?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 888,
+      "question_idx": 888,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "What is the name of the pastry that is known for its \"little war\" regarding its name in the North and South of France?",
+      "prediction": "A. Chocolatine / Pain au chocolat\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 900,
+      "question_idx": 900,
+      "country": "France",
+      "region": "West Europe",
+      "prompt_question": "In French culture, what is not considered the customary way to greet friends or acquaintances?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 904,
+      "question_idx": 904,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, how is it common to arrive for a formal business meeting scheduled at midday?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 917,
+      "question_idx": 917,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, how do people typically communicate with each other?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 946,
+      "question_idx": 946,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "In British culture, how do people typically not handle emotional situations?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1104,
+      "question_idx": 1104,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "What is a common social behavior in Dutch culture when people gather?",
+      "prediction": "C. Avoiding any form of confrontation or disagreement\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1115,
+      "question_idx": 1115,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "In German culture, what is considered polite behavior when toasting?",
+      "prediction": "B. Making eye contact with each person you are toasting\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1165,
+      "question_idx": 1165,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "What is a common saying in the Netherlands that emphasizes their cultural attitude towards behavior?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1166,
+      "question_idx": 1166,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In the Netherlands, what is the cultural expectation regarding punctuality?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nThe cultural expectation in the Netherlands regarding punctuality is that people generally aim to arrive before the scheduled time at least 30 minutes early. Therefore, the correct answer is C. Reaching destination before scheduled time at least 30 minutes early. \n\nJSON format:\n```json\n{\n  \"answer_choice\": \"C\"\n}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1175,
+      "question_idx": 1175,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In The Netherlands, how do children travel to elementary school?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1176,
+      "question_idx": 1176,
+      "country": "Netherlands",
+      "region": "West Europe",
+      "prompt_question": "In Dutch culture, how do guests typically arrange themselves at a birthday party?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1201,
+      "question_idx": 1201,
+      "country": "Germany",
+      "region": "West Europe",
+      "prompt_question": "Which board game is also the name of a common christmas snack in Germany?",
+      "prediction": "{\"answer_choice\": \"C\"} Explanation: Monopoly is the name of a board game, and in Germany, it is also the name of a traditional Christmas snack, called \"Monopolykuchen\" (Monopoly cake). However, it's important to note that the connection between the game and the snack is not widely known or documented, and the name \"Monopoly\" is often used for other purposes in Germany. Nonetheless, based on the given options and the information available, the correct answer",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1202,
+      "question_idx": 1202,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "At a wedding in Scotland what would the groom normally wear?",
+      "prediction": "A. Tartan kilt\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1203,
+      "question_idx": 1203,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "What's usually on the menu for a Scottish family dinner on January 25th?",
+      "prediction": "A. Haggis\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1204,
+      "question_idx": 1204,
+      "country": "United Kingdom",
+      "region": "West Europe",
+      "prompt_question": "What do people in scotland normally call the celebrations of 31st december",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

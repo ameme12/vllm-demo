@@ -1,0 +1,44 @@
+{
+  "total_samples": 96,
+  "aggregate_metrics": {
+    "accuracy": {
+      "mean": 0.6458333333333334,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exact_match": {
+      "mean": 0.6458333333333334,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "has_valid_format": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "by_country": {
+    "Netherlands": {
+      "count": 25,
+      "accuracy": 0.48
+    },
+    "United Kingdom": {
+      "count": 25,
+      "accuracy": 0.76
+    },
+    "France": {
+      "count": 14,
+      "accuracy": 0.6428571428571429
+    },
+    "Germany": {
+      "count": 32,
+      "accuracy": 0.6875
+    }
+  },
+  "by_region": {
+    "West Europe": {
+      "count": 96,
+      "accuracy": 0.6458333333333334
+    }
+  }
+}

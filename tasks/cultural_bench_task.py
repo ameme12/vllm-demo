@@ -1,6 +1,6 @@
 from pathlib import Path
 from typing import Dict, List, Any
-from base_task import BaseTask
+from tasks.base_task import BaseTask
 import json
 import re  
 

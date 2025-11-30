@@ -16,8 +16,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 from inference.vllm_engine import VLLMInferenceEngine, VLLMConfig
 
 # Import task
-from tasks.cultural_bench_task import create_culturalbench_task, CulturalBenchTask
-
+from tasks.cultural_bench_task import create_culturalbench_mcq_task as create_culturalbench_task, CulturalBenchTask
 
 class ExperimentRunner:
     """Runs experiments based on YAML configuration"""
@@ -205,7 +204,7 @@ class ExperimentRunner:
                     print("\n" + "="*70)
                     print("PROMPT:")
                     prompt_text = task.prepare_prompts(sample)
-                    print(prompt_text[:200] + "..." if len(prompt_text) > 200 else prompt_text)
+                    print(prompt_text + "..." if len(prompt_text) > 200 else prompt_text)
                     print("\nPREDICTION:")
                     print(prediction)
                     print("="*70)

@@ -1,0 +1,1531 @@
+{
+  "experiment_name": "culturalbench_south_asia_qwen_2.5b",
+  "timestamp": "20251129_191300",
+  "config": {
+    "experiment_name": "culturalbench_south_asia_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "South Asia"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 106,
+  "results": [
+    {
+      "sample_id": 5,
+      "question_idx": 5,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In India, what are the common tools people do not use to consume food?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) With their hands\n(ii) With chopsticks\n(iii) With a knife and fork\n(iv) With a spoon and fork.",
+      "prediction": "D\n\n{\"answer_choice\":\"i, ii, iii, iv\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 13,
+      "question_idx": 13,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What type of weddings do Indians typically prefer?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 14,
+      "question_idx": 14,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What do Indians traditionally prefer for decorating their skin temporarily?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 23,
+      "question_idx": 23,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladesh, which festival celebration style is most likely appropriate for expressing the collective cultural identity?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 46,
+      "question_idx": 46,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "What type of attire do Bengali males traditionally wear on Eid day?",
+      "prediction": "{\"answer_choice\": \"A\"} Bengali males traditionally wear Kurta Pajama on Eid day. Kurta Pajama is a traditional attire that consists of a long tunic (kurta) and loose-fitting pants (pajama) that are commonly worn in many parts of India and Bangladesh, including during Eid. The other options are not typical for Eid in Bengali culture. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 49,
+      "question_idx": 49,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepali culture, what type of hat do men often wear on a daily basis?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 60,
+      "question_idx": 60,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistan culture, how might a billionaire display their wealth at a significant family event?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 67,
+      "question_idx": 67,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepali culture, which hand is traditionally used for eating to show politeness?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 94,
+      "question_idx": 94,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladesh, what is a customary action before stepping into someone's home?",
+      "prediction": "B. Remove your shoes\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 98,
+      "question_idx": 98,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In traditional Bangladeshi households, what is a common living arrangement for children after they reach adulthood?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 139,
+      "question_idx": 139,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, who else do people pray to besides the powerful gods?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) nature and animals\n(ii) ancestors and spirits\n(iii) renowned figures in society\n(iv) famous leaders from past",
+      "prediction": "B. {\"answer_choice\":\"ii, iii\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 167,
+      "question_idx": 167,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistani culture, what is the custom for Muslims regarding prayers on a specific day of the week?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 168,
+      "question_idx": 168,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistani culture, how often is it common to pray in a day?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 204,
+      "question_idx": 204,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "Can you name one of the taboos or malpractices related to menstruation among women in Nepal?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nExplanation: Chhaupadi is a malpractice related to menstruation among women in Nepal. It is a practice where women are isolated from the rest of the family during their menstrual period and are not allowed to enter the house, touch food, or even touch the floor. This practice is considered taboo and harmful to women's health and dignity. It is important to note that this practice is not widely accepted in Nepal and is being phased out. \n\n{\"answer",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 205,
+      "question_idx": 205,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Hindu culture, monkey is worshipped as which god?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 211,
+      "question_idx": 211,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladesh culture, how do people traditionally greet foreign guests?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nExplanation: In Bangladesh culture, people traditionally greet foreign guests by bowing deeply. This is a sign of respect and humility. \n\nA. Offering a firm handshake is more common in Western cultures.\nB. Kissing on both cheeks is a greeting custom in some South Asian cultures, but not in Bangladesh.\nD. Namaste is a greeting gesture originating from India, but it is not a traditional greeting in Bangladesh. \n\nThus, the correct answer is C.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 216,
+      "question_idx": 216,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepalese culture, which hand is traditionally used to give or receive items?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 228,
+      "question_idx": 228,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "How do people traditionally greet each other in Nepali culture?",
+      "prediction": "{\"answer_choice\": \"A\"}.\n\nNamaste is a traditional way of greeting in Nepali culture. It is a gesture of respect and is often accompanied by a slight bow. {\"answer_choice\": \"A\"} is the correct choice.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 230,
+      "question_idx": 230,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "Why do people in India worship so many gods?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 235,
+      "question_idx": 235,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, what is a common custom when visiting someone's home?",
+      "prediction": "C. Taking off your shoes outside the front door.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 266,
+      "question_idx": 266,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "How many seasons are traditionally recognized in Bangladeshi culture?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 270,
+      "question_idx": 270,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "What is the national dress of Pakistan, reflecting its culture and traditions?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 271,
+      "question_idx": 271,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, what is a common way of eating meals among locals?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Using chopsticks\n(ii) Eating with a fork and knife\n(iii) Eating using hands/fingers\n(iv) Eating with a spoon only.",
+      "prediction": "D. i, iii, iv\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 272,
+      "question_idx": 272,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, what is a common attire for women to wear for formal occasions such as weddings or festivals?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 312,
+      "question_idx": 312,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, how do people typically indicate \"yes\" with a head movement?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 323,
+      "question_idx": 323,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladeshi culture, how do people traditionally eat their meals?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 334,
+      "question_idx": 334,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladesh culture, how should the young ones address their elders?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 350,
+      "question_idx": 350,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In India, is 25 considered an appropriate age to marry?",
+      "prediction": "{\"answer_choice\": \"D\"} {\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 364,
+      "question_idx": 364,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladeshi culture, how do people greet each other when they meet?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 365,
+      "question_idx": 365,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "What do Bangladeshi people commonly do after Eid prayer in their culture?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nExplanation: In Bangladesh, it is common for people to exchange gifts immediately after Eid prayer. This is a significant part of the Eid celebration and is a way to show gratitude and appreciation to each other. \n\nA. Hugging each other is a common gesture of affection, but it is not a specific tradition after Eid prayer.\nB. Shaking hands formally is a more common greeting in professional settings, and it is not a specific tradition after Eid prayer.\nD",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 366,
+      "question_idx": 366,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladeshi culture, what color dress is traditionally worn on the first day of spring?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 378,
+      "question_idx": 378,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Sikhism, what is the term for the free food offered in the temples ?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 379,
+      "question_idx": 379,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What does \"Phulkari\" mean in Punjabi culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 408,
+      "question_idx": 408,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, how do you address elders who are not related to you as a mark of respect?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 458,
+      "question_idx": 458,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "How do people in Nepal commonly greet elders?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Nepal, people commonly greet elders with a Namaste gesture, which involves making a prayer-like gesture with the palms pressed together at chest level and bowing slightly. This gesture is a sign of respect and is widely used in Nepal. \n\nA firm handshake, a hug and pat on the back, and a high five are not commonly used in Nepal for greeting elders. Therefore, the correct answer is A. Namaste with a bow. \n\nJSON",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 464,
+      "question_idx": 464,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistan, what do Muslims commonly do on Eid ul-Fitr?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Prepare a vegetarian feast\n(ii) Sacrifice an animal\n(iii) Wear new clothes\n(iv) Go for Eid prayer",
+      "prediction": "D. iii, iv\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 465,
+      "question_idx": 465,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistan, what do pedestrians often not find on roads?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nJustification: In Pakistan, pedestrian traffic lights are not commonly found on roads. The other options like fast food stands, grocery shops, and mailboxes are more common and can be found on roads. \n\nHence, the correct answer is A. Pedestrian traffic lights. \n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 466,
+      "question_idx": 466,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "What do people in Pakistan mourn on 10 Muharram?",
+      "prediction": "B. Death of Hussain(A.S)\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 477,
+      "question_idx": 477,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladeshi culture, how do people traditionally address their elders?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 494,
+      "question_idx": 494,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepalese culture, how do people traditionally eat their meals?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 495,
+      "question_idx": 495,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepalese culture, what should people avoid doing with their feet?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Pointing the soles of their feet towards other people and sacred objects\n(ii) Crossing legs while sitting in public\n(iii) Wearing shoes inside someone's home\n(iv) Tapping feet to the rhythm of music in public gatherings.",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 511,
+      "question_idx": 511,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepali culture, what do we mainly do to celebrate festivals?",
+      "prediction": "A. Inviting relatives over for a feast\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 519,
+      "question_idx": 519,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangali culture, how do people generally communicate in terms of volume?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nThe correct answer is A. In Bangali culture, people generally communicate in terms of volume by speaking loudly, especially in social gatherings or when addressing a group. However, it's important to note that the volume can vary based on the context and the relationship between the speakers. In more formal or private settings, the volume might be lower. \n\nOption B is incorrect because Bangali people generally do not communicate quietly or whisper. Option C is not accurate as Bang",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 520,
+      "question_idx": 520,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, how do people commonly greet each other?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 521,
+      "question_idx": 521,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bengali culture, what do women traditionally avoid wearing at their husbands' houses after marriage?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 534,
+      "question_idx": 534,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladesh, what are male interviewees usually asked about during interviews?",
+      "prediction": "{\"answer_choice\": \"B\"}.\n\nGiven the context of Bangladesh, the most likely question that male interviewees would be asked about during interviews is their marital status. This is because marital status is often a significant factor in many aspects of life, including employment, social status, and community roles. \n\nEducational status and favorite sports teams are not typically the primary focus of interviews in Bangladesh. Driving skills are not usually a standard interview question in most professional settings in Bangladesh. \n\nThus, the most appropriate",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 537,
+      "question_idx": 537,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepal, how do people worship Goddness Laxmi?",
+      "prediction": "C. Pray for cows at Gaipuja\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 572,
+      "question_idx": 572,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "How do people in Pakistan greet eachother?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In Pakistan, people greet each other by saying \"Assalamualaikum\" which means \"peace be upon you\" in Arabic. They also bring some fruit as a gesture of hospitality. So, option B is the correct answer. {\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 580,
+      "question_idx": 580,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In India, guests are expected to eat with which utensils at events?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Fork and knife\n(ii) Spoon\n(iii) Hands\n(iv) Chopsticks",
+      "prediction": "C\n\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 592,
+      "question_idx": 592,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepali culture, how do most girls' parents approach their marriage?",
+      "prediction": "B. By choosing the spouse themselves for an arranged marriage\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 632,
+      "question_idx": 632,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "How might a young person greet their grandparents during a holiday in India?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Looking them in the eyes when speaking to show confidence.\n(ii) Put two hands together at the palm\n(iii) Bowing slightly when greeting them.\n(iv) Offering a firm handshake when meeting.",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 676,
+      "question_idx": 676,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In the context of Nepalese culture, how are cows generally regarded?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 682,
+      "question_idx": 682,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, how is food typically served to guests to ensure they are sufficiently fed?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 687,
+      "question_idx": 687,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, how is hospitality typically shown when inviting guests over?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By offering welcoming drinks\n(ii) By giving them a tour of the home and give welcome drink\n(iii) By taking them to a local restaurant and pay for the food\n(iv) It depends on people",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 688,
+      "question_idx": 688,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What is a common belief when considering dating?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 692,
+      "question_idx": 692,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "How many times Bangladesh Muslim are allowed to pray?",
+      "prediction": "D. no limits\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 698,
+      "question_idx": 698,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, how do people treat currency notes?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 699,
+      "question_idx": 699,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In the Hindu culture, how is a new venture typically started to ensure success and blessings?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By cutting a ribbon.\n(ii) By making an offering to Shree Ganesh.\n(iii) By breaking a coconut in front of the deity\n(iv) By lighting a candle.",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 708,
+      "question_idx": 708,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepalese culture, which hand is considered improper for eating and for handing over or receiving items?",
+      "prediction": "B. Left hand\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 800,
+      "question_idx": 800,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "What does a Pakistani family serve to visitors as a welcome?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 803,
+      "question_idx": 803,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistan culture, what is the predominant role of women in the household?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In Pakistan culture, women are predominantly responsible for managing the household, including performing house chores and looking after the family. This includes taking care of the children, cooking, cleaning, and managing the household budget. However, it is important to note that the role of women in Pakistan is not limited to the household and they also play important roles in society, such as in education, politics, and business. Nonetheless, the predominant role of women in the household",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 823,
+      "question_idx": 823,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "What vegetarian food is common in Bangladesh?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 831,
+      "question_idx": 831,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Hinduism culture, is it compulsory for followers to be vegetarian?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 838,
+      "question_idx": 838,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In the context of the Bengali culture, for what reason did students fight?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 841,
+      "question_idx": 841,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "Question: In schools in Nepal, what is the rule regarding young boys and their hair length?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 901,
+      "question_idx": 901,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Tihar festival tradition, what is the significance of the last day known as \"Bhai Tika\"?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 909,
+      "question_idx": 909,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "How might a Pakistan woman's day out be in South Asia?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 913,
+      "question_idx": 913,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "How do people in Bangladesh commonly greet each other without contact?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nThe correct answer is A, as people in Bangladesh commonly greet each other by nodding or saying \"Namaste\" without any physical contact. \n\nHere's the JSON format as requested:\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 915,
+      "question_idx": 915,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, what is traditionally served to guests when they visit someone's home?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Chai and Namkeen\n(ii) Coffee and Doughnuts\n(iii) Soda and Chips\n(iv) Tea and Biscuits.",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 923,
+      "question_idx": 923,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladeshi culture, how is a host expected to behave when it comes to serving food to guests?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 939,
+      "question_idx": 939,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistan Islamic culture, what is considered the average age of marriage?",
+      "prediction": "A. In their early 20s\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 942,
+      "question_idx": 942,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, what is a common activity during family gatherings?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 973,
+      "question_idx": 973,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In some parts of India, which of the following is celebrated as a girl entering womanhood?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 975,
+      "question_idx": 975,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What is the Indian tradition of creating semi-permanent designs on your hands and feet called?",
+      "prediction": "D. Henna\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 976,
+      "question_idx": 976,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepali Hindu culture, which of the following is considered not common regarding marriage practices?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 978,
+      "question_idx": 978,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In the context of the Indian job market, what type of focus do most tech jobs have?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nThe focus of most tech jobs in the Indian job market is on maintenance and support, as the Indian IT industry is primarily known for providing IT services such as software development, system integration, and maintenance. While there is a growing trend towards innovation and research, and startup development and entrepreneurship, the majority of tech jobs in India are still centered around providing support and maintenance for existing systems and software. Community uplift and startup development and entrepreneurship are not the primary focus of most",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 982,
+      "question_idx": 982,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian schools, what is a common method used by instructors for getting students to learn new material?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Projects that change community around you based on what you have learned.\n(ii) Homeworks that apply what you have learned to new tasks.\n(iii) Homeworks to repeat writing learnt vocabulary.\n(iv) There is no homework.",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 996,
+      "question_idx": 996,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In India and Hindu culture, what are you supposed to do if your feet accidentally touch a book?",
+      "prediction": "A. Apologize with a gesture and put hand to chest or forehead\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1007,
+      "question_idx": 1007,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "At a college fair in India, as an advisor introducing the program to an Indian mom, she would usually take the following action to express approval and/or she's engaged in this conversation:",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1011,
+      "question_idx": 1011,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In an Asian Indian cultural context, what is a unique action done to a newborn baby a majority of the time?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1012,
+      "question_idx": 1012,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "After entering a Hindu temple, what do most people do first?",
+      "prediction": "B. Provide offerings and/or pray to the Gods/Goddesses.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1016,
+      "question_idx": 1016,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What is defined as vegetarian in India?",
+      "prediction": "D. All of the above\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1018,
+      "question_idx": 1018,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "In Pakistan what is a dish with cooked lentils and beef",
+      "prediction": "B. Nihari\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1021,
+      "question_idx": 1021,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What is looked down upon for women in a lot of more traditional Indian families?",
+      "prediction": "D. All of the above\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1025,
+      "question_idx": 1025,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In India, what is common for the average person in terms of household help?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1033,
+      "question_idx": 1033,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "What is a factor that is considered before two young people get married in North India?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Their family background\n(ii) Their caste\n(iii) Their jobs\n(iv) Their hobbies",
+      "prediction": "C. i, ii, iii, iv\n\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1037,
+      "question_idx": 1037,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, where does a woman typically go for childbirth?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1039,
+      "question_idx": 1039,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In an Indian cultural context, how does a groom arrive to his wedding?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nIn an Indian cultural context, a groom usually arrives to his wedding on a horse with a wedding procession. This is a traditional and symbolic way of showing respect and honor to the bride and the family. The groom's family and friends often join the procession, and the groom is accompanied by a group of horses, musicians, and dancers. The procession is a significant part of the wedding ceremony and is meant to symbolize the groom's arrival to the bride's family",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1044,
+      "question_idx": 1044,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "Which of the following is a commonly used Indian spice blend?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Five spice mix\n(ii) Garam masala\n(iii) Pumpkin spice\n(iv) Chaat masala",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1059,
+      "question_idx": 1059,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In the Nepali Hindu culture, what significant ceremony is performed for a male child reaching adolescence?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1067,
+      "question_idx": 1067,
+      "country": "Pakistan",
+      "region": "South Asia",
+      "prompt_question": "What would a Pakistani call someone in Pakistan who is brown but with foreign ideals?",
+      "prediction": "C. desi\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1077,
+      "question_idx": 1077,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In South Indian culture, which fragrance is associated with an temple feeling?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1083,
+      "question_idx": 1083,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "When eating something, which hand do Bengalis use to eat?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1098,
+      "question_idx": 1098,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "What type of flavor do Bangali people generally prefer in their desserts?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1099,
+      "question_idx": 1099,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "What do Bangali people typically do when they have guests?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1100,
+      "question_idx": 1100,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In Bangladeshi culture, what is likely to be considered as the main meal for people living near many rivers?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Bangladeshi culture, fish is a staple food and is often considered the main meal for people living near many rivers due to the abundance of fish in the rivers. Fish is a significant part of the Bangladeshi diet and is consumed in various forms such as curries, fried, grilled, or steamed. Therefore, option A, Fish, is the most likely answer.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1105,
+      "question_idx": 1105,
+      "country": "Bangladesh",
+      "region": "South Asia",
+      "prompt_question": "In the context of Bangladesh, how has the Bengali language influenced its cultural identity?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1109,
+      "question_idx": 1109,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In traditional Indian culture, which of the following is the most commonly accepted way to greet someone in a formal setting?",
+      "prediction": "A. Say \"Namaste\" with palms pressed together and a slight bow\n\n{\n  \"answer_choice\": \"A\"\n}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1118,
+      "question_idx": 1118,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In the context of mourning for lost immediate relatives, what color dress do people traditionally wear in Nepali culture?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1157,
+      "question_idx": 1157,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "During the celebration of Diwali, Priya and her family engage in various traditional activities. Which of the following options best captures the comprehensive range of practices that symbolize the spiritual and cultural essence of Diwali in their household?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1193,
+      "question_idx": 1193,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In Nepali culture, how are teen girls uniquely honored in a practice not commonly found elsewhere?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nNote: The given options are not specific to Nepali culture. However, considering the context of the question, option A is the closest to a unique honor given to teen girls in Nepali culture. In some parts of Nepal, it is believed that unmarried girls are considered to be living goddesses (Mha Devi) and are worshipped by their families and communities. This belief is deeply rooted in Nepali culture and is not commonly found elsewhere.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1194,
+      "question_idx": 1194,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In which culture does the country not celebrate an Independence Day because it is the only country in the world that was never colonized?",
+      "prediction": "{\"answer_choice\": \"A\"} Explanation: Nepal is the only country in the world that was never colonized. Nepal celebrates its National Day on 28th December, which is the day when the first Rana Prime Minister, Jung Bahadur Rana, took the oath of office in 1843. Nepal is not known to celebrate an Independence Day. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1195,
+      "question_idx": 1195,
+      "country": "Nepal",
+      "region": "South Asia",
+      "prompt_question": "In which calendar is Nepal currently in the year 2080 B.S, distinctive from the Gregorian calendar used by many other countries?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1198,
+      "question_idx": 1198,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, what is the traditional greeting used instead of a handshake?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1199,
+      "question_idx": 1199,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Hindu culture, why might a daughter not inherit property from parents?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1200,
+      "question_idx": 1200,
+      "country": "India",
+      "region": "South Asia",
+      "prompt_question": "In Indian culture, who is traditionally not responsible for taking care of the parents as they grow older?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

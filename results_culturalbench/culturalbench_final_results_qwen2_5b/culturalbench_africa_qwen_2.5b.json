@@ -1,0 +1,1923 @@
+{
+  "experiment_name": "culturalbench_africa_qwen_2.5b",
+  "timestamp": "20251129_190332",
+  "config": {
+    "experiment_name": "culturalbench_africa_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "Africa"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 134,
+  "results": [
+    {
+      "sample_id": 2,
+      "question_idx": 2,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "What is not an uncommon aspect in Nigeria?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 4,
+      "question_idx": 4,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Moroccan culture, how do people typically greet people they know on the street?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nExplanation: In Moroccan culture, people typically greet people they know on the street with a casual nod or a slight bow. This is a common and respectful way to acknowledge acquaintances without engaging in a more formal greeting. \n\nA. \"Peace be upon you\" is a common greeting in some Islamic cultures, but it is not typical in Moroccan culture.\nB. \"Hello\" is a more common greeting in many Western cultures, but it is not the typical greeting",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 11,
+      "question_idx": 11,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "What advice is commonly given in Zimbabwe regarding the consumption of food to eliminate bacteria and aid digestion?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 12,
+      "question_idx": 12,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "What is a traditional greeting exchanged between two old schoolmates in Egypt?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 22,
+      "question_idx": 22,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "What is not the common way for a young Yoruba man saying hello to his grandfather?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 41,
+      "question_idx": 41,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Mashona, why do people pour beer on the graves of the deceased?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 42,
+      "question_idx": 42,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "Why do Zimbabwean cultures add peanut butter to various dishes, including rice, bread, and leafy greens?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 50,
+      "question_idx": 50,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "What is not a common way for people to show respect to their grandparents in Moroccan culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 56,
+      "question_idx": 56,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egypt, which weekly religious practice are Muslim men required to participate in?",
+      "prediction": "B. Going to Friday prayers at the mosque each week\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 57,
+      "question_idx": 57,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egyptian culture, when is it common for children to move out of their parents' home?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 65,
+      "question_idx": 65,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "What is typically done before a man can marry a woman in Igbo culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 111,
+      "question_idx": 111,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Yoruba culture of Nigera, how do young people traditionally greet elders?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nExplanation: In Yoruba culture, young people traditionally greet elders by bowing slightly without making any physical contact. This shows respect and deference to the elders. \n\nA. Shake hands while maintaining eye contact - This is more common in Western cultures and not typical in Yoruba culture.\nB. Prostrate as a male and go on your knees as a female - This is not a common greeting in Yoruba culture.\nD. Give a brief",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 116,
+      "question_idx": 116,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwe, what is considered an important aspect regarding a girl's purity by the age of 21?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 117,
+      "question_idx": 117,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu tradition, what is considered important during dinner time?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nIn Zulu culture, dinner time is often seen as an important time for family members to come together and spend quality time together. The other options are not as commonly associated with Zulu dinner time traditions. \n\n{\"answer_choice\": \"A\"} is the correct answer.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 120,
+      "question_idx": 120,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In rainbow nation, what genre of music blends jazz and house sounds, known for its loud, repetitive melodies and danceable beats, that artists perform for international audiences?",
+      "prediction": "{\"answer_choice\": \"D\"} {\"answer_choice\": \"\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 125,
+      "question_idx": 125,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, it is allowed for a child to explain their own side of the story when scolded by an elder. Could you let me know when this can be done?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 138,
+      "question_idx": 138,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "Why do Nigerian men tend to value male children more than female children?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 143,
+      "question_idx": 143,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is the name of the traditional beer in South African culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 148,
+      "question_idx": 148,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egyptian culture, what does saying \"I'll be there in 10 minutes\" actually indicate?",
+      "prediction": "A. It means soon, which can vary from 20 minutes to an hour and a half.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 161,
+      "question_idx": 161,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "How do South African coloured people traditionally celebrate their baby's first tooth?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 188,
+      "question_idx": 188,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "Which festival is celebrated by the Yoruba people in the 8th month of every year?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 192,
+      "question_idx": 192,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, what is the correct way to greet elders?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 193,
+      "question_idx": 193,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwe, what hairstyle is accepted for women attending funeral?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 206,
+      "question_idx": 206,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, what does a groom usually give to the bride's family as a token of appreciation?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 207,
+      "question_idx": 207,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa, what do people usually buy before upcoming holidays?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 208,
+      "question_idx": 208,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, what are young boys commonly referred to as?",
+      "prediction": "D. laaitie\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 209,
+      "question_idx": 209,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "What is the typical duration of working hours for both private and public sectors in Egypt?",
+      "prediction": "{\"answer_choice\": \"A\"} The typical working hours in Egypt, including both the private and public sectors, are often 8 hours per day. However, the provided options do not include 8 hours exactly. Given the choices, the closest and most commonly observed duration is 8 hours. Thus, the answer is:\n\nAnswer: {\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 225,
+      "question_idx": 225,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is an accurate cultural representation of people of color in South Africa concerning dental aesthetics?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 229,
+      "question_idx": 229,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Moroccan culture, how do people typically show their hospitality?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By always welcoming and smiling\n(ii) By giving a firm handshake\n(iii) By bowing slightly\n(iv) By avoiding eye contact as a sign of respect.",
+      "prediction": "{\"answer_choice\":\"\"} {\"answer_choice\":\"\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 0.0
+      }
+    },
+    {
+      "sample_id": 238,
+      "question_idx": 238,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "What is considered very rude in Moroccan culture?",
+      "prediction": "A. Eating food with your left hand\n\nIn Moroccan culture, eating with the left hand is considered very rude. The right hand is used for eating and handling food, while the left hand is traditionally used for other tasks. Therefore, eating with the left hand is seen as a sign of disrespect.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 239,
+      "question_idx": 239,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In the context of Moroccan culture, what is often considered a sign of a man's success in life?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 244,
+      "question_idx": 244,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Igbo culture, what step is a man traditionally not supposed to skip before marrying a lady?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 256,
+      "question_idx": 256,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "During a traditional Yoruba gathering, how do indigenous people typically show respect and accommodation?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Greeting each other with a bow\n(ii) Offering a firm handshake to everyone\n(iii) Sharing a meal together without any formalities\n(iv) Hosting and ensuring guests' comfort with food and conversation.",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 258,
+      "question_idx": 258,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egypt, who is considered most deserving of your seat on public transportation?",
+      "prediction": "C. A woman whose being harassed or touched because of the crowds.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 259,
+      "question_idx": 259,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egypt, what could be a game changer in winning an election?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nJustification: Effective communication is often considered a game-changer in elections, as it can help candidates connect with voters and convey their message effectively. Social media campaigns (B) can also be a game-changer, but they are not necessarily a game-changer in and of themselves, as they depend on the quality of the content and the candidate's ability to engage with the audience. Bribes (C) are illegal and unethical, and public protests (",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 283,
+      "question_idx": 283,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwean culture, what must be done for individuals who share the same totem to marry?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 284,
+      "question_idx": 284,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In the Shona Zimbabwe culture, what are the consequences for eating your totem?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 291,
+      "question_idx": 291,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "What factors contribute to the high birth rates among women in Malawi despite financial constraints in providing for their children?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 292,
+      "question_idx": 292,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwe culture, how should women and young girls show respect when giving water or food to elders and parents?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In Zimbabwe culture, it is customary for women and young girls to show respect when giving water or food to elders and parents by bowing down. This gesture symbolizes humility and respect. Standing up straight and making eye contact (A) is not a common practice in Zimbabwe. Shaking hands before and after giving water or food (C) is not a typical cultural practice in Zimbabwe. Asking the elders to help themselves (D) is not a common",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 293,
+      "question_idx": 293,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, how do most women traditionally dress when in public?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 294,
+      "question_idx": 294,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwe culture, what do the youngest children call their older sister or brother instead of using their names?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 304,
+      "question_idx": 304,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Morocco, with which hand do individuals exclusively eat their food?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 310,
+      "question_idx": 310,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egypt, what is the appropriate way to return borrowed money when you find your friend's spouse home alone?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 311,
+      "question_idx": 311,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egypt, how should an adult respond when witnessing a child behaving inappropriately towards another child?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 315,
+      "question_idx": 315,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "How is lobola observed in the Zulu culture and what does it symbolize?",
+      "prediction": "{\"answer_choice\": \"A\"} How is lobola observed in the Zulu culture and what does it symbolize?\nThe correct answer is A. Lobola is a negotiation involving gifts of cattle, goats, or other items from the groom's family to the bride's family, symbolizing respect and unity between the families. \n\nHere's the JSON format as requested:\n```json\n{\n  \"answer_choice\": \"A\"\n}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 335,
+      "question_idx": 335,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa, what is the rule about talking during meals?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 336,
+      "question_idx": 336,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, what is the practice regarding men and marriage?",
+      "prediction": "D. Men are allowed to marry more than one wife.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 337,
+      "question_idx": 337,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, what is the proper way for a married woman to serve men when approaching them sitting?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nIn Zulu culture, a married woman is expected to serve men by kneeling down to serve them when approaching them sitting. This is a sign of respect and humility. \n\nA. Kneels down to serve them\nB. Sits at the table and serves them\nC. Stands beside the table to serve\nD. Shakes hands with everyone before serving. \n\nThe correct answer is A. Kneels down to serve them. \n\n{\"",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 345,
+      "question_idx": 345,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwean culture, what does the groom typically give to the bride's family when getting married?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 351,
+      "question_idx": 351,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In the Zulu culture, how do women traditionally show respect when presenting food to men?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 360,
+      "question_idx": 360,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, what practice is followed for a couple to be married regarding the groom's family?",
+      "prediction": "A. Paying Lobola (dowry) to the bride's family\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 373,
+      "question_idx": 373,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, who is not allowed to stand in front of a masquerade during traditional festivals?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 380,
+      "question_idx": 380,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "What is a common behavior towards strangers in Egypt?",
+      "prediction": "A. Keeping a formal distance without much conversation\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 383,
+      "question_idx": 383,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "How do people in Egypt typically behave during a meal?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 384,
+      "question_idx": 384,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "What might a Cairo family eat for breakfast on weekdays?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 397,
+      "question_idx": 397,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egyptian culture, how do the legal wedding ceremony and the wedding party differ in terms of invitees?",
+      "prediction": "{\"answer_choice\":\"B\"} {\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 410,
+      "question_idx": 410,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What traditional rite of passage do Xhosa teenagers typically undergo for initiation into adulthood?",
+      "prediction": "B. Going to the mountain for circumcision and initiation\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 411,
+      "question_idx": 411,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, who is primarily worshipped and revered?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 412,
+      "question_idx": 412,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In the Sahraoui culture, what is the preferred body type for women in the context of marriage?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 413,
+      "question_idx": 413,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Saharoui culture, what is the appropriate greeting etiquette between a woman and a strange adult man?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nNote: The appropriate greeting etiquette in Saharoui culture between a woman and a strange adult man is not to shake hands. The other options are not typical or appropriate in this context. The correct answer is A. They should not shake hands. \n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 417,
+      "question_idx": 417,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "How many days do weddings usually last in Moroccan culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 426,
+      "question_idx": 426,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, which traditional clothing styles are experiencing a resurgence in popularity, especially among young people?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 428,
+      "question_idx": 428,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa, what is a common practice for a man when he wants to get married?",
+      "prediction": "A. Paying a bride price\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 429,
+      "question_idx": 429,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa, what does leaving uneaten food on your plate typically signify?",
+      "prediction": "C. It can be interpreted as a negative reflection on the food or the host.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 430,
+      "question_idx": 430,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Yoruba culture, how do people celebrate weddings?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Yoruba culture, the traditional engagement ceremony called \"Idana\" is a significant part of wedding celebrations. The groom presents gifts to the bride's family as a sign of respect and commitment. The other options are not commonly practiced in Yoruba culture. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 431,
+      "question_idx": 431,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What traditional initiation ceremony do the Xhosa people in South Africa have for young men to transition into adulthood?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 434,
+      "question_idx": 434,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa, what is the traditional practice related to meals and praying?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 436,
+      "question_idx": 436,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "Why do Zulu fathers pay damages to the mother of their child?",
+      "prediction": "D. To compensate for pregnancy and childbirth expenses.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 437,
+      "question_idx": 437,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "What is a common characteristic of Morocco culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 440,
+      "question_idx": 440,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Moroccan culture, what is the favorite meal for Friday?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 445,
+      "question_idx": 445,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, why do people often refer to shop owners as \"my friend\"?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 456,
+      "question_idx": 456,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, what should a child do in the morning when they see their guardians before having breakfast?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 482,
+      "question_idx": 482,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What must a guest do when they arrive at a South African Dinner party?",
+      "prediction": "B. Greet everyone respectfully and immediately.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 490,
+      "question_idx": 490,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Batswana culture, what types of names are commonly used?",
+      "prediction": "{\"answer_choice\":\"B\"} \n\nExplanation: In Batswana culture, names are often given after old family members as a way to honor and respect the ancestors. This is a common practice in many African cultures, including the Setswana culture. \n\nA. is incorrect because it is not a common practice in Batswana culture to name children after celebrities or popular figures.\nC. is incorrect because it is not a common practice in Batswana culture to use names from baby",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 503,
+      "question_idx": 503,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "What's a traditional beverage to serve in Moroccan homes",
+      "prediction": "B. Green mint tea\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 512,
+      "question_idx": 512,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "At a South African braai, which meat is commonly served?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 531,
+      "question_idx": 531,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egyptian culture, what is an uncommon social behavior when someone offers you something?",
+      "prediction": "A. Politely refuse at first to show respect, as they might not actually mean to share.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 545,
+      "question_idx": 545,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Chichewa culture, what do women traditionally wear over their clothes as part of their dressing?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 590,
+      "question_idx": 590,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, who is likely to pay the bride price for a wedding",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nIn Nigerian culture, the bride price (also known as dowry) is typically paid by the male's family to the female's family. This is a significant part of the cultural and traditional wedding practices in Nigeria. Therefore, the male's family is likely to pay the bride price for a wedding. \n\nHence, the correct answer is A. The male's family. \n\nJSON format: {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 599,
+      "question_idx": 599,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, what will the groom give to the family of the bride during the wedding proceedings?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 600,
+      "question_idx": 600,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "As a Zimbabwe family, who is traditionally expected to take on the financial responsibilities for women?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 609,
+      "question_idx": 609,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In Egyptian culture, when is the celebration for a new baby typically held? and who are participate?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 633,
+      "question_idx": 633,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What should a man never do when visiting someone else's house in South Africa?",
+      "prediction": "D. Shaking hands with the left hand.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 649,
+      "question_idx": 649,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "Question: In Venda culture, what is the traditional posture for women when speaking to their husbands or elders?",
+      "prediction": "{\"answer_choice\":\"C\"} The traditional posture for women in Venda culture when speaking to their husbands or elders is to lie prostrate in front of them (C). This practice reflects the hierarchical nature of Venda society and the respect due to elders and husbands. However, it's important to note that this practice is not commonly observed in modern times and may vary based on individual and cultural contexts. The other options (A, B, and D) do not align with traditional Venda customs.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 652,
+      "question_idx": 652,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwe, when is a person typically buried after they have passed away?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 675,
+      "question_idx": 675,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "Which ceremony is traditionally associated with testing the virginity of women?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 696,
+      "question_idx": 696,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What ceremony do young Zulu maidens participate in as a coming-of-age celebration where their virginity is tested and celebrated?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 758,
+      "question_idx": 758,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Xhosa culture, how do grand children call their grandfather as a sign of respect?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 761,
+      "question_idx": 761,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What do people in South African culture  call a barbeque?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 765,
+      "question_idx": 765,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Northern African culture, what do people commonly drink even when the temperature reaches 40\u00b0C?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 773,
+      "question_idx": 773,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Moroccan culture, what is one important item you would find in every Moroccan house?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 776,
+      "question_idx": 776,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, who has information on the funeral proceedings and burial site of the king?",
+      "prediction": "A. The inner circle of men, known as Amabutho\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 779,
+      "question_idx": 779,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, which clothing item is strictly worn by males?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 839,
+      "question_idx": 839,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "How do people in Zimbabwe typically say \"thank you\"?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 851,
+      "question_idx": 851,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African Afrikaans culture, which of the following B terms are linked with adults when watching a rugby game?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 852,
+      "question_idx": 852,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In the Boere tradition, what roles do sons and daughters typically have in their household?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 862,
+      "question_idx": 862,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "What is the staple food in Zimbabwe?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 863,
+      "question_idx": 863,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Ndebele culture, what is a man expected to pay to his soon-to-be wife's family as a bride price?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 878,
+      "question_idx": 878,
+      "country": "Zimbabwe",
+      "region": "Africa",
+      "prompt_question": "In Zimbabwe, what is mainly used for the bride price during a marriage ceremony?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nNote: The correct answer is not among the given options. The bride price in Zimbabwe is traditionally known as \"ndovu\" and is usually paid in livestock, particularly cows. However, the given options do not include cows. {\"answer_choice\": \"A\"} is the only option provided, so it is the best choice among the given options.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 882,
+      "question_idx": 882,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is the traditional cooking method using fire called among Afrikaans people in South Africa?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 883,
+      "question_idx": 883,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Yoruba culture, how do younger ones typically greet their parents and the elderly?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 890,
+      "question_idx": 890,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What would a South African like as a snack?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 895,
+      "question_idx": 895,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In the Igbo tribe of Nigeria, why does a bride serve her husband palm wine on their traditional marriage day?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nThe correct answer is A. In the Igbo tribe of Nigeria, palm wine is served to the bride on her wedding day as a symbol of her willingness to care and provide for her husband. Palm wine is a traditional drink in the Igbo culture and is often served during important ceremonies and celebrations. It is believed that the bride's willingness to serve palm wine to her husband is a sign of her readiness to take on the role of a wife and to care",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 897,
+      "question_idx": 897,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "How do Egyptian muslim families observe fasting from dawn to sunset during Ramadan?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: During Ramadan, Egyptian Muslim families observe fasting from dawn (Fajr) until sunset (Maghrib). This means they do not eat or drink anything during this period, including water. Therefore, the correct answer is A. They not eating or drinking from sunrise until sunset. \n\nOption B is incorrect because they avoid eating during daylight hours, but they can still drink water and other beverages. Option C is incorrect because they do not drink water or",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 898,
+      "question_idx": 898,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Venda culture, during which season are young boys traditionally taken to the mountains?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 920,
+      "question_idx": 920,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In West African setting described, what is likely the main dish being enjoyed during the festival?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 931,
+      "question_idx": 931,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Morocco, what is considered the most prominent evidence supporting the truth of Islam?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 934,
+      "question_idx": 934,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In a Moroccan cultural context, what is a common behavior people exhibit when entering a house?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 945,
+      "question_idx": 945,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, what is the title given to the first wife, who is respected and honored above others in a polygamous marriage?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"umdlunkulu\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1048,
+      "question_idx": 1048,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "It's early morning in Egypt, why is there the sound of banging on metal in the streets?",
+      "prediction": "A. Someone is waking people up for prayer\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1066,
+      "question_idx": 1066,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "In the context of Egyptian culture, why is free food being served in the street at sunset?",
+      "prediction": "D. They are feeding those who were fasting throughout the day\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1070,
+      "question_idx": 1070,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is a common stereotype about colored people in South Africa?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1085,
+      "question_idx": 1085,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Venda culture, why must the youngest father's sister marry a wife for the king?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1087,
+      "question_idx": 1087,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, which product is famously known as a traditional kind of milk or yoghurt?",
+      "prediction": "D. Amasi\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1110,
+      "question_idx": 1110,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "what don't Egyptians like to drink after dinner?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1111,
+      "question_idx": 1111,
+      "country": "Egypt",
+      "region": "Africa",
+      "prompt_question": "What do Muslims in Egypt do during the fasting hours of Ramadan?",
+      "prediction": "D. stops all food and drinks intake\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1123,
+      "question_idx": 1123,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, what is considered a bad omen when walking?",
+      "prediction": "B. Seeing a black cat cross your path\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1131,
+      "question_idx": 1131,
+      "country": "Morocco",
+      "region": "Africa",
+      "prompt_question": "In Moroccan culture, how do you properly greet someone from your family or friends?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Shake hands firmly while making eye contact.\n(ii) Give them 4 to 6 kisses while asking about their well-being and updates.\n(iii) Bow slightly while saying hello.\n(iv) Offer a high-five while asking what's new.",
+      "prediction": "D. i, ii, iv\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1132,
+      "question_idx": 1132,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, which game unites everyone, with people commonly dressing in green to support it?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1133,
+      "question_idx": 1133,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is a popular activity among South Africans to relax during both summer and winter?",
+      "prediction": "A. Going for a braai\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1134,
+      "question_idx": 1134,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is the one food considered a staple and widely consumed across all communities in South African culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1138,
+      "question_idx": 1138,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, what is traditionally required before a couple can get married?",
+      "prediction": "A. A man must pay a dowry of many cows.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1139,
+      "question_idx": 1139,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa's tradition, where do 14-year-old boys go to undergo circumcision as part of their cultural rites of passage?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1140,
+      "question_idx": 1140,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "How do people in South African culture honor the memory of the youth involved in the events of June 16th under the apartheid regime?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1141,
+      "question_idx": 1141,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In Zulu culture, how do women traditionally show respect when serving their husbands food?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1142,
+      "question_idx": 1142,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South Africa, where do young men go?",
+      "prediction": "A. Initiation school\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1143,
+      "question_idx": 1143,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "How do people in South Africa typically eat their dinner",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1151,
+      "question_idx": 1151,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What rituals do Zulu people commonly practice?",
+      "prediction": "{\"answer_choice\":\"C\"} Zulu people commonly practice the Umhlanga, the Reed Dance ceremony, which is a significant ritual in their culture. This ceremony involves the selection of young girls to be trained as future wives for the royal family. It is not related to the other options provided. {\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1152,
+      "question_idx": 1152,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "What is included in the traditional cuisine of the Tswana culture?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nThe traditional cuisine of the Tswana culture includes Seswaa, which is pounded meat. Therefore, the correct answer is A. \n\nAnswer: {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1169,
+      "question_idx": 1169,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, is a girl allowed to greet her parents with a hug as a sign of respect or honor?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1170,
+      "question_idx": 1170,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, a child is free to express their feelings and defend themselves when being scolded by their parents.",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1171,
+      "question_idx": 1171,
+      "country": "Nigeria",
+      "region": "Africa",
+      "prompt_question": "In Nigerian culture, why is it mandatory to pay the traditional bridal financial gift called dowry?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1212,
+      "question_idx": 1212,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In South African culture, which animal is most commonly used for cleansing ceremonies?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1213,
+      "question_idx": 1213,
+      "country": "South Africa",
+      "region": "Africa",
+      "prompt_question": "In the black communities in South Africa, what is considered taboo for a man when greeting an elderly person?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

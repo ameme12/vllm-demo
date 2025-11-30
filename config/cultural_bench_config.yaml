@@ -1,19 +1,19 @@
 # CulturalBench Evaluation Configuration with VLLMInferenceEngine
 # Example: MCQ evaluation for Japan
 
-experiment_name: culturalbench_china_qwen_2.5b
+experiment_name: culturalbench_africa_qwen_2.5b
 
 task:
   name: culturalbench_cultural_knowledge
   type: culturalbench
   config:
-    country: China  # Optional: Filter by specific country (see country list below)
-    # region: East Asia  # Optional: Filter by region instead of country (uncomment to use)
+    #country: China # Optional: Filter by specific country (see country list below)
+    region: Africa # Optional: Filter by region instead of country (uncomment to use)
     # Leave both country and region commented to load all countries
 
 # Model configuration (matches VLLMConfig)
 model:
-  name: Qwen/Qwen2.5-3B-Instruct   # HuggingFace model name
+  name: meta-llama/Llama-3.2-3B-Instruct   # HuggingFace model name
   
   # vLLM Engine Configuration
   tensor_parallel_size: 1  # Number of GPUs to use

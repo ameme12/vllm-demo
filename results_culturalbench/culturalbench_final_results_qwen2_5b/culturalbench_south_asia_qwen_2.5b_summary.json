@@ -1,0 +1,44 @@
+{
+  "total_samples": 106,
+  "aggregate_metrics": {
+    "accuracy": {
+      "mean": 0.6509433962264151,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exact_match": {
+      "mean": 0.6509433962264151,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "has_valid_format": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "by_country": {
+    "India": {
+      "count": 46,
+      "accuracy": 0.5434782608695652
+    },
+    "Bangladesh": {
+      "count": 25,
+      "accuracy": 0.6
+    },
+    "Nepal": {
+      "count": 21,
+      "accuracy": 0.8095238095238095
+    },
+    "Pakistan": {
+      "count": 14,
+      "accuracy": 0.8571428571428571
+    }
+  },
+  "by_region": {
+    "South Asia": {
+      "count": 106,
+      "accuracy": 0.6509433962264151
+    }
+  }
+}

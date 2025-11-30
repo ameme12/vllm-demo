@@ -1,0 +1,53 @@
+model,country,region,accuracy,num_samples,file
+Llama 3.2-3B,Bangladesh,South Asia,72.0,25,culturalbench_south_asia_llama3b_summary.json
+Llama 3.2-3B,Canada,North America,85.71428571428571,7,culturalbench_north_america_llama3b_summary.json
+Llama 3.2-3B,China,East Asia,57.6271186440678,59,culturalbench_east_asia_llama3b_summary.json
+Llama 3.2-3B,Egypt,Africa,45.0,20,culturalbench_africa_llama3b_summary.json
+Llama 3.2-3B,France,West Europe,64.28571428571429,14,culturalbench_west_europe_llama3b_summary.json
+Llama 3.2-3B,Germany,West Europe,68.75,32,culturalbench_west_europe_llama3b_summary.json
+Llama 3.2-3B,Hong Kong,East Asia,66.66666666666666,36,culturalbench_east_asia_llama3b_summary.json
+Llama 3.2-3B,India,South Asia,69.56521739130434,46,culturalbench_south_asia_llama3b_summary.json
+Llama 3.2-3B,Iran,Middle East/West Asia,45.94594594594595,37,culturalbench_west_asia_llama3b_summary.json
+Llama 3.2-3B,Israel,Middle East/West Asia,46.15384615384615,13,culturalbench_west_asia_llama3b_summary.json
+Llama 3.2-3B,Japan,East Asia,71.69811320754717,53,culturalbench_east_asia_llama3b_summary.json
+Llama 3.2-3B,Lebanon,Middle East/West Asia,54.54545454545454,22,culturalbench_west_asia_llama3b_summary.json
+Llama 3.2-3B,Morocco,Africa,64.70588235294117,17,culturalbench_africa_llama3b_summary.json
+Llama 3.2-3B,Nepal,South Asia,85.71428571428571,21,culturalbench_south_asia_llama3b_summary.json
+Llama 3.2-3B,Netherlands,West Europe,48.0,25,culturalbench_west_europe_llama3b_summary.json
+Llama 3.2-3B,Nigeria,Africa,81.81818181818183,22,culturalbench_africa_llama3b_summary.json
+Llama 3.2-3B,OVERALL,ALL,60.66350710900474,211,culturalbench_east_asia_llama3b_summary.json
+Llama 3.2-3B,Pakistan,South Asia,78.57142857142857,14,culturalbench_south_asia_llama3b_summary.json
+Llama 3.2-3B,Saudi Arabia,Middle East/West Asia,47.05882352941176,17,culturalbench_west_asia_llama3b_summary.json
+Llama 3.2-3B,South Africa,Africa,79.3103448275862,58,culturalbench_africa_llama3b_summary.json
+Llama 3.2-3B,South Korea,East Asia,56.09756097560976,41,culturalbench_east_asia_llama3b_summary.json
+Llama 3.2-3B,Taiwan,East Asia,40.909090909090914,22,culturalbench_east_asia_llama3b_summary.json
+Llama 3.2-3B,Turkey,Middle East/West Asia,65.78947368421053,38,culturalbench_west_asia_llama3b_summary.json
+Llama 3.2-3B,United Kingdom,West Europe,76.0,25,culturalbench_west_europe_llama3b_summary.json
+Llama 3.2-3B,United States,North America,85.0,20,culturalbench_north_america_llama3b_summary.json
+Llama 3.2-3B,Zimbabwe,Africa,88.23529411764706,17,culturalbench_africa_llama3b_summary.json
+Qwen 2.5-3B,Bangladesh,South Asia,60.0,25,culturalbench_south_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Canada,North America,57.14285714285714,7,culturalbench_north_america_qwen_2.5b_summary.json
+Qwen 2.5-3B,China,East Asia,57.6271186440678,59,culturalbench_east_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Egypt,Africa,50.0,20,culturalbench_africa_qwen_2.5b_summary.json
+Qwen 2.5-3B,France,West Europe,57.14285714285714,14,culturalbench_west_europe_qwen_2.5b_summary.json
+Qwen 2.5-3B,Germany,West Europe,56.25,32,culturalbench_west_europe_qwen_2.5b_summary.json
+Qwen 2.5-3B,Hong Kong,East Asia,63.888888888888886,36,culturalbench_east_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,India,South Asia,54.347826086956516,46,culturalbench_south_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Iran,Middle East/West Asia,48.64864864864865,37,culturalbench_west_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Israel,Middle East/West Asia,53.84615384615385,13,culturalbench_west_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Japan,East Asia,69.81132075471697,53,culturalbench_east_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Lebanon,Middle East/West Asia,50.0,22,culturalbench_west_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Morocco,Africa,41.17647058823529,17,culturalbench_africa_qwen_2.5b_summary.json
+Qwen 2.5-3B,Nepal,South Asia,80.95238095238095,21,culturalbench_south_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Netherlands,West Europe,40.0,25,culturalbench_west_europe_qwen_2.5b_summary.json
+Qwen 2.5-3B,Nigeria,Africa,68.18181818181817,22,culturalbench_africa_qwen_2.5b_summary.json
+Qwen 2.5-3B,OVERALL,ALL,59.241706161137444,211,culturalbench_east_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Pakistan,South Asia,85.71428571428571,14,culturalbench_south_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Saudi Arabia,Middle East/West Asia,41.17647058823529,17,culturalbench_west_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,South Africa,Africa,70.6896551724138,58,culturalbench_africa_qwen_2.5b_summary.json
+Qwen 2.5-3B,South Korea,East Asia,46.34146341463415,41,culturalbench_east_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Taiwan,East Asia,54.54545454545454,22,culturalbench_east_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,Turkey,Middle East/West Asia,63.1578947368421,38,culturalbench_west_asia_qwen_2.5b_summary.json
+Qwen 2.5-3B,United Kingdom,West Europe,72.0,25,culturalbench_west_europe_qwen_2.5b_summary.json
+Qwen 2.5-3B,United States,North America,85.0,20,culturalbench_north_america_qwen_2.5b_summary.json
+Qwen 2.5-3B,Zimbabwe,Africa,76.47058823529412,17,culturalbench_africa_qwen_2.5b_summary.json

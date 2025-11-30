@@ -1,0 +1,48 @@
+{
+  "total_samples": 211,
+  "aggregate_metrics": {
+    "accuracy": {
+      "mean": 0.5924170616113744,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exact_match": {
+      "mean": 0.5924170616113744,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "has_valid_format": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "by_country": {
+    "South Korea": {
+      "count": 41,
+      "accuracy": 0.4634146341463415
+    },
+    "Japan": {
+      "count": 53,
+      "accuracy": 0.6981132075471698
+    },
+    "Taiwan": {
+      "count": 22,
+      "accuracy": 0.5454545454545454
+    },
+    "Hong Kong": {
+      "count": 36,
+      "accuracy": 0.6388888888888888
+    },
+    "China": {
+      "count": 59,
+      "accuracy": 0.576271186440678
+    }
+  },
+  "by_region": {
+    "East Asia": {
+      "count": 211,
+      "accuracy": 0.5924170616113744
+    }
+  }
+}

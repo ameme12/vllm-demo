@@ -1,0 +1,425 @@
+{
+  "experiment_name": "culturalbench_north_america_qwen_2.5b",
+  "timestamp": "20251129_192401",
+  "config": {
+    "experiment_name": "culturalbench_north_america_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "North America"
+      }
+    },
+    "model": {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 27,
+  "results": [
+    {
+      "sample_id": 26,
+      "question_idx": 26,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In the United States, if there is only one slice of pizza left in the last box, what is the most common action someone would take?",
+      "prediction": "C\nExplanation: This is based on the common social norms and behaviors observed in many cultures, where people often feel a strong desire to claim the last item, especially if it's something desirable like pizza. This is often referred to as the \"last piece of pizza\" phenomenon. The correct answer is C, as it reflects this common behavior. The other options are less likely to be the most common action someone would take in this situation. \n\nHere is the answer in the requested format:\n\n{\"answer",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 141,
+      "question_idx": 141,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In Black American culture, which of the following is typically recognized as a significant aspect of its rich and diverse tapestry?",
+      "prediction": "A\n\nExplanation: Jazz and Hip Hop music are significant aspects of Black American culture, reflecting its rich and diverse heritage. Jazz originated in the southern United States in the late 19th and early 20th centuries, while Hip Hop emerged in the 1970s in the Bronx, New York. Both genres have played a crucial role in shaping the cultural identity of Black Americans. In contrast, Flamenco dancing is a style of Spanish dance, Sushi cuisine is a type of Japanese food,",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 151,
+      "question_idx": 151,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In African-American culture, when is it considered acceptable to touch a black woman's hair?",
+      "prediction": "A\nExplanation: In African-American culture, it's generally considered a breach of etiquette to touch a black woman's hair without her explicit consent. This is because hair is a symbol of identity, culture, and personal expression. Touching someone's hair without permission can be seen as intrusive and disrespectful. (Source: \"The Hair Bible\" by Angela Y. Davis)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 242,
+      "question_idx": 242,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canadian culture, how might someone respond if they knock over a chair in a restaurant?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Laugh and make a joke about their clumsiness.\n(ii) Simply continue walking as if nothing happened.\n(iii) Apologize to the chair as though it were a person.\n(iv) Ignore the incident and avoid eye contact with anyone who noticed.",
+      "prediction": "C\nExplanation: In Canadian culture, people are generally polite and courteous. If someone knocks over a chair in a restaurant, they might laugh and make a joke about their clumsiness (i). They might also simply continue walking as if nothing happened (ii). Additionally, they might apologize to the chair as though it were a person (iii), which is a common way to show respect and politeness in Canadian culture. Ignoring the incident and avoiding eye contact (iv) is not a typical response",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 421,
+      "question_idx": 421,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American culture, what is a common behavior observed in grocery store parking lots?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general observations and may not be universally true for all individuals. \n\nPlease let me know if you want me to change anything. \n\nAlso, I can provide more examples or create a new question if you'd like. \n\nLet me know how I can assist you further! \n\nBest regards,\n[Your Name] \n\nThis is a response to your request. However, I noticed that you provided a response in a specific",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 451,
+      "question_idx": 451,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In the USA, what is considered inappropriate when addressing a Black man?",
+      "prediction": "B\n\nExplanation: Using the term \"Nigga\" is considered highly inappropriate and derogatory when addressing a Black man in the USA. This term has a long history of being used as a racial slur, and its use can be perceived as disrespectful and hurtful. (Source: Merriam-Webster Dictionary)",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 452,
+      "question_idx": 452,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American culture, how do people commonly address each other in a friendly and informal setting even if they have professional titles or high social standing?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The provided answer is based on common American cultural practices. The explanation is not included in the response as per the given instructions. \n\nHowever, I can provide an explanation if you'd like. In American culture, people often address each other in a friendly and informal setting by using first names or nicknames, even if they have professional titles or high social standing. This is a common practice in many social and professional settings, such as in casual",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 497,
+      "question_idx": 497,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "What is a common custom in Canadian culture when someone nearly causes an accident with you?",
+      "prediction": "A\nExplanation: In Canadian culture, it is considered polite and courteous to apologize, even if the other person was at fault. This is a common social norm in Canada, where apologizing is seen as a way to show respect and avoid conflict. (Source: various online sources, including articles and forums discussing Canadian social norms and customs.) \n\nHere is the answer in the requested format:\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 526,
+      "question_idx": 526,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which holiday is specifically celebrated in the US culture and taken very seriously, not commonly celebrated in the same way or scale in other cultures?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The question is self-contained and does not require any external knowledge or reference to the provided text. The answer can be deduced through general knowledge. \n\nLet me know if you want me to generate another question. \n\nAlso, I can generate a new question on a different topic. Just let me know! \n\n(Also, I can make the questions more challenging if you'd like. Just let me know the level of difficulty you're looking",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 532,
+      "question_idx": 532,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "How do Canadians manage time differently across their provinces?",
+      "prediction": "A\n\n```json\n{\"answer_choice\": \"A\"}\n``` \n\nNote: The question is based on the fact that Canada has multiple time zones across its provinces, and the answer is based on that fact. The other options are incorrect because Canada does not have a single national time, nor does it adjust time based on the sun's position or use digital systems to automatically adjust time across the country. \n\nHowever, if you want to add more context to the question, here's an example:\n\n\"How",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 625,
+      "question_idx": 625,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In African American culture, how should you behave when elders are speaking?",
+      "prediction": "A\nExplanation: In African American culture, it is considered respectful to listen quietly and not talk back when elders are speaking. This shows respect for their wisdom and experience. (Source: various African American cultural texts and traditions)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 678,
+      "question_idx": 678,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canadian culture, who should apologize when bumping into someone accidentally?",
+      "prediction": "A\nExplanation: In Canadian culture, it is considered polite and courteous to apologize even if the bumping was not your fault. This reflects the country's emphasis on politeness, respect, and avoiding conflict. By apologizing, you show that you value the other person's feelings and are willing to take responsibility for any inconvenience caused, even if it was not your fault. This behavior is deeply ingrained in Canadian culture and is seen as a key aspect of being a good neighbor and a respectful member",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 715,
+      "question_idx": 715,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "What are family reunions in black culture in United States most commonly known for?",
+      "prediction": "B\n\nExplanation: Family reunions in black culture in the United States are most commonly known for music and a larger variety of foods. This is because they often feature live music performances, traditional dishes, and a more relaxed atmosphere. The event is a time for family members to come together, share stories, and enjoy each other's company. The food is often a highlight of the event, with a variety of traditional dishes such as fried chicken, collard greens, and mac and cheese. The music",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 739,
+      "question_idx": 739,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "What is the capital city according to United States culture?",
+      "prediction": "A\nExplanation: Washington, D.C. is the capital city of the United States. The United States is a country in North America, and its capital is a city that serves as the seat of government. The correct answer is Washington, D.C. because it is the capital city of the United States, not the capital city of the world. The other options, London, Paris, and Tokyo, are all capital cities of other countries. \n\nNote: The question is asking for the capital city",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 740,
+      "question_idx": 740,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In which region is the state of Arizona located, according to the United States regional classification?",
+      "prediction": "A\nExplanation: Arizona is located in the Southwest region of the United States. The Southwest region includes states such as Arizona, California, Colorado, Nevada, New Mexico, Texas, and Utah. It is characterized by its arid desert climate, mountain ranges, and Native American reservations. The region is also home to many major cities, including Phoenix, Tucson, and Albuquerque. Arizona's geography and climate are typical of the Southwest, with hot summers and mild winters. The state's economy is also closely",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 821,
+      "question_idx": 821,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Quebec culture, what is a traditional meal they are known for?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general knowledge and may not be universally agreed upon. However, it is a widely recognized and traditional Quebecois dish.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 865,
+      "question_idx": 865,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In a small, picturesque village in America, what traditional event do you think the community was most looking forward to celebrating annually?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The question is designed to be self-contained, and the answer can be inferred based on the context provided. The answer is not explicitly stated in the question, but rather requires the test-taker to make an educated guess based on the information given. \n\nThis type of question is designed to test the test-taker's ability to think critically and make connections between different pieces of information. It also requires the test-taker to have some general knowledge",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 921,
+      "question_idx": 921,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In United States, which gesture is typically used both as a greeting and a sign of agreement?",
+      "prediction": "C\nExplanation: In the United States, a handshake is commonly used as a greeting and also as a sign of agreement or confirmation. It is a widely accepted and culturally familiar gesture that is used in many social and professional settings.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 970,
+      "question_idx": 970,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "What is something unique to American culture?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The answer is Thanksgiving, which is a unique American holiday. The other options, while popular in the US, are not unique to American culture. Burgers, pizza, and soda are enjoyed in many other countries as well. Thanksgiving, on the other hand, is a distinctly American holiday. \n\nHowever, if you'd like to choose a more unique aspect of American culture, you could consider something like:\n\n* The concept of a \"road",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 971,
+      "question_idx": 971,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canada, compared to the United States, how might adolescents typically behave when navigating through a crowded public transit bus to exit?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By saying \"Sorry\" and moving through.\n(ii) By saying \"Excuse Me\" and moving through.\n(iii) By apologizing and then agressively shoving people out of the way.\n(iv) All of the Options Applied",
+      "prediction": "A\nExplanation: In Canada, compared to the United States, adolescents typically behave more politely when navigating through a crowded public transit bus to exit. They are likely to say \"Excuse Me\" and move through, rather than apologizing and then aggressively shoving people out of the way. Therefore, options (i) and (ii) are correct. Option (iv) is also correct because both (i) and (ii) are correct. Option (iii) is incorrect because it describes a",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 984,
+      "question_idx": 984,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which relationship would be the most peculiar for an American?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on societal norms and cultural expectations in the United States. The given answer is not meant to be a judgment on the relationship itself, but rather on what might be considered unusual or unconventional in American culture. \n\nPlease let me know if you want me to change anything. \n\nLet me know if you need anything else. \n\nThanks! \n\nBest,\n[Your Name] \n\nLet me know if you need anything else.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1019,
+      "question_idx": 1019,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which of the following is the most 'drippy' in American culture",
+      "prediction": "B\nExplanation: Crocs are known for their holey, drippy design, making them a popular choice for water activities and casual wear. They are often associated with a relaxed, laid-back style that is drippy and casual. In American culture, Crocs are often seen as a fun and playful accessory that is perfect for warm weather and outdoor activities. They are also known for their ability to keep feet dry and comfortable, making them a popular choice for people who enjoy water sports or activities.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1029,
+      "question_idx": 1029,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "How do Americans usually eat their food?",
+      "prediction": "B\n\n{\"answer_choice\":\"B\"} \n\nNote: The answer is based on general knowledge and may not be applicable to all Americans. The question is designed to test the ability to provide a simple answer without any additional explanation. \n\nLet me know if you want me to change anything. \n\nPlease let me know if you need anything else. \n\nThanks for your time. \n\nBest regards,\n[Your Name] \n\n---\n\nThis is a simple Q&A response. \n\nIf you need anything else, feel",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1031,
+      "question_idx": 1031,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "Which food are young American children being naughty and disobedient sometimes told to eat?",
+      "prediction": "B\nExplanation: Children are often told to eat vegetables, which are nutritious and healthy, but may not be as tasty or appealing to young children. This can sometimes lead to them being disobedient or resistant to eating them.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1036,
+      "question_idx": 1036,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American culture what is more popular?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general popularity and may not reflect the most accurate or up-to-date information. The answer is subjective and based on general knowledge. \n\nPlease let me know if you want me to change anything. \n\nAlso, I can provide more options or change the format to something else if you prefer. \n\nLet me know how I can assist you further. \n\nThanks! \n\nBest regards,\n[Your Name] \n\n---\n\nThis is",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1038,
+      "question_idx": 1038,
+      "country": "United States",
+      "region": "North America",
+      "prompt_question": "In American College culture, which of the following is seen as the coolest?",
+      "prediction": "A\nExplanation: In American College culture, partying is often seen as the coolest, as it is a common social activity among students. It is a way for students to relax, have fun, and socialize with their peers. Many colleges and universities have a vibrant party scene, with events and parties happening throughout the week. This is often seen as a way for students to let loose and have a good time. (Source: various online sources) \n\nNote: The other options, studying,",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1144,
+      "question_idx": 1144,
+      "country": "Canada",
+      "region": "North America",
+      "prompt_question": "In Canadian culture, how is milk usually stored and poured into a glass?",
+      "prediction": "B\n\n{\"answer_choice\": \"B\"} \n\nNote: The answer is based on common practices in Canada, and the response is in the requested format. \n\nLet me know if you need any further assistance! \n\nHowever, I must correct the response to match the requested format. Here is the revised answer:\n\n{\"answer_choice\": \"B\"} \n\nLet me know if you need any further assistance! \n\nThe final answer is indeed B. Using a carton. In Canada, milk is commonly stored",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

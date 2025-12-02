@@ -1,5 +1,5 @@
 from pathlib import Path
-from experiments.cultural_bench_experiment_runner import ExperimentRunner
+from experiments.dlama_experiment_runner import DLAMAExperimentRunner  
 import torch
 
 def main():

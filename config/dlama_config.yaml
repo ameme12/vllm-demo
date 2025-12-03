@@ -1,15 +1,15 @@
 # DLAMA Evaluation Configuration with VLLMInferenceEngine
 # Example: Native language evaluation for Asian countries
 
-experiment_name: dlama_japan_qwen_2.5b
+experiment_name: dlama_arab_qwen_2.5b
 
 task:
   name: dlama_cultural_knowledge
   type: dlama
   config:
     predicate: null  # null for all, or specific like "P103" for native language
-    culture: Asia-West  # "Arab-West", "Asia-West", "South America-West", or null for all
-    country: Japan  # Country name or null for all countries
+    culture: Arab-West  # "Arab-West", "Asia-West", "South America-West", or null for all
+     # Country name or null for all countries
 
 # Model configuration (matches VLLMConfig)
 model:
@@ -37,12 +37,12 @@ model:
   stop: null  # Stop sequences (e.g., ["\n", "."])
 
 evaluation:
-  num_samples: 10  # -1 for all samples, or specific number for testing
+  num_samples: -1  # -1 for all samples, or specific number for testing
   batch_size: 32  # Batch size for inference
 
 # Output settings
 output:
-  results_dir: results/dlama
+  results_dir: results_dlama
   save_predictions: true
   verbose: true
 

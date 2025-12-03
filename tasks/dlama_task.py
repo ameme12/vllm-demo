@@ -38,6 +38,40 @@ PREDICATE_DESCRIPTIONS = {
     'P1376': 'Capital of', 'P1412': 'Languages spoken or published',
 }
 
+place_relation_predicates = [
+        "P17",
+        "P19",
+        "P20",
+        "P27",
+        #     "P30", # Continent
+        "P36",
+        "P47",
+        "P131",
+        "P159",
+        "P190",  #  Sister City
+        "P276",
+        "P463",
+        "P495",
+        "P530",  # Diplomatic relation
+        "P740",
+        "P937",
+        "P1001",
+        "P1376",
+    ]
+
+    # Predicates having persons as subjects or objects
+person_relation_predicates = [
+    "P39",
+    "P101",
+    "P103",
+    "P106",
+    "P108",
+    "P136",
+    "P140",
+    "P413",
+    "P1412",
+]
+
 # Cultural regions as they appear in the dataset
 CULTURAL_REGIONS = ['Arab-West', 'Asia-West', 'South America-West']
 
@@ -51,54 +85,80 @@ CONFIG_TO_CULTURES = {
 
 WIKIDATA_COUNTRIES = {
     # Western Countries
-    'Q228': 'Andorra',
-    'Q408': 'Australia',
-    'Q40': 'Austria',
-    'Q31': 'Belgium',
-    'Q16': 'Canada',
-    'Q142': 'France',
-    'Q183': 'Germany',
-    'Q27': 'Ireland',
-    'Q38': 'Italy',
-    'Q347': 'Liechtenstein',
-    'Q32': 'Luxembourg',
-    'Q235': 'Monaco',
-    'Q55': 'Netherlands',
-    'Q664': 'New Zealand',
-    'Q45': 'Portugal',
-    'Q238': 'San Marino',
-    'Q29': 'Spain',
-    'Q39': 'Switzerland',
-    'Q145': 'UK',
-    'Q30': 'USA',
+    "Q228": "Andorra",
+    "Q408": "Australia",
+    "Q40": "Austria",
+    "Q31": "Belgium",
+    "Q16": "Canada",
+    "Q142": "France",
+    "Q183": "Germany",
+    "Q27": "Ireland",
+    "Q38": "Italy",
+    "Q347": "Liechtenstein",
+    "Q32": "Luxembourg",
+    "Q235": "Monaco",
+    "Q55": "Netherlands",
+    "Q664": "New Zealand",
+    "Q45": "Portugal",
+    "Q238": "San Marino",
+    "Q29": "Spain",
+    "Q39": "Switzerland",
+    "Q145": "UK",
+    "Q30": "USA",
+
+    #Arab countries
+
+    "Q79": "Egypt",
+    "Q237": "Bahrain",
+    "Q1016": "Comoros",
+    "Q800": "Djibouti",
+    "Q958": "Algeria",
+    "Q817": "Iraq",
+    "Q810": "Jordan",
+    "Q1028": "Kuwait",
+    "Q1014": "Lebanon",
+    "Q1025": "Libya",
+    "Q1029": "Mauritania",
+    "Q842": "Morocco",
+    "Q836": "Oman",
+    "Q858": "Qatar",
+    "Q851": "Saudi Arabia",
+    "Q1041": "Somalia",
+    "Q858": "Sudan",
+    "Q858": "South Sudan",   # Note: South Sudan NOT in Arab League
+    "Q851": "Syria",
+    "Q878": "Tunisia",
+    "Q805": "UAE",
+    "Q954": "Yemen",
     
     # Asian Countries
-    'Q148': 'China',
-    'Q17': 'Japan',
-    'Q423': 'North Korea',
-    'Q884': 'South Korea',
-    'Q865': 'Taiwan',
-    'Q711': 'Mongolia',
-    'Q252': 'Indonesia',
-    'Q833': 'Malaysia',
-    'Q869': 'Thailand',
-    'Q881': 'Vietnam',
-    'Q928': 'Philippines',
-    'Q836': 'Myanmar',
-    'Q334': 'Singapore',
-    'Q8646': 'Hong Kong',
-    'Q14773': 'Macau',
+    "Q148": "China",
+    "Q252": "Indonesia",
+    "Q17": "Japan",
+    "Q833": "Malaysia",
+    "Q836": "Myanmar",
+    "Q423": "North Korea",
+    "Q928": "Philippines",
+    "Q334": "Singapore",
+    "Q884": "South Korea",
+    "Q865": "Taiwan",
+    "Q869": "Thailand",
+    "Q881": "Vietnam",
+    "Q711": "Mongolia",
     
     # South American Countries
-    'Q414': 'Argentina',
-    'Q750': 'Bolivia',
-    'Q298': 'Chile',
-    'Q739': 'Colombia',
-    'Q736': 'Ecuador',
-    'Q733': 'Paraguay',
-    'Q419': 'Peru',
-    'Q77': 'Uruguay',
-    'Q717': 'Venezuela',
+    "Q414": "Argentina",
+    "Q750": "Bolivia",
+    "Q298": "Chile",
+    "Q739": "Colombia",
+    "Q736": "Ecuador",
+    "Q733": "Paraguay",
+    "Q419": "Peru",
+    "Q77": "Uruguay",
+    "Q717": "Venezuela",
+    "Q155": "Brazil",
+    "Q734": "Guyana",
+    "Q730": "Suriname",
     
     # African Countries
     'Q1033': 'Nigeria',
@@ -166,8 +226,7 @@ class DLAMATask(BaseTask):
         self.predicate = config.get("predicate", None)
         self.culture = config.get("culture", None)
         self.country = config.get("country", None)
-
-
+        
         # Validate
         if self.predicate and self.predicate not in PREDICATE_TEMPLATES:
             raise ValueError(f"Invalid predicate: {self.predicate}")
@@ -373,7 +432,7 @@ class DLAMATask(BaseTask):
 
 
 
-    def evaluate_response(self, prediction: str, ground_truth: Any) -> Dict[str, float]:
+    def evaluate_response(self, prediction: str, sample: Dict[str, Any]) -> Dict[str, float]:
         '''
         Evaluate model prediction against ground truth answer(s).
 
@@ -388,28 +447,28 @@ class DLAMATask(BaseTask):
         Returns:
             Dict with 'exact_match' and 'overlap' scores (0.0 or 1.0)
         '''
+        
         obj_labels = sample['correct_answer']  # List of acceptable answers
         if not isinstance(obj_labels, list):
             obj_labels = [obj_labels]
 
         answer = self._extract_answer(prediction)
 
-        #Normalize to uppercase
+        # Normalize to uppercase
         answer_upper = answer.upper()
         obj_labels_upper = [lbl.upper() for lbl in obj_labels]
 
-        #metric 1: Exact match
-
+        # Metric 1: Exact match
         exact_match = 1.0 if answer_upper in obj_labels_upper else 0.0
 
-        #metric 2: Overlap (substring match)
+        # Metric 2: Overlap (substring match)
         overlap = 1.0 if any(obj.upper() in answer_upper for obj in obj_labels) else 0.0
 
         return {
             'exact_match': exact_match,
             'overlap': overlap,
         }
-
+        
     def _extract_answer(self, prediction: str) -> str:
         """
         Extract the actual answer from model's prediction.
@@ -497,13 +556,3 @@ if __name__ == "__main__":
         print(f"\n{'='*70}")
         print("Evaluation Tests:")
         print(f"{'='*70}")
-        
-        for pred in test_predictions:
-            metrics = task.evaluate_response(pred, sample)
-            print(f"\nPrediction: '{pred}'")
-            print(f"  Exact Match: {metrics['exact_match']:.1f}")
-            print(f"  Overlap:     {metrics['overlap']:.1f}")
-            
-            # Show what was extracted
-            extracted = task._extract_answer(pred)
-            print(f"  (Extracted: '{extracted}')")

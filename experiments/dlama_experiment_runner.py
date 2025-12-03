@@ -188,8 +188,8 @@ class DLAMAExperimentRunner:
                 **gen_params
             )
             
-            # Evaluate responses
-            for sample, prediction in zip(batch_samples, predictions):
+            # Evaluate responses - THIS IS THE KEY PART
+            for idx, (sample, prompt, prediction) in enumerate(zip(batch_samples, batch_prompts, predictions)):
                 prediction = prediction.strip()
                 
                 # Evaluate
@@ -204,7 +204,7 @@ class DLAMAExperimentRunner:
                     'correct_answer': sample['correct_answer'],
                     'culture': sample['culture'],
                     'country': sample['country_names'][0] if sample['country_names'] else 'Unknown',
-                    'prompt': prompt,
+                    'prompt': prompt,  # Use the prompt from the zip, not the variable
                     'prediction': prediction,
                     'extracted_answer': task._extract_answer(prediction),
                     'metrics': metrics
@@ -282,6 +282,25 @@ class DLAMAExperimentRunner:
                 'overlap': sum(metrics['overlap']) / len(metrics['overlap'])
             }
         
+        # ===== NEW: Breakdown by country =====
+        countries = {}
+        for r in results:
+            country = r['country']
+            if country not in countries:
+                countries[country] = {'exact_match': [], 'overlap': []}
+            
+            countries[country]['exact_match'].append(r['metrics']['exact_match'])
+            countries[country]['overlap'].append(r['metrics']['overlap'])
+        
+        summary['by_country'] = {}
+        for country, metrics in countries.items():
+            summary['by_country'][country] = {
+                'count': len(metrics['exact_match']),
+                'exact_match': sum(metrics['exact_match']) / len(metrics['exact_match']),
+                'overlap': sum(metrics['overlap']) / len(metrics['overlap'])
+            }
+        # ===== END NEW =====
+        
         # Breakdown by predicate
         predicates = {}
         for r in results:
@@ -321,6 +340,21 @@ class DLAMAExperimentRunner:
             print(f"    Exact Match: {stats['exact_match']:.4f}")
             print(f"    Overlap: {stats['overlap']:.4f}")
         
+        # ===== NEW: Print country breakdown =====
+        print(f"\n By Country:")
+        # Sort by sample count (descending)
+        sorted_countries = sorted(
+            summary['by_country'].items(),
+            key=lambda x: x[1]['count'],
+            reverse=True
+        )
+        
+        for country, stats in sorted_countries:
+            print(f"  {country} (n={stats['count']}):")
+            print(f"    Exact Match: {stats['exact_match']:.4f}")
+            print(f"    Overlap: {stats['overlap']:.4f}")
+        # ===== END NEW =====
+        
         print(f"\n Top 5 Predicates:")
         sorted_preds = sorted(
             summary['by_predicate'].items(),
@@ -337,6 +371,7 @@ class DLAMAExperimentRunner:
 
 
 if __name__ == "__main__":
+    
     import argparse
     
     parser = argparse.ArgumentParser(description="Run DLAMA evaluation experiment")

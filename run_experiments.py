@@ -28,7 +28,7 @@ def main():
     print(f"GPU Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
     
     # Run experiments
-    runner = ExperimentRunner(Path(args.config))
+    runner = DLAMAExperimentRunner(Path(args.config))
     runner.run_all_experiments()
     
     print("\n✅ All experiments completed!")

@@ -1,0 +1,574 @@
+Culture,Country,Predicate,Accuracy (%),Samples
+Arab,Australia,P27 (Country of citizenship),100.0,1
+Arab,Brazil,P17 (Country),100.0,1
+Arab,Cameroon,P495 (Country of origin),0.0,1
+Arab,Canada,P27 (Country of citizenship),50.0,6
+Arab,Canada,P495 (Country of origin),0.0,3
+Arab,China,P17 (Country),100.0,1
+Arab,Comoros,P1376 (Capital of),100.0,1
+Arab,Comoros,P30 (Continent),100.0,1
+Arab,Comoros,P36 (Capital),100.0,1
+Arab,Comoros,P37 (Official language),100.0,1
+Arab,Comoros,P530 (Diplomatic relation),100.0,1
+Arab,Comoros,P1412 (Languages spoken or published),77.78,9
+Arab,Comoros,P17 (Country),63.64,33
+Arab,Comoros,P103 (Native language),50.0,4
+Arab,Comoros,P364 (Original language of work),50.0,2
+Arab,Comoros,P27 (Country of citizenship),43.75,16
+Arab,Comoros,P106 (Occupation),38.46,13
+Arab,Comoros,P19 (Place of birth),27.27,11
+Arab,Comoros,P495 (Country of origin),20.0,5
+Arab,Comoros,P20 (Place of death),7.14,14
+Arab,Comoros,P1303 (Instrument),0.0,7
+Arab,Comoros,P136 (Genre),0.0,2
+Arab,Comoros,P190 (Sister city),0.0,2
+Arab,Comoros,P264 (Record label),0.0,3
+Arab,Comoros,P47 (Shares border with),0.0,1
+Arab,Egypt,P1376 (Capital of),100.0,2
+Arab,Egypt,P30 (Continent),100.0,1
+Arab,Egypt,P36 (Capital),100.0,1
+Arab,Egypt,P37 (Official language),100.0,1
+Arab,Egypt,P17 (Country),72.86,140
+Arab,Egypt,P103 (Native language),69.01,413
+Arab,Egypt,P1412 (Languages spoken or published),59.19,272
+Arab,Egypt,P27 (Country of citizenship),41.14,175
+Arab,Egypt,P19 (Place of birth),34.15,205
+Arab,Egypt,P106 (Occupation),29.86,221
+Arab,Egypt,P364 (Original language of work),27.79,529
+Arab,Egypt,P449 (Original network),22.22,18
+Arab,Egypt,P20 (Place of death),20.17,233
+Arab,Egypt,P495 (Country of origin),9.8,408
+Arab,Egypt,P136 (Genre),8.33,60
+Arab,Egypt,P1303 (Instrument),0.65,155
+Arab,Egypt,P190 (Sister city),0.0,8
+Arab,Egypt,P264 (Record label),0.0,29
+Arab,Egypt,P47 (Shares border with),0.0,1
+Arab,Egypt,P530 (Diplomatic relation),0.0,1
+Arab,France,P27 (Country of citizenship),30.77,52
+Arab,France,P17 (Country),25.0,4
+Arab,France,P495 (Country of origin),7.69,52
+Arab,Germany,P495 (Country of origin),0.0,5
+Arab,Iraq,P103 (Native language),100.0,4
+Arab,Iraq,P1376 (Capital of),100.0,1
+Arab,Iraq,P36 (Capital),100.0,1
+Arab,Iraq,P37 (Official language),100.0,1
+Arab,Iraq,P47 (Shares border with),100.0,1
+Arab,Iraq,P17 (Country),75.0,12
+Arab,Iraq,P1412 (Languages spoken or published),61.54,13
+Arab,Iraq,P27 (Country of citizenship),26.67,30
+Arab,Iraq,P20 (Place of death),20.0,5
+Arab,Iraq,P106 (Occupation),9.38,32
+Arab,Iraq,P19 (Place of birth),9.09,22
+Arab,Iraq,P1303 (Instrument),0.0,17
+Arab,Iraq,P136 (Genre),0.0,8
+Arab,Iraq,P190 (Sister city),0.0,1
+Arab,Iraq,P264 (Record label),0.0,6
+Arab,Iraq,P30 (Continent),0.0,1
+Arab,Iraq,P364 (Original language of work),0.0,1
+Arab,Iraq,P449 (Original network),0.0,3
+Arab,Iraq,P495 (Country of origin),0.0,8
+Arab,Iraq,P530 (Diplomatic relation),0.0,1
+Arab,Italy,P17 (Country),100.0,1
+Arab,Japan,P495 (Country of origin),0.0,1
+Arab,Jordan,P36 (Capital),100.0,1
+Arab,Jordan,P37 (Official language),100.0,1
+Arab,Jordan,P103 (Native language),75.0,16
+Arab,Jordan,P17 (Country),64.29,28
+Arab,Jordan,P1412 (Languages spoken or published),63.16,19
+Arab,Jordan,P364 (Original language of work),60.0,10
+Arab,Jordan,P27 (Country of citizenship),45.0,20
+Arab,Jordan,P19 (Place of birth),41.67,12
+Arab,Jordan,P106 (Occupation),14.29,21
+Arab,Jordan,P495 (Country of origin),12.5,16
+Arab,Jordan,P20 (Place of death),2.56,39
+Arab,Jordan,P1303 (Instrument),0.0,18
+Arab,Jordan,P136 (Genre),0.0,5
+Arab,Jordan,P190 (Sister city),0.0,3
+Arab,Jordan,P264 (Record label),0.0,3
+Arab,Jordan,P30 (Continent),0.0,1
+Arab,Jordan,P449 (Original network),0.0,1
+Arab,Jordan,P47 (Shares border with),0.0,1
+Arab,Jordan,P530 (Diplomatic relation),0.0,1
+Arab,Kuwait,P1376 (Capital of),100.0,1
+Arab,Kuwait,P30 (Continent),100.0,1
+Arab,Kuwait,P36 (Capital),100.0,1
+Arab,Kuwait,P37 (Official language),100.0,1
+Arab,Kuwait,P17 (Country),72.13,61
+Arab,Kuwait,P1412 (Languages spoken or published),55.17,116
+Arab,Kuwait,P364 (Original language of work),27.34,139
+Arab,Kuwait,P103 (Native language),20.33,182
+Arab,Kuwait,P106 (Occupation),15.53,103
+Arab,Kuwait,P20 (Place of death),14.58,48
+Arab,Kuwait,P495 (Country of origin),13.21,106
+Arab,Kuwait,P27 (Country of citizenship),12.0,100
+Arab,Kuwait,P19 (Place of birth),9.09,88
+Arab,Kuwait,P190 (Sister city),8.33,12
+Arab,Kuwait,P136 (Genre),6.82,88
+Arab,Kuwait,P264 (Record label),3.85,26
+Arab,Kuwait,P1303 (Instrument),0.0,173
+Arab,Kuwait,P449 (Original network),0.0,41
+Arab,Kuwait,P47 (Shares border with),0.0,1
+Arab,Kuwait,P530 (Diplomatic relation),0.0,1
+Arab,Lebanon,P17 (Country),0.0,1
+Arab,Libya,P1376 (Capital of),100.0,1
+Arab,Libya,P20 (Place of death),100.0,1
+Arab,Libya,P30 (Continent),100.0,1
+Arab,Libya,P36 (Capital),100.0,1
+Arab,Libya,P37 (Official language),100.0,1
+Arab,Libya,P17 (Country),66.67,6
+Arab,Libya,P1412 (Languages spoken or published),62.5,8
+Arab,Libya,P364 (Original language of work),60.0,5
+Arab,Libya,P106 (Occupation),37.5,8
+Arab,Libya,P27 (Country of citizenship),28.57,7
+Arab,Libya,P103 (Native language),0.0,2
+Arab,Libya,P1303 (Instrument),0.0,2
+Arab,Libya,P136 (Genre),0.0,1
+Arab,Libya,P190 (Sister city),0.0,1
+Arab,Libya,P19 (Place of birth),0.0,7
+Arab,Libya,P264 (Record label),0.0,1
+Arab,Libya,P47 (Shares border with),0.0,1
+Arab,Libya,P495 (Country of origin),0.0,5
+Arab,Libya,P530 (Diplomatic relation),0.0,1
+Arab,Mauritania,P17 (Country),100.0,1
+Arab,Monaco,P27 (Country of citizenship),0.0,1
+Arab,Morocco,P103 (Native language),100.0,3
+Arab,Morocco,P1412 (Languages spoken or published),100.0,3
+Arab,Morocco,P30 (Continent),100.0,1
+Arab,Morocco,P36 (Capital),100.0,1
+Arab,Morocco,P37 (Official language),100.0,1
+Arab,Morocco,P106 (Occupation),50.0,4
+Arab,Morocco,P17 (Country),50.0,10
+Arab,Morocco,P27 (Country of citizenship),33.33,3
+Arab,Morocco,P495 (Country of origin),33.33,6
+Arab,Morocco,P1303 (Instrument),0.0,3
+Arab,Morocco,P136 (Genre),0.0,1
+Arab,Morocco,P190 (Sister city),0.0,1
+Arab,Morocco,P19 (Place of birth),0.0,3
+Arab,Morocco,P20 (Place of death),0.0,2
+Arab,Morocco,P47 (Shares border with),0.0,1
+Arab,Morocco,P530 (Diplomatic relation),0.0,1
+Arab,Netherlands,P495 (Country of origin),0.0,1
+Arab,Somalia,P495 (Country of origin),0.0,1
+Arab,South Sudan,P30 (Continent),100.0,1
+Arab,South Sudan,P36 (Capital),100.0,1
+Arab,South Sudan,P37 (Official language),100.0,1
+Arab,South Sudan,P530 (Diplomatic relation),100.0,1
+Arab,South Sudan,P17 (Country),94.83,58
+Arab,South Sudan,P364 (Original language of work),64.71,34
+Arab,South Sudan,P1412 (Languages spoken or published),63.64,77
+Arab,South Sudan,P103 (Native language),60.0,15
+Arab,South Sudan,P106 (Occupation),25.86,58
+Arab,South Sudan,P27 (Country of citizenship),22.73,44
+Arab,South Sudan,P19 (Place of birth),20.83,72
+Arab,South Sudan,P495 (Country of origin),8.33,36
+Arab,South Sudan,P20 (Place of death),7.21,111
+Arab,South Sudan,P1303 (Instrument),5.88,51
+Arab,South Sudan,P136 (Genre),4.17,24
+Arab,South Sudan,P190 (Sister city),0.0,6
+Arab,South Sudan,P264 (Record label),0.0,3
+Arab,South Sudan,P449 (Original network),0.0,2
+Arab,South Sudan,P47 (Shares border with),0.0,1
+Arab,Spain,P495 (Country of origin),0.0,1
+Arab,Switzerland,P27 (Country of citizenship),0.0,1
+Arab,Switzerland,P495 (Country of origin),0.0,1
+Arab,Syria,P36 (Capital),100.0,1
+Arab,Syria,P37 (Official language),100.0,1
+Arab,Syria,P103 (Native language),85.63,174
+Arab,Syria,P1412 (Languages spoken or published),70.3,101
+Arab,Syria,P17 (Country),66.94,124
+Arab,Syria,P27 (Country of citizenship),48.65,74
+Arab,Syria,P19 (Place of birth),36.73,147
+Arab,Syria,P364 (Original language of work),33.33,24
+Arab,Syria,P106 (Occupation),29.87,77
+Arab,Syria,P495 (Country of origin),10.0,50
+Arab,Syria,P20 (Place of death),6.31,111
+Arab,Syria,P1303 (Instrument),0.0,29
+Arab,Syria,P136 (Genre),0.0,12
+Arab,Syria,P190 (Sister city),0.0,2
+Arab,Syria,P264 (Record label),0.0,7
+Arab,Syria,P30 (Continent),0.0,1
+Arab,Syria,P449 (Original network),0.0,7
+Arab,Syria,P47 (Shares border with),0.0,1
+Arab,Syria,P530 (Diplomatic relation),0.0,1
+Arab,Tunisia,P103 (Native language),100.0,3
+Arab,Tunisia,P30 (Continent),100.0,1
+Arab,Tunisia,P36 (Capital),100.0,1
+Arab,Tunisia,P37 (Official language),100.0,1
+Arab,Tunisia,P47 (Shares border with),100.0,1
+Arab,Tunisia,P1412 (Languages spoken or published),83.33,12
+Arab,Tunisia,P17 (Country),72.97,37
+Arab,Tunisia,P364 (Original language of work),62.5,16
+Arab,Tunisia,P27 (Country of citizenship),47.06,17
+Arab,Tunisia,P19 (Place of birth),29.41,17
+Arab,Tunisia,P106 (Occupation),21.05,19
+Arab,Tunisia,P20 (Place of death),9.09,11
+Arab,Tunisia,P495 (Country of origin),3.23,31
+Arab,Tunisia,P1303 (Instrument),0.0,10
+Arab,Tunisia,P136 (Genre),0.0,5
+Arab,Tunisia,P190 (Sister city),0.0,1
+Arab,Tunisia,P264 (Record label),0.0,3
+Arab,Tunisia,P449 (Original network),0.0,5
+Arab,Tunisia,P530 (Diplomatic relation),0.0,1
+Arab,UAE,P1376 (Capital of),100.0,2
+Arab,UAE,P37 (Official language),100.0,1
+Arab,UAE,P1412 (Languages spoken or published),87.5,8
+Arab,UAE,P17 (Country),82.35,34
+Arab,UAE,P103 (Native language),66.67,3
+Arab,UAE,P364 (Original language of work),60.0,5
+Arab,UAE,P106 (Occupation),40.0,15
+Arab,UAE,P27 (Country of citizenship),38.46,13
+Arab,UAE,P19 (Place of birth),20.0,15
+Arab,UAE,P20 (Place of death),7.14,14
+Arab,UAE,P1303 (Instrument),0.0,19
+Arab,UAE,P136 (Genre),0.0,3
+Arab,UAE,P190 (Sister city),0.0,2
+Arab,UAE,P264 (Record label),0.0,1
+Arab,UAE,P30 (Continent),0.0,1
+Arab,UAE,P36 (Capital),0.0,1
+Arab,UAE,P449 (Original network),0.0,2
+Arab,UAE,P47 (Shares border with),0.0,1
+Arab,UAE,P495 (Country of origin),0.0,11
+Arab,UAE,P530 (Diplomatic relation),0.0,1
+Arab,UK,P17 (Country),100.0,3
+Arab,UK,P27 (Country of citizenship),28.57,14
+Arab,UK,P495 (Country of origin),9.09,11
+Arab,USA,P17 (Country),80.0,5
+Arab,USA,P27 (Country of citizenship),9.09,11
+Arab,USA,P495 (Country of origin),0.0,5
+Arab,Unknown Country,P36 (Capital),100.0,11
+Arab,Unknown Country,P37 (Official language),100.0,11
+Arab,Unknown Country,P1376 (Capital of),93.75,16
+Arab,Unknown Country,P30 (Continent),81.82,11
+Arab,Unknown Country,P103 (Native language),69.61,181
+Arab,Unknown Country,P17 (Country),67.5,440
+Arab,Unknown Country,P1412 (Languages spoken or published),58.01,362
+Arab,Unknown Country,P47 (Shares border with),45.45,11
+Arab,Unknown Country,P106 (Occupation),37.06,429
+Arab,Unknown Country,P364 (Original language of work),29.79,235
+Arab,Unknown Country,P530 (Diplomatic relation),27.27,11
+Arab,Unknown Country,P27 (Country of citizenship),24.1,415
+Arab,Unknown Country,P19 (Place of birth),22.69,401
+Arab,Unknown Country,P20 (Place of death),9.73,411
+Arab,Unknown Country,P495 (Country of origin),9.32,236
+Arab,Unknown Country,P190 (Sister city),7.14,28
+Arab,Unknown Country,P136 (Genre),6.58,243
+Arab,Unknown Country,P264 (Record label),2.38,84
+Arab,Unknown Country,P1303 (Instrument),1.55,516
+Arab,Unknown Country,P449 (Original network),0.0,48
+Western,Andorra,P1376 (Capital of),100.0,1
+Western,Andorra,P36 (Capital),100.0,1
+Western,Andorra,P37 (Official language),100.0,1
+Western,Andorra,P47 (Shares border with),100.0,1
+Western,Andorra,P30 (Continent),0.0,1
+Western,Andorra,P530 (Diplomatic relation),0.0,1
+Western,Australia,P103 (Native language),100.0,5
+Western,Australia,P364 (Original language of work),100.0,4
+Western,Australia,P36 (Capital),100.0,1
+Western,Australia,P37 (Official language),100.0,1
+Western,Australia,P27 (Country of citizenship),81.25,16
+Western,Australia,P106 (Occupation),76.47,17
+Western,Australia,P17 (Country),75.0,12
+Western,Australia,P19 (Place of birth),52.38,21
+Western,Australia,P20 (Place of death),33.33,6
+Western,Australia,P1412 (Languages spoken or published),29.41,17
+Western,Australia,P136 (Genre),18.75,16
+Western,Australia,P1303 (Instrument),11.54,26
+Western,Australia,P264 (Record label),3.85,26
+Western,Australia,P190 (Sister city),0.0,14
+Western,Australia,P30 (Continent),0.0,1
+Western,Australia,P449 (Original network),0.0,9
+Western,Australia,P47 (Shares border with),0.0,1
+Western,Australia,P495 (Country of origin),0.0,9
+Western,Australia,P530 (Diplomatic relation),0.0,1
+Western,Austria,P103 (Native language),100.0,3
+Western,Austria,P1412 (Languages spoken or published),100.0,2
+Western,Austria,P30 (Continent),100.0,1
+Western,Austria,P36 (Capital),100.0,1
+Western,Austria,P37 (Official language),100.0,1
+Western,Austria,P17 (Country),80.0,10
+Western,Austria,P19 (Place of birth),57.14,7
+Western,Austria,P136 (Genre),50.0,4
+Western,Austria,P495 (Country of origin),50.0,2
+Western,Austria,P20 (Place of death),33.33,9
+Western,Austria,P264 (Record label),25.0,4
+Western,Austria,P106 (Occupation),0.0,1
+Western,Austria,P1303 (Instrument),0.0,3
+Western,Austria,P190 (Sister city),0.0,5
+Western,Austria,P27 (Country of citizenship),0.0,1
+Western,Austria,P449 (Original network),0.0,1
+Western,Austria,P47 (Shares border with),0.0,1
+Western,Austria,P530 (Diplomatic relation),0.0,1
+Western,Belgium,P30 (Continent),100.0,1
+Western,Belgium,P36 (Capital),100.0,1
+Western,Belgium,P37 (Official language),100.0,1
+Western,Belgium,P47 (Shares border with),100.0,1
+Western,Belgium,P17 (Country),64.29,14
+Western,Belgium,P106 (Occupation),60.0,10
+Western,Belgium,P495 (Country of origin),60.0,5
+Western,Belgium,P103 (Native language),42.86,14
+Western,Belgium,P136 (Genre),25.0,4
+Western,Belgium,P20 (Place of death),25.0,8
+Western,Belgium,P19 (Place of birth),16.67,12
+Western,Belgium,P27 (Country of citizenship),14.29,7
+Western,Belgium,P1412 (Languages spoken or published),12.5,8
+Western,Belgium,P1303 (Instrument),0.0,2
+Western,Belgium,P190 (Sister city),0.0,10
+Western,Belgium,P264 (Record label),0.0,2
+Western,Belgium,P449 (Original network),0.0,1
+Western,Belgium,P530 (Diplomatic relation),0.0,1
+Western,Brazil,P27 (Country of citizenship),66.67,3
+Western,Canada,P1376 (Capital of),100.0,1
+Western,Canada,P30 (Continent),100.0,1
+Western,Canada,P36 (Capital),100.0,1
+Western,Canada,P37 (Official language),100.0,1
+Western,Canada,P17 (Country),84.0,25
+Western,Canada,P103 (Native language),82.61,23
+Western,Canada,P106 (Occupation),81.58,38
+Western,Canada,P364 (Original language of work),75.0,20
+Western,Canada,P1412 (Languages spoken or published),50.0,32
+Western,Canada,P19 (Place of birth),33.33,33
+Western,Canada,P136 (Genre),31.25,32
+Western,Canada,P27 (Country of citizenship),20.51,39
+Western,Canada,P1303 (Instrument),18.42,38
+Western,Canada,P20 (Place of death),16.67,12
+Western,Canada,P449 (Original network),10.2,49
+Western,Canada,P495 (Country of origin),8.0,25
+Western,Canada,P190 (Sister city),3.45,29
+Western,Canada,P264 (Record label),2.94,34
+Western,Canada,P47 (Shares border with),0.0,1
+Western,Canada,P530 (Diplomatic relation),0.0,1
+Western,China,P17 (Country),0.0,1
+Western,China,P495 (Country of origin),0.0,1
+Western,France,P1376 (Capital of),100.0,2
+Western,France,P30 (Continent),100.0,1
+Western,France,P37 (Official language),100.0,1
+Western,France,P103 (Native language),86.29,175
+Western,France,P106 (Occupation),73.55,155
+Western,France,P17 (Country),72.09,215
+Western,France,P364 (Original language of work),66.67,42
+Western,France,P1412 (Languages spoken or published),61.05,172
+Western,France,P19 (Place of birth),53.97,126
+Western,France,P136 (Genre),33.62,116
+Western,France,P27 (Country of citizenship),25.0,152
+Western,France,P495 (Country of origin),22.81,57
+Western,France,P1303 (Instrument),17.33,75
+Western,France,P20 (Place of death),16.93,189
+Western,France,P190 (Sister city),5.0,40
+Western,France,P264 (Record label),1.75,57
+Western,France,P36 (Capital),0.0,1
+Western,France,P449 (Original network),0.0,39
+Western,France,P47 (Shares border with),0.0,1
+Western,France,P530 (Diplomatic relation),0.0,1
+Western,Germany,P1376 (Capital of),100.0,2
+Western,Germany,P30 (Continent),100.0,1
+Western,Germany,P36 (Capital),100.0,1
+Western,Germany,P37 (Official language),100.0,1
+Western,Germany,P103 (Native language),91.67,36
+Western,Germany,P364 (Original language of work),88.0,25
+Western,Germany,P17 (Country),79.57,93
+Western,Germany,P1412 (Languages spoken or published),40.96,83
+Western,Germany,P19 (Place of birth),36.36,88
+Western,Germany,P106 (Occupation),35.62,73
+Western,Germany,P136 (Genre),34.38,32
+Western,Germany,P495 (Country of origin),29.17,24
+Western,Germany,P27 (Country of citizenship),12.99,77
+Western,Germany,P20 (Place of death),8.47,118
+Western,Germany,P1303 (Instrument),4.17,24
+Western,Germany,P190 (Sister city),0.0,77
+Western,Germany,P264 (Record label),0.0,14
+Western,Germany,P449 (Original network),0.0,13
+Western,Germany,P47 (Shares border with),0.0,1
+Western,Germany,P530 (Diplomatic relation),0.0,1
+Western,Ireland,P106 (Occupation),100.0,7
+Western,Ireland,P30 (Continent),100.0,1
+Western,Ireland,P36 (Capital),100.0,1
+Western,Ireland,P37 (Official language),100.0,1
+Western,Ireland,P47 (Shares border with),100.0,1
+Western,Ireland,P17 (Country),66.67,3
+Western,Ireland,P103 (Native language),50.0,2
+Western,Ireland,P1412 (Languages spoken or published),50.0,6
+Western,Ireland,P136 (Genre),46.15,13
+Western,Ireland,P19 (Place of birth),33.33,6
+Western,Ireland,P264 (Record label),22.22,9
+Western,Ireland,P1303 (Instrument),0.0,10
+Western,Ireland,P1376 (Capital of),0.0,1
+Western,Ireland,P190 (Sister city),0.0,2
+Western,Ireland,P20 (Place of death),0.0,2
+Western,Ireland,P27 (Country of citizenship),0.0,6
+Western,Ireland,P449 (Original network),0.0,1
+Western,Ireland,P495 (Country of origin),0.0,4
+Western,Ireland,P530 (Diplomatic relation),0.0,1
+Western,Italy,P30 (Continent),100.0,1
+Western,Italy,P36 (Capital),100.0,1
+Western,Italy,P37 (Official language),100.0,1
+Western,Italy,P47 (Shares border with),100.0,1
+Western,Italy,P103 (Native language),90.0,40
+Western,Italy,P1412 (Languages spoken or published),77.27,44
+Western,Italy,P17 (Country),76.32,38
+Western,Italy,P364 (Original language of work),66.67,3
+Western,Italy,P106 (Occupation),55.56,36
+Western,Italy,P19 (Place of birth),50.88,57
+Western,Italy,P449 (Original network),25.0,4
+Western,Italy,P20 (Place of death),23.75,80
+Western,Italy,P27 (Country of citizenship),23.08,26
+Western,Italy,P495 (Country of origin),22.22,9
+Western,Italy,P136 (Genre),15.91,44
+Western,Italy,P1303 (Instrument),4.55,44
+Western,Italy,P190 (Sister city),0.0,40
+Western,Italy,P264 (Record label),0.0,37
+Western,Italy,P530 (Diplomatic relation),0.0,1
+Western,Japan,P17 (Country),100.0,1
+Western,Japan,P27 (Country of citizenship),100.0,1
+Western,Japan,P495 (Country of origin),0.0,4
+Western,Kuwait,P17 (Country),0.0,1
+Western,Kuwait,P27 (Country of citizenship),0.0,1
+Western,Liechtenstein,P1376 (Capital of),100.0,1
+Western,Liechtenstein,P30 (Continent),100.0,1
+Western,Liechtenstein,P36 (Capital),100.0,1
+Western,Liechtenstein,P37 (Official language),100.0,1
+Western,Liechtenstein,P47 (Shares border with),100.0,1
+Western,Liechtenstein,P530 (Diplomatic relation),0.0,1
+Western,Luxembourg,P30 (Continent),100.0,1
+Western,Luxembourg,P36 (Capital),100.0,1
+Western,Luxembourg,P37 (Official language),100.0,1
+Western,Luxembourg,P47 (Shares border with),100.0,1
+Western,Luxembourg,P17 (Country),75.0,4
+Western,Luxembourg,P190 (Sister city),0.0,1
+Western,Luxembourg,P530 (Diplomatic relation),0.0,1
+Western,Monaco,P1376 (Capital of),100.0,1
+Western,Monaco,P30 (Continent),100.0,1
+Western,Monaco,P37 (Official language),100.0,1
+Western,Monaco,P47 (Shares border with),100.0,1
+Western,Monaco,P136 (Genre),0.0,1
+Western,Monaco,P36 (Capital),0.0,1
+Western,Monaco,P530 (Diplomatic relation),0.0,1
+Western,Netherlands,P103 (Native language),100.0,1
+Western,Netherlands,P364 (Original language of work),100.0,1
+Western,Netherlands,P17 (Country),66.67,3
+Western,Netherlands,P20 (Place of death),20.0,5
+Western,Netherlands,P19 (Place of birth),18.18,11
+Western,Netherlands,P190 (Sister city),10.0,10
+Western,Netherlands,P449 (Original network),0.0,1
+Western,Netherlands,P495 (Country of origin),0.0,6
+Western,New Zealand,P103 (Native language),100.0,1
+Western,New Zealand,P1412 (Languages spoken or published),100.0,1
+Western,New Zealand,P19 (Place of birth),100.0,1
+Western,New Zealand,P36 (Capital),100.0,1
+Western,New Zealand,P37 (Official language),100.0,1
+Western,New Zealand,P47 (Shares border with),100.0,1
+Western,New Zealand,P495 (Country of origin),100.0,1
+Western,New Zealand,P530 (Diplomatic relation),100.0,1
+Western,New Zealand,P17 (Country),66.67,6
+Western,New Zealand,P106 (Occupation),50.0,2
+Western,New Zealand,P27 (Country of citizenship),50.0,2
+Western,New Zealand,P136 (Genre),33.33,3
+Western,New Zealand,P1303 (Instrument),20.0,5
+Western,New Zealand,P264 (Record label),20.0,5
+Western,New Zealand,P1376 (Capital of),0.0,1
+Western,New Zealand,P190 (Sister city),0.0,4
+Western,New Zealand,P30 (Continent),0.0,1
+Western,Portugal,P19 (Place of birth),100.0,4
+Western,Portugal,P30 (Continent),100.0,1
+Western,Portugal,P36 (Capital),100.0,1
+Western,Portugal,P37 (Official language),100.0,1
+Western,Portugal,P47 (Shares border with),100.0,1
+Western,Portugal,P495 (Country of origin),100.0,1
+Western,Portugal,P103 (Native language),90.0,10
+Western,Portugal,P1412 (Languages spoken or published),71.43,7
+Western,Portugal,P136 (Genre),50.0,2
+Western,Portugal,P17 (Country),50.0,8
+Western,Portugal,P106 (Occupation),40.0,5
+Western,Portugal,P20 (Place of death),28.57,7
+Western,Portugal,P1303 (Instrument),0.0,2
+Western,Portugal,P190 (Sister city),0.0,11
+Western,Portugal,P264 (Record label),0.0,2
+Western,Portugal,P27 (Country of citizenship),0.0,4
+Western,Portugal,P530 (Diplomatic relation),0.0,1
+Western,San Marino,P1376 (Capital of),100.0,1
+Western,San Marino,P36 (Capital),100.0,1
+Western,San Marino,P37 (Official language),100.0,1
+Western,San Marino,P47 (Shares border with),100.0,1
+Western,San Marino,P30 (Continent),0.0,1
+Western,San Marino,P530 (Diplomatic relation),0.0,1
+Western,Spain,P1376 (Capital of),100.0,1
+Western,Spain,P30 (Continent),100.0,1
+Western,Spain,P36 (Capital),100.0,1
+Western,Spain,P37 (Official language),100.0,1
+Western,Spain,P47 (Shares border with),100.0,1
+Western,Spain,P1412 (Languages spoken or published),90.32,31
+Western,Spain,P103 (Native language),86.96,23
+Western,Spain,P364 (Original language of work),85.71,7
+Western,Spain,P17 (Country),79.2,125
+Western,Spain,P106 (Occupation),57.69,26
+Western,Spain,P19 (Place of birth),44.44,27
+Western,Spain,P495 (Country of origin),40.0,5
+Western,Spain,P136 (Genre),33.33,42
+Western,Spain,P27 (Country of citizenship),22.73,22
+Western,Spain,P264 (Record label),16.67,24
+Western,Spain,P20 (Place of death),11.11,36
+Western,Spain,P1303 (Instrument),8.7,23
+Western,Spain,P190 (Sister city),4.55,22
+Western,Spain,P449 (Original network),0.0,10
+Western,Spain,P530 (Diplomatic relation),0.0,1
+Western,Switzerland,P30 (Continent),100.0,1
+Western,Switzerland,P36 (Capital),100.0,1
+Western,Switzerland,P37 (Official language),100.0,1
+Western,Switzerland,P47 (Shares border with),100.0,1
+Western,Switzerland,P495 (Country of origin),100.0,1
+Western,Switzerland,P17 (Country),90.0,10
+Western,Switzerland,P19 (Place of birth),87.5,8
+Western,Switzerland,P103 (Native language),75.0,4
+Western,Switzerland,P106 (Occupation),72.73,11
+Western,Switzerland,P1303 (Instrument),50.0,2
+Western,Switzerland,P1412 (Languages spoken or published),44.44,9
+Western,Switzerland,P136 (Genre),33.33,6
+Western,Switzerland,P20 (Place of death),9.09,22
+Western,Switzerland,P190 (Sister city),0.0,4
+Western,Switzerland,P264 (Record label),0.0,1
+Western,Switzerland,P27 (Country of citizenship),0.0,9
+Western,Switzerland,P449 (Original network),0.0,1
+Western,Switzerland,P530 (Diplomatic relation),0.0,1
+Western,UK,P1376 (Capital of),100.0,1
+Western,UK,P30 (Continent),100.0,1
+Western,UK,P36 (Capital),100.0,1
+Western,UK,P37 (Official language),100.0,1
+Western,UK,P103 (Native language),89.68,126
+Western,UK,P364 (Original language of work),88.06,134
+Western,UK,P106 (Occupation),71.64,134
+Western,UK,P17 (Country),51.19,84
+Western,UK,P449 (Original network),40.82,98
+Western,UK,P136 (Genre),32.96,179
+Western,UK,P19 (Place of birth),26.09,115
+Western,UK,P1303 (Instrument),22.22,171
+Western,UK,P1412 (Languages spoken or published),17.84,185
+Western,UK,P27 (Country of citizenship),17.83,129
+Western,UK,P20 (Place of death),15.18,112
+Western,UK,P264 (Record label),13.87,173
+Western,UK,P190 (Sister city),9.09,44
+Western,UK,P495 (Country of origin),4.35,138
+Western,UK,P47 (Shares border with),0.0,1
+Western,UK,P530 (Diplomatic relation),0.0,1
+Western,USA,P30 (Continent),100.0,1
+Western,USA,P37 (Official language),100.0,1
+Western,USA,P47 (Shares border with),100.0,1
+Western,USA,P530 (Diplomatic relation),100.0,1
+Western,USA,P103 (Native language),85.1,537
+Western,USA,P364 (Original language of work),81.68,764
+Western,USA,P106 (Occupation),67.42,485
+Western,USA,P136 (Genre),33.0,506
+Western,USA,P449 (Original network),31.18,773
+Western,USA,P1412 (Languages spoken or published),24.81,403
+Western,USA,P19 (Place of birth),20.04,484
+Western,USA,P1303 (Instrument),16.35,575
+Western,USA,P20 (Place of death),9.14,394
+Western,USA,P264 (Record label),8.5,612
+Western,USA,P190 (Sister city),2.58,155
+Western,USA,P17 (Country),1.8,334
+Western,USA,P27 (Country of citizenship),0.85,471
+Western,USA,P495 (Country of origin),0.14,706
+Western,USA,P1376 (Capital of),0.0,1
+Western,USA,P36 (Capital),0.0,1
+Western,Unknown Country,P1376 (Capital of),91.67,12
+Western,Unknown Country,P17 (Country),69.23,13
+Western,Unknown Country,P495 (Country of origin),50.0,2
+Western,Unknown Country,P27 (Country of citizenship),17.65,34

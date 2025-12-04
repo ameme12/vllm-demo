@@ -1,0 +1,319 @@
+{
+  "total_samples": 27067,
+  "aggregate_metrics": {
+    "exact_match": {
+      "mean": 0.15336018029334614,
+      "count": 27067
+    },
+    "overlap": {
+      "mean": 0.35201536926885135,
+      "count": 27067
+    }
+  },
+  "by_culture": {
+    "Asian": {
+      "count": 13479,
+      "exact_match": 0.14808220194376437,
+      "overlap": 0.3399361970472587
+    },
+    "Western": {
+      "count": 13588,
+      "exact_match": 0.1585958198410362,
+      "overlap": 0.36399764498086545
+    }
+  },
+  "by_country": {
+    "Japan": {
+      "count": 9292,
+      "exact_match": 0.1513129573826948,
+      "overlap": 0.3582651743435213
+    },
+    "South Korea": {
+      "count": 1867,
+      "exact_match": 0.19657204070701662,
+      "overlap": 0.30208891269416177
+    },
+    "China": {
+      "count": 1065,
+      "exact_match": 0.059154929577464786,
+      "overlap": 0.1699530516431925
+    },
+    "Thailand": {
+      "count": 284,
+      "exact_match": 0.14788732394366197,
+      "overlap": 0.3591549295774648
+    },
+    "Taiwan": {
+      "count": 264,
+      "exact_match": 0.10606060606060606,
+      "overlap": 0.35984848484848486
+    },
+    "Myanmar": {
+      "count": 35,
+      "exact_match": 0.11428571428571428,
+      "overlap": 0.5142857142857142
+    },
+    "Indonesia": {
+      "count": 83,
+      "exact_match": 0.14457831325301204,
+      "overlap": 0.4939759036144578
+    },
+    "North Korea": {
+      "count": 75,
+      "exact_match": 0.14666666666666667,
+      "overlap": 0.32
+    },
+    "Philippines": {
+      "count": 112,
+      "exact_match": 0.16964285714285715,
+      "overlap": 0.5267857142857143
+    },
+    "Malaysia": {
+      "count": 101,
+      "exact_match": 0.18811881188118812,
+      "overlap": 0.504950495049505
+    },
+    "Singapore": {
+      "count": 30,
+      "exact_match": 0.06666666666666667,
+      "overlap": 0.6
+    },
+    "Vietnam": {
+      "count": 174,
+      "exact_match": 0.08045977011494253,
+      "overlap": 0.27586206896551724
+    },
+    "France": {
+      "count": 1613,
+      "exact_match": 0.1940483570985741,
+      "overlap": 0.47303161810291383
+    },
+    "UK": {
+      "count": 1952,
+      "exact_match": 0.15163934426229508,
+      "overlap": 0.36424180327868855
+    },
+    "USA": {
+      "count": 7235,
+      "exact_match": 0.151209398756047,
+      "overlap": 0.31665514858327576
+    },
+    "Spain": {
+      "count": 390,
+      "exact_match": 0.1717948717948718,
+      "overlap": 0.5128205128205128
+    },
+    "Portugal": {
+      "count": 69,
+      "exact_match": 0.2898550724637681,
+      "overlap": 0.4927536231884058
+    },
+    "Italy": {
+      "count": 496,
+      "exact_match": 0.21169354838709678,
+      "overlap": 0.40524193548387094
+    },
+    "Switzerland": {
+      "count": 106,
+      "exact_match": 0.1320754716981132,
+      "overlap": 0.3867924528301887
+    },
+    "Canada": {
+      "count": 478,
+      "exact_match": 0.14644351464435146,
+      "overlap": 0.33472803347280333
+    },
+    "Australia": {
+      "count": 198,
+      "exact_match": 0.1414141414141414,
+      "overlap": 0.4595959595959596
+    },
+    "Germany": {
+      "count": 615,
+      "exact_match": 0.15609756097560976,
+      "overlap": 0.44227642276422763
+    },
+    "Belgium": {
+      "count": 100,
+      "exact_match": 0.06,
+      "overlap": 0.31
+    },
+    "Ireland": {
+      "count": 88,
+      "exact_match": 0.125,
+      "overlap": 0.3522727272727273
+    },
+    "Austria": {
+      "count": 75,
+      "exact_match": 0.16,
+      "overlap": 0.49333333333333335
+    },
+    "New Zealand": {
+      "count": 40,
+      "exact_match": 0.125,
+      "overlap": 0.5
+    },
+    "Netherlands": {
+      "count": 35,
+      "exact_match": 0.05714285714285714,
+      "overlap": 0.2857142857142857
+    },
+    "Mongolia": {
+      "count": 18,
+      "exact_match": 0.2777777777777778,
+      "overlap": 0.5555555555555556
+    },
+    "Monaco": {
+      "count": 7,
+      "exact_match": 0.2857142857142857,
+      "overlap": 0.5714285714285714
+    },
+    "Unknown Country": {
+      "count": 137,
+      "exact_match": 0.06569343065693431,
+      "overlap": 0.48905109489051096
+    },
+    "Luxembourg": {
+      "count": 10,
+      "exact_match": 0.4,
+      "overlap": 0.8
+    },
+    "Liechtenstein": {
+      "count": 6,
+      "exact_match": 0.3333333333333333,
+      "overlap": 0.8333333333333334
+    },
+    "Andorra": {
+      "count": 6,
+      "exact_match": 0.3333333333333333,
+      "overlap": 0.8333333333333334
+    },
+    "San Marino": {
+      "count": 6,
+      "exact_match": 0.16666666666666666,
+      "overlap": 0.6666666666666666
+    },
+    "Lebanon": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "Comoros": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 1.0
+    },
+    "Brazil": {
+      "count": 2,
+      "exact_match": 0.0,
+      "overlap": 0.5
+    },
+    "Kuwait": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    }
+  },
+  "by_predicate": {
+    "P103": {
+      "count": 2000,
+      "exact_match": 0.773,
+      "overlap": 0.8705
+    },
+    "P106": {
+      "count": 2000,
+      "exact_match": 0.291,
+      "overlap": 0.5605
+    },
+    "P1303": {
+      "count": 2000,
+      "exact_match": 0.017,
+      "overlap": 0.1365
+    },
+    "P136": {
+      "count": 2000,
+      "exact_match": 0.0035,
+      "overlap": 0.198
+    },
+    "P1376": {
+      "count": 53,
+      "exact_match": 0.3018867924528302,
+      "overlap": 0.8490566037735849
+    },
+    "P1412": {
+      "count": 2000,
+      "exact_match": 0.2665,
+      "overlap": 0.4925
+    },
+    "P17": {
+      "count": 2000,
+      "exact_match": 0.0455,
+      "overlap": 0.573
+    },
+    "P190": {
+      "count": 854,
+      "exact_match": 0.00468384074941452,
+      "overlap": 0.01756440281030445
+    },
+    "P19": {
+      "count": 2000,
+      "exact_match": 0.044,
+      "overlap": 0.382
+    },
+    "P20": {
+      "count": 2000,
+      "exact_match": 0.017,
+      "overlap": 0.1465
+    },
+    "P264": {
+      "count": 2000,
+      "exact_match": 0.029,
+      "overlap": 0.0455
+    },
+    "P27": {
+      "count": 2000,
+      "exact_match": 0.0,
+      "overlap": 0.242
+    },
+    "P30": {
+      "count": 32,
+      "exact_match": 0.34375,
+      "overlap": 0.84375
+    },
+    "P364": {
+      "count": 2000,
+      "exact_match": 0.491,
+      "overlap": 0.7775
+    },
+    "P36": {
+      "count": 32,
+      "exact_match": 0.65625,
+      "overlap": 0.875
+    },
+    "P37": {
+      "count": 32,
+      "exact_match": 0.34375,
+      "overlap": 1.0
+    },
+    "P449": {
+      "count": 2000,
+      "exact_match": 0.047,
+      "overlap": 0.1545
+    },
+    "P47": {
+      "count": 32,
+      "exact_match": 0.125,
+      "overlap": 0.5625
+    },
+    "P495": {
+      "count": 2000,
+      "exact_match": 0.0175,
+      "overlap": 0.1
+    },
+    "P530": {
+      "count": 32,
+      "exact_match": 0.0,
+      "overlap": 0.15625
+    }
+  }
+}

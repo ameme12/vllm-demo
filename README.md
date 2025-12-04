@@ -1,338 +1,363 @@
-# BLEnD Evaluation Pipeline
+# vllm-demo: Cultural Bias Evaluation Framework
 
-Complete automation pipeline for evaluating LLMs on the BLEnD (Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages) dataset.
+A comprehensive evaluation framework for assessing cultural bias and knowledge distribution in Large Language Models (LLMs). This project implements multiple cultural knowledge benchmarks to compare how well models like Llama and Qwen understand factual knowledge across different cultures.
+
+**Repository**: [ameme12/vllm-demo](https://github.com/ameme12/vllm-demo)
+
+## 🎯 Overview
+
+This framework evaluates cultural bias in language models by testing their factual knowledge across different cultural contexts. We use multiple benchmarks to assess whether models exhibit bias toward specific cultures and how well they capture knowledge from diverse cultural perspectives.
+
+## 📊 Benchmarks Implemented
+
+### 1. DLAMA (Diverse Language Adaptive Multilingual Assessment)
+Evaluates factual knowledge queries across cultural contexts using Wikidata predicates.
+
+**Datasets:**
+- **DLAMA Arab-West**: Compares knowledge about Arab vs Western cultures
+- **DLAMA Asia-West**: Compares knowledge about Asian vs Western cultures
+
+**Predicates Tested** (20 total):
+- **Demographics**: P106 (Occupation), P27 (Country of citizenship), P19 (Place of birth)
+- **Geography**: P17 (Country), P30 (Continent), P36 (Capital), P47 (Shares border with)
+- **Language**: P37 (Official language), P103 (Native language), P1412 (Languages spoken)
+- **Culture**: P136 (Genre), P495 (Country of origin), P364 (Original language of work)
+- **Organizations**: P264 (Record label), P449 (Original network), P190 (Sister city)
+- **Miscellaneous**: P1303 (Instrument), P530 (Diplomatic relation), P20 (Place of death), P1376 (Capital of)
+
+### 2. Culture-Gen
+Evaluates cultural perception and stereotypes across 110 countries/regions covering 8 culture-related topics.
+
+**Topics:**
+- Food preferences
+- Social customs
+- Religious practices
+- Traditional celebrations
+- Family structures
+- Communication styles
+- Work culture
+- Art and aesthetics
+
+### 3. Additional Benchmarks
+*(Based on your evaluation pipeline structure)*
+- Multiple choice evaluations
+- Free-form generation tasks
+- Probability-based assessments
+
+## 🤖 Models Evaluated
+
+- **Llama 3.2-3B-Instruct** (`meta-llama/Llama-3.2-3B-Instruct`)
+- **Qwen 2.5-3B-Instruct** (`Qwen/Qwen2.5-3B-Instruct`)
+
+### Evaluation Setup
+- **Temperature**: 0.0 (deterministic generation)
+- **Inference Engine**: vLLM for efficient batch processing
+- **Fuzzy Matching**: RapidFuzz with threshold of 80
+- **Metrics**: Exact match and substring overlap
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.10+
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer and resolver
+- CUDA-capable GPU (recommended for model inference)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ameme12/vllm-demo.git
+cd vllm-demo
+
+# Install dependencies with uv
+uv sync
+```
+
+### Running Evaluations
+
+#### DLAMA Benchmark
+
+**Arab-West Dataset:**
+```bash
+# Llama 3B
+uv run python run_dlama_evaluation.py \
+    --model_name meta-llama/Llama-3.2-3B-Instruct \
+    --dataset dlama_arab_west \
+    --output_dir results_dlama
+
+# Qwen 2.5B
+uv run python run_dlama_evaluation.py \
+    --model_name Qwen/Qwen2.5-3B-Instruct \
+    --dataset dlama_arab_west \
+    --output_dir results_dlama
+```
+
+**Asia-West Dataset:**
+```bash
+# Llama 3B
+uv run python run_dlama_evaluation.py \
+    --model_name meta-llama/Llama-3.2-3B-Instruct \
+    --dataset dlama_asia_west \
+    --output_dir results_dlama
+
+# Qwen 2.5B
+uv run python run_dlama_evaluation.py \
+    --model_name Qwen/Qwen2.5-3B-Instruct \
+    --dataset dlama_asia_west \
+    --output_dir results_dlama
+```
+
+#### Culture-Gen Benchmark
+
+```bash
+# Llama 3B
+uv run python run_culturegen_evaluation.py \
+    --model_name meta-llama/Llama-3.2-3B-Instruct \
+    --output_dir results_culturegen
+
+# Qwen 2.5B
+uv run python run_culturegen_evaluation.py \
+    --model_name Qwen/Qwen2.5-3B-Instruct \
+    --output_dir results_culturegen
+```
+
+## 📈 Visualization & Analysis
+
+### Individual Model Analysis (DLAMA)
+
+```bash
+# Analyze single experiment results
+uv run python analyze_dlama_results.py \
+    --results_file results_dlama/dlama_arab_llama3b_20251203_222321.json \
+    --output_dir results_dlama/visualizations \
+    --model_name "Llama 3B" \
+    --metric overlap
+```
+
+**Generates 6 visualization figures:**
+1. **Culture Comparison Table** - Side-by-side culture accuracy
+2. **Detailed Breakdown** - Top 5 predicates × Top/Bottom 5 countries (≥100 samples)
+3. **Top/Bottom Predicates by Culture** - Best and worst performing predicates (≥100 samples)
+4. **Top/Bottom Countries by Culture** - Best and worst performing countries (≥50 samples)
+5. **Summary Statistics** - Comprehensive breakdown by culture, country, and predicate
+6. **Accuracy by Culture for Top Predicates** - Direct comparison across cultures
+
+### Cross-Model Comparison
+
+```bash
+# Compare Llama 3B vs Qwen 2.5B across both datasets
+uv run python compare_models_dlama.py \
+    --llama_arab results_dlama/dlama_arab_llama3b_*_summary.json \
+    --llama_asia results_dlama/dlama_asia_llama3b_*_summary.json \
+    --qwen_arab results_dlama/dlama_arab_qwen2.5b_*_summary.json \
+    --qwen_asia results_dlama/dlama_asia_qwen2.5b_*_summary.json \
+    --output_dir results_dlama/model_comparison \
+    --metric overlap
+```
+
+**Generates 6 comparison figures:**
+1. **Overall Comparison Table** - Culture-specific accuracy for all model-dataset combinations
+2. **Top 5 Predicates by Sample Count** - Performance comparison on most common predicates
+3. **Culture Breakdown (2×2 Grid)** - Culture-specific performance for each model-dataset
+4. **Predicate Performance Heatmap** - Top 10 predicates across all combinations
+5. **Cultural Bias Analysis** - Accuracy differences between cultures
+6. **Predicate Sample Breakdown** - Sample distribution by predicate and culture
 
 ## 📁 Project Structure
 
 ```
-project/
+vllm-demo/
+├── run_dlama_evaluation.py        # DLAMA evaluation runner
+├── run_culturegen_evaluation.py   # Culture-Gen evaluation runner
+├── analyze_dlama_results.py       # Single-model DLAMA visualization
+├── analyze_dlama_results_universal.py  # Universal version (any culture pair)
+├── compare_models_dlama.py        # Multi-model DLAMA comparison
 ├── tasks/
-│   ├── __init__.py
-│   ├── blend_task.py          # BLEnD task implementation
-│   └── base_task.py            # Base task interface (your existing file)
-├── experiments/
-│   ├── __init__.py
-│   └── experiment_runner.py    # Experiment orchestration
-├── config/
-│   └── blend_config.yaml       # Configuration files
-├── results/                    # Results output directory
-├── data/                       # Optional: local data cache
-├── run_experiments.py          # Main entry point
-├── requirements.txt            # Dependencies
-└── setup.sh                    # Setup script
+│   ├── base_task.py               # Base task interface
+│   ├── dlama_task.py              # DLAMA evaluation implementation
+│   ├── culturegen_task.py         # Culture-Gen evaluation implementation
+│   └── ...                        # Additional benchmark tasks
+├── utils/
+│   ├── vllm_inference.py          # vLLM inference engine
+│   ├── fuzzy_matching.py          # RapidFuzz matching utilities
+│   └── metrics.py                 # Evaluation metrics
+├── configs/                       # YAML configuration files
+│   ├── dlama_arab_west.yaml
+│   ├── dlama_asia_west.yaml
+│   └── culturegen.yaml
+├── results_dlama/                 # DLAMA evaluation results
+│   ├── dlama_*_summary.json      # Summary metrics
+│   ├── visualizations/           # Per-model visualizations
+│   └── model_comparison/         # Cross-model comparisons
+├── results_culturegen/            # Culture-Gen evaluation results
+├── Makefile                       # Convenience commands
+├── pyproject.toml                 # uv project configuration
+└── README.md                      # This file
 ```
 
-## 🚀 Quick Start
+## 🔧 Configuration
 
-### 1. Setup Environment
-
-```bash
-# Make setup script executable
-chmod +x setup.sh
-
-# Run setup (creates directories)
-./setup.sh
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Or with conda
-conda create -n blend python=3.10
-conda activate blend
-pip install -r requirements.txt
-```
-
-### 2. Organize Files
-
-Place the files in the correct directories:
-
-```bash
-# Tasks
-cp blend_task.py tasks/
-cp tasks__init__.py tasks/__init__.py
-
-# Experiments
-cp experiment_runner.py experiments/
-cp experiments__init__.py experiments/__init__.py
-
-# Config
-cp blend_config.yaml config/
-```
-
-### 3. Configure Experiment
-
-Edit `config/blend_config.yaml`:
+Evaluations can be configured via YAML files or command-line arguments:
 
 ```yaml
-experiment_name: my_blend_experiment
+# Example: DLAMA Arab-West Configuration
+model:
+  name: "meta-llama/Llama-3.2-3B-Instruct"
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.9
+  max_model_len: 4096
+  trust_remote_code: true
 
 task:
-  config:
-    blend_config: multiple-choice-questions  # or "short-answer-questions"
-    culture: DZ  # See culture codes below
-    use_english: true
-
-model:
-  name: meta-llama/Llama-3.2-3B-Instruct  # Your model
+  name: "dlama"
+  dataset: "dlama_v1_arab_west"
   temperature: 0.0
-  max_tokens: 100
-
-evaluation:
-  num_samples: 50  # -1 for all samples
+  max_tokens: 50
+  top_p: 1.0
   batch_size: 32
-```
+  use_fuzzy_matching: true
+  fuzzy_threshold: 80
 
-### 4. Run Evaluation
-
-```bash
-# Run on default GPU
-python run_experiments.py --config config/blend_config.yaml
-
-# Run on specific GPU(s)
-python run_experiments.py --config config/blend_config.yaml --gpu 0
-python run_experiments.py --config config/blend_config.yaml --gpu 0,1
-```
-
-## 📋 Culture Codes
-
-| Code | Country/Region | Language |
-|------|----------------|----------|
-| US | United States | English |
-| UK | United Kingdom | English |
-| CN | China | Chinese |
-| ES | Spain | Spanish |
-| MX | Mexico | Spanish |
-| ID | Indonesia | Indonesian |
-| KR | South Korea | Korean |
-| KP | North Korea | Korean |
-| GR | Greece | Greek |
-| IR | Iran | Persian |
-| DZ | Algeria | Arabic |
-| AZ | Azerbaijan | Azerbaijani |
-| JB | West Java | Sundanese |
-| AS | Assam | Assamese |
-| NG | Northern Nigeria | Hausa |
-| ET | Ethiopia | Amharic |
-
-## 🔧 Configuration Options
-
-### Task Configuration
-
-```yaml
-task:
-  config:
-    blend_config: "multiple-choice-questions"  # Required
-    # Options: "multiple-choice-questions", "short-answer-questions"
-    
-    culture: "DZ"  # Required
-    # See culture codes table above
-    
-    use_english: true  # Optional, default: true
-    # true: Use English translations
-    # false: Use local language
-```
-
-### Model Configuration
-
-```yaml
-model:
-  name: "meta-llama/Llama-3.2-3B-Instruct"  # Required
-  # HuggingFace model name or path
-  
-  temperature: 0.0  # Optional, default: 0.0
-  # 0.0 for deterministic output
-  
-  max_tokens: 100  # Optional, default: 100
-  # Maximum tokens to generate
-  
-  top_p: 1.0  # Optional, default: 1.0
-  
-  gpu_memory_utilization: 0.9  # Optional, default: 0.9
-  # Fraction of GPU memory to use
-  
-  trust_remote_code: true  # Optional, default: true
-```
-
-### Evaluation Configuration
-
-```yaml
-evaluation:
-  num_samples: -1  # Optional, default: -1 (all)
-  # Number of samples to evaluate
-  # -1 or omit for all samples
-  
-  batch_size: 32  # Optional, default: 32
-  # Batch size for inference
-  
-  metrics:  # Optional
-    - accuracy
-    - exact_match
-    - has_valid_format
-```
-
-### Output Configuration
-
-```yaml
 output:
-  results_dir: "results"  # Optional, default: "results"
-  # Directory to save results
-  
-  save_predictions: true  # Optional, default: true
-  # Save individual predictions
-  
-  verbose: true  # Optional, default: false
-  # Print detailed progress
+  results_dir: "results_dlama"
+  experiment_name: "dlama_arab_llama3b"
+  save_predictions: true
+  save_summary: true
+
+logging:
+  level: "INFO"
+  log_file: "logs/evaluation.log"
 ```
 
-## 📊 Output Files
+## 📊 Evaluation Metrics
 
-After running an experiment, you'll get:
+### Core Metrics
+- **Exact Match**: Binary exact string match (case-insensitive, normalized)
+- **Substring Overlap**: Fuzzy string matching using RapidFuzz (threshold: 80)
 
+### Analysis Metrics
+- **Overall Accuracy**: Performance across all samples
+- **Culture-Specific Accuracy**: Performance per culture (Arab/Asia/Western)
+- **Predicate-Specific Accuracy**: Performance per knowledge type (e.g., P106, P17)
+- **Country-Specific Accuracy**: Performance per country
+- **Cultural Bias Score**: Absolute accuracy difference between cultures
+
+## 🧪 Statistical Filtering
+
+To ensure meaningful comparisons, visualizations apply sample-count thresholds:
+
+| Figure/Analysis | Entity | Minimum Samples | Selection Criteria |
+|----------------|--------|-----------------|-------------------|
+| Detailed Breakdown | Predicates | 100 | Top 5 by accuracy |
+| Detailed Breakdown | Countries | 100 | Top 5 + Bottom 5 per culture |
+| Predicate Performance | Predicates | 100 | Top 5 + Bottom 5 per culture |
+| Country Performance | Countries | 50 | Top 5 + Bottom 5 per culture |
+| Heatmap | Predicates | N/A | Top 10 by average accuracy |
+
+## 🎓 Research Questions Addressed
+
+This evaluation framework helps answer:
+
+1. **Knowledge Distribution**: How well do models know facts about different cultures?
+2. **Cultural Bias**: Do models favor certain cultures (e.g., Western) over others?
+3. **Knowledge Type Variation**: Which predicates are universally easy/hard vs culture-specific?
+4. **Model Architecture Impact**: How do different model families handle cultural knowledge?
+5. **Data Imbalance Effects**: How does training data distribution affect cultural knowledge?
+
+## 💡 Key Features
+
+- **🚀 Fast Inference**: Uses vLLM for efficient batch processing
+- **📦 Easy Setup**: Managed by uv for fast, reliable dependency resolution
+- **🎨 Rich Visualizations**: Comprehensive plots and tables for analysis
+- **🔄 Modular Design**: Easy to add new benchmarks and models
+- **📊 Statistical Rigor**: Sample filtering ensures meaningful comparisons
+- **🌍 Multi-Cultural**: Supports multiple culture pairs and regions
+
+## 🛠️ Development
+
+### Adding a New Benchmark
+
+1. Create a new task class in `tasks/your_benchmark_task.py`
+2. Inherit from `BaseTask` and implement required methods
+3. Add configuration in `configs/your_benchmark.yaml`
+4. Create evaluation runner script
+5. Add visualization utilities if needed
+
+### Adding a New Model
+
+Simply specify the model name in your configuration or command-line:
+
+```bash
+uv run python run_dlama_evaluation.py \
+    --model_name your-org/your-model-name \
+    --dataset dlama_arab_west
 ```
-results/
-├── blend_algeria_mcq_20241127_143052.json          # Full results
-└── blend_algeria_mcq_20241127_143052_summary.json  # Aggregate metrics
-```
 
-### Results JSON Format
+## 🤝 Contributing
 
-```json
-{
-  "experiment_name": "blend_algeria_mcq",
-  "timestamp": "20241127_143052",
-  "config": { ... },
-  "task_type": "BLEnDMCQTask",
-  "num_samples": 100,
-  "results": [
-    {
-      "sample_id": "mcq_001",
-      "prompt": "What is a common snack...",
-      "prediction": "{\"answer_choice\": \"C\"}",
-      "metrics": {
-        "accuracy": 1.0,
-        "exact_match": 1.0
-      },
-      "ground_truth_idx": 2,
-      "ground_truth_letter": "C",
-      "choices": ["...", "...", "...", "..."]
-    }
-  ]
+Contributions are welcome! Areas for improvement:
+
+- 📊 Additional benchmarks (e.g., cultural bias in generation tasks)
+- 🤖 More model evaluations (GPT, Claude, Mistral, etc.)
+- 🌍 New cultural comparison pairs (e.g., African-Western, Latin-Western)
+- 📈 Statistical significance testing
+- 🎯 Prompt engineering experiments
+- 🔍 Error analysis tools
+
+## 📝 Citation
+
+If you use this evaluation framework in your research, please cite:
+
+```bibtex
+@software{vllm_demo_cultural_bias,
+  author = {Ameline},
+  title = {vllm-demo: Cultural Bias Evaluation Framework},
+  year = {2024},
+  url = {https://github.com/ameme12/vllm-demo}
 }
 ```
 
-### Summary JSON Format
+### Benchmark Citations
 
-```json
-{
-  "total_samples": 100,
-  "aggregate_metrics": {
-    "accuracy": {
-      "mean": 0.8500,
-      "min": 0.0,
-      "max": 1.0
-    },
-    "exact_match": {
-      "mean": 0.8500,
-      "min": 0.0,
-      "max": 1.0
-    }
-  }
+**DLAMA:**
+```bibtex
+@article{dlama2024,
+  title={DLAMA: A Framework for Curating Culturally Diverse Facts for Probing the Knowledge of Pretrained Language Models},
+  author={...},
+  journal={...},
+  year={2024}
 }
 ```
 
-## 🎯 Example Workflows
+**Culture-Gen:**
+```bibtex
+@article{culturegen2024,
+  title={Culture-Gen: Revealing Global Cultural Perception in Language Models through Natural Language Prompting},
+  author={...},
+  journal={...},
+  year={2024}
+}
 
-### 1. Quick Test (10 samples)
-
-```yaml
-# config/quick_test.yaml
-experiment_name: quick_test
-
-task:
-  config:
-    blend_config: multiple-choice-questions
-    culture: US
-    use_english: true
-
-model:
-  name: meta-llama/Llama-3.2-3B-Instruct
-  temperature: 0.0
-
-evaluation:
-  num_samples: 10
-  batch_size: 10
+@misc{myung2025blendbenchmarkllmseveryday,
+      title={BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages}, 
+      author={Junho Myung and Nayeon Lee and Yi Zhou and Jiho Jin and Rifki Afina Putri and Dimosthenis Antypas and Hsuvas Borkakoty and Eunsu Kim and Carla Perez-Almendros and Abinew Ali Ayele and Víctor Gutiérrez-Basulto and Yazmín Ibáñez-García and Hwaran Lee and Shamsuddeen Hassan Muhammad and Kiwoong Park and Anar Sabuhi Rzayev and Nina White and Seid Muhie Yimam and Mohammad Taher Pilehvar and Nedjma Ousidhoum and Jose Camacho-Collados and Alice Oh},
+      year={2025},
+      eprint={2406.09948},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2406.09948}, 
+}
 ```
 
-```bash
-python run_experiments.py --config config/quick_test.yaml
-```
+## 📧 Contact
 
-### 2. Full Evaluation (All samples)
+For questions or collaborations, please open an issue on [GitHub](https://github.com/ameme12/vllm-demo).
 
-```yaml
-# config/full_eval.yaml
-experiment_name: full_evaluation
+## 📜 License
 
-task:
-  config:
-    blend_config: multiple-choice-questions
-    culture: KR
-    use_english: true
+[Add your license here]
 
-model:
-  name: meta-llama/Llama-3.2-3B-Instruct
-  temperature: 0.0
+---
 
-evaluation:
-  num_samples: -1  # All samples
-  batch_size: 32
-```
-
-```bash
-python run_experiments.py --config config/full_eval.yaml --gpu 0
-```
-
-### 3. Multi-Culture Comparison
-
-Create separate configs for each culture and run them:
-
-```bash
-# Evaluate on multiple cultures
-for culture in US CN KR DZ AS; do
-  # Create config for each culture (or use template)
-  python run_experiments.py --config config/blend_${culture}.yaml
-done
-```
-
-## 🔍 Troubleshooting
-
-### Issue: "CUDA not available"
-**Solution:** Ensure you have a GPU and PyTorch with CUDA support:
-```bash
-python -c "import torch; print(torch.cuda.is_available())"
-```
-
-### Issue: "Culture 'XX' not found"
-**Solution:** Check the culture code matches one from the COUNTRY_NAME dict. Use the exact codes from the table above.
-
-### Issue: "No data found for culture"
-**Solution:** Some cultures may not have MCQ data. Try:
-1. Check if culture has data in the dataset
-2. Try short-answer-questions instead
-3. Verify COUNTRY_NAME mapping in blend_task.py
-
-### Issue: "Model not found"
-**Solution:** Ensure the model name is correct and you have access:
-```bash
-huggingface-cli login  # If using gated models
-```
-
-### Issue: "Out of memory"
-**Solution:** Reduce batch_size or gpu_memory_utilization:
-```yaml
-evaluation:
-  batch_size: 16  # Reduce from 32
-
-model:
-  gpu_memory_utilization: 0.7  # Reduce from 0.9
-```
+**Built with ❤️ using [uv](https://github.com/astral-sh/uv) and [vLLM](https://github.com/vllm-project/vllm)**

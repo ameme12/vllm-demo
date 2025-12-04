@@ -10,6 +10,7 @@ dependencies = [
     "gitpython>=3.1.45",
     "ninja>=1.13.0",
     "rapidfuzz>=3.14.3",
+    "scipy>=1.16.3",
     "seaborn>=0.13.2",
     "setuptools>=80.9.0",
     "torch==2.5.1",

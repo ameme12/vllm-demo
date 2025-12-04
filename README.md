@@ -38,11 +38,34 @@ Evaluates cultural perception and stereotypes across 110 countries/regions cover
 - Work culture
 - Art and aesthetics
 
-### 3. Additional Benchmarks
-*(Based on your evaluation pipeline structure)*
-- Multiple choice evaluations
-- Free-form generation tasks
-- Probability-based assessments
+### 3. BLEnD (Benchmarking LLMs' Everyday kNowledge across Diverse Cultures and Languages)
+**Dataset**: [nayeon212/BLEnD](https://huggingface.co/datasets/nayeon212/BLEnD)
+
+Evaluates LLMs' culture-specific everyday knowledge across diverse regions and languages, focusing on daily habits, customs, and lifestyles that may not be explicitly documented online.
+
+**Coverage:**
+- **52.6k question-answer pairs** from **16 countries/regions**
+- **13 different languages**, including low-resource languages:
+  - **Low-resource**: Amharic, Assamese, Azerbaijani, Hausa, Sundanese
+  - **Mid-to-high resource**: English, Spanish, French, Arabic, Chinese, Korean, and others
+
+**Question Types:**
+- **Short-answer questions**: Free-form generation requiring specific cultural knowledge
+- **Multiple-choice questions (MCQ)**: 4-option selection format
+
+**Cultural Topics:**
+- Birthday celebration foods and traditions
+- Common spices and ingredients used in cooking
+- Musical instruments played by youngsters
+- Sports practiced in schools
+- Daily customs and lifestyle practices
+- Regional traditions not well-documented online
+
+**Key Insights:**
+- LLMs perform better on cultures with more online presence (up to 57.34% difference in GPT-4)
+- For mid-to-high-resource languages, LLMs perform better in their local languages
+- For low-resource languages, LLMs surprisingly perform better when answering in English
+
 
 ## 🤖 Models Evaluated
 

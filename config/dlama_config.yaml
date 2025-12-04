@@ -1,14 +1,14 @@
 # DLAMA Evaluation Configuration with VLLMInferenceEngine
 # Example: Native language evaluation for Asian countries
 
-experiment_name: dlama_arab_qwen_2.5b
+experiment_name: dlama_asia_qwen_2.5b
 
 task:
   name: dlama_cultural_knowledge
   type: dlama
   config:
     predicate: null  # null for all, or specific like "P103" for native language
-    culture: Arab-West  # "Arab-West", "Asia-West", "South America-West", or null for all
+    culture: Asia-West  # "Arab-West", "Asia-West", "South America-West", or null for all
      # Country name or null for all countries
 
 # Model configuration (matches VLLMConfig)

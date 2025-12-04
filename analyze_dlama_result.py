@@ -168,10 +168,79 @@ def plot_arab_vs_western_table(df: pd.DataFrame, metric: str = 'overlap', model_
     return fig
 
 
-def plot_detailed_breakdown_table(df: pd.DataFrame, metric: str = 'overlap', model_name: str = 'Qwen 2.5-3B'):
-    """Create visual table with detailed breakdown by culture, country, predicate"""
+def plot_detailed_breakdown_table(df: pd.DataFrame, metric: str = 'overlap', model_name: str = 'Qwen 2.5-3B',
+                                 min_samples: int = 100, top_n_countries: int = 5):
+    """
+    Create visual table with detailed breakdown by culture, country, predicate.
+    Only shows:
+    - Top 5 predicates with >min_samples samples
+    - Top 5 and bottom 5 countries per culture (with >min_samples samples)
+    """
     
-    table_df = create_detailed_breakdown_table(df, metric)
+    # Filter to top 5 predicates with >min_samples
+    pred_counts = df.groupby('predicate_code').size()
+    valid_predicates = pred_counts[pred_counts >= min_samples].index
+    pred_accuracy = df[df['predicate_code'].isin(valid_predicates)].groupby('predicate_code')[metric].mean()
+    top_predicates = pred_accuracy.nlargest(5).index.tolist()
+    
+    # Filter dataframe to only top predicates
+    df_filtered = df[df['predicate_code'].isin(top_predicates)].copy()
+    
+    # For each culture, get top 5 and bottom 5 countries (with >min_samples)
+    selected_countries = {}
+    for culture in df_filtered['culture'].unique():
+        culture_df = df_filtered[df_filtered['culture'] == culture]
+        
+        # Calculate country accuracy and counts
+        country_accuracy = culture_df.groupby('country')[metric].mean()
+        country_counts = culture_df.groupby('country').size()
+        
+        # Filter countries with minimum sample count
+        valid_countries = country_counts[country_counts >= min_samples].index
+        country_accuracy_filtered = country_accuracy[valid_countries]
+        
+        # Get top and bottom countries from filtered set
+        top_countries = country_accuracy_filtered.nlargest(top_n_countries).index.tolist()
+        bottom_countries = country_accuracy_filtered.nsmallest(top_n_countries).index.tolist()
+        
+        # Combine and deduplicate (in case there's overlap)
+        selected_countries[culture] = list(set(top_countries + bottom_countries))
+    
+    # Build table data
+    table_data_list = []
+    
+    for culture in sorted(df_filtered['culture'].unique()):
+        culture_df = df_filtered[df_filtered['culture'] == culture]
+        
+        # Get countries for this culture
+        countries = selected_countries[culture]
+        country_accuracy = culture_df.groupby('country')[metric].mean()
+        countries_sorted = country_accuracy[countries].sort_values(ascending=False).index.tolist()
+        
+        for country in countries_sorted:
+            country_df = culture_df[culture_df['country'] == country]
+            
+            for pred_code in top_predicates:
+                subset = country_df[country_df['predicate_code'] == pred_code]
+                
+                if len(subset) == 0:
+                    continue
+                
+                accuracy = subset[metric].mean() * 100
+                count = len(subset)
+                
+                pred_desc = PREDICATE_DESCRIPTIONS.get(pred_code, pred_code)
+                
+                table_data_list.append({
+                    'Culture': culture,
+                    'Country': country,
+                    'Predicate': f"{pred_code} ({pred_desc})",
+                    'Accuracy (%)': round(accuracy, 2),
+                    'Samples': count
+                })
+    
+    table_df = pd.DataFrame(table_data_list)
+    table_df = table_df.sort_values(['Culture', 'Country', 'Accuracy (%)'], ascending=[True, True, False])
     
     # Create larger figure for detailed table
     num_rows = len(table_df)
@@ -250,9 +319,9 @@ def plot_detailed_breakdown_table(df: pd.DataFrame, metric: str = 'overlap', mod
     
     metric_name = 'Overlap' if metric == 'overlap' else 'Exact Match'
     ax.set_title(
-        f'DLAMA-v1: Detailed Breakdown by Culture, Country & Predicate\n'
-        f'Model: {model_name} | Metric: {metric_name}',
-        fontsize=15, pad=20, fontweight='bold'
+        f'DLAMA-v1: Detailed Breakdown - Top 5 Predicates & Countries (>{min_samples} samples)\n'
+        f'Top & Bottom {top_n_countries} Countries per Culture | Model: {model_name} | Metric: {metric_name}',
+        fontsize=14, pad=20, fontweight='bold'
     )
     
     plt.tight_layout()
@@ -260,14 +329,16 @@ def plot_detailed_breakdown_table(df: pd.DataFrame, metric: str = 'overlap', mod
 
 
 def plot_top_bottom_predicates_by_culture(df: pd.DataFrame, metric: str = 'overlap', 
-                                          top_n: int = 5, model_name: str = 'Qwen 2.5-3B'):
+                                          top_n: int = 5, model_name: str = 'Qwen 2.5-3B',
+                                          min_samples: int = 100):
     """
-    Create bar plots for top 5 and bottom 5 predicates, separated by Arab and Western cultures
+    Create bar plots for top 5 and bottom 5 predicates, separated by Arab and Western cultures.
+    Only considers predicates with at least min_samples.
     """
     
     fig, axes = plt.subplots(2, 2, figsize=(18, 12))
     fig.suptitle(
-        f'DLAMA-v1: Top & Bottom Predicates by Culture\n'
+        f'DLAMA-v1: Top & Bottom Predicates by Culture (min. {min_samples} samples)\n'
         f'Model: {model_name} | Metric: {metric.capitalize()}',
         fontsize=16, fontweight='bold', y=0.995
     )
@@ -282,9 +353,13 @@ def plot_top_bottom_predicates_by_culture(df: pd.DataFrame, metric: str = 'overl
         pred_accuracy = culture_df.groupby('predicate_code')[metric].mean() * 100
         pred_counts = culture_df.groupby('predicate_code').size()
         
-        # Get top and bottom predicates
-        top_preds = pred_accuracy.nlargest(top_n)
-        bottom_preds = pred_accuracy.nsmallest(top_n)
+        # Filter predicates with minimum sample count
+        valid_predicates = pred_counts[pred_counts >= min_samples].index
+        pred_accuracy_filtered = pred_accuracy[valid_predicates]
+        
+        # Get top and bottom predicates from filtered set
+        top_preds = pred_accuracy_filtered.nlargest(top_n)
+        bottom_preds = pred_accuracy_filtered.nsmallest(top_n)
         
         # Create labels with descriptions
         top_labels = [f"{p}\n{PREDICATE_DESCRIPTIONS.get(p, p)}" for p in top_preds.index]
@@ -339,14 +414,16 @@ def plot_top_bottom_predicates_by_culture(df: pd.DataFrame, metric: str = 'overl
 
 
 def plot_top_bottom_countries_by_culture(df: pd.DataFrame, metric: str = 'overlap',
-                                        top_n: int = 5, model_name: str = 'Qwen 2.5-3B'):
+                                        top_n: int = 5, model_name: str = 'Qwen 2.5-3B',
+                                        min_samples: int = 50):
     """
-    Create bar plots for top 5 and bottom 5 countries for Arab and Western cultures
+    Create bar plots for top 5 and bottom 5 countries for Arab and Western cultures.
+    Only considers countries with at least min_samples.
     """
     
     fig, axes = plt.subplots(2, 2, figsize=(16, 12))
     fig.suptitle(
-        f'DLAMA-v1: Top & Bottom Countries by Culture\n'
+        f'DLAMA-v1: Top & Bottom Countries by Culture (min. {min_samples} samples)\n'
         f'Model: {model_name} | Metric: {metric.capitalize()}',
         fontsize=16, fontweight='bold', y=0.995
     )
@@ -361,9 +438,13 @@ def plot_top_bottom_countries_by_culture(df: pd.DataFrame, metric: str = 'overla
         country_accuracy = culture_df.groupby('country')[metric].mean() * 100
         country_counts = culture_df.groupby('country').size()
         
-        # Get top and bottom countries
-        top_countries = country_accuracy.nlargest(top_n)
-        bottom_countries = country_accuracy.nsmallest(top_n)
+        # Filter countries with minimum sample count
+        valid_countries = country_counts[country_counts >= min_samples].index
+        country_accuracy_filtered = country_accuracy[valid_countries]
+        
+        # Get top and bottom countries from filtered set
+        top_countries = country_accuracy_filtered.nlargest(top_n)
+        bottom_countries = country_accuracy_filtered.nsmallest(top_n)
         
         color = colors_arab if culture == 'Arab' else colors_western
         
@@ -507,6 +588,111 @@ def create_summary_statistics_table(df: pd.DataFrame, metric: str = 'overlap',
     return fig
 
 
+def plot_accuracy_by_region_top_predicates(df: pd.DataFrame, metric: str = 'overlap',
+                                           model_name: str = 'Qwen 2.5-3B',
+                                           min_samples: int = 100):
+    """
+    Create bar plot showing accuracy by region (Arab vs Western) for top 5 predicates.
+    Only considers predicates with at least min_samples.
+    """
+    
+    # Filter to top 5 predicates with >min_samples
+    pred_counts = df.groupby('predicate_code').size()
+    valid_predicates = pred_counts[pred_counts >= min_samples].index
+    pred_accuracy = df[df['predicate_code'].isin(valid_predicates)].groupby('predicate_code')[metric].mean()
+    top_predicates = pred_accuracy.nlargest(5).index.tolist()
+    
+    # Filter dataframe to only top predicates
+    df_filtered = df[df['predicate_code'].isin(top_predicates)].copy()
+    
+    # Calculate accuracy by culture and predicate
+    results = []
+    for pred_code in top_predicates:
+        pred_df = df_filtered[df_filtered['predicate_code'] == pred_code]
+        
+        for culture in ['Arab', 'Western']:
+            culture_df = pred_df[pred_df['culture'] == culture]
+            if len(culture_df) > 0:
+                accuracy = culture_df[metric].mean() * 100
+                count = len(culture_df)
+                pred_desc = PREDICATE_DESCRIPTIONS.get(pred_code, pred_code)
+                
+                results.append({
+                    'predicate': pred_code,
+                    'predicate_desc': pred_desc,
+                    'culture': culture,
+                    'accuracy': accuracy,
+                    'count': count
+                })
+    
+    results_df = pd.DataFrame(results)
+    
+    # Create the plot
+    fig, ax = plt.subplots(figsize=(14, 8))
+    
+    # Prepare data for grouped bar chart
+    predicates = top_predicates
+    x = np.arange(len(predicates))
+    width = 0.35
+    
+    arab_accuracies = []
+    western_accuracies = []
+    arab_counts = []
+    western_counts = []
+    
+    for pred in predicates:
+        arab_data = results_df[(results_df['predicate'] == pred) & (results_df['culture'] == 'Arab')]
+        western_data = results_df[(results_df['predicate'] == pred) & (results_df['culture'] == 'Western')]
+        
+        arab_accuracies.append(arab_data['accuracy'].values[0] if len(arab_data) > 0 else 0)
+        western_accuracies.append(western_data['accuracy'].values[0] if len(western_data) > 0 else 0)
+        arab_counts.append(arab_data['count'].values[0] if len(arab_data) > 0 else 0)
+        western_counts.append(western_data['count'].values[0] if len(western_data) > 0 else 0)
+    
+    # Create bars
+    bars1 = ax.bar(x - width/2, arab_accuracies, width, label='Arab Culture',
+                   color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=1)
+    bars2 = ax.bar(x + width/2, western_accuracies, width, label='Western Culture',
+                   color='#3498db', alpha=0.8, edgecolor='black', linewidth=1)
+    
+    # Add value labels on bars
+    for i, (bar1, bar2) in enumerate(zip(bars1, bars2)):
+        height1 = bar1.get_height()
+        height2 = bar2.get_height()
+        
+        if height1 > 0:
+            ax.text(bar1.get_x() + bar1.get_width()/2., height1 + 1,
+                   f'{height1:.1f}%\n(n={arab_counts[i]})',
+                   ha='center', va='bottom', fontsize=9, fontweight='bold')
+        
+        if height2 > 0:
+            ax.text(bar2.get_x() + bar2.get_width()/2., height2 + 1,
+                   f'{height2:.1f}%\n(n={western_counts[i]})',
+                   ha='center', va='bottom', fontsize=9, fontweight='bold')
+    
+    # Customize plot
+    ax.set_xlabel('Predicate', fontsize=13, fontweight='bold')
+    ax.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold')
+    ax.set_title(
+        f'DLAMA-v1: Accuracy by Culture for Top 5 Predicates (min. {min_samples} samples)\n'
+        f'Model: {model_name} | Metric: {metric.capitalize()}',
+        fontsize=14, fontweight='bold', pad=20
+    )
+    
+    # Set x-axis labels with predicate codes and descriptions
+    labels = [f"{pred}\n{PREDICATE_DESCRIPTIONS.get(pred, pred)}" for pred in predicates]
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=10)
+    
+    ax.legend(fontsize=12, loc='upper right', framealpha=0.9)
+    ax.grid(axis='y', alpha=0.3, linestyle='--', linewidth=0.8)
+    ax.set_ylim(0, 105)
+    ax.set_facecolor('#f8f9fa')
+    
+    plt.tight_layout()
+    return fig
+
+
 def main():
     """Main function to generate all visualizations"""
     
@@ -549,21 +735,21 @@ def main():
     
     # 2. Detailed breakdown table
     print("   2. Detailed breakdown table...")
-    fig2 = plot_detailed_breakdown_table(df, metric, model_name)
+    fig2 = plot_detailed_breakdown_table(df, metric, model_name, min_samples=100, top_n_countries=5)
     fig2.savefig(output_dir / f'2_detailed_breakdown_table_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig2)
     
     # 3. Top/Bottom predicates by culture
     print("   3. Top & bottom predicates by culture...")
-    fig3 = plot_top_bottom_predicates_by_culture(df, metric, 5, model_name)
+    fig3 = plot_top_bottom_predicates_by_culture(df, metric, 5, model_name, min_samples=100)
     fig3.savefig(output_dir / f'3_top_bottom_predicates_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig3)
     
     # 4. Top/Bottom countries by culture
     print("   4. Top & bottom countries by culture...")
-    fig4 = plot_top_bottom_countries_by_culture(df, metric, 5, model_name)
+    fig4 = plot_top_bottom_countries_by_culture(df, metric, 5, model_name, min_samples=50)
     fig4.savefig(output_dir / f'4_top_bottom_countries_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig4)
@@ -574,6 +760,13 @@ def main():
     fig5.savefig(output_dir / f'5_summary_statistics_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig5)
+    
+    # 6. Accuracy by region for top predicates
+    print("   6. Accuracy by region for top predicates...")
+    fig6 = plot_accuracy_by_region_top_predicates(df, metric, model_name, min_samples=100)
+    fig6.savefig(output_dir / f'6_accuracy_by_region_top_predicates_{metric}.png',
+                 dpi=300, bbox_inches='tight')
+    plt.close(fig6)
     
     # Export CSV files
     print("\n💾 Exporting CSV files...")
@@ -591,7 +784,7 @@ def main():
     
     print(f"\n✅ Complete! All files saved to: {output_dir}/")
     print(f"\nGenerated files:")
-    print(f"   📊 5 visualization PNGs")
+    print(f"   📊 6 visualization PNGs")
     print(f"   📄 3 CSV files")
     print("\n" + "="*70 + "\n")
 
@@ -671,21 +864,21 @@ if __name__ == "__main__":
     
     # 2. Detailed breakdown table
     print("   2. Detailed breakdown table...")
-    fig2 = plot_detailed_breakdown_table(df, metric, model_name)
+    fig2 = plot_detailed_breakdown_table(df, metric, model_name, min_samples=100, top_n_countries=5)
     fig2.savefig(output_dir / f'2_detailed_breakdown_table_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig2)
     
     # 3. Top/Bottom predicates by culture
     print("   3. Top & bottom predicates by culture...")
-    fig3 = plot_top_bottom_predicates_by_culture(df, metric, 5, model_name)
+    fig3 = plot_top_bottom_predicates_by_culture(df, metric, 5, model_name, min_samples=100)
     fig3.savefig(output_dir / f'3_top_bottom_predicates_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig3)
     
     # 4. Top/Bottom countries by culture
     print("   4. Top & bottom countries by culture...")
-    fig4 = plot_top_bottom_countries_by_culture(df, metric, 5, model_name)
+    fig4 = plot_top_bottom_countries_by_culture(df, metric, 5, model_name, min_samples=50)
     fig4.savefig(output_dir / f'4_top_bottom_countries_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig4)
@@ -696,6 +889,13 @@ if __name__ == "__main__":
     fig5.savefig(output_dir / f'5_summary_statistics_{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig5)
+    
+    # 6. Accuracy by region for top predicates
+    print("   6. Accuracy by region for top predicates...")
+    fig6 = plot_accuracy_by_region_top_predicates(df, metric, model_name, min_samples=100)
+    fig6.savefig(output_dir / f'6_accuracy_by_region_top_predicates_{metric}.png',
+                 dpi=300, bbox_inches='tight')
+    plt.close(fig6)
     
     # Export CSV files
     print("\n💾 Exporting CSV files...")
@@ -713,6 +913,6 @@ if __name__ == "__main__":
     
     print(f"\n✅ Complete! All files saved to: {output_dir}/")
     print(f"\nGenerated files:")
-    print(f"   📊 5 visualization PNGs")
+    print(f"   📊 6 visualization PNGs")
     print(f"   📄 3 CSV files")
     print("\n" + "="*70 + "\n")

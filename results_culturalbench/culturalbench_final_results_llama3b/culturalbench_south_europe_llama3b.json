@@ -1,0 +1,1111 @@
+{
+  "experiment_name": "culturalbench_south_europe_qwen_2.5b",
+  "timestamp": "20251205_112546",
+  "config": {
+    "experiment_name": "culturalbench_south_europe_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "South Europe"
+      }
+    },
+    "model": {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 76,
+  "results": [
+    {
+      "sample_id": 3,
+      "question_idx": 3,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Which is the preferred way of cooking eggs for Spanish people?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 30,
+      "question_idx": 30,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italy, what is the common practice regarding tipping waitstaff at regular restaurants?",
+      "prediction": "A\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 31,
+      "question_idx": 31,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is a common practice in Spanish culture that is considered beneficial for health?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on the common practice in Spanish culture that is considered beneficial for health, which is taking a nap in the afternoon. This practice is known as \"siesta\" and is a common tradition in many Spanish-speaking countries.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 69,
+      "question_idx": 69,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Among Valencian people, how is altering the traditional recipe for paella generally received?",
+      "prediction": "C\nExplanation: The question is about the general reception of altering traditional recipes among Valencian people. The correct answer, \"Negatively\", reflects the idea that many people might view such changes as a disservice to their cultural heritage and culinary traditions. This answer is supported by the fact that paella is a deeply rooted part of Valencian identity and is often seen as a symbol of their rich cultural history. Altering the traditional recipe could be perceived as a threat to this cultural significance,",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 95,
+      "question_idx": 95,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is the name of the most famous summer TV show that featured the Spanish journalist who has broadcast the New Year's Eve chimes the longest, while wearing a cape on public TV?",
+      "prediction": "B\nExplanation: The Spanish journalist who has broadcast the New Year's Eve chimes the longest, while wearing a cape on public TV is indeed the one who has been a part of the Spanish TV show \"El Gran Prix\". The show is a long-running Spanish television program that has been on the air since 1983. It is a sports and entertainment program that features various events, including the Spanish Grand Prix. The show is known for its unique format, which includes a mix of sports,",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 131,
+      "question_idx": 131,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Valencia, when is it traditionally considered the appropriate time to order Paella?",
+      "prediction": "C\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 156,
+      "question_idx": 156,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is cacio e pepe?",
+      "prediction": "C\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 157,
+      "question_idx": 157,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is casoncelli?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 158,
+      "question_idx": 158,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is a trippa?",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 159,
+      "question_idx": 159,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what does \"pota\" mean?",
+      "prediction": "C. A swear word. \n\nNote: The answer is based on the general knowledge of Italian culture and language. However, please note that the answer may not be suitable for all audiences.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 213,
+      "question_idx": 213,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What time is it customary to have dinner in Spain?",
+      "prediction": "C\nExplanation: In Spain, it is customary to have dinner between 8pm and 10pm. This is later than in many other European countries, and is influenced by the country's Mediterranean climate and the fact that many people work late hours. Having dinner late allows people to enjoy the evening and socialize with family and friends.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 221,
+      "question_idx": 221,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, when a woman asks for a bikini in a restaurant, what might she be requesting?",
+      "prediction": "B\nExplanation: In Spanish culture, when a woman asks for a bikini in a restaurant, she is likely asking for a piece of clothing, specifically a swimsuit. This is a common phrase used in Spanish-speaking countries to request a swimsuit. The other options are not relevant to the context of the request. \n\nHere is the answer in the requested format:\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 236,
+      "question_idx": 236,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What do people typically not do when greeting each other in Madrid?",
+      "prediction": "D\n\nExplanation: In Madrid, it is common for people to greet each other with two kisses on the cheek, known as \"dos besos.\" This is a traditional Spanish greeting, especially among friends and family. It is not typical to greet someone with a handshake, bow, or hug in this context.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 240,
+      "question_idx": 240,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In traditional Spanish culture, why do people often choose to get married?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The provided answer is based on general knowledge and may not be applicable to every individual or situation. The response is intended to provide a general overview of the cultural context. \n\nIn this response, I've followed the format you requested, providing a JSON object with the answer choice \"A\" as the value. Please let me know if you have any further requests or questions!",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 247,
+      "question_idx": 247,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, what do people traditionally eat at midnight on New Year's Eve for good luck in the upcoming year?",
+      "prediction": "A\nExplanation: In Spain and many Latin American countries, it is traditional to eat 12 grapes at midnight, one for each stroke of the clock, to bring good luck for the upcoming year. This tradition is believed to have originated in the 19th century in Spain, where it was said that if you ate 12 grapes at midnight, you would have good luck for the next 12 months. The tradition has since spread to many other countries in Latin America and has become a popular way",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 260,
+      "question_idx": 260,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In southern Italian culture, what do people often carry with themselves due to the influence of superstitions?",
+      "prediction": "D\n\nExplanation: In southern Italian culture, people often carry a cornicello, a small, twisted metal charm, with them due to superstitions. The cornicello is believed to ward off evil spirits and bring good luck. It is a common sight in southern Italy, particularly in the Campania region. The cornicello is often carried in a pocket or attached to a keychain, and its twisted shape is thought to resemble a horn, which is believed to have protective powers.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 261,
+      "question_idx": 261,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is a common custom related to coffee in Italian culture?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 262,
+      "question_idx": 262,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How does a typical Italian family spend their Sundays?",
+      "prediction": "C\n\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 273,
+      "question_idx": 273,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In a typical Italian family gathering, what is a common tradition for Sunday lunch?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on a common Italian tradition where the grandmother (nonna) is often the one who cooks a big, homemade meal for the family on Sundays. This is a stereotypical representation of Italian family gatherings, but it's a common trope in Italian culture. \n\nHowever, it's worth noting that this answer might not be universally true for all Italian families, and there are many variations and exceptions to this tradition. But in general",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 286,
+      "question_idx": 286,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "When do Spanish people typically eat their main meal of the day?",
+      "prediction": "B\nExplanation: In Spain, the main meal of the day is typically eaten around noon, known as \"la comida\". This is because the traditional Spanish siesta, a mid-day rest, allows people to rest and recharge before the evening meal. (Source: Lonely Planet)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 288,
+      "question_idx": 288,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What type of break is a common practice among Spanish workers during their workday?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Taking a long lunch break in the afternoon\n(ii) Having a short coffee break every few hours\n(iii) Working through lunch to leave work earlier\n(iv) Taking multiple short breaks for snacks",
+      "prediction": "C\nExplanation: In Spain, a common practice is to take a long lunch break in the afternoon, and to have a short coffee break every few hours. However, working through lunch to leave work earlier is not a common practice. Taking multiple short breaks for snacks is also not a common practice. Therefore, the correct answer is C. i, ii.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 355,
+      "question_idx": 355,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, which of the following is a common way of greeting even among acquaintances?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Two kisses on the cheeks\n(ii) A firm handshake\n(iii) A high five\n(iv) Three kisses on the cheeks",
+      "prediction": "A\nExplanation: In Italian culture, when greeting even among acquaintances, two kisses on the cheeks (i) is common. A firm handshake (ii) is also common. Three kisses on the cheeks (iv) is more common when greeting close friends or family members. A high five (iii) is not a common greeting in Italian culture. Therefore, the correct answer is A. i, iv.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 359,
+      "question_idx": 359,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How do people usually kiss in italy?",
+      "prediction": "B\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 361,
+      "question_idx": 361,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, when does lunch usually start?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general knowledge and may not be applicable to all regions or individuals.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 363,
+      "question_idx": 363,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Catalonia, which language is officially recognized?",
+      "prediction": "B\nExplanation: The official language of Catalonia is Catalan, and Spanish is also widely used. Aranes is not a recognized language. The correct answer is B. Spanish, Catalan and Aranes.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 372,
+      "question_idx": 372,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spain, which activity is most commonly enjoyed due to the love for the sun and joyous celebrations?",
+      "prediction": "A\nExplanation: The correct answer is A. Hosting large outdoor lunches with family and friends. This is because Spain is known for its love for the sun and joyous celebrations, and hosting large outdoor lunches with family and friends is a common activity that takes advantage of the sunny weather and is often associated with festive occasions.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 390,
+      "question_idx": 390,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian dining etiquette, how is it customary to clean any residual sauce on the plate after eating a pasta dish?",
+      "prediction": "D\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 432,
+      "question_idx": 432,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How do families in Italy typically enjoy their meals together?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The traditional Italian way of dining is often characterized by a sense of community and conviviality. Families typically gather around the table, sharing a meal together, and engaging in conversation. This approach fosters a sense of togetherness and strengthens family bonds. In Italy, mealtimes are considered sacred, and the act of sharing a meal together is an essential part of family life. \n\nThis response is based on general knowledge and may",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 438,
+      "question_idx": 438,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is the most popular soft drink and sells the best?",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: The answer is based on general knowledge and may not be up-to-date or accurate. It's always a good idea to verify the information with a reliable source.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 463,
+      "question_idx": 463,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "At a business meeting in Spain, how do men typically greet each other?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nNote: The cultural context of the meeting is that it is in Spain, a country known for its warm and affectionate greetings. The correct answer is based on the common practice of greeting in Spain, where men typically greet each other with a kiss on both cheeks. \n\nThis question requires the test-taker to have knowledge of cultural norms and practices, specifically in the context of greetings in Spain. The correct answer is not explicitly stated in the provided text",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 468,
+      "question_idx": 468,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What do people usually have as a dish, typical of Italy and popular with foreigners, usually with a tomato sauce?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Pasta\n(ii) Focaccia\n(iii) Pizza\n(iv) Tacos.",
+      "prediction": "D\nExplanation: The typical Italian dish that is popular with foreigners and usually has a tomato sauce is pizza. Pasta is also a popular Italian dish, but it is not typically associated with tomato sauce. Focaccia is a type of Italian flatbread, but it is not usually served with tomato sauce. Tacos are a Mexican dish and are not typically associated with Italian cuisine. Therefore, the correct answer is D. i, iii.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 470,
+      "question_idx": 470,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the most popular dessert in Italy?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Italian layered coffee-flavored dessert\n(ii) Ice cream\n(iii) Wweet bread and fruitcacke\n(iv) Pandoro",
+      "prediction": "D\nExplanation: Italian layered coffee-flavored dessert, Ice cream, Pandoro are the most popular desserts in Italy.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 474,
+      "question_idx": 474,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is the typical reaction to the idea of adding pineapple to pizza?",
+      "prediction": "B\nExplanation: In Italy, pineapple on pizza is considered a sacrilegious act, and many Italians would react with shock and horror to the idea. This is because pineapple is not a traditional pizza topping in Italy, and many people consider it an abomination to put it on a beautiful, classic dish like pizza. This reaction is often exaggerated in popular culture, but it's a common sentiment among many Italians.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 475,
+      "question_idx": 475,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how do mealtimes typically play out when at a neighbour's birthday party?",
+      "prediction": "A\n\nExplanation: In Spanish culture, mealtimes are often social occasions, and gatherings can be quite lively. When at a neighbour's birthday party, mealtimes are likely to be filled with conversation, laughter, and good company. The party may go on late into the night, with people enjoying each other's company and the festive atmosphere. This is a common phenomenon in Spanish culture, where mealtimes are often seen as opportunities to socialize and bond with others.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 529,
+      "question_idx": 529,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is a common custom to greet close friends?",
+      "prediction": "B\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 562,
+      "question_idx": 562,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the common choice for kid's breakfast before school in Italy?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Cookies and milk\n(ii) Bacon and eggs\n(iii) Cereal with milk\n(iv) Ham sandwich and tea",
+      "prediction": "D. i, iii\nExplanation: In Italy, kids often have a simple breakfast of cookies and milk, or cereal with milk. These are common choices for a quick and easy breakfast before school. Option (i) and (iii) are correct, while options (ii) and (iv) are not typical choices for a kid's breakfast in Italy. Therefore, the correct answer is D. i, iii.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 578,
+      "question_idx": 578,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What dates do Pamplona locals mark for the annual running of the bulls?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nThe question is asking for the date of the annual running of the bulls in Pamplona, Spain. The correct answer is the 7th of July. This event is known as the San Ferm\u00edn festival, which takes place every year in Pamplona. The locals mark this date for the annual running of the bulls. \n\nThe other options are incorrect because the 4th of July is a US holiday, the 31st of October",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 579,
+      "question_idx": 579,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how do people usually speak in conversations?",
+      "prediction": "D\n\nExplanation: In Spanish culture, people usually speak softly and calmly, maintaining a relaxed and composed demeanor. This is often referred to as \"hablar con calma\" or \"speaking with calmness.\" This approach is valued for its ability to convey respect, empathy, and understanding in conversations. It's not uncommon for Spanish speakers to speak in a soft, gentle tone, even in formal or professional settings. This approach is also reflected in the use of phrases like \"habla con cal",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 604,
+      "question_idx": 604,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Sicily, when an older person meets a younger one for the first time in a small town, what do they commonly ask to know their family background?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 617,
+      "question_idx": 617,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spain, which event do we celebrate for a week each spring that depicts different stages of the life and resurrection of Jesus Christ?",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 671,
+      "question_idx": 671,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Where was flamenco born?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nFlamenco is a style of music and dance that originated in the Andalusia region of Spain. It is characterized by its passionate and expressive nature, and is often performed to traditional Spanish music. The origins of flamenco are not well-documented, but it is believed to have evolved from the music and dance of the Romani people, who were brought to Spain from North Africa and the Middle East. Over time, flamenco developed into a",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 672,
+      "question_idx": 672,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In which city is \"the April fair\" celebrated?",
+      "prediction": "B\n```json\n{\n  \"answer_choice\": \"B\"\n}\n``` ````\nThe \"April fair\" is celebrated in Huelva, Spain. The fair is a traditional event that takes place in the city of Huelva, which is located in the autonomous community of Andalusia, Spain. It is a celebration of the city's patron saint, San Buenaventura, and features various activities, including music, dance, and food. The fair is typically held in April",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 673,
+      "question_idx": 673,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Where are the Sanfermines celebrated?",
+      "prediction": "B\n\n{\"answer_choice\": \"B\"} \n\nThe Sanfermines are a famous festival in Spain, and the correct answer is Pamplona. The Sanfermines, also known as the Running of the Bulls, are a series of festivals held in Pamplona, Navarre, Spain, from July 6 to July 14. The festival is a UNESCO-recognized Masterpiece of the Intangible Heritage of Humanity. The event features a series of bull runs, known as",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 686,
+      "question_idx": 686,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, when do people usually have a steaming hot cappuccino with frothy milk?",
+      "prediction": "D\n{\"answer_choice\": \"D\"} \n\nNote: The traditional Italian coffee culture is a topic of much debate, and there is no one \"right\" answer. However, the most commonly accepted answer is that Italians typically drink cappuccino in the morning, not in the afternoon or evening. This is because cappuccino is a strong coffee drink that is meant to be consumed in the morning to help people wake up. In the afternoon and evening, Italians are more likely to drink",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 704,
+      "question_idx": 704,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is the customary practice in Spain after finishing a meal?",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 746,
+      "question_idx": 746,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "Which desserts might you find at an Italian family's Christmas dinner?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on traditional Italian Christmas desserts. Panettone and Pandoro are both traditional Italian Christmas desserts. Panettone is a sweet bread typically served on Christmas Day, while Pandoro is a star-shaped cake traditionally served during the Christmas season. Fruitcake and Gingerbread are more commonly associated with Christmas in other countries, such as the United States. Pecan pie and Sugar cookies are popular desserts in the United States, but",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 790,
+      "question_idx": 790,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is a common driving behavior in Italian culture?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on general knowledge and may not be applicable to every individual. The Italian culture is known for being very polite and courteous, especially when interacting with others, including other drivers. This is reflected in the concept of \"amore\" and the importance of relationships in Italian culture. \n\nPlease let me know if you want me to add more information or clarify anything. \n\nAlso, please let me know if you want me to generate",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 810,
+      "question_idx": 810,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, there is a very controversial traditional dish called \"tortilla de patata.\" What do many Spanish families debate regarding its preparation?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ````\nThe best answer is A.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 814,
+      "question_idx": 814,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian dining culture, which type of meal is typically not served?",
+      "prediction": "C. Fast food meals. \n\nExplanation: In Italian dining culture, fast food meals are not typically served. Italian cuisine is known for its rich flavors, aromas, and presentation, which is not characteristic of fast food. Italian meals are often served in a formal setting, and the food is typically prepared from scratch using fresh ingredients. Fast food, on the other hand, is often mass-produced and served quickly, which is not in line with traditional Italian dining culture. \n\nNote: The other options",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 815,
+      "question_idx": 815,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "While talking on the mobile phone with a friend in a public space in the context of Spanish culture, what is well-accepted behavior?",
+      "prediction": "A\nExplanation: In Spanish culture, it is common to have conversations on the phone in public spaces, but it is considered polite to keep the conversation private and not shout or speak loudly. This is a social norm that is widely accepted and respected. (Source: various online sources and cultural experts)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 818,
+      "question_idx": 818,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In the context of Spanish culture, how do young people prefer to spend their free time?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general trends and may not reflect the preferences of every individual. The question is designed to test the ability to identify a general pattern or trend in a specific context. \n\nLet me know if you want me to generate another question. \n\nAlso, please let me know if you want me to change the answer or the question in any way. \n\nPlease let me know if you want me to generate another question. \n\nAlso",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 848,
+      "question_idx": 848,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Do small shop owners take a siesta on working days?",
+      "prediction": "C\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 860,
+      "question_idx": 860,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is the traditional New Year's Eve celebration practice in Spanish culture?",
+      "prediction": "A\n\nExplanation: In Spanish culture, it is traditional to eat 12 grapes at midnight, one for each stroke of the clock, and to toast with champagne. This practice is believed to bring good luck for the coming year.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 861,
+      "question_idx": 861,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In the context of Italian dining culture, is it traditionally acceptable to order a pizza with pineapple topping?",
+      "prediction": "B\nExplanation: In Italy, pineapple on pizza is not a traditional or common topping. In fact, many Italians might even frown upon it. The classic combination of tomato sauce, mozzarella, and various meats or vegetables is what most Italians are accustomed to. Pineapple is not a typical topping in Italian cuisine, and its use on pizza is generally considered a non-traditional choice. This is why option B is the correct answer.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 868,
+      "question_idx": 868,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, what phrase does a friend typically use to challenge another friend to do something?",
+      "prediction": "C\nExplanation: In Spanish culture, \"\u00bfTe apuestas?\" is a common phrase used to challenge a friend to do something, similar to \"I double dare you!\" or \"Are you man enough?\" in English. It literally translates to \"Do you bet?\" or \"Are you willing to bet?\" and is often used in a lighthearted or playful manner.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 926,
+      "question_idx": 926,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What drink is specific to Asturias, and is widely drank at the traditional festivals of the region?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The drink is Cider, which is widely consumed in Asturias, and is a key component of the traditional festivals of the region.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 958,
+      "question_idx": 958,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In the Italian tradition, what is not a common way to celebrate Ferragosto on August 15th every year?",
+      "prediction": "B\n\nExplanation: In Italy, Ferragosto is a traditional holiday that marks the Assumption of Mary, and it is a day of rest and relaxation. While it is common to take a day off from work (A), get drunk with friends (B) is not a traditional way to celebrate Ferragosto. Decorating the house with flags and watching a parade (C) is also not a common way to celebrate Ferragosto. Relaxing at home (D) is a common way to",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 962,
+      "question_idx": 962,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, why are stores and businesses closed around noon on a typical weekday?",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 972,
+      "question_idx": 972,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What wouldn't a local in Madrid typically have for dinner?",
+      "prediction": "B\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 977,
+      "question_idx": 977,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how is tardiness generally viewed in social situations?",
+      "prediction": "C\nExplanation: In Spanish culture, punctuality is not as highly valued as in some other cultures. Being late is often seen as a minor inconvenience and is not considered a major issue. However, being extremely late or consistently late can be seen as a sign of disrespect and can harm one's reputation. This is because the Spanish culture places a strong emphasis on relationships and social harmony, and being late can be seen as a disruption to these relationships. Therefore, option C is the correct answer.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 979,
+      "question_idx": 979,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What English word in Spanish is most similar to the Spanish word for \"handcuffs\", \"esposas\"?",
+      "prediction": "D\nExplanation: The word \"esposas\" is the Spanish word for \"handcuffs\", and \"esposa\" is the Spanish word for \"wife\". The English word that is most similar to \"esposa\" is \"wife\".",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 988,
+      "question_idx": 988,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What does a Spanish kid typically do with their tooth once it has fallen out, following their cultural tradition?",
+      "prediction": "C\nExplanation: In Spain, children typically place their lost tooth under their pillow for Ratoncito P\u00e9rez, a small mouse who exchanges gifts for the tooth. This tradition is similar to the one in many other countries where children leave their tooth under their pillow for the Tooth Fairy.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 990,
+      "question_idx": 990,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how long might someone stay out at the clubs?",
+      "prediction": "B\nExplanation: In Spanish culture, it is common for people to stay out at the clubs until the early hours of the morning, often until the next morning. This is because the nightlife scene in many Spanish cities, such as Madrid and Barcelona, is known for its vibrant and late-night atmosphere. People often go out to socialize, dance, and enjoy themselves, and it's not uncommon for them to stay out until the early hours of the morning.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1001,
+      "question_idx": 1001,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is a common way of greeting each other in Spanish culture for women?",
+      "prediction": "A\n\nExplanation: In Spanish culture, it is common for women to greet each other with a kiss on both cheeks, known as \"besos\". This is a traditional and common way of greeting in many Latin American countries.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1034,
+      "question_idx": 1034,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how effective are Spanish shutters in blocking out light?",
+      "prediction": "A\n\nExplanation: Spanish shutters are designed to block out most of the light, especially during the hot summer months, to keep the interior of the house cool and dark. They are typically made of wood or metal and have a slatted design that allows for airflow and ventilation. This design helps to reduce the amount of heat that enters the house, making it more energy-efficient and comfortable. Additionally, the shutters can be adjusted to control the amount of light that enters the room, providing privacy and",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1081,
+      "question_idx": 1081,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What do the guests do usually to celebrate the spouses in Italy?",
+      "prediction": "D\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1082,
+      "question_idx": 1082,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is a typical habit during processions in the south of Italy?",
+      "prediction": "C\n{\"answer_choice\":\"C\"} \n\nNote: The question is about a general habit during processions in the south of Italy, not specifically about a particular event or festival. The answer is a general tradition that is common in the region. \n\nPlease let me know if you want me to change anything. \n\nHere is the revised answer:\n\nWhat is a typical habit during processions in the south of Italy?\nWithout any explanation, choose only one from the given alphabet choices (A, B,",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1094,
+      "question_idx": 1094,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What distinguishes an Italian's breakfast habit from that of an Englishman?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Eating a light breakfast typically consisting of a coffee and pastry.\n(ii) Enjoying a hearty breakfast with eggs, bacon, and toast.\n(iii) Eating pancakes with maple syrup.\n(iv) Opting for a cereal with cold milk.",
+      "prediction": "D\nExplanation: Italian breakfasts are light and simple, consisting of a coffee and pastry. English breakfasts are hearty and rich, consisting of eggs, bacon, and toast. Pancakes with maple syrup are not a common English breakfast food. Cereal with cold milk is also not a common English breakfast food. Therefore, the correct answer is D.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1095,
+      "question_idx": 1095,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "When greeting someone for the first time, what is a common practice in Italy culture?",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1096,
+      "question_idx": 1096,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the common practice regarding footwear inside homes in Italian culture?",
+      "prediction": "B\n\nExplanation: In Italian culture, it is common practice to remove shoes before entering a home. This is a sign of respect for the home and its occupants. Leaving shoes outside is a common practice in many Italian households, especially in rural areas where shoes can be left outside the door or in a designated area. This practice is also seen in many Italian cities, where shoes are often left outside the front door or in a shoe rack. This practice is rooted in the Italian tradition of removing shoes before",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1124,
+      "question_idx": 1124,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What do Italians traditionally use to make carbonara?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The traditional Italian recipe for carbonara does not include bacon. Guanciale is the preferred choice. \n\nHowever, I will provide the answer as requested:\n\n{\"answer_choice\": \"A\"} \n\nPlease let me know if you need any further assistance. \n\nLet me know if you need anything else. \n\nBest regards,\n[Your Name] \n\n---\n\nI can help with that. Here is the revised response:\n\n{\"answer_choice\": \"A",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1125,
+      "question_idx": 1125,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What car is often considered the most \"fun\" and traditional vehicle in Italian culture?",
+      "prediction": "A\n\nExplanation: The Fiat 500 is often considered the most \"fun\" and traditional vehicle in Italian culture, embodying the country's love for small, stylish, and agile cars. Its retro design and iconic status in Italy make it a symbol of Italian automotive heritage.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1172,
+      "question_idx": 1172,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How do locals in Italy tip their waitstaff who provide exceptional service at a dinner at a five (or even less) star restaurant?",
+      "prediction": "A\n```\n\nNote: The answer is based on the general knowledge of tipping customs in Italy, which may vary depending on the region and specific restaurant. The correct answer is based on the general understanding of tipping in Italy. \n\nPlease let me know if you want me to change anything. \n\nHere is the response in the requested format:\n\n```\n{\"answer_choice\": \"A\"}\n``` \n\nLet me know if you need any further assistance. \n\nPlease let me know if you need anything else.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1173,
+      "question_idx": 1173,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the traditional way for an Italian to enjoy his coffee during a well-deserved but short break from work?",
+      "prediction": "B\n\n```json\n{\n  \"answer_choice\": \"B\"\n}\n``` \n\nNote: The correct answer is based on the traditional Italian coffee break, which is often referred to as \"il caff\u00e8\" or \"il rinfresco\". In Italy, it's common to take a short break during the day to enjoy a cup of coffee with friends or colleagues, often while chatting and reading the newspaper or socializing. This is typically done at a bar or caf\u00e9, where you can sit",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1210,
+      "question_idx": 1210,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In spanish culture, what tradition do we in the last seconds of the year before starting the new year",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1211,
+      "question_idx": 1211,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, what is the name of the most recent dictator?",
+      "prediction": "A\nExplanation: Francisco Franco was the dictator of Spain from 1939 until his death in 1975. He was a key figure in the Spanish Civil War and ruled the country with an iron fist until his death. The other options are not correct because Richard Nixon was the President of the United States, Joseph Stalin was the leader of the Soviet Union, and Adolf Hitler was the leader of Nazi Germany.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

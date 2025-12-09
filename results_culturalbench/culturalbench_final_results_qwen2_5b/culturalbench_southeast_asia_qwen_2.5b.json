@@ -1,0 +1,2273 @@
+{
+  "experiment_name": "culturalbench_southeast_asia_qwen_2.5b",
+  "timestamp": "20251205_113358",
+  "config": {
+    "experiment_name": "culturalbench_southeast_asia_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "Southeast Asia"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 159,
+  "results": [
+    {
+      "sample_id": 7,
+      "question_idx": 7,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what is a favorite dish to pair with rice in a family dinner meal?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 8,
+      "question_idx": 8,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how should one give or receive items to show respect?",
+      "prediction": "A. With the right hand or both hands\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 9,
+      "question_idx": 9,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how should items be given or received to show respect?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 18,
+      "question_idx": 18,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what is the most popular food base?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 27,
+      "question_idx": 27,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, which of the following is considered rude to ask someone, especially if you are not related?",
+      "prediction": "A. about their salary\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 29,
+      "question_idx": 29,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what is usually not the common practice regarding arrival time for a wedding invitation?",
+      "prediction": "C\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 32,
+      "question_idx": 32,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is the polite gesture to do when you accidentally cross paths with someone?",
+      "prediction": "A. Nod and smile politely\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 33,
+      "question_idx": 33,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Indonesian people typically do when celebrating Eid al-Fitr in their culture?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Indonesian culture, Eid al-Fitr is a time for family gatherings and forgiveness. People typically visit their relatives' houses to ask for forgiveness and share meals. This is a significant part of the Eid al-Fitr celebration in Indonesia. \n\nOptions B, C, and D are not typical practices for Eid al-Fitr in Indonesia. While some people may have family barbecues, it is not a common practice. Similarly, going camping is not",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 34,
+      "question_idx": 34,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what food is often served as a typical dish on the Eid al-Fitr holiday?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 44,
+      "question_idx": 44,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what do they traditionally eat on New Year's Day?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 61,
+      "question_idx": 61,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Javanese culture, how does someone react if you accidentally step on their foot?",
+      "prediction": "C. They might ignore the incident completely, not wanting to cause a scene.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 73,
+      "question_idx": 73,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, how many years of mandatory education do students complete before entering university?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 75,
+      "question_idx": 75,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Singaporeans often append at the end of their sentences as a linguistic quirk unique to their culture to show a form of exasperation?",
+      "prediction": "{\"answer_choice\": \"B\"} The linguistic quirk unique to Singaporeans that often shows a form of exasperation and is appended at the end of their sentences is \"lah\". Therefore, the correct answer is B. {\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 85,
+      "question_idx": 85,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "Which proverb reflects the Indonesian cultural perspective on having more kids?",
+      "prediction": "D. The more, the merrier\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 99,
+      "question_idx": 99,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a distinct tradition in Filipino culture during the Christmas season, excluding caroling?",
+      "prediction": "{\"answer_choice\":\"B\"} {\"answer_choice\":\"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 100,
+      "question_idx": 100,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is unique about the Filipino family culture besides multi-generational living?",
+      "prediction": "{\"answer_choice\": \"C\"} {\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 101,
+      "question_idx": 101,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, we do this to show respect for the elderly?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 124,
+      "question_idx": 124,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, which action is a common way to show respect towards elders?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 165,
+      "question_idx": 165,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian Muslim culture, what is the traditional expectation regarding marriage and sexual relations?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 166,
+      "question_idx": 166,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What's the polite way for Thai students to pass by their seated teacher?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 198,
+      "question_idx": 198,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what aspects of community interaction are people known for?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) To connect with neighbors and ensure neighborhood safety.\n(ii) To enjoy the seasonal decorations and festive environment.\n(iii) To hold garage sales and trade items with neighbors.\n(iv) To participate in neighborhood watch programs formally organized by local authorities.",
+      "prediction": "A. i, iii\n\n{\"answer_choice\":\"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 218,
+      "question_idx": 218,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "Why do Pilipinos serve \"Pansit\", a Filipino noodle dish, on birthdays?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 219,
+      "question_idx": 219,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what is the title of the most popular story regarding the origin of man and woman?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 231,
+      "question_idx": 231,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, which item is it illegal to sell?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 237,
+      "question_idx": 237,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What dish is traditionally not consumed outside of Vietnam but commonly eaten in their culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 248,
+      "question_idx": 248,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines culture, how do young people show respect to their elders when meeting them?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nIn the Philippines culture, young people show respect to their elders by performing the \"mano\" gesture, which involves placing the right hand on the elder's left hand and saying \"bless\" (mano) as a sign of respect and gratitude. Therefore, the correct answer is A. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 249,
+      "question_idx": 249,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippine culture, what does the term \"bayanihan\" signify?",
+      "prediction": "B. The community coming together to help someone in need\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 250,
+      "question_idx": 250,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is the significance of the term 'pamanhikan'?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 251,
+      "question_idx": 251,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what event involves attending masses at dawn in preparation for Christmas Day?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 263,
+      "question_idx": 263,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, what is the expectation regarding working overtime and after hours?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 274,
+      "question_idx": 274,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is respect?",
+      "prediction": "D. Performing the \"mano po\" gesture by taking the elder's hand and placing it on their forehead.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 277,
+      "question_idx": 277,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, what is a common practice regarding pedestrians and traffic?",
+      "prediction": "C. Crossing streets only at designated pedestrian crossings\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 279,
+      "question_idx": 279,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the context of Filipino culture, how might Filipinos typically react to news that an actor that was cast in a big Hollywood TV series had one Filipino grandparent?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 281,
+      "question_idx": 281,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which of the following actions is not considered respectful?",
+      "prediction": "A. Touching someone's head.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 301,
+      "question_idx": 301,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, why is it important to know people's age?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 302,
+      "question_idx": 302,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, how do they call the grandmother on the father's side?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 309,
+      "question_idx": 309,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singaporean culture, what is an egregious faux pas when eating with others?",
+      "prediction": "B. Taking the last morsel of food for yourself from a communal dish.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 328,
+      "question_idx": 328,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "Is food coloring always added to make Filipino banana ketchup?",
+      "prediction": "B. No\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 338,
+      "question_idx": 338,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, how do the elders know that the young respects them?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 339,
+      "question_idx": 339,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how is food typically served during a meal?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 341,
+      "question_idx": 341,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, how do we traditionally greet each other?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 342,
+      "question_idx": 342,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, how do we traditionally eat our special type of sticky rice?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 344,
+      "question_idx": 344,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a popular Indonesian cuisine that involves skewered and grilled meat served with a thick, spicy, and turmeric-based sauce?",
+      "prediction": "{\"answer_choice\": \"A\"} Explanation: Sate Padang is a popular Indonesian cuisine that involves skewered and grilled meat, typically served with a thick, spicy, and turmeric-based sauce. The meat used is usually chicken, but it can also be beef or goat. Sate Padang is a variation of the traditional Indonesian sate, which is a popular street food in Indonesia. The sauce used in Sate Padang is made from a blend of spices, including turmeric, which",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 371,
+      "question_idx": 371,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Malaysian families usually have their meals?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 375,
+      "question_idx": 375,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, what is a common expectation parents have for their children's education?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Taking extra classes after school\n(ii) Participating in summer camps focused on academic\n(iii) Attending coding bootcamps during weekends\n(iv) Enrolling in online courses for college credit.",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 376,
+      "question_idx": 376,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is Thailand commonly known as due to its friendly and welcoming population?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 377,
+      "question_idx": 377,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which food is considered a staple in everyday meals?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 389,
+      "question_idx": 389,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how is respect shown to elders when walking together?",
+      "prediction": "C. Standing or walking behind them\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 400,
+      "question_idx": 400,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is a common way to greet someone?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 401,
+      "question_idx": 401,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is the most frequently asked introductory question?",
+      "prediction": "The most frequently asked introductory question in Thai culture is often related to personal well-being and health. Therefore, the most likely answer is:\n\n{\"answer_choice\": \"A\"} \n\nHowever, it's important to note that this is a generalization and can vary based on the context and the person being asked. \n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 403,
+      "question_idx": 403,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is the expected educational path after finishing high school?",
+      "prediction": "A. Attending a university\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 409,
+      "question_idx": 409,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, how do people mostly spend their time on the road?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 414,
+      "question_idx": 414,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "How do you reserve a table in Singapore?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Using personal items like tissue packets, umbrellas, or water bottles\n(ii) Placing a reserved sign provided by the food court\n(iii) Asking a friend to stand by the table until they arrive\n(iv) Leaving a tip on the table ahead of time.",
+      "prediction": "D. ii, iii, iv\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 441,
+      "question_idx": 441,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, what do people use to reserve seats in hawker centres?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 444,
+      "question_idx": 444,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What activities might colleagues in Singapore participate in after work?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Go sing karaoke\n(ii) Go get Kaya toast\n(iii) Go get bubble tea\n(iv) Go for dinner",
+      "prediction": "B. i, iii, iv\n\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 449,
+      "question_idx": 449,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What is not a common way to enjoy street food in Vietnamese culture?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 467,
+      "question_idx": 467,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how do younger people show respect when passing by an elder who is seated?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 483,
+      "question_idx": 483,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "How do people commonly reserve restaurant tables in Singapore's culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 504,
+      "question_idx": 504,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what behaviors should you avoid when speaking to someone older than you?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Filipino culture, talking behind someone's back is considered disrespectful and inappropriate. The other options are generally acceptable behaviors in Filipino culture. Bowing to them is a sign of respect, using \"po\" and \"opo\" is a way to show politeness, and avoiding eye contact is not a common practice in Filipino culture. Thus, the behavior that should be avoided is talking behind their back. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 517,
+      "question_idx": 517,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What best describes a well-known trait of Filipino culture in terms of treating guests?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 522,
+      "question_idx": 522,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, which of the following shows a good use of Singlish?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 523,
+      "question_idx": 523,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, what item is commonly used to reserve seats at a hawker center?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 524,
+      "question_idx": 524,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, what do people traditionally eat during the Mid-Autumn Festival?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 539,
+      "question_idx": 539,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, why is the right hand preferred over the left hand for giving or receiving items?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 544,
+      "question_idx": 544,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What might a Singaporean say to friends when insisting in Singlish?",
+      "prediction": "A. Lah\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 548,
+      "question_idx": 548,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What do commuters usually use to pay for a ride on the vibrantly decorated public utility jeepneys in Manila?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 551,
+      "question_idx": 551,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "How do people in the Philippines often greet each other without using words?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nJustification: In the Philippines, people often greet each other by nodding their head, which is a non-verbal way of saying \"hello\" or \"goodbye.\" Raising eyebrows, giving a firm handshake, and giving a high five are not common ways of greeting in the Philippines. Therefore, the correct answer is C. By nodding their head. \n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 552,
+      "question_idx": 552,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which of the following actions is considered disrespectful?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 553,
+      "question_idx": 553,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how do younger people show respect to someone older?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 554,
+      "question_idx": 554,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is the customary practice regarding wearing shoes indoors?",
+      "prediction": "A. Removing shoes before entering a home\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 558,
+      "question_idx": 558,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a common characteristic of food in Thai culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 559,
+      "question_idx": 559,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What cutlery do Thai people normally use for eating their meals?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 560,
+      "question_idx": 560,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "Why does Malaysia have more holidays than Thailand?",
+      "prediction": "D. Because of historic commemorative celebrations celebrated throughout the year.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 561,
+      "question_idx": 561,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysia, what do you say at the end of sentences when you are gently requesting assistance from a coworker?",
+      "prediction": "A. \"lah\"\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 566,
+      "question_idx": 566,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, when are national anthems typically played?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 567,
+      "question_idx": 567,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how should you address someone that is older than yourself politely?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 576,
+      "question_idx": 576,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what is a common tradition for an Overseas Filipino Worker (OFW) when returning home?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 591,
+      "question_idx": 591,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is a common practice when entering someone\u2019s home or a temple?",
+      "prediction": "A. Taking off your shoes before entering\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 593,
+      "question_idx": 593,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "How do people in Indonesia typically show its pride in its independence?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 594,
+      "question_idx": 594,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Balinese people preserve their loved ones after they have died?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 596,
+      "question_idx": 596,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is the second most spoken language after Filipino?",
+      "prediction": "D. Cebuano/Bisaya\n\nJSON format: {\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 597,
+      "question_idx": 597,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What utensils don't Filipinos use for eating?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 620,
+      "question_idx": 620,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, how is a stranger likely to be treated when visiting a local family?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 626,
+      "question_idx": 626,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, people often say 'God bless you' or 'kaawaan ka ng Diyos' in response to actions such as:",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 659,
+      "question_idx": 659,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how do people traditionally greet each other?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 660,
+      "question_idx": 660,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is considered disgusting when done on the street?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 661,
+      "question_idx": 661,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is considered highly disrespectful when interacting with someone?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 662,
+      "question_idx": 662,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What do small shrine-like structures found outside homes and businesses in Thai culture usually for?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 667,
+      "question_idx": 667,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is Philippine unique for?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nJustification: Philippine culture is known for its hospitality and beautiful sun kissed beaches. While the other options are also unique to the Philippines, they are not as universally recognized as the hospitality and beaches. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 685,
+      "question_idx": 685,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is the most family value?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 693,
+      "question_idx": 693,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what does every barangay have that is unique to it and celebrated with a fiesta?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Philippine culture, every barangay (village or community) has its own patron saint, which is a unique element celebrated with a fiesta (feast or festival). The patron saint is often a local saint or a saint who is believed to have a special connection to the barangay. The fiesta is a celebration that commemorates the patron saint and the community's history and traditions. \n\nA. Its own patron saint - This is the",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 694,
+      "question_idx": 694,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is the common belief in the Philippines regarding living with a boyfriend or girlfriend?",
+      "prediction": "A. Living together before marriage is customary.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 695,
+      "question_idx": 695,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture,  what words are never used to address someone older than you?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 707,
+      "question_idx": 707,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is the common gesture when meeting someone older?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 717,
+      "question_idx": 717,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which action is considered rude.",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 726,
+      "question_idx": 726,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what question would your relatives ask you if they heard you just changed company?",
+      "prediction": "B. How much do you make?\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 728,
+      "question_idx": 728,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, what do people like to criticize online?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 729,
+      "question_idx": 729,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, is it true that residents of different skin colours live in different areas of the country?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 730,
+      "question_idx": 730,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, which item is allowed in buses?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Durians\n(ii) Fast food burgers\n(iii) Popcorn on package\n(iv) A slice of pizza.",
+      "prediction": "D. {\"answer_choice\":\"ii, iii, iv\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 742,
+      "question_idx": 742,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what career is most preferred?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nJustification: In Thai culture, the most preferred career is often considered to be a Doctor. This is because of the high regard for healthcare and the belief that doctors can help people in need. Additionally, the medical field is often seen as a noble profession in Thai society. \n\nHowever, it's important to note that preferences can vary based on individual circumstances and personal interests. The above answer is based on cultural norms and general preferences. \n\nThe other options (",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 745,
+      "question_idx": 745,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What kind of milk is traditionally used in Vietnamese coffee?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 750,
+      "question_idx": 750,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysia, how are religious festivals from different religions treated?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 751,
+      "question_idx": 751,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysia, what is the customary practice regarding tipping servers in restaurants?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 769,
+      "question_idx": 769,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "When does the traditionally long and festive Christmas season start in the Philippines?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 770,
+      "question_idx": 770,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Filipinos typically gesture to point out a direction?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 771,
+      "question_idx": 771,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a common belief among many traditional Filipino families regarding sweeping the floor at night?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 772,
+      "question_idx": 772,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is a common feature found in most family households?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 782,
+      "question_idx": 782,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what is often considered necessary to achieve a high social position?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 784,
+      "question_idx": 784,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "What are the things that can surprise a tourist when visiting a Malaysian toilet?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) The use of a water hose or bidet instead of toilet paper\n(ii) Paying to use public restrooms\n(iii) The presence of a carpeted bathroom floor\n(iv) Finding a shower within the toilet stall.",
+      "prediction": "D. i, ii, iv\n\n{\n  \"answer_choice\": \"D\"\n}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 785,
+      "question_idx": 785,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what do parents do for a 1-month-old child?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 799,
+      "question_idx": 799,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, how should one speak to their elders?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 802,
+      "question_idx": 802,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What are the most dangerous natural disasters in Indonesia?",
+      "prediction": "{\"answer_choice\": \"C\"} {\"answer_choice\": \"C\"}\n\nExplanation: The most dangerous natural disasters in Indonesia include earthquakes and volcanoes. Indonesia is located in a seismically active region and has numerous volcanoes, making these events particularly perilous. Hurricanes, tornadoes, and blizzards are not common in Indonesia, so they are not considered the most dangerous natural disasters in the country. Thus, the correct answer is C. Earthquakes and volcanoes. \n\nAnswer: {\"",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 822,
+      "question_idx": 822,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a common thing an Indonesia teenagers do before entering their home?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 830,
+      "question_idx": 830,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, how would a person show respect to someone older than them?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 837,
+      "question_idx": 837,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, which of the following is a traditional noodle dish?",
+      "prediction": "B. Ph\u1edf\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 845,
+      "question_idx": 845,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "According to the traditional ceremony, what might a Thai groom perform at his own wedding?",
+      "prediction": "D\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 857,
+      "question_idx": 857,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singaporean culture, how do people commonly reserve seats in casual eateries?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 866,
+      "question_idx": 866,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What is the biggest public holiday in Vietnamese culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 867,
+      "question_idx": 867,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Vietnamese grandparents usually gift their grandchildren for the traditional Lunar New Year celebration?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 875,
+      "question_idx": 875,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "Which of the following examples is a correct Singlish sentence?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) I finished already leh.\n(ii) I'm done with it, huh?\n(iii) I've completed this task liao.\n(iv) This is done, ay.",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 880,
+      "question_idx": 880,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, how do people commonly indicate something by avoiding using their fingers?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 884,
+      "question_idx": 884,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian tradition, when shaking hands with an adult, what do you need to do?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 899,
+      "question_idx": 899,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what traditional courtship practice involves presenting one's love in the form of music?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 902,
+      "question_idx": 902,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What kind of food does Singapore have?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 916,
+      "question_idx": 916,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What kind of dress and style is traditionally worn by Vietnamese girls, distinguishing them from other countries' styles? Is it the same as other nations?",
+      "prediction": "{\"answer_choice\":\"A\"} {\"answer_choice\": \"A\"}\n\nExplanation: The traditional dress and style that is traditionally worn by Vietnamese girls is the Ao Dai. Ao Dai is a unique garment that combines elements of both Chinese and Vietnamese clothing traditions, featuring a tight-fitting tunic worn over trousers. This style is distinct from other countries' traditional attire, such as the Kimono, Sari, or casual wear like jeans and a T-shirt. Therefore, the correct answer is A. {\"answer",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 918,
+      "question_idx": 918,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Vietnam people typically prefer way to live as a community?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 928,
+      "question_idx": 928,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, how do you address service providers based on their gender?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 929,
+      "question_idx": 929,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, how are tables reserved in food courts?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) by placing absorbent material on the table\n(ii) by asking a waiter to reserve it\n(iii) by leaving a personal item like a book or jacket\n(iv) by having at least one person sit at the table",
+      "prediction": "C. i, iii\n\n{\"answer_choice\":\"C, i, iii\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 930,
+      "question_idx": 930,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singaporean culture, which syllable is added to the end of questions uttered in informal conversation to add a skeptical tone?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 935,
+      "question_idx": 935,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what is usually said by a friend or family member when you see them eating?",
+      "prediction": "A. You are invited to join and partake in the food.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 936,
+      "question_idx": 936,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what kind of gesture that student use to give respect to their teachers?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 956,
+      "question_idx": 956,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Filipinos do to make guests to feel welcomed in their country or homes?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"B\"} {\"answer_choice\": \"C\"} {\"answer_choice\": \"D\"} The given options are not mutually exclusive, and each can be a part of making guests feel welcomed in Filipino culture. However, since the instruction asks to choose only one, and considering the context of making guests feel welcomed, the most comprehensive and universally applicable choice would be:\n\n{\"answer_choice\": \"A\"} {\"answer_choice\": \"B\"} {\"answer_choice\":",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 960,
+      "question_idx": 960,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "How is \"All Saints Day\" celebrated in a culture that treats it like a feast day in the cemetery?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 963,
+      "question_idx": 963,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What trait most strongly defines the pronouns one would use to call a person in Vietnamese culture?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 967,
+      "question_idx": 967,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In a Vietnamese cultural setting, who should not be the last person to eat?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1006,
+      "question_idx": 1006,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what are you not supposed to do at night?",
+      "prediction": "The question about Vietnamese cultural norms at night is not provided in the context, so we cannot determine which of the given options is specifically not supposed to be done at night in Vietnamese culture. However, based on the options given, we can only select one and provide the JSON format as requested.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1014,
+      "question_idx": 1014,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is required to be on your identification card?",
+      "prediction": "{\"answer_choice\":\"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1022,
+      "question_idx": 1022,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What zodiac sign is associated with good fortune and power in Vietnamese culture?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nJustification: In Vietnamese culture, the Dragon with no wings (A) is associated with good fortune and power. The Dragon is a symbol of strength, prosperity, and good luck. It is often depicted as a powerful and majestic creature, and is considered a symbol of good fortune and success. The Dragon with no wings is a specific representation of this symbol, as it represents the dragon's power and strength without the need for physical wings. The other options do",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1028,
+      "question_idx": 1028,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What's a typical New Year's Eve dinner for a family in Vietnam?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: A typical New Year's Eve dinner in Vietnam often includes Banh Chung, a traditional sticky rice cake wrapped in banana leaves, symbolizing unity and completeness. Bun Bo, Pho, and New Year Moon Cakes are not typically associated with New Year's Eve dinner in Vietnam. \n\nJSON format:\n```json\n{\n  \"answer_choice\": \"A\"\n}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1043,
+      "question_idx": 1043,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, who should you not say hi to last?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1061,
+      "question_idx": 1061,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "What are you expected to do when you receive a red envelope during Chinese New Year in Malaysia?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1068,
+      "question_idx": 1068,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesia, what activity does it called for helping each other without payment or voluntary calculation?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Indonesia, the term for helping each other without payment or voluntary calculation is \"Gotong Royong\". This term is commonly used in Indonesian culture and refers to a cooperative effort among community members to achieve a common goal. \n\nSo, the correct answer is A. Gotong Royong. \n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1069,
+      "question_idx": 1069,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesia, what do people usually do when visiting someone's house or residence?",
+      "prediction": "A. Bringing a small gift for the host\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1084,
+      "question_idx": 1084,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, which of the following is traditionally preferred?",
+      "prediction": "B. Live together before marriage to test compatibility\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1101,
+      "question_idx": 1101,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "At a Vietnamese family reunion, who might inquire about everyone's ages?",
+      "prediction": "D. It is considered impolite for anyone to ask about age.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1135,
+      "question_idx": 1135,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What's the quirky way someone in Singapore saves a seat at a table at a hawker center?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1136,
+      "question_idx": 1136,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore people do not eat chewing gum. Why?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1147,
+      "question_idx": 1147,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, which of the following is considered the most respectful way for a younger person to address an elder during a formal family gathering?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1160,
+      "question_idx": 1160,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What is expected of guests attending a wedding in Vietnam?",
+      "prediction": "A. Giving the newlyweds cash\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1183,
+      "question_idx": 1183,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "Imagine you are a foreigner in Thailand, and someone did a good job, can you pat the head of the Thai person as a sign that the job was well done?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1190,
+      "question_idx": 1190,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the traditional Filipino cuisine, what is the primary fruit ingredient of a very famous condiment equivalent to ketchup?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1205,
+      "question_idx": 1205,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What eating utensils don't Filipinos traditionally use?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Spoon and fork\n(ii) Knife and fork\n(iii) Chopsticks\n(iv) Hands.",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1206,
+      "question_idx": 1206,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is the most common New Year's Eve tradition in the Philippines?",
+      "prediction": "A. Eating 12 grapes at midnight\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1207,
+      "question_idx": 1207,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, how do people usually greet their neighbors when they pass by their homes?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1214,
+      "question_idx": 1214,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "When does the Christmas season begin in Filipino culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1215,
+      "question_idx": 1215,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what should be expected when a spoon falls to the floor?",
+      "prediction": "D. Bad luck\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1216,
+      "question_idx": 1216,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Javanese culture, how is the Islamic New Year not celebrated?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1217,
+      "question_idx": 1217,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What did Indonesia culture do involving hosting family and close friend in a park",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nJustification: The question asks about Indonesia culture involving hosting family and close friends in a park. Option B, \"Hosting barbecues in a public park and inviting neighbors for a potluck,\" is a common practice in many cultures, including Indonesia, where people gather in public spaces to share food and socialize. This option aligns well with the context of hosting family and close friends in a park. Options A, C, and D do not specifically mention",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1218,
+      "question_idx": 1218,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Borneo culture, what can the elder do to guide the future of their tribe involving reading and mystic element",
+      "prediction": "{\"answer_choice\": \"B\"} {\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+# GeoMLAMA Evaluation Configuration
+# Evaluates geographical/cultural bias in language models
+# Follows original GeoMLAMA evaluation methodology
+
+experiment_name: "geomlama_english_all_qwen2_5b"
+
+# Model configuration
+model:
+  name: Qwen/Qwen2.5-3B-Instruct 
+  
+  # vLLM settings
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.9
+  max_model_len: 2048
+  trust_remote_code: true
+  dtype: "auto"
+  quantization: null
+  swap_space: 4
+  enforce_eager: false
+  max_num_seqs: 256
+  seed: 42
+  
+  # Generation parameters
+  temperature: 0.0
+  max_tokens: 50
+  top_p: 1.0
+  top_k: -1
+  presence_penalty: 0.0
+  frequency_penalty: 0.0
+  stop: null
+
+# Task configuration
+task:
+  name: "GeoMLAMA"
+  dataset_path: "./repos/GeoMLAMA"
+  config:
+    # ============================================================================
+    # IMPORTANT: Language file selection
+    # ============================================================================
+    # The 'language' parameter chooses which TSV file to load.
+    # Each TSV file contains prompts about ALL 5 countries in that language.
+    #
+    # Options:
+    #   "en" → gd_prompt_en.tsv (English prompts about US, China, India, Iran, Kenya)
+    #   "fa" → gd_prompt_fa.tsv (Persian prompts about US, China, India, Iran, Kenya)
+    #   "zh" → gd_prompt_zh.tsv (Chinese prompts about US, China, India, Iran, Kenya)
+    #   "hi" → gd_prompt_hi.tsv (Hindi prompts about US, China, India, Iran, Kenya)
+    #   "sw" → gd_prompt_sw.tsv (Swahili prompts about US, China, India, Iran, Kenya)
+    #
+    # RECOMMENDATION: Use "en" for English-only models like Llama/Qwen
+    # ============================================================================
+    language: "en"
+    
+    # ============================================================================
+    # Countries evaluated (AUTOMATIC - determined by dataset structure)
+    # ============================================================================
+    # The runner will automatically evaluate ALL 5 countries:
+    #   - United States (125 samples at indices 0, 5, 10, 15, ...)
+    #   - China (125 samples at indices 1, 6, 11, 16, ...)
+    #   - India (125 samples at indices 2, 7, 12, 17, ...)
+    #   - Iran (125 samples at indices 3, 8, 13, 18, ...)      ← YOUR IRAN DATA!
+    #   - Kenya (125 samples at indices 4, 9, 14, 19, ...)
+    #
+    # Total: 625 samples (125 per country)
+    #
+    # You CANNOT filter to a single country in the config.
+    # All 5 countries are always evaluated together.
+    # Results will show per-country breakdown.
+    # ============================================================================
+    
+    # Country context in prompts
+    with_country: true          # true = "In Iran, the capital is <mask>."
+                                # false = "The capital is <mask>." (removes country name)
+                                # 
+                                # Use true for standard evaluation (with context)
+                                # Use false to test intrinsic bias (harder task)
+    
+    # ============================================================================
+    # NOTE: Prompt formatting is FIXED in the current implementation
+    # ============================================================================
+    # The task file currently uses a simple conversion:
+    #   Original: "In Iran, the capital is <mask>."
+    #   Formatted: "what is In Iran, the capital"
+    #
+    # This is a basic implementation. For better control over prompts,
+    # you would need to modify the prepare_prompts() method in:
+    #   tasks/geomlama_task.py
+    # ============================================================================
+
+# Evaluation settings
+evaluation:
+  num_samples: -1               # -1 = evaluate all 625 samples (125 per country)
+                                # Set to smaller number for quick testing (e.g., 50)
+  batch_size: 32
+
+# Output settings
+output:
+  results_dir: "results/geomlama"
+
+# ============================================================================
+# WHAT YOU'LL GET:
+# ============================================================================
+# 
+# The evaluation will produce per-country results like:
+# 
+#   Llama-3.2-3B-Instruct_en (exact_match):
+#     [0.712, 0.632, 0.568, 0.624, 0.600]
+#     US: 0.712, CN: 0.632, IN: 0.568, IR: 0.624, KE: 0.600
+#     
+#   Detailed breakdown:
+#     United States (n=125): Exact Match: 0.7120, Overlap: 0.7920
+#     China (n=125):         Exact Match: 0.6320, Overlap: 0.7120
+#     India (n=125):         Exact Match: 0.5680, Overlap: 0.6480
+#     Iran (n=125):          Exact Match: 0.6240, Overlap: 0.7040  ← IRAN!
+#     Kenya (n=125):         Exact Match: 0.6000, Overlap: 0.6800
+# 
+# Higher scores = Better knowledge
+# US > Others = Western bias
+# Similar scores = Less biased
+# 
+# ============================================================================
+# EXAMPLE CONFIGURATIONS:
+# ============================================================================
+# 
+# 1. Standard evaluation (recommended):
+#      language: "en"
+#      with_country: true
+#    → Tests all 5 countries with English prompts and country context
+# 
+# 2. Intrinsic bias test (harder):
+#      language: "en"
+#      with_country: false
+#    → Removes country names from prompts (tests pure knowledge)
+# 
+# 3. Quick test (small sample):
+#      language: "en"
+#      with_country: true
+#      num_samples: 50
+#    → Tests first 50 samples (10 per country)
+# 
+# 4. Persian prompts (for multilingual models):
+#      language: "fa"
+#      with_country: true
+#    → Same 5 countries, but prompts in Persian
+# 
+# ============================================================================

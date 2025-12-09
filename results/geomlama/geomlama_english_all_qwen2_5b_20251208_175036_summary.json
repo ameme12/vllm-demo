@@ -1,0 +1,190 @@
+{
+  "total_samples": 625,
+  "aggregate_metrics": {
+    "exact_match": {
+      "mean": 0.0,
+      "count": 625
+    },
+    "overlap": {
+      "mean": 0.2096,
+      "count": 625
+    }
+  },
+  "by_country": {
+    "United States": {
+      "count": 125,
+      "exact_match": 0.0,
+      "overlap": 0.216
+    },
+    "China": {
+      "count": 125,
+      "exact_match": 0.0,
+      "overlap": 0.296
+    },
+    "India": {
+      "count": 125,
+      "exact_match": 0.0,
+      "overlap": 0.168
+    },
+    "Iran": {
+      "count": 125,
+      "exact_match": 0.0,
+      "overlap": 0.168
+    },
+    "Kenya": {
+      "count": 125,
+      "exact_match": 0.0,
+      "overlap": 0.2
+    }
+  },
+  "country_raw_stats": {
+    "exact_match_counts": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "overlap_counts": [
+      27.0,
+      37.0,
+      21.0,
+      21.0,
+      25.0
+    ],
+    "total_counts": [
+      125,
+      125,
+      125,
+      125,
+      125
+    ]
+  },
+  "by_concept": {
+    "0": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.48
+    },
+    "1": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.2
+    },
+    "2": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.32
+    },
+    "3": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.36
+    },
+    "4": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.64
+    },
+    "5": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "6": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.04
+    },
+    "7": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "8": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "9": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.08
+    },
+    "10": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.24
+    },
+    "11": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "12": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.32
+    },
+    "13": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.24
+    },
+    "14": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.16
+    },
+    "15": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.2
+    },
+    "16": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "17": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.2
+    },
+    "18": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.0
+    },
+    "19": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.08
+    },
+    "20": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.28
+    },
+    "21": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.04
+    },
+    "22": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.72
+    },
+    "23": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.56
+    },
+    "24": {
+      "count": 25,
+      "exact_match": 0.0,
+      "overlap": 0.08
+    }
+  }
+}

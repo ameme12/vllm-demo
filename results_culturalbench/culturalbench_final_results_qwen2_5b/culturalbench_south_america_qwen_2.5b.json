@@ -1,0 +1,2147 @@
+{
+  "experiment_name": "culturalbench_south_america_qwen_2.5b",
+  "timestamp": "20251205_112933",
+  "config": {
+    "experiment_name": "culturalbench_south_america_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "South America"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 150,
+  "results": [
+    {
+      "sample_id": 10,
+      "question_idx": 10,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In a Chilean cultural context, what is never done when greeting women that are not your close friends or relatives?",
+      "prediction": "B. a kiss in the cheek\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 43,
+      "question_idx": 43,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is commonly consumed with breakfast, even by children?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 62,
+      "question_idx": 62,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, how does the perception of punctuality for social events, such as parties and informal gatherings, vary between different social classes, and how might this impact expectations for arrival times?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 66,
+      "question_idx": 66,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, how should tequila be consumed for optimal enjoyment?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 72,
+      "question_idx": 72,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, how is punctuality for social gatherings typically viewed?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 74,
+      "question_idx": 74,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peru, what are the consequences of exploiting others?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nJustification: The question asks about the consequences of exploiting others in Peru. Exploitation is generally viewed negatively and can lead to negative consequences such as getting hate or disapproval from the community. The other options (B, C, and D) do not accurately reflect the likely consequences of exploiting others. Therefore, the most appropriate answer is A. Get hate. \n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 86,
+      "question_idx": 86,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, what is the most common type of footwear?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 93,
+      "question_idx": 93,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peruvian culture, how do workers typically view their commitment to their employers?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 105,
+      "question_idx": 105,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentina, what is the most popular beverage that is often shared with friends or family and is not considered an infusion but contains herbs?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: Mate is the most popular non-infusion beverage in Argentina that is often shared with friends or family. It is a traditional drink made from the yerba mate plant and is consumed through a special straw. The other options are not the most popular beverage in Argentina. Black tea, iced coffee, and root beer are not as commonly consumed as mate in Argentina. {\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 106,
+      "question_idx": 106,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What is the name of a popular meal in Argentina that you can eat with your hands?",
+      "prediction": "B. Empanada\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 107,
+      "question_idx": 107,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What is the name of the popular Barbecue with 'Achuras' in Argentina?",
+      "prediction": "B. Asado\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 113,
+      "question_idx": 113,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "What is often considered an object of pride in Peruvian culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 114,
+      "question_idx": 114,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "Would a family in Lima feel safe walking home at night?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 115,
+      "question_idx": 115,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "How do Peruvians generally feel about their national education system within their culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 126,
+      "question_idx": 126,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, what is a normal way of greeting someone?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In Brazilian culture, a normal way of greeting someone is with a lip kiss, which is known as \"abra\u00e7o\" or \"beijo\" in Portuguese. This is a common greeting, especially among friends and family. \n\nA. Wrap arms around each other - This is not a common greeting in Brazilian culture.\nC. Eskimo kiss - This is not a common greeting in Brazilian culture.\nD. Waving from a distance - This is not",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 146,
+      "question_idx": 146,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentinian culture, how might a male interviewer typically respond when asked about their economic situation?",
+      "prediction": "C. They might change the subject to avoid discussing finances.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 147,
+      "question_idx": 147,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentine culture, how is public education generally viewed regardless of its cost?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 149,
+      "question_idx": 149,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "What historic event celebrated every year primarily in the Northeast of Brazil involves groups gathering in public squares and streets to sing and dance?",
+      "prediction": "D. Bumba meu Boi\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 152,
+      "question_idx": 152,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what phrase is unlikely to be said before starting a meal to wish everyone enjoyment of their food?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 154,
+      "question_idx": 154,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, why do people often invite others to their homes soon after meeting them?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 160,
+      "question_idx": 160,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peru, how is the importance of family typically demonstrated in social gatherings?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 174,
+      "question_idx": 174,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "Which specific food, tied to a monthly custom, do Argentinians favor on the last weekday of the month?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 175,
+      "question_idx": 175,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "Which popular Argentine beverage, steeped in cultural significance, is commonly consumed in groups?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 176,
+      "question_idx": 176,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "If you were walking through the neighborhood of La Boca in Argentina, and you saw people dancing, what music do you think it would be?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 179,
+      "question_idx": 179,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentine culture, what is considered one of the most important aspects of everyday life?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 180,
+      "question_idx": 180,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentine culture, which building in Buenos Aires is famous for being a gathering place to celebrate national events?",
+      "prediction": "{\"answer_choice\":\"A\"} Explanation: Casa Rosada is the official seat of the executive branch of the government of Argentina and is often used as a venue for national events and celebrations. It is a prominent landmark in Buenos Aires and a popular gathering place for Argentinians. {\"answer_choice\":\"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 181,
+      "question_idx": 181,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentine culture, who is considered the most important figure?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nJustification: In Argentine culture, the President is considered the most important figure. The President is the head of state and government of Argentina and is responsible for leading the country and making key decisions that affect the nation. The President is also the commander-in-chief of the armed forces and represents the country in international affairs. While famous soccer players, popular music artists, and successful entrepreneurs are also important figures in Argentine culture, the President is considered the most important due to",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 185,
+      "question_idx": 185,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What is a popular attribute of Mexican culture in 2024?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 189,
+      "question_idx": 189,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In the context of beauty standards in Argentina, what is expected of women's bodies?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 190,
+      "question_idx": 190,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "How do friends greet each other at a cafe in Argentina?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nExplanation: In Argentina, friends greet each other at a cafe with a strong, audible tone. They often use gestures instead of words, but the tone of their voice is usually loud and enthusiastic. {\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 194,
+      "question_idx": 194,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, how common is it to have lunch with the entire family at least once a week to talk about your day/week?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"} \n\nThis answer is based on the common understanding of family values and traditions in Mexican culture, where having lunch together as a family is seen as a way to maintain strong family bonds and discuss daily activities. \n\nHere's the JSON format:\n```json\n{\n  \"answer_choice\": \"A\"\n}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 195,
+      "question_idx": 195,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What happens in Mexican culture after they have a meal at a restaurant?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) They pay and leave\n(ii) They stay longer and chat\n(iii) They argue about the bill\n(iv) They order dessert",
+      "prediction": "D. i, ii, iii\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 196,
+      "question_idx": 196,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What happens in Mexican culture when they hear banda and regional music playing?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 197,
+      "question_idx": 197,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What approach do individuals in Mexico often take when making a purchase?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 199,
+      "question_idx": 199,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "What does \"sierra\" Peruvians wear when it\u00b4s cold outside?",
+      "prediction": "{\"answer_choice\": \"D\"} Explanation: Chullo is a traditional Peruvian hat, Ushanka is a type of fur hat worn in Russia, and Natinerenka is a traditional hat from Kyrgyzstan. Wool cap is a common and practical choice for Peruvians to wear when it's cold outside. {\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 226,
+      "question_idx": 226,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentina, you can find many businesses that usually operate seven days a week closed for several days in a row. What is most likely the reason for this?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 227,
+      "question_idx": 227,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, how do you properly offer food to a guest to show hospitality?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Offer the food only once and take their first response as final.\n(ii) Offer the food multiple times until the guest accepts.\n(iii) Wait for the guest to ask for food before offering.\n(iv) Offer the food once more after the initial refusal to ensure the offer is genuine.",
+      "prediction": "A. {\"answer_choice\":\"ii, iii\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 245,
+      "question_idx": 245,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is a characteristic not commonly found in employment ads?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 275,
+      "question_idx": 275,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is the general perception of the police force in Mexico City?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 295,
+      "question_idx": 295,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican Catholic culture, which gifts are traditionally said to have been brought by the three Wise Men to the child God?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 296,
+      "question_idx": 296,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, we celebrate Dia de la Independencia on September 15th, marking the fight to protect our heritage from Spanish influence, involving great battles and significant sacrifices. What is a traditional way we commemorate this day?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 297,
+      "question_idx": 297,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "What do families in Chile typically barbecue and drink on Independence Day?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) barbecue and hotdogs\n(ii) barbecue\n(iii) barbecue, wine and empanadas\n(iv) barbecue, terremoto and empanadas",
+      "prediction": "B. {\"answer_choice\":\"ii, iv\"} \n\nExplanation: The question asks about the typical Independence Day activities in Chile. The correct answer is (ii) \"barbecue\" as it is a common activity on Independence Day in Chile. However, the question does not mention hotdogs or terremoto as part of the Independence Day celebration. The other options include items that are not typically associated with Independence Day in Chile. Empanadas are a common dish in Chile, but they are not specifically",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 299,
+      "question_idx": 299,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chilean culture, how are people usually received?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 319,
+      "question_idx": 319,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentina, how do friends typically prefer to enjoy their time?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 320,
+      "question_idx": 320,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In many South American cultures, which of the following is a commonly observed greeting practice, especially in informal social settings, that may differ from similar practices in other cultures?",
+      "prediction": "D\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 327,
+      "question_idx": 327,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "What is the most likely way to celebrate September 18 in Chile?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 356,
+      "question_idx": 356,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Northeast Mexico, as a sign of affection, how do you address an elder even if not related to you?",
+      "prediction": "A. Calling them Uncle\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 357,
+      "question_idx": 357,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is unusual at a funeral?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 358,
+      "question_idx": 358,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What is commonly done to celebrate the dead in Mexican culture?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Lighting candles and saying prayers at home.\n(ii) Visiting the graves and leaving food for the dead.\n(iii) Holding a parade in the deceased's honor.\n(iv) Planting a tree in memory of the deceased.",
+      "prediction": "D. i, ii\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 367,
+      "question_idx": 367,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "People from which city in Mexico are stereotyped as being prone to have romantic relationships with cousins?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 385,
+      "question_idx": 385,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is the typically known way to eat burritos?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 387,
+      "question_idx": 387,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chile, which language's words are commonly borrowed in addition to the official language, Spanish, reflecting the cultural integration with the indigenous population?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 388,
+      "question_idx": 388,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chilean culture, what is the typical evening meal called, bearing resemblance to a continental breakfast and involving gatherings after 6PM for fresh bread and tea or coffee?",
+      "prediction": "D. Brunch\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 398,
+      "question_idx": 398,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, which type of dog is commonly considered a status symbol?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 422,
+      "question_idx": 422,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what tradition is celebrated every November 2nd to honor those who have passed away?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 423,
+      "question_idx": 423,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "How do people in Mexico traditionally celebrate El D\u00eda de Reyes?",
+      "prediction": "A. By eating Rosca de Reyes\n\nJSON format:\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 425,
+      "question_idx": 425,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What do people in Mexico typically say to others after finishing a meal at a restaurant before leaving, taking into account the cultural and linguistic regional differences within the country, as well as the variations between different types of restaurants and social situations?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nExplanation: In Mexico, \"Provecho\" is the most commonly used phrase after finishing a meal at a restaurant, reflecting the cultural and linguistic regional differences within the country. It is widely used in both formal and informal settings, and it is appropriate for various types of restaurants, from casual eateries to high-end dining establishments. \"Provecho\" is a direct translation of \"enjoy your meal\" in English, making",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 447,
+      "question_idx": 447,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "How do people in Chile typically not celebrate their country's independence?",
+      "prediction": "{\"answer_choice\": \"A\"} Explanation: People in Chile typically do not celebrate their country's independence by decorating the streets with national flags and enjoying traditional dances and foods for a whole week. This is because Chile's independence day, September 18, is not a public holiday, and the celebrations are not as grand or widespread as in some other countries. Instead, the day is often marked by family gatherings and private events. The other options describe typical celebrations that do occur in Chile. {\"answer",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 459,
+      "question_idx": 459,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentina, what is the most common origin of the surnames?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Spanish\n(ii) Local\n(iii) Italian\n(iv) French",
+      "prediction": "D. i, ii, iii, iv\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 461,
+      "question_idx": 461,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "When do people usually have dinner in Argentina?",
+      "prediction": "D. at 7:30 PM.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 462,
+      "question_idx": 462,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What traditional dish do Argentines always have every Sunday at noon?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 469,
+      "question_idx": 469,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentina, which hot beverage with caffeine is most popular with the locals?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 488,
+      "question_idx": 488,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, which religious figure is commonly venerated and reflects the predominant religion?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 489,
+      "question_idx": 489,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, how do people typically engage with others in their community?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 492,
+      "question_idx": 492,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peru, what is the cultural expectation regarding arrival time for a well planned birthday celebration event?",
+      "prediction": "C. Arriving an hour early\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 505,
+      "question_idx": 505,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "What is a common type of joke straight Brazilian men prefer when dealing with male friends, but not with strangers?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 510,
+      "question_idx": 510,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, how might someone comment if they notice you've gained weight?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 540,
+      "question_idx": 540,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is a common greeting practice when arriving somewhere?",
+      "prediction": "A. Greeting everyone present, even if they are strangers.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 541,
+      "question_idx": 541,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, when they're meeting someone for the first time, how do Mexicans typically greet each other to show friendliness and warmth according to their culture?",
+      "prediction": "B. By kissing on the cheek or with a hug\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 542,
+      "question_idx": 542,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is a traditional practice for D\u00eda de los Muertos?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Making an altar with the deceased's favorite dishes\n(ii) Celebrate life with pyrotechnics\n(iii) Participating in religious church rituals\n(iv) Sending out greeting cards to family members to remember the deceased.",
+      "prediction": "C. i, iii\n\n{\n  \"answer_choice\": \"C\"\n}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 543,
+      "question_idx": 543,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "How do people in Chile typically celebrate Independence Day?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By having a big barbecue\n(ii) By setting off fireworks\n(iii) By having a large parade\n(iv) By eating apple pie and ice cream.",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 549,
+      "question_idx": 549,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, how do we usually greet someone?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Hug\n(ii) Bow\n(iii) Fist bump\n(iv) Handshake.",
+      "prediction": "D\n{\"answer_choice\":\"iii, iv\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 550,
+      "question_idx": 550,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, which of the following statements best reflects the local belief about food quality?",
+      "prediction": "A. Even the simplest meals are considered the best.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 571,
+      "question_idx": 571,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "What might a Brazilian family typically prepare for Sunday lunch?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Rice and beans\n(ii) Barbecue\n(iii) Fast food meal combo\n(iv) Traditional Italian pasta dish",
+      "prediction": "C. i, ii\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 582,
+      "question_idx": 582,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is considered the most favorite food?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 583,
+      "question_idx": 583,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What is the most favorite food in Mexican culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 603,
+      "question_idx": 603,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "How do people in Brazil typically eat pizza?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In Brazil, pizza is typically eaten with their hands, folded. This is a common practice in many Latin American countries, including Brazil. The folded hand method allows for easy handling of the pizza and allows for the consumption of toppings and sauce. Using cutlery or a toothpick is not common in Brazil. The use of chopsticks is not typical in Brazil, as it is more commonly used in East Asian countries. \n\n{\"answer_choice\": \"",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 608,
+      "question_idx": 608,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What is the name of the end-of-year festive period in Mexican culture that starts after December 12th and ends before January 6th?",
+      "prediction": "{\"answer_choice\": \"B\"} {\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 613,
+      "question_idx": 613,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "Why might a friend in Mexico joke about being scared of sandals?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 615,
+      "question_idx": 615,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, which dish is considered the best and originated from Africans?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 616,
+      "question_idx": 616,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "Which time frame is most common for a Brazilian acquaintance to invite you to their home for a gathering?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) On the same day, even if you've just met.\n(ii) Only after knowing them for several months.\n(iii) After a couple of weeks, once you've hung out a few times.\n(iv) Not until they formally introduce themselves with a written letter.",
+      "prediction": "B. i, iii\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 618,
+      "question_idx": 618,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chilean culture, what is a common tradition during Christmas for a non religious person?",
+      "prediction": "{\"answer_choice\": \"D\"} \n\nJustification: In Chilean culture, Christmas is a religious holiday, but non-religious people may still participate in some traditions. Communities organizing potluck dinners at local community centers is a common tradition among non-religious people during Christmas in Chile. This option is the most plausible among the given choices. \n\nA. is incorrect because while traveling to gather with families is a common practice during Christmas in Chile, it is more associated with religious people.\nB. is",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 619,
+      "question_idx": 619,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "How do people in Chile typically celebrate their Independence Day?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) By having a single day of partying and eating, to then return to work the next day.\n(ii) By watching a fireworks show and having a barbecue with friends and family.\n(iii) By enjoying one or more days of drinking, eating, and partying with friends and family.\n(iv) By decorating their homes with flags and attending a parade.",
+      "prediction": "D. {\"answer_choice\":\"iii, iv\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 627,
+      "question_idx": 627,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "It is not known whether or not young children can have memories of specific moments and, if the denial is true, it would not explain the reason why big parties are thrown for babies in Brazilian culture.",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 639,
+      "question_idx": 639,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, which birthday do girls value the most?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 644,
+      "question_idx": 644,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What type of food is customary to eat in Mexican culture?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 670,
+      "question_idx": 670,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peruvian culture, how long is a typical lunch break?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 677,
+      "question_idx": 677,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, who is considered a legendary football player?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 679,
+      "question_idx": 679,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peruvian culture, how do most people greet each other when they see one another?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nExplanation: In Peruvian culture, people usually greet each other by bowing slightly. This is a common and respectful way to show respect and acknowledge the other person. \n\nA. Shake hands or hug - This is not a common greeting in Peruvian culture.\nC. Touch noses - This is not a common greeting in Peruvian culture.\nD. Only wave from a distance - This is not a common greeting in Peruvian culture. \n\nThus, the correct",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 680,
+      "question_idx": 680,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peruvian culture, what is greatly cherished before anything else?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 681,
+      "question_idx": 681,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "Why might someone from the Peruvian culture be late to a meeting?",
+      "prediction": "A. Due to frequent traffic delays\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 711,
+      "question_idx": 711,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentine culture, how do people typically greet each other when meeting for the first time?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) A handshake\n(ii) A bow\n(iii) A kiss on the cheek\n(iv) A hug.",
+      "prediction": "A. i, iii\n\n{\"answer_choice\": \"A, iii\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 712,
+      "question_idx": 712,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What is a common expression in Argentina to wish someone a good meal?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 713,
+      "question_idx": 713,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentina, what is the common response when someone sneezes?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 720,
+      "question_idx": 720,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chilean culture, how do a gentleman and a girl typically greet each other?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 721,
+      "question_idx": 721,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "How do you welcome someone of the opposite sex in Chile?",
+      "prediction": "C. Shake hands firmly\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 723,
+      "question_idx": 723,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "Cu\u00e1l es la salsa picante favorita de los peruanos\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Tabasco\n(ii) Pimiento\n(iii) Rocoto\n(iv) Aj\u00ed",
+      "prediction": "D. {\"answer_choice\":\"iii, iv\"} \n\nExplanation: The question asks for the salsa picante (spicy sauce) that is the favorite among Peruvians. Among the options given, Rocoto (iii) and Aj\u00ed (iv) are both Peruvian sauces that are known for their spiciness. Tabasco (i) is a brand of hot sauce from the United States, and Pimiento (ii) is a type of pepper, not a sauce. Therefore, the",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 724,
+      "question_idx": 724,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "En Lima, \u00bfqu\u00e9 hace un \"datero\"?",
+      "prediction": "{\"answer_choice\":\"B\"} {\"answer_choice\":\"B\"} (Note: The correct answer is B, but the JSON format requires a single string, hence the repetition of B.) {\"answer_choice\":\"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 725,
+      "question_idx": 725,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Lima, during the month of October, what is a tradition for Catholic people regarding their attire?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 735,
+      "question_idx": 735,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chile culture, which sport is almost considered a religion by some of its enthusiasts?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 759,
+      "question_idx": 759,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peruvian culture, what are the most common drinks to share with our traditional food?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: In Peruvian culture, the most common drink to share with traditional food is Inca Kola, which is a traditional soft drink made from the coca leaf. It is often served with ceviche, lomo saltado, and other Peruvian dishes. Coca-Cola, Pepsi, and Dr Pepper are not as commonly consumed in Peru as Inca Kola. \n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 760,
+      "question_idx": 760,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peru and the Andean countries, what natural medicine is commonly used to combat altitude sickness, especially when traveling to the Andes Mountains?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 766,
+      "question_idx": 766,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, during the celebration for the Adoration of the Magi, what is expected of someone who finds the baby Jesus figurine inside the Rosca de Reyes cake?",
+      "prediction": "C. They are considered the godparent of Jesus for that year.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 768,
+      "question_idx": 768,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, which of the following statements best reflects the local belief about food quality?",
+      "prediction": "A. Even the simplest meals are considered the best.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 781,
+      "question_idx": 781,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "What is the most traditional dish in south Brazil?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: Feijoada is a traditional dish in South Brazil, made with black beans and various cuts of pork. It is considered the national dish of Brazil and is widely consumed in the country. The other options are also popular dishes in Brazil, but Feijoada is the most traditional and widely recognized dish in South Brazil. {\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 793,
+      "question_idx": 793,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "How do colleagues greet each other on a Monday morning in Argentina?",
+      "prediction": "{\"answer_choice\": \"C\"} \n\nExplanation: In Argentina, colleagues often greet each other with a traditional greeting or respect gesture, such as a handshake or a hug, to show respect and professionalism. A wave is not a common greeting in this context. {\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 794,
+      "question_idx": 794,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In an Argentine cultural context, what is a common practice when drinking \"mate\"?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 795,
+      "question_idx": 795,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In an Argentine cultural context, what is the common attitude towards punctuality for social gatherings?",
+      "prediction": "{\"answer_choice\":\"B\"} \n\nThe common attitude towards punctuality for social gatherings in an Argentine cultural context is that people often arrive deliberately after the scheduled time. This is a cultural norm that is widely accepted and understood. Therefore, the correct answer is B. arriving deliberately after scheduled. \n\nA. Punctuality important for meeting attendance - This is not the common attitude in Argentina.\nC. First to offer assistance - This is not related to punctuality for social gatherings.\nD. Rescheduling due",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 796,
+      "question_idx": 796,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, how can you show respect to your guests when they visit your home?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Offer a cup of coffee\n(ii) Take them on a house tour\n(iii) Give them a welcome gift\n(iv) Serve them a glass of cold water.",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 801,
+      "question_idx": 801,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In an Argentine cultural context, in which of the following situations would a kiss on the cheek be considered inappropriate?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 807,
+      "question_idx": 807,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "What forms do witches commonly assume in the Mexican state of Puebla?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 826,
+      "question_idx": 826,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, on average, how many times a day do people tend to shower?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 827,
+      "question_idx": 827,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, which meal is considered the most important of the day?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 828,
+      "question_idx": 828,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexico, what would be the polite manner to say hello to another individual regarding their gender?",
+      "prediction": "B. Bow in a slightly manner so you are able to show a sign of respect regardless of the gender of the other individual.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 829,
+      "question_idx": 829,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexico, what is the polite manner to get something that's far from you at the dining table?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 849,
+      "question_idx": 849,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, which is considered the most important meal of the day, since they like to eat outside during work time?",
+      "prediction": "A. Breakfast\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 850,
+      "question_idx": 850,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazil, what is a common dietary practice on All Saints' Day?",
+      "prediction": "D. Having a big feast with turkey and pumpkin pie.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 853,
+      "question_idx": 853,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chilean culture, what is typically eaten during the family evening gathering known as 'once'?",
+      "prediction": "B\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 854,
+      "question_idx": 854,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chile, how do drivers typically react when they see a pedestrian at a pedestrian crossing, reflecting the country's high road education standards?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nThe correct answer is A. In Chile, drivers typically stop at pedestrian crossings, reflecting the country's high road education standards. This behavior is a result of the country's emphasis on pedestrian safety and the importance of following traffic rules. \n\nTo provide more context, Chile has a strong emphasis on road safety and education, which is reflected in the behavior of drivers. The country has implemented various measures to ensure that drivers are aware of their responsibilities and the importance of following",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 855,
+      "question_idx": 855,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, what is considered odd regarding the living environment?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 858,
+      "question_idx": 858,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peru, which is a common outdoor family gathering tradition?",
+      "prediction": "B. Hosting a large family dinner at home.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 859,
+      "question_idx": 859,
+      "country": "Peru",
+      "region": "South America",
+      "prompt_question": "In Peruvian culture, when is considered appropriate for women to get married?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 879,
+      "question_idx": 879,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, where are family get-togethers frequently held?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 894,
+      "question_idx": 894,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chilean culture, what is a common components of dinner?",
+      "prediction": "{\"answer_choice\":\"B\"} {\"answer_choice\":\"B\"} // Note: The correct answer is B, but the format requires a JSON object. {\"answer_choice\":\"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 903,
+      "question_idx": 903,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, who is traditionally given the first slice of birthday cake?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 924,
+      "question_idx": 924,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "How do people in Brazil commonly greet each other when they meet?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nExplanation: In Brazil, people commonly greet each other by shaking hands and giving a single kiss on the cheek. This is a popular and widely accepted greeting in Brazil. \n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 944,
+      "question_idx": 944,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "What is considered a traditional food in Chile?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Empanadas\n(ii) Completos\n(iii) Pebre\n(iv) Fried Chicken.",
+      "prediction": "B. i, ii, iii\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 947,
+      "question_idx": 947,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What do Argentine people who enjoy social gatherings love to drink as part of their cultural tradition?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nMate is a traditional social drink in Argentina, often consumed during social gatherings. It is a tea made from yerba mate leaves and is usually shared from a communal gourd. The other options are not as commonly associated with Argentine social gatherings. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 951,
+      "question_idx": 951,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In Chile, how do people traditionally celebrate on 18th of September during:\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) The traditional Chilean courtship dance\n(ii) Public celebrations display\n(iii) National harvest festival celebration\n(iv) Fiestas Patrias competition",
+      "prediction": "D. i, ii\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 969,
+      "question_idx": 969,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What letter do Latin Americans pronounce differently than most of their Spaniard counterparts?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1053,
+      "question_idx": 1053,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "Fill in the blank: in Mexican culture, it can be _____ to call someone fat in Spanish\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) A term of endearment\n(ii) Insulting\n(iii) Acceptable, but not very nice\n(iv) Acceptable",
+      "prediction": "D\n\n{\"answer_choice\":\"i, iii\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1071,
+      "question_idx": 1071,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Argentine culture, what type of cuisine is less likely to be popular?",
+      "prediction": "{\"answer_choice\":\"D\"} \n\nExplanation: In Argentine culture, desserts are not as popular as other types of cuisine. While Argentine cuisine includes a variety of dishes, desserts are not a central part of the national cuisine. Instead, Argentine cuisine is known for its hearty stews, grilled meats, and breads. Therefore, the type of cuisine that is less likely to be popular in Argentine culture is desserts. \n\nSo, the correct answer is D. Desserts. \n\nAnswer: {\"answer_choice",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1072,
+      "question_idx": 1072,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What do friends in Argentina chat about over mate?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Politics and economy\n(ii) Local sports teams\n(iii) The latest technology gadgets\n(iv) Upcoming Hollywood movies.",
+      "prediction": "A. i, ii\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1078,
+      "question_idx": 1078,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In northern Mexico culture, how do people often not refer to their friend's parents?",
+      "prediction": "B. As \"Mr.\" or \"Mrs.\" followed by their last name\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1079,
+      "question_idx": 1079,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, how is it customary not to greet women at a party?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1092,
+      "question_idx": 1092,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican culture, do all Mexicans live with their parents until they are in their 30s?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) until they are about 18 years old\n(ii) until they get married, even if that's in their 30s\n(iii) until they finish high school\n(iv) until they can afford their own rent.",
+      "prediction": "D. i, iv\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1093,
+      "question_idx": 1093,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In Mexican cuisine, quesadillas are made with cheese as it comes from queso (cheese) but there are certain places in Mexico where people can order quesadillas without cheese",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1097,
+      "question_idx": 1097,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In Latino america culture, how do people typically greet each other?",
+      "prediction": "{\"answer_choice\": \"B\"} \n\nIn Latino American culture, people typically greet each other with a hug and sometimes a kiss on the cheek. This greeting is a sign of affection and respect. \n\nA. With a handshake - This is not the most common greeting in Latino American culture.\nC. With a bow - This is more common in East Asian cultures.\nD. With a fist bump - This is not a common greeting in Latino American culture. \n\nHence, the correct answer is B",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1102,
+      "question_idx": 1102,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "How do people in Mexico traditionally NOT celebrate the Day of the Dead?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1116,
+      "question_idx": 1116,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "What do Brazilians usually wear on their feet indoors in the cold weather?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1120,
+      "question_idx": 1120,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "Chile had several wars against the Peru-Bolivian Confederation. In which of these wars did Chile militarily occupy the enemy's capital?",
+      "prediction": "{\"answer_choice\":\"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1121,
+      "question_idx": 1121,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "How do villagers in Chilo\u00e9 move houses with community help?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1122,
+      "question_idx": 1122,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "Which of these dances is the most popular in the desert in Chile?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1145,
+      "question_idx": 1145,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, what is traditionally eaten with a\u00e7ai?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1146,
+      "question_idx": 1146,
+      "country": "Brazil",
+      "region": "South America",
+      "prompt_question": "In Brazilian culture, what was Silvio Santos's first job before he became a revered owner of a Brazilian broadcasting network?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1156,
+      "question_idx": 1156,
+      "country": "Mexico",
+      "region": "South America",
+      "prompt_question": "In the narrative of Maria's family celebrating D\u00eda de los Muertos, which elements of their celebration are essential for honoring the tradition of welcoming deceased loved ones back to the living world?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1158,
+      "question_idx": 1158,
+      "country": "Chile",
+      "region": "South America",
+      "prompt_question": "In most parts of Chile, what is not the customary behavior of drivers when approaching a pedestrian at a zebra crossing?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1178,
+      "question_idx": 1178,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In the context of Argentina celebrating a country's victory in a soccer tournament within their culture, what would be the most common way to celebrate this success?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1179,
+      "question_idx": 1179,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "In the context of Argentina's culture, which of the following statements best reflects the country's urban organization?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1180,
+      "question_idx": 1180,
+      "country": "Argentina",
+      "region": "South America",
+      "prompt_question": "What is a common living arrangement in Argentina?",
+      "prediction": "B. Sharing rent with roommates\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

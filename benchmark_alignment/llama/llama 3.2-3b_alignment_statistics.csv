@@ -1,0 +1,2 @@
+model,benchmark1,benchmark2,n_countries,pearson_r,pearson_p,spearman_r,spearman_p,mean_abs_diff,max_abs_diff,benchmark1_mean,benchmark2_mean
+llama 3.2-3b,BLEND,CulturalBench,9,0.22619194396150247,0.5584022797937407,0.5,0.17047066078705375,16.576666666666668,28.42,78.64888888888889,65.81666666666666

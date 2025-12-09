@@ -1,0 +1,1111 @@
+{
+  "experiment_name": "culturalbench_south_europe_qwen_2.5b",
+  "timestamp": "20251205_113312",
+  "config": {
+    "experiment_name": "culturalbench_south_europe_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "South Europe"
+      }
+    },
+    "model": {
+      "name": "Qwen/Qwen2.5-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 76,
+  "results": [
+    {
+      "sample_id": 3,
+      "question_idx": 3,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Which is the preferred way of cooking eggs for Spanish people?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 30,
+      "question_idx": 30,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italy, what is the common practice regarding tipping waitstaff at regular restaurants?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 31,
+      "question_idx": 31,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is a common practice in Spanish culture that is considered beneficial for health?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 69,
+      "question_idx": 69,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Among Valencian people, how is altering the traditional recipe for paella generally received?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 95,
+      "question_idx": 95,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is the name of the most famous summer TV show that featured the Spanish journalist who has broadcast the New Year's Eve chimes the longest, while wearing a cape on public TV?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 131,
+      "question_idx": 131,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Valencia, when is it traditionally considered the appropriate time to order Paella?",
+      "prediction": "C. For dinner\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 156,
+      "question_idx": 156,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is cacio e pepe?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 157,
+      "question_idx": 157,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is casoncelli?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 158,
+      "question_idx": 158,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is a trippa?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 159,
+      "question_idx": 159,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what does \"pota\" mean?",
+      "prediction": "{\"answer_choice\": \"A\"}.\n\n\"Pota\" in Italian culture is often considered a filler word, which fits the description of option A. It is used to fill silence or to express agreement without much meaning. \n\nTo ensure the accuracy of this answer, let's review the other options:\n- B. A casual greeting: While \"pota\" might be used in casual settings, it is not typically a greeting.\n- C. A swear word: \"Pota\" is not considered a",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 213,
+      "question_idx": 213,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What time is it customary to have dinner in Spain?",
+      "prediction": "A. Between 5pm and 7pm\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 221,
+      "question_idx": 221,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, when a woman asks for a bikini in a restaurant, what might she be requesting?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 236,
+      "question_idx": 236,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What do people typically not do when greeting each other in Madrid?",
+      "prediction": "C. A hug\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 240,
+      "question_idx": 240,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In traditional Spanish culture, why do people often choose to get married?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 247,
+      "question_idx": 247,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, what do people traditionally eat at midnight on New Year's Eve for good luck in the upcoming year?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 260,
+      "question_idx": 260,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In southern Italian culture, what do people often carry with themselves due to the influence of superstitions?",
+      "prediction": "D. A cornicello\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 261,
+      "question_idx": 261,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is a common custom related to coffee in Italian culture?",
+      "prediction": "{\"answer_choice\": \"C\"} {\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 262,
+      "question_idx": 262,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How does a typical Italian family spend their Sundays?",
+      "prediction": "C. The whole family gathers for Sunday lunch, which can last the whole day.\n\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 273,
+      "question_idx": 273,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In a typical Italian family gathering, what is a common tradition for Sunday lunch?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 286,
+      "question_idx": 286,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "When do Spanish people typically eat their main meal of the day?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 288,
+      "question_idx": 288,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What type of break is a common practice among Spanish workers during their workday?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Taking a long lunch break in the afternoon\n(ii) Having a short coffee break every few hours\n(iii) Working through lunch to leave work earlier\n(iv) Taking multiple short breaks for snacks",
+      "prediction": "C. i, ii\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 355,
+      "question_idx": 355,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, which of the following is a common way of greeting even among acquaintances?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Two kisses on the cheeks\n(ii) A firm handshake\n(iii) A high five\n(iv) Three kisses on the cheeks",
+      "prediction": "B. i, ii\n\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 359,
+      "question_idx": 359,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How do people usually kiss in italy?",
+      "prediction": "B. They don't kiss in public\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 361,
+      "question_idx": 361,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, when does lunch usually start?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 363,
+      "question_idx": 363,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Catalonia, which language is officially recognized?",
+      "prediction": "{\"answer_choice\":\"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 372,
+      "question_idx": 372,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spain, which activity is most commonly enjoyed due to the love for the sun and joyous celebrations?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 390,
+      "question_idx": 390,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian dining etiquette, how is it customary to clean any residual sauce on the plate after eating a pasta dish?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 432,
+      "question_idx": 432,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How do families in Italy typically enjoy their meals together?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 438,
+      "question_idx": 438,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is the most popular soft drink and sells the best?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 463,
+      "question_idx": 463,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "At a business meeting in Spain, how do men typically greet each other?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 468,
+      "question_idx": 468,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What do people usually have as a dish, typical of Italy and popular with foreigners, usually with a tomato sauce?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Pasta\n(ii) Focaccia\n(iii) Pizza\n(iv) Tacos.",
+      "prediction": "D. i, iii\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 470,
+      "question_idx": 470,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the most popular dessert in Italy?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Italian layered coffee-flavored dessert\n(ii) Ice cream\n(iii) Wweet bread and fruitcacke\n(iv) Pandoro",
+      "prediction": "D. i, iv\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 474,
+      "question_idx": 474,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is the typical reaction to the idea of adding pineapple to pizza?",
+      "prediction": "B. They freak out, considering it an unacceptable topping\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 475,
+      "question_idx": 475,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how do mealtimes typically play out when at a neighbour's birthday party?",
+      "prediction": "A. People tend to converse a lot and gatherings can last into the night.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 529,
+      "question_idx": 529,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, what is a common custom to greet close friends?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 562,
+      "question_idx": 562,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the common choice for kid's breakfast before school in Italy?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Cookies and milk\n(ii) Bacon and eggs\n(iii) Cereal with milk\n(iv) Ham sandwich and tea",
+      "prediction": "D. i, iii\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 578,
+      "question_idx": 578,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What dates do Pamplona locals mark for the annual running of the bulls?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 579,
+      "question_idx": 579,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how do people usually speak in conversations?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 604,
+      "question_idx": 604,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Sicily, when an older person meets a younger one for the first time in a small town, what do they commonly ask to know their family background?",
+      "prediction": "A. What is your family name?\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 617,
+      "question_idx": 617,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spain, which event do we celebrate for a week each spring that depicts different stages of the life and resurrection of Jesus Christ?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 671,
+      "question_idx": 671,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Where was flamenco born?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 672,
+      "question_idx": 672,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In which city is \"the April fair\" celebrated?",
+      "prediction": "A. Seville\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 673,
+      "question_idx": 673,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Where are the Sanfermines celebrated?",
+      "prediction": "B. Pamplona\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 686,
+      "question_idx": 686,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian culture, when do people usually have a steaming hot cappuccino with frothy milk?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 704,
+      "question_idx": 704,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is the customary practice in Spain after finishing a meal?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 746,
+      "question_idx": 746,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "Which desserts might you find at an Italian family's Christmas dinner?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: Panettone and Pandoro are traditional Italian Christmas desserts. Panettone is a sweet, yeasted bread that is often served as a dessert, while Pandoro is a sweet, buttery bread that is also a popular Christmas treat. The other options are not typical Italian Christmas desserts. Fruitcake and Gingerbread are more common in American Christmas celebrations, Pecan pie and Sugar cookies are American desserts, and Buche de Noel and Stollen",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 790,
+      "question_idx": 790,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is a common driving behavior in Italian culture?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 810,
+      "question_idx": 810,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, there is a very controversial traditional dish called \"tortilla de patata.\" What do many Spanish families debate regarding its preparation?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 814,
+      "question_idx": 814,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In Italian dining culture, which type of meal is typically not served?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 815,
+      "question_idx": 815,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "While talking on the mobile phone with a friend in a public space in the context of Spanish culture, what is well-accepted behavior?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 818,
+      "question_idx": 818,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In the context of Spanish culture, how do young people prefer to spend their free time?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nThis answer is based on the assumption that young people in Spanish culture prefer to spend their free time going out to parties and social gatherings. However, it's important to note that this is a generalization and preferences can vary widely among individuals. {\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 848,
+      "question_idx": 848,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "Do small shop owners take a siesta on working days?",
+      "prediction": "D. They don't close for a break during the day.\n\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 860,
+      "question_idx": 860,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is the traditional New Year's Eve celebration practice in Spanish culture?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: The traditional New Year's Eve celebration practice in Spanish culture is eating 12 grapes and toasting with champagne. This custom is known as \"La uva de la buena suerte\" (The grape of good luck) and is a popular tradition in many Spanish-speaking countries. Each grape represents a month of the year, and people try to catch each grape as it falls from a bowl or a bottle, hoping to bring good luck for the coming",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 861,
+      "question_idx": 861,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In the context of Italian dining culture, is it traditionally acceptable to order a pizza with pineapple topping?",
+      "prediction": "B. No, pineapple on pizza is typically frowned upon.\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 868,
+      "question_idx": 868,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, what phrase does a friend typically use to challenge another friend to do something?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 926,
+      "question_idx": 926,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What drink is specific to Asturias, and is widely drank at the traditional festivals of the region?",
+      "prediction": "{\"answer_choice\": \"A\"} {\"answer_choice\": \"A\"}\n\nThe drink specific to Asturias and widely consumed at traditional festivals in the region is cider. Therefore, the correct answer is:\n\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 958,
+      "question_idx": 958,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "In the Italian tradition, what is not a common way to celebrate Ferragosto on August 15th every year?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 962,
+      "question_idx": 962,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, why are stores and businesses closed around noon on a typical weekday?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 972,
+      "question_idx": 972,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What wouldn't a local in Madrid typically have for dinner?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 977,
+      "question_idx": 977,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how is tardiness generally viewed in social situations?",
+      "prediction": "A. It's often considered acceptable and not a major issue.\n\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 979,
+      "question_idx": 979,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What English word in Spanish is most similar to the Spanish word for \"handcuffs\", \"esposas\"?",
+      "prediction": "{\"answer_choice\":\"B\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 988,
+      "question_idx": 988,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What does a Spanish kid typically do with their tooth once it has fallen out, following their cultural tradition?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 990,
+      "question_idx": 990,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how long might someone stay out at the clubs?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1001,
+      "question_idx": 1001,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "What is a common way of greeting each other in Spanish culture for women?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1034,
+      "question_idx": 1034,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, how effective are Spanish shutters in blocking out light?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1081,
+      "question_idx": 1081,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What do the guests do usually to celebrate the spouses in Italy?",
+      "prediction": "{\"answer_choice\": \"D\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1082,
+      "question_idx": 1082,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is a typical habit during processions in the south of Italy?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1094,
+      "question_idx": 1094,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What distinguishes an Italian's breakfast habit from that of an Englishman?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Eating a light breakfast typically consisting of a coffee and pastry.\n(ii) Enjoying a hearty breakfast with eggs, bacon, and toast.\n(iii) Eating pancakes with maple syrup.\n(iv) Opting for a cereal with cold milk.",
+      "prediction": "D. i, ii, iv\n\n{\"answer_choice\":\"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1095,
+      "question_idx": 1095,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "When greeting someone for the first time, what is a common practice in Italy culture?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1096,
+      "question_idx": 1096,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the common practice regarding footwear inside homes in Italian culture?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1124,
+      "question_idx": 1124,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What do Italians traditionally use to make carbonara?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1125,
+      "question_idx": 1125,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What car is often considered the most \"fun\" and traditional vehicle in Italian culture?",
+      "prediction": "{\"answer_choice\": \"A\"} \n\nExplanation: The Fiat 500 is often considered the most \"fun\" and traditional vehicle in Italian culture. It is a small, cute, and iconic car that has been a symbol of Italian design and automotive culture for decades. The Fiat 500 is also known for its ability to be driven with a sense of joy and freedom, which is often associated with the Italian concept of \"carpe diem\" or \"seize the day.\"",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1172,
+      "question_idx": 1172,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "How do locals in Italy tip their waitstaff who provide exceptional service at a dinner at a five (or even less) star restaurant?",
+      "prediction": "{\"answer_choice\": \"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1173,
+      "question_idx": 1173,
+      "country": "Italy",
+      "region": "South Europe",
+      "prompt_question": "What is the traditional way for an Italian to enjoy his coffee during a well-deserved but short break from work?",
+      "prediction": "{\"answer_choice\": \"C\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1210,
+      "question_idx": 1210,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In spanish culture, what tradition do we in the last seconds of the year before starting the new year",
+      "prediction": "B. Eating 12 grapes at each stroke of midnight\n\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1211,
+      "question_idx": 1211,
+      "country": "Spain",
+      "region": "South Europe",
+      "prompt_question": "In Spanish culture, what is the name of the most recent dictator?",
+      "prediction": "{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

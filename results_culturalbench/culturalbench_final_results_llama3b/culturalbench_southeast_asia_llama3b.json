@@ -1,0 +1,2273 @@
+{
+  "experiment_name": "culturalbench_southeast_asia_qwen_2.5b",
+  "timestamp": "20251205_112303",
+  "config": {
+    "experiment_name": "culturalbench_southeast_asia_qwen_2.5b",
+    "task": {
+      "name": "culturalbench_cultural_knowledge",
+      "type": "culturalbench",
+      "config": {
+        "region": "Southeast Asia"
+      }
+    },
+    "model": {
+      "name": "meta-llama/Llama-3.2-3B-Instruct",
+      "tensor_parallel_size": 1,
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": null,
+      "trust_remote_code": true,
+      "dtype": "auto",
+      "quantization": null,
+      "swap_space": 4,
+      "enforce_eager": false,
+      "max_num_seqs": 256,
+      "seed": 42,
+      "temperature": 0.0,
+      "max_tokens": 100,
+      "top_p": 1.0,
+      "top_k": -1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "stop": null
+    },
+    "evaluation": {
+      "num_samples": -1,
+      "batch_size": 32
+    },
+    "output": {
+      "results_dir": "results_culturalbench",
+      "save_predictions": true,
+      "verbose": true
+    }
+  },
+  "task_type": "CulturalBenchTask",
+  "num_samples": 159,
+  "results": [
+    {
+      "sample_id": 7,
+      "question_idx": 7,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what is a favorite dish to pair with rice in a family dinner meal?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nNote: The answer is based on general knowledge of Vietnamese culture and may not be universally applicable.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 8,
+      "question_idx": 8,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how should one give or receive items to show respect?",
+      "prediction": "A\n```json\n{\"answer_choice\": \"A\"}\n``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 9,
+      "question_idx": 9,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how should items be given or received to show respect?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 18,
+      "question_idx": 18,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what is the most popular food base?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general knowledge and may not be applicable to every individual or region within the Philippines.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 27,
+      "question_idx": 27,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, which of the following is considered rude to ask someone, especially if you are not related?",
+      "prediction": "A\nExplanation: In Philippine culture, it is considered impolite to ask someone about their salary, especially if you are not related. This is because salary is a personal and private matter, and asking about it can be seen as intrusive or nosy. In contrast, asking about someone's education or daily routine is generally considered acceptable and even polite. The same goes for asking about taxes, which is a public matter. However, asking about someone's salary is generally considered rude and should be avoided",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 29,
+      "question_idx": 29,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what is usually not the common practice regarding arrival time for a wedding invitation?",
+      "prediction": "D\n```json\n{\n  \"answer_choice\": \"D\"\n}\n``` \nNote: The answer is based on the common practice in Vietnamese culture. However, it's always best to check with the specific couple or their families for their preferences regarding arrival time for a wedding invitation.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 32,
+      "question_idx": 32,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is the polite gesture to do when you accidentally cross paths with someone?",
+      "prediction": "C\nExplanation: In Indonesian culture, when you accidentally cross paths with someone, it is considered polite to make a quick apology using hand gestures, such as bowing or making a \"sorry\" gesture with your hands. This shows respect and acknowledges the other person's presence.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 33,
+      "question_idx": 33,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Indonesian people typically do when celebrating Eid al-Fitr in their culture?",
+      "prediction": "A\n\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` \n\nNote: The question is about the cultural practices of Indonesian people during Eid al-Fitr, which is a significant Islamic holiday in Indonesia. The correct answer is based on the cultural practices of Indonesian people during this holiday. \n\nThe correct answer is A, as Indonesian people typically visit relatives' houses to ask for forgiveness and share meals during Eid al-Fitr. This is a common practice in Indonesian culture, where people come",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 34,
+      "question_idx": 34,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what food is often served as a typical dish on the Eid al-Fitr holiday?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ````\nNote: Eid al-Fitr is a significant Islamic holiday that marks the end of Ramadan, the Islamic holy month of fasting. In Indonesia, a traditional dish called \"Ketupat\" is often served during this holiday. Ketupat is a type of rice cake made from glutinous rice, wrapped in palm leaves, and is a staple food in Indonesian cuisine. It is typically served with spicy samb",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 44,
+      "question_idx": 44,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what do they traditionally eat on New Year's Day?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ```json\n{\n  \"answer_choice\": \"A\"\n}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 61,
+      "question_idx": 61,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Javanese culture, how does someone react if you accidentally step on their foot?",
+      "prediction": "A\n\nExplanation: In Javanese culture, physical contact and personal space are highly valued. When someone accidentally steps on another person's foot, it is considered impolite to react harshly or make a scene. Instead, the person who was stepped on will often use polite language to remind the other person of the incident, without drawing attention to it. This approach helps to maintain social harmony and avoid embarrassment.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 73,
+      "question_idx": 73,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, how many years of mandatory education do students complete before entering university?",
+      "prediction": "B\nExplanation: In Vietnam, students typically complete 12 years of compulsory education, from primary school to high school, and then attend a 3-year vocational or technical school, or a 4-year university. Therefore, the total number of years is 12 + 3 = 15 years.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 75,
+      "question_idx": 75,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Singaporeans often append at the end of their sentences as a linguistic quirk unique to their culture to show a form of exasperation?",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 85,
+      "question_idx": 85,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "Which proverb reflects the Indonesian cultural perspective on having more kids?",
+      "prediction": "D\nExplanation: The Indonesian cultural perspective on having more kids is reflected in the proverb \"The more, the merrier\", which emphasizes the joy and abundance that comes with a larger family. This proverb is often used to encourage people to have more children, as it is believed that a larger family brings more happiness and fulfillment. (Source: various Indonesian proverbs and cultural sources) \n\nNote: The other options do not reflect the Indonesian cultural perspective on having more kids. Option A is a common saying",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 99,
+      "question_idx": 99,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a distinct tradition in Filipino culture during the Christmas season, excluding caroling?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The question is asking for a distinct tradition in Filipino culture during the Christmas season, excluding caroling. The correct answer is \"A\" which is the only option that is related to Filipino culture. The other options are not related to Filipino culture. \n\nHowever, it's worth noting that the question is not asking for a tradition that is unique to the Philippines, but rather a distinct tradition in Filipino culture during the Christmas season. In that case",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 100,
+      "question_idx": 100,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is unique about the Filipino family culture besides multi-generational living?",
+      "prediction": "C\nExplanation: The Filipino family culture is known for its strong emphasis on family ties and intergenerational relationships. One of the unique aspects of Filipino family culture is the practice of multi-generational living, where family members of different ages live together under the same roof. This is often seen in extended family households, where grandparents, parents, and children all live together, sharing responsibilities and supporting each other. This practice is deeply rooted in Filipino culture and is seen as a way to promote family unity",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 101,
+      "question_idx": 101,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, we do this to show respect for the elderly?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 124,
+      "question_idx": 124,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, which action is a common way to show respect towards elders?",
+      "prediction": "C\nExplanation: In Filipino culture, the 'pagmamano' is a common way to show respect towards elders. This involves younger people raising the backs of the elders' hands to their foreheads as a sign of respect and greeting. This practice is deeply rooted in Filipino tradition and is often seen in formal and informal settings. The 'pagmamano' is a way to show respect, gratitude, and affection towards elders, and is an important part of Filipino etiquette.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 165,
+      "question_idx": 165,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian Muslim culture, what is the traditional expectation regarding marriage and sexual relations?",
+      "prediction": "A\nExplanation: In Indonesian Muslim culture, marriage is considered a sacred institution, and sexual relations are expected to occur only after marriage. This is based on Islamic teachings and cultural norms. The correct answer is A, as marriage is traditionally expected to occur before engaging in sexual relations. The other options do not accurately reflect the traditional expectations in Indonesian Muslim culture. \n\nNote: The provided answer is based on general knowledge and may not be applicable to all individuals or communities within Indonesian Muslim culture. It is essential",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 166,
+      "question_idx": 166,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What's the polite way for Thai students to pass by their seated teacher?",
+      "prediction": "D\nExplanation: In Thai culture, the wai is a traditional greeting where the hands are placed together in a prayer-like gesture. It is a sign of respect and is often used to acknowledge someone's presence. When passing by a seated teacher, a polite Thai student would offer a wai to show respect and acknowledge the teacher's presence before walking in front of them. This is a common practice in Thai culture and is considered a polite and respectful way to interact with someone in a position of authority",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 198,
+      "question_idx": 198,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what aspects of community interaction are people known for?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) To connect with neighbors and ensure neighborhood safety.\n(ii) To enjoy the seasonal decorations and festive environment.\n(iii) To hold garage sales and trade items with neighbors.\n(iv) To participate in neighborhood watch programs formally organized by local authorities.",
+      "prediction": "D. i, ii\nThe best answer is D.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 218,
+      "question_idx": 218,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "Why do Pilipinos serve \"Pansit\", a Filipino noodle dish, on birthdays?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on the common practice in the Philippines where \"Pansit\" is served on birthdays to wish the birthday person a long and healthy life.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 219,
+      "question_idx": 219,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what is the title of the most popular story regarding the origin of man and woman?",
+      "prediction": "A\nExplanation: The story of the origin of man and woman in Philippine culture is the legend of \"Malakas at Maganda\" which translates to \"Strong and Beautiful\" in English. This story is a popular myth in the Philippines and is often told to explain the creation of the first man and woman. The story is similar to the biblical account of Adam and Eve, but with some differences. The legend of Malakas at Maganda is a significant part of Philippine folklore and is still",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 231,
+      "question_idx": 231,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, which item is it illegal to sell?",
+      "prediction": "A\nExplanation: In Singapore, chewing gum is banned for sale in public places, except for certain medical purposes. This is due to concerns about litter and the potential for gum to be used as a nuisance. The ban was introduced in 1992.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 237,
+      "question_idx": 237,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What dish is traditionally not consumed outside of Vietnam but commonly eaten in their culture?",
+      "prediction": "D\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on the information provided in the question. The question states that the dish is traditionally not consumed outside of Vietnam but commonly eaten in their culture. The answer is rice cake, which is a popular dish in Vietnamese culture. \n\nHowever, it's worth noting that the question does not provide any information about the specific type of rice cake, and the answer could be any type of rice cake. The answer provided in the question is",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 248,
+      "question_idx": 248,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines culture, how do young people show respect to their elders when meeting them?",
+      "prediction": "A\nExplanation: In the Philippines culture, young people show respect to their elders when meeting them by giving a \"mano\" or saying \"bless\". This is a traditional greeting where the younger person places their right hand on the elder's left hand and says \"bless\" or \"mano po\". This is a sign of respect and affection. (Source: various online sources) \n\nNote: The other options are not correct representations of how young people show respect to their elders in the",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 249,
+      "question_idx": 249,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippine culture, what does the term \"bayanihan\" signify?",
+      "prediction": "B\n\n{\"answer_choice\": \"B\"} \n\nThe best answer is B.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 250,
+      "question_idx": 250,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is the significance of the term 'pamanhikan'?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The term 'pamanhikan' is a Filipino term that refers to the act of a man and his family visiting the intended bride's family to request her hand in marriage. This is a significant cultural practice in the Philippines, where the groom's family would typically visit the bride's family to express their interest in marrying the bride and to negotiate the terms of the marriage. The visit is often accompanied by gifts and is seen as a sign",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 251,
+      "question_idx": 251,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what event involves attending masses at dawn in preparation for Christmas Day?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nExplanation: Simbang gabi is a series of nine dawn Masses that take place from December 16 to 24, in preparation for Christmas Day. It is a traditional Filipino Christmas celebration. The event involves attending masses at dawn, singing Christmas carols, and eating traditional Filipino breakfast foods. The purpose of simbang gabi is to prepare the Filipino people for the birth of Jesus Christ and to strengthen their faith. It is a significant part of",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 263,
+      "question_idx": 263,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, what is the expectation regarding working overtime and after hours?",
+      "prediction": "A\nExplanation: In Singapore, it is common for employees to be expected to work overtime and after hours without pay, especially in industries such as finance and healthcare. This is often seen as a sign of dedication and commitment to the job. However, it's worth noting that the Singaporean government has been actively promoting work-life balance in recent years, and some companies are starting to adopt more flexible work arrangements. Nevertheless, the traditional expectation remains that employees will be willing to put in extra hours without additional",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 274,
+      "question_idx": 274,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is respect?",
+      "prediction": "D\n\nExplanation: In Filipino culture, respect is shown through physical gestures and actions that demonstrate deference to elders and those in positions of authority. One such gesture is the \"mano po\" or \"hand on the forehead\" gesture, where the younger person takes the elder's hand and places it on their forehead as a sign of respect. This gesture is a way of showing respect and acknowledging the elder's wisdom and authority. \n\nNote: The other options are not accurate representations of respect in Filipino",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 277,
+      "question_idx": 277,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, what is a common practice regarding pedestrians and traffic?",
+      "prediction": "C\n{\"answer_choice\": \"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 279,
+      "question_idx": 279,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the context of Filipino culture, how might Filipinos typically react to news that an actor that was cast in a big Hollywood TV series had one Filipino grandparent?",
+      "prediction": "C\n\nExplanation: This answer is based on the cultural norms of the Filipino people, who tend to be humble and modest. Filipinos often prioritize family and community over public displays of pride or achievement. In this scenario, a quiet family dinner would be a more typical reaction, as it allows the actor to share their achievement with loved ones without drawing unnecessary attention to themselves. This approach also reflects the Filipino value of \"pakikisama\" (getting along with others), which emphasizes the importance of maintaining",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 281,
+      "question_idx": 281,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which of the following actions is not considered respectful?",
+      "prediction": "A\n\nExplanation: In Thai culture, it is considered impolite to touch someone's head, as it is considered a sacred part of the body. The head is also associated with the brain and the soul, and touching it is seen as a sign of disrespect. In contrast, the other options are all considered respectful in Thai culture. Shaking hands is a common greeting, making direct eye contact is a sign of respect, and hugs are a common way to greet friends and family.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 301,
+      "question_idx": 301,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, why is it important to know people's age?",
+      "prediction": "C\nExplanation: In Vietnamese culture, age is a significant factor in social interactions and relationships. Knowing someone's age is essential to address them properly and show respect, as it indicates their level of maturity and social status. This is reflected in the use of honorific titles and language that vary depending on the person's age. For example, older individuals are addressed with titles such as \"anh\" or \"ch\u1ecb,\" which convey respect and deference. In contrast, younger individuals are addressed with more",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 302,
+      "question_idx": 302,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, how do they call the grandmother on the father's side?",
+      "prediction": "A\nExplanation: In Vietnamese culture, the grandmother on the father's side is called B\u00e0 n\u1ed9i.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 309,
+      "question_idx": 309,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singaporean culture, what is an egregious faux pas when eating with others?",
+      "prediction": "B\n\nExplanation: In Singaporean culture, it is considered impolite to take the last morsel of food from a communal dish for yourself. This is because it implies that you are not willing to share with others, which is a fundamental aspect of social harmony in Singaporean culture. By taking the last morsel, you are essentially saying that you are more important than the others, which is seen as rude and selfish. In contrast, offering to pay the bill at the end of",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 328,
+      "question_idx": 328,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "Is food coloring always added to make Filipino banana ketchup?",
+      "prediction": "B\nExplanation: Filipino banana ketchup is made from a combination of tomatoes, bananas, onions, garlic, and spices. The color of the ketchup is not always artificially added, as the natural color of the tomatoes and bananas can provide a reddish-brown hue. However, some commercial brands may add artificial food coloring to enhance the color and make it more appealing to consumers. The exact composition of homemade or store-bought ketchup can vary depending on the recipe and the manufacturer.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 338,
+      "question_idx": 338,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, how do the elders know that the young respects them?",
+      "prediction": "B\n\nExplanation: In Filipino culture, showing respect to elders is deeply ingrained. One way to show respect is by adding \"po\" at the end of sentences, which is a sign of politeness and respect. Additionally, greeting the elderly with \"Mano\" (which means \"hand\" in Filipino) is also a sign of respect and affection. This is a common practice in Filipino culture, especially among younger generations. \n\nNote: The other options, while polite in general, are not",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 339,
+      "question_idx": 339,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how is food typically served during a meal?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 341,
+      "question_idx": 341,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, how do we traditionally greet each other?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The traditional Thai greeting involves placing the palms together in a prayer-like gesture, with the fingers interlaced, and bowing the head slightly. This is a sign of respect and is often accompanied by a gentle smile. The greeting is typically used among friends, family, and in formal settings. \n\nIn this context, the answer is A, as it is the traditional Thai greeting. The other options, B, C, and D,",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 342,
+      "question_idx": 342,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, how do we traditionally eat our special type of sticky rice?",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: The traditional way of eating sticky rice in Thailand is by using our hands. The sticky rice is usually served with other dishes like tom yum soup, green curry, and grilled meat. The combination of flavors and textures is a big part of the Thai dining experience. \n\nHowever, the sticky rice is not typically eaten with a fork. Forks are not commonly used in Thai cuisine, and the sticky rice is usually too sticky and moist to be",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 344,
+      "question_idx": 344,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a popular Indonesian cuisine that involves skewered and grilled meat served with a thick, spicy, and turmeric-based sauce?",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: The answer is based on the description provided. Sate Madura is a popular Indonesian dish that involves skewered and grilled meat served with a thick, spicy, and turmeric-based sauce. The answer is B. Sate Madura. \n\nHowever, the answer key provided in the question is B. Sate Madura, but the correct answer is actually B. Sate Madura is a type of Sate, but the correct",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 371,
+      "question_idx": 371,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Malaysian families usually have their meals?",
+      "prediction": "B\n\n{\"answer_choice\":\"B\"} \n\nNote: The question is based on the general knowledge of Malaysian culture and food habits. In Malaysia, it is common for families to share a large meal, often featuring a variety of dishes, including rice, noodles, and curries. This practice is deeply rooted in the country's cultural heritage and is often seen as a way to bring people together and foster a sense of community.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 375,
+      "question_idx": 375,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, what is a common expectation parents have for their children's education?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Taking extra classes after school\n(ii) Participating in summer camps focused on academic\n(iii) Attending coding bootcamps during weekends\n(iv) Enrolling in online courses for college credit.",
+      "prediction": "D. i, iv\nThe best answer is D.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 376,
+      "question_idx": 376,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is Thailand commonly known as due to its friendly and welcoming population?",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 377,
+      "question_idx": 377,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which food is considered a staple in everyday meals?",
+      "prediction": "A\nExplanation: In Thai culture, rice is a staple food that is consumed with most meals. It is a main component of the traditional Thai diet and is often served with a variety of dishes. The staple food is rice, which is a fundamental part of Thai cuisine. In Thai culture, rice is a staple food that is consumed with most meals. It is a main component of the traditional Thai diet and is often served with a variety of dishes. The staple food is rice, which is a",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 389,
+      "question_idx": 389,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how is respect shown to elders when walking together?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 400,
+      "question_idx": 400,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is a common way to greet someone?",
+      "prediction": "B\n\n{\"answer_choice\": \"B\"} \n\nNote: The correct answer is based on general knowledge of Thai culture, not on the provided text. \n\nPlease let me know if I can assist you further. \n\nHowever, I noticed that the provided text does not contain any information about Thai culture. The text only contains a prompt to choose an answer from the given alphabet choices. \n\nIf you would like to provide more context or information about the prompt, I would be happy to assist you further.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 401,
+      "question_idx": 401,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is the most frequently asked introductory question?",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: The question is based on a real-life scenario, but the answer is not necessarily universally true for all Thai people. The answer is based on general knowledge and may not reflect the opinions or experiences of every individual.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 403,
+      "question_idx": 403,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is the expected educational path after finishing high school?",
+      "prediction": "A\nExplanation: In Thai culture, it is highly valued to pursue higher education after completing high school. This is seen as a key step towards securing a good job and achieving social mobility. As a result, attending a university is the most common and expected educational path after finishing high school. (Source: various online sources and cultural studies)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 409,
+      "question_idx": 409,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, how do people mostly spend their time on the road?",
+      "prediction": "D\n\n{\n  \"answer_choice\": \"D\"\n} \n\nNote: The answer is based on the general knowledge of Indonesian culture and transportation. The question is designed to test the ability to recall and apply general knowledge in a specific context. The answer is not based on any specific text or information provided in the question. \n\nLet me know if you want me to generate another question. \n\nAlso, please let me know if you want me to change the answer choice to something else. \n\nPlease let",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 414,
+      "question_idx": 414,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "How do you reserve a table in Singapore?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Using personal items like tissue packets, umbrellas, or water bottles\n(ii) Placing a reserved sign provided by the food court\n(iii) Asking a friend to stand by the table until they arrive\n(iv) Leaving a tip on the table ahead of time.",
+      "prediction": "B\nExplanation: Reserving a table in Singapore is not a common practice, but if you do, you can use a reserved sign provided by the food court (ii) or ask a friend to stand by the table until you arrive (iii). However, leaving a tip on the table ahead of time (iv) is not a common practice. Using personal items like tissue packets, umbrellas, or water bottles (i) is not a way to reserve a table. Therefore, the correct answer",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 441,
+      "question_idx": 441,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, what do people use to reserve seats in hawker centres?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nNote: The answer is based on common knowledge and may not be explicitly stated in the provided text. \n\nThis question requires the test-taker to have knowledge of local customs and practices in Singapore, specifically in hawker centres. The correct answer, \"Placing their wallet on the table\", is a common practice in Singapore where people reserve seats by placing their wallet or other personal items on the table. This is a social norm that is widely accepted",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 444,
+      "question_idx": 444,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What activities might colleagues in Singapore participate in after work?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Go sing karaoke\n(ii) Go get Kaya toast\n(iii) Go get bubble tea\n(iv) Go for dinner",
+      "prediction": "D\nThe best answer is D.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 449,
+      "question_idx": 449,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What is not a common way to enjoy street food in Vietnamese culture?",
+      "prediction": "D\n\nExplanation: In Vietnamese culture, it is common to eat street food while standing or sitting on small plastic stools at a roadside stall (A), quickly wipe down your chopsticks or spoon before eating (B), and pay the chef directly (C). However, cleaning your table after eating (D) is not a common practice in Vietnamese street food culture, as the tables are often not provided and are instead made of the ground or a small tray. This is a cultural norm that is not typically",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 467,
+      "question_idx": 467,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how do younger people show respect when passing by an elder who is seated?",
+      "prediction": "A\nExplanation: In Thai culture, when passing by an elder who is seated, younger people typically lower their heads or bow slightly as a sign of respect. This is a common practice in Thai etiquette and is considered a polite way to show deference to the elder. (Source: various online sources, including Thai culture websites and forums)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 483,
+      "question_idx": 483,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "How do people commonly reserve restaurant tables in Singapore's culture?",
+      "prediction": "D\n\n{\"answer_choice\":\"D\"} \n\nNote: The answer is based on common practices in Singapore's culture. However, it's worth noting that the best practice is to call the restaurant in advance to book a table, as it ensures a table is available and avoids disappointment. \n\nPlease let me know if you'd like me to add anything else! \n\n---\n\nHere's the revised response:\n\nIn Singapore's culture, people commonly reserve restaurant tables by calling the restaurant in advance to book a table.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 504,
+      "question_idx": 504,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what behaviors should you avoid when speaking to someone older than you?",
+      "prediction": "C\nExplanation: In Filipino culture, it is considered impolite to use phrases like \"po\" and \"opo\" when speaking to someone older than you. These phrases are typically used to show respect and deference, and using them in a way that is not genuine or insincere can be seen as insincere or even mocking. Instead, it is better to use formal titles such as \"Tito\" or \"Tita\" (uncle or aunt) or \"Kam",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 517,
+      "question_idx": 517,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What best describes a well-known trait of Filipino culture in terms of treating guests?",
+      "prediction": "A\nExplanation: Filipinos are known for their warm and welcoming nature, making them excellent hosts. They take great pride in treating their guests with respect, kindness, and generosity. This trait is deeply ingrained in their culture and is often referred to as \"Filipino hospitality.\" (Source: various travel guides and cultural resources)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 522,
+      "question_idx": 522,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, which of the following shows a good use of Singlish?",
+      "prediction": "A\nExplanation: This choice shows a good use of Singlish as it uses colloquial expressions like \"Alamak\" (an expression of surprise or shock) and \"i\" instead of \"I\". This is a common way to speak in Singaporean English, also known as Singlish. \n\nNote: The other options do not use Singlish as they are more formal and do not contain colloquial expressions. \n\nPlease let me know if you want me to explain anything else.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 523,
+      "question_idx": 523,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, what item is commonly used to reserve seats at a hawker center?",
+      "prediction": "A\nExplanation: In Singapore culture, tissue papers are commonly used to reserve seats at a hawker center. This is a common practice among locals to ensure that they get a seat at their preferred stall. The tissue paper is placed on the seat, and when the vendor is ready to serve, the customer can take the seat. This practice is a reflection of the resourcefulness and practicality of the Singaporean culture.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 524,
+      "question_idx": 524,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, what do people traditionally eat during the Mid-Autumn Festival?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The question is based on the general knowledge of the Mid-Autumn Festival in Singapore. The answer is not specific to any particular source or reference. \n\nPlease let me know if you want me to change anything. \n\nAlso, I can provide more questions on the same topic. \n\nLet me know if you need anything else. \n\nBest regards,\n[Your Name] \n\n---\n\nThis is a response to your request. However, I noticed",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 539,
+      "question_idx": 539,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, why is the right hand preferred over the left hand for giving or receiving items?",
+      "prediction": "A\n\nExplanation: In Indonesian culture, the right hand is preferred over the left hand for giving or receiving items because it is seen as more formal and clean. This is a common practice in many Asian cultures, where the left hand is associated with private activities such as personal hygiene and is considered impolite to use it for social interactions. The right hand, on the other hand, is considered more dignified and respectful, making it the preferred choice for exchanging items. This preference is rooted in cultural",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 544,
+      "question_idx": 544,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What might a Singaporean say to friends when insisting in Singlish?",
+      "prediction": "A\nExplanation: \"Lah\" is a common expression used in Singlish to emphasize a point or to show agreement. It can be translated to \"okay\" or \"alright\". For example, \"You want to go to the movies? Lah, let's go!\" or \"You think it's going to rain? Lah, I don't think so!\".\n\nNote: The other options are also common expressions in Singlish, but \"lah\" is a more specific example of an expression",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 548,
+      "question_idx": 548,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What do commuters usually use to pay for a ride on the vibrantly decorated public utility jeepneys in Manila?",
+      "prediction": "B\n```json\n{\n  \"answer_choice\": \"B\"\n}\n``` \nNote: The answer is based on the common practice in Manila, where jeepney drivers usually accept small bills and coins as payment. The use of QR code or other digital payment methods is not common in this context. The answer choice \"By bills only\" is incorrect because it implies that only bills are accepted, which is not the case. The answer choice \"By public transport payment method\" is also incorrect because it",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 551,
+      "question_idx": 551,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "How do people in the Philippines often greet each other without using words?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nNote: The greeting in the Philippines is often referred to as \"salute\" or \"hello\" without using words. This is often achieved by nodding the head. \n\nThis is a common greeting in the Philippines, especially among friends and family. It is a way of acknowledging each other's presence without needing to say a word. The nodding of the head is a universal sign of greeting and acknowledgement, and it is widely understood and accepted in",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 552,
+      "question_idx": 552,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which of the following actions is considered disrespectful?",
+      "prediction": "C\n\nExplanation: In Thai culture, it is considered disrespectful to touch someone's head, as it is considered a sacred part of the body. The head is also associated with the brain and the soul, and touching it is seen as a sign of disrespect or even a threat. In Thai culture, it is customary to use the palms of the hands to greet or touch someone, rather than the fingertips. This is a subtle but important aspect of Thai etiquette. \n\nNote: The other options are not",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 553,
+      "question_idx": 553,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how do younger people show respect to someone older?",
+      "prediction": "C\nExplanation: In Thai culture, the \"Wai\" or namaste hand gesture is a traditional way for younger people to show respect to someone older. It involves placing the palms together in front of the chest, with the fingers interlaced, and bowing the head slightly. This gesture is a sign of respect, gratitude, and humility. It is commonly used in various social situations, including when greeting someone older or showing respect to a superior.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 554,
+      "question_idx": 554,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is the customary practice regarding wearing shoes indoors?",
+      "prediction": "A\n```json\n{\"answer_choice\": \"A\"}\n```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 558,
+      "question_idx": 558,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a common characteristic of food in Thai culture?",
+      "prediction": "A\n\nExplanation: Thai cuisine is known for its bold and spicy flavors, which are often achieved through the use of chili peppers, lemongrass, and other spices. This characteristic is a defining feature of Thai food and is often associated with the country's cuisine. The use of spicy flavors is not only a staple in Thai cooking but also a key element in many traditional dishes, such as tom yum soup and green curry. The spiciness of Thai food is also a reflection of the country",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 559,
+      "question_idx": 559,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What cutlery do Thai people normally use for eating their meals?",
+      "prediction": "C\nExplanation: In Thailand, the traditional utensils used for eating are chopsticks, which are also known as \"khanom buang\" in Thai. They are used to pick up food from a communal plate or a personal plate. The chopsticks are typically made of wood, bamboo, or plastic. The use of chopsticks is an integral part of Thai dining culture, and it is common to see people using them to eat a variety of dishes, from spicy curries to fragrant",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 560,
+      "question_idx": 560,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "Why does Malaysia have more holidays than Thailand?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The question is not asking for a factual answer but rather a hypothetical explanation. The correct answer is based on the assumption that Malaysia has more holidays than Thailand. \n\nHowever, the actual reason for Malaysia having more holidays than Thailand is not explicitly stated in the question. But, based on general knowledge, Malaysia has a higher number of public holidays compared to Thailand. According to the Malaysian Public Holidays Act 1957, there are 16 public holidays",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 561,
+      "question_idx": 561,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysia, what do you say at the end of sentences when you are gently requesting assistance from a coworker?",
+      "prediction": "A\nExplanation: In Malaysia, when requesting assistance from a coworker, it is common to use the phrase \"lah\" at the end of sentences to convey a gentle and polite tone. This phrase is often used to soften the request and show appreciation for the person's help. For example, \"I need your help, lah\" or \"Can you assist me, lah?\" The use of \"lah\" is a common feature of Malaysian English and is often used in informal settings. \n\nNote:",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 566,
+      "question_idx": 566,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thailand, when are national anthems typically played?",
+      "prediction": "A\nExplanation: In Thailand, the national anthem is typically played prior to the start and end of each workday, as well as during other official events. This is a common practice in many countries, including Thailand, to show respect and patriotism. (Source: various online sources)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 567,
+      "question_idx": 567,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysian culture, how should you address someone that is older than yourself politely?",
+      "prediction": "A\nExplanation: In Malaysian culture, it is customary to address someone who is older than yourself with a respectful title followed by their first name. This shows respect and deference to their age and experience. For example, \"Ah Kow\" (Mr. Kow) or \"Ah Puan\" (Mrs. Puan). This is a common practice in Malaysian culture, especially in formal or professional settings. \n\nNote: The answer is based on general knowledge of Malaysian culture and may not be",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 576,
+      "question_idx": 576,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what is a common tradition for an Overseas Filipino Worker (OFW) when returning home?",
+      "prediction": "D\n\nExplanation: OFWs often return home with a lot of money and goods, and they like to share their blessings with their families and friends. Buying pasalubong (souvenirs) for everyone is a common tradition, and hosting a big welcome-back barbecue is also a popular way to celebrate their return. (Source: various online articles and forums)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 591,
+      "question_idx": 591,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is a common practice when entering someone\u2019s home or a temple?",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 593,
+      "question_idx": 593,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "How do people in Indonesia typically show its pride in its independence?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The question is about how people in Indonesia typically show its pride in its independence, which is on August 17th. The correct answer is related to national pride and independence. The given options are not directly related to the independence day, but option D is the closest to showing national pride and independence. \n\nHowever, the correct answer is not among the options. The correct answer is that people in Indonesia typically show its pride in its independence by",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 594,
+      "question_idx": 594,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Balinese people preserve their loved ones after they have died?",
+      "prediction": "C\n\n{\"answer_choice\":\"C\"} \n\nThe question is about the Balinese people's tradition of preserving their loved ones after death. The correct answer is C, which refers to the Balinese tradition of burning the corpses in a fire festival called ngaben. This is a unique and distinctive practice that is not found in other cultures. The other options, such as burying the bodies in cemeteries or holding a banquet in their honor, are not specific to the Balinese people's tradition",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 596,
+      "question_idx": 596,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is the second most spoken language after Filipino?",
+      "prediction": "D\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on the 2015 census data, where Cebuano/Bisaya is the second most spoken language after Filipino.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 597,
+      "question_idx": 597,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What utensils don't Filipinos use for eating?",
+      "prediction": "D. Hands.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 620,
+      "question_idx": 620,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, how is a stranger likely to be treated when visiting a local family?",
+      "prediction": "B\n\nExplanation: In Vietnamese culture, hospitality is highly valued, and visitors are often treated with great respect and kindness. When a stranger visits a local family, they are likely to be welcomed with open arms and invited into their home for a meal, where they will be treated to traditional food and drinks, and made to feel part of the family. This is a common practice in Vietnamese culture, and is seen as a sign of respect and generosity. The stranger may also be offered a place to stay",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 626,
+      "question_idx": 626,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, people often say 'God bless you' or 'kaawaan ka ng Diyos' in response to actions such as:",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 659,
+      "question_idx": 659,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, how do people traditionally greet each other?",
+      "prediction": "A\n\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` \n\nNote: The answer is based on the traditional Thai greeting, which is the \"wai\". The other options are not traditional Thai greetings. \n\nPlease let me know if you want me to add anything else. \n\nThanks! \n\nBest regards,\n[Your Name] \n\n---\n\nI've added the requested information. Here is the revised response:\n\nIn Thai culture, how do people traditionally greet each other?\n\nWithout any explanation",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 660,
+      "question_idx": 660,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is considered disgusting when done on the street?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nExplanation: In Thai culture, spitting on the street is considered disgusting and is often seen as a sign of disrespect. It is generally frowned upon and can be considered impolite. \n\nNote: The other options (eating, tipping, and hugging) are not typically considered disgusting in Thai culture, and may even be seen as normal or acceptable behaviors in certain situations. \n\nThis question requires the test-taker to demonstrate an understanding of Thai cultural",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 661,
+      "question_idx": 661,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what is considered highly disrespectful when interacting with someone?",
+      "prediction": "D\n\nExplanation: In Thai culture, pointing at someone with your feet is considered highly disrespectful, as the feet are considered the lowest and most impolite part of the body. This is because in Thai culture, the feet are associated with personal hygiene and are not considered suitable for pointing or touching. Making direct eye contact is also considered impolite, but pointing with the feet is considered more egregious. Smiling to people you have seen on the street is a common greeting in Thai culture, and",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 662,
+      "question_idx": 662,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "What do small shrine-like structures found outside homes and businesses in Thai culture usually for?",
+      "prediction": "A\nExplanation: In Thai culture, these small shrine-like structures are called \"Lakorns\" or \"Lakorns\" and are used to house a small Buddha image or other deities. They are believed to bring good luck, prosperity, and protection to the home and business. They are often found outside homes and businesses, and are a common feature of Thai architecture. The purpose of these structures is to honor and appease the spirits, and to ensure success and good fortune in all aspects",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 667,
+      "question_idx": 667,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is Philippine unique for?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on general knowledge and may not be exhaustive or definitive. The purpose is to provide a brief and concise response. \n\nLet's try another one. What is Philippine unique for?\nWithout any explanation, choose only one from the given alphabet choices (A, B, C, D).\nProvide as JSON format: {\"answer_choice\":\"\"}\n\nA. food\nB. history\nC. culture\nD. architecture\n\nAnswer:",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 685,
+      "question_idx": 685,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is the most family value?",
+      "prediction": "A\n\nExplanation: In Indonesian culture, the most family value is collective decision-making. This means that family members work together to make decisions, which is a fundamental aspect of Indonesian family values. This approach is often seen as a way to promote harmony and unity within the family. (Source: various online sources, including articles and cultural studies) \n\nNote: The other options (B, C, and D) are not accurate representations of the most family value in Indonesian culture. While individual success and personal",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 693,
+      "question_idx": 693,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what does every barangay have that is unique to it and celebrated with a fiesta?",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 694,
+      "question_idx": 694,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is the common belief in the Philippines regarding living with a boyfriend or girlfriend?",
+      "prediction": "B\n\nExplanation: In the Philippines, it is common for couples to live together before getting married. This is often seen as a way to test their compatibility and to see if they are ready to take the next step in their relationship. This practice is deeply rooted in Filipino culture and is often viewed as a rite of passage for young couples. (Source: various online sources and cultural experts)",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 695,
+      "question_idx": 695,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture,  what words are never used to address someone older than you?",
+      "prediction": "C\nExplanation: In Filipino culture, it is considered impolite to use the words \"po\" and \"opo\" to address someone older than you. \"Po\" is a term used to show respect to someone younger than you, while \"opo\" is a term used to show respect to someone older than you. Using these words to address someone older than you can be seen as disrespectful. Instead, it is customary to use formal titles such as \"Mr.\" and \"Mrs.\" or \"",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 707,
+      "question_idx": 707,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is the common gesture when meeting someone older?",
+      "prediction": "B\nExplanation: In Indonesian culture, when meeting someone older, it is customary to bow and take their hand as a sign of respect. This gesture is a way to show deference and acknowledge the older person's age and authority. The bowing motion is a traditional greeting in Indonesian culture, and taking their hand is a way to physically show respect and affection. This gesture is often used in formal and informal settings, and is an important part of Indonesian social etiquette.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 717,
+      "question_idx": 717,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, which action is considered rude.",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nExplanation: In Thai culture, touching someone with your hand is considered a rude gesture. It is generally considered impolite to touch someone without their permission, especially in formal or professional settings. In Thai culture, it is customary to use the feet or the hands to point or gesture, but touching someone with the hand is not acceptable. \n\nIn Thai culture, keeping eye contact while talking is considered polite and respectful. It is a sign of engagement and",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 726,
+      "question_idx": 726,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what question would your relatives ask you if they heard you just changed company?",
+      "prediction": "D\n{\"answer_choice\": \"D\"}",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 728,
+      "question_idx": 728,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, what do people like to criticize online?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 729,
+      "question_idx": 729,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, is it true that residents of different skin colours live in different areas of the country?",
+      "prediction": "B\nExplanation: While Singapore is a multicultural society, there is evidence to suggest that people from different cultural backgrounds may prefer to live in areas that are more familiar to them. For example, Chinese residents tend to congregate in areas with high concentrations of Chinese population, such as Chinatown. Similarly, Indian residents may prefer to live in areas with high concentrations of Indian population, such as Little India. However, it's worth noting that this is not a hard and fast rule, and many people from",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 730,
+      "question_idx": 730,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore, which item is allowed in buses?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Durians\n(ii) Fast food burgers\n(iii) Popcorn on package\n(iv) A slice of pizza.",
+      "prediction": "B\nExplanation: According to the Singapore Bus Rules, the following items are allowed in buses: fast food burgers, popcorn on package, and a slice of pizza. However, durians are not allowed. Therefore, the correct answer is B. ii, iii, iv.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 742,
+      "question_idx": 742,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "In Thai culture, what career is most preferred?",
+      "prediction": "A\nExplanation: In Thai culture, the most preferred career is being a doctor. This is because doctors are highly respected in Thai society, and it is considered a noble profession. Thai people place a high value on healthcare and consider doctors to be the guardians of public health. As a result, becoming a doctor is often seen as a prestigious and desirable career path. (Source: various online sources, including news articles and cultural commentary) \n\nHere is the answer in JSON format:\n{\"answer_choice\":",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 745,
+      "question_idx": 745,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What kind of milk is traditionally used in Vietnamese coffee?",
+      "prediction": "A\n\nExplanation: In Vietnamese coffee, sweetened condensed milk is traditionally used to add sweetness and creaminess to the coffee. The sweetened condensed milk is poured into the coffee, creating a layered effect and a unique flavor profile. This is a distinctive characteristic of Vietnamese coffee culture.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 750,
+      "question_idx": 750,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysia, how are religious festivals from different religions treated?",
+      "prediction": "C\nExplanation: In Malaysia, the government officially recognizes and celebrates the festivals of the majority Muslim population, as well as the Chinese New Year and Deepavali (Diwali) of the Hindu community. However, the treatment of religious festivals from other religions, such as the Buddhist and Sikh communities, is less prominent. The government does not officially recognize or give public holidays for these festivals. Therefore, the correct answer is C.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 751,
+      "question_idx": 751,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Malaysia, what is the customary practice regarding tipping servers in restaurants?",
+      "prediction": "A\nExplanation: In Malaysia, tipping servers in restaurants is not a customary practice. The locals usually pay the full amount of the bill and do not leave any additional money as a tip. This is because tipping is not expected or required in Malaysian culture. Therefore, the correct answer is A.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 769,
+      "question_idx": 769,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "When does the traditionally long and festive Christmas season start in the Philippines?",
+      "prediction": "A\nExplanation: In the Philippines, the Christmas season is considered to start after Easter, which is why it is often referred to as the \"Christmas season after Easter.\" This tradition is believed to have originated from the Catholic Church, which considers Christmas to be a celebration of the birth of Jesus Christ, and Easter to be a celebration of his resurrection. As a result, the Christmas season is seen as a time of preparation and celebration leading up to Christmas Day, which falls on December 25. (",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 770,
+      "question_idx": 770,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Filipinos typically gesture to point out a direction?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The question is based on common knowledge about Filipino culture and gestures. The answer is not a definitive or absolute fact, but rather a generalization based on common practices. \n\nHowever, I can provide more information about Filipino gestures if you'd like. Filipinos often use a combination of gestures, including nodding their head, using their hands to point, and making eye contact to communicate directions. Nodding their head is a common way to",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 771,
+      "question_idx": 771,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a common belief among many traditional Filipino families regarding sweeping the floor at night?",
+      "prediction": "B\n{\"answer_choice\": \"B\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 772,
+      "question_idx": 772,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, what is a common feature found in most family households?",
+      "prediction": "A\nExplanation: In Filipino culture, a common feature found in most family households is a \"Live Laugh Love\" decor in the kitchen. This is a popular and common theme found in many Filipino homes, often displayed in the kitchen as a reminder to live life to the fullest and to appreciate the simple things. This decor is often accompanied by other Filipino-inspired decorations, such as traditional Filipino artwork or colorful textiles. The \"Live Laugh Love\" theme is a reflection of the Filipino value of family and community",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 782,
+      "question_idx": 782,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what is often considered necessary to achieve a high social position?",
+      "prediction": "C\nExplanation: In Vietnamese culture, family background and social connections play a significant role in determining one's social position. Inheriting a family business or a high-ranking position in a family organization is often seen as a key factor in achieving a high social status. This is because family businesses and organizations are often seen as a source of prestige and respect in Vietnamese society. (Source: various online sources and cultural experts) \n\nPlease let me know if you want me to add more information or change anything",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 784,
+      "question_idx": 784,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "What are the things that can surprise a tourist when visiting a Malaysian toilet?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) The use of a water hose or bidet instead of toilet paper\n(ii) Paying to use public restrooms\n(iii) The presence of a carpeted bathroom floor\n(iv) Finding a shower within the toilet stall.",
+      "prediction": "D\nExplanation: The use of a water hose or bidet instead of toilet paper (i) is a common feature in Malaysian toilets. Paying to use public restrooms (ii) is also a common practice in Malaysia. Finding a shower within the toilet stall (iv) is also a common feature in some Malaysian toilets. Therefore, the correct answer is D. i, ii, iv.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 785,
+      "question_idx": 785,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what do parents do for a 1-month-old child?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nNote: The answer is based on Vietnamese culture and tradition. In Vietnamese culture, it is a common practice for parents to give a gift of money to the newborn baby, especially in the first month of life. This is a way to wish the baby good health and prosperity. \n\nPlease let me know if you need any further assistance! \n\nHowever, I noticed that the answer is not among the options provided. The correct answer is \"C. A",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 799,
+      "question_idx": 799,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, how should one speak to their elders?",
+      "prediction": "A\n\nExplanation: In Indonesian culture, it is customary to show respect to elders by using polite and delicate language when speaking to them. This is a fundamental aspect of social etiquette and is deeply ingrained in the culture. Using polite language, such as honorifics and titles, is a way to show respect and deference to those who are older and more experienced. This is especially true in formal or professional settings, where using polite language is a sign of respect and professionalism. (Source: various",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 802,
+      "question_idx": 802,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What are the most dangerous natural disasters in Indonesia?",
+      "prediction": "C\n\n{\"answer_choice\":\"C\"} \n\nNote: Indonesia is a country located in the Pacific Ring of Fire, making it prone to various natural disasters. The country is surrounded by several active volcanoes, and its location in the Pacific Ring of Fire makes it susceptible to earthquakes and tsunamis. The country is also prone to landslides and floods. Here are some of the most dangerous natural disasters in Indonesia:\n\n1. Earthquakes: Indonesia is located in a seismically active",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 822,
+      "question_idx": 822,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What is a common thing an Indonesia teenagers do before entering their home?",
+      "prediction": "C\n{\"answer_choice\":\"C\"}",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 830,
+      "question_idx": 830,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Filipino culture, how would a person show respect to someone older than them?",
+      "prediction": "A\n\nExplanation: In Filipino culture, showing respect to someone older than oneself is often done through physical gestures, such as bowing one's head and slightly bending down. This is a common way to show deference and respect to elders, particularly in formal or traditional settings. The other options, while potentially respectful in other cultures, are not typically used in Filipino culture to show respect to elders.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 837,
+      "question_idx": 837,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, which of the following is a traditional noodle dish?",
+      "prediction": "B\nExplanation: Ph\u1edf is a traditional Vietnamese noodle soup made from beef or chicken broth, rice noodles, herbs, and various toppings. It is a popular dish in Vietnamese cuisine. The other options are not traditional Vietnamese noodle dishes. Spaghetti Carbonara is an Italian dish, Soba Noodles are Japanese, and Macaroni and Cheese is a Western comfort food.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 845,
+      "question_idx": 845,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "According to the traditional ceremony, what might a Thai groom perform at his own wedding?",
+      "prediction": "D\n{\"answer_choice\": \"D\"} \n\nThe best answer is D.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 857,
+      "question_idx": 857,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singaporean culture, how do people commonly reserve seats in casual eateries?",
+      "prediction": "C\nExplanation: In Singaporean culture, people often reserve seats in casual eateries by using personal belongings, such as a jacket, bag, or umbrella, to claim a seat. This is a common practice in many Asian cultures, including Singapore. The idea is that if someone leaves their belongings on a table, it is implied that they are reserving the seat for themselves. This practice is often seen in hawker centers, food courts, and other casual dining establishments.",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 866,
+      "question_idx": 866,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What is the biggest public holiday in Vietnamese culture?",
+      "prediction": "C\nExplanation: The Lunar New Year, also known as T\u1ebft Nguy\u00ean \u0110\u00e1n, is the most important public holiday in Vietnamese culture. It is a time for family reunions, traditional foods, and festivities. The holiday is celebrated over several days, with the exact dates varying each year based on the lunar calendar. (Source: Vietnam Travel Guide)",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 867,
+      "question_idx": 867,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Vietnamese grandparents usually gift their grandchildren for the traditional Lunar New Year celebration?",
+      "prediction": "C\n{\"answer_choice\": \"C\"} \n\nNote: The traditional Lunar New Year celebration in Vietnam is known as T\u1ebft Nguy\u00ean \u0110\u00e1n, and it is a time when Vietnamese people traditionally give gifts to their children and grandchildren. The most common gift given during this time is money, which symbolizes good luck and prosperity. This practice is rooted in the Vietnamese culture and is a way to show love and appreciation for the younger generation. \n\nIn this context, the correct answer is C. monetary gifts",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 875,
+      "question_idx": 875,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "Which of the following examples is a correct Singlish sentence?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) I finished already leh.\n(ii) I'm done with it, huh?\n(iii) I've completed this task liao.\n(iv) This is done, ay.",
+      "prediction": "D. i, ii, iii\nExplanation: \n(i) I finished already leh. - This is a correct Singlish sentence.\n(ii) I'm done with it, huh? - This is a correct Singlish sentence.\n(iii) I've completed this task liao. - This is a correct Singlish sentence.\nTherefore, the correct answer is D. i, ii, iii.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 880,
+      "question_idx": 880,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, how do people commonly indicate something by avoiding using their fingers?",
+      "prediction": "A\nExplanation: In the Philippines, people commonly indicate something by avoiding using their fingers. One way to do this is by pointing with their face lips, which is a common non-verbal cue in many cultures. This is often referred to as \"lip pointing\" or \"smacking lips.\" It's a way to point to something without using their fingers, which is considered impolite in some cultures. This behavior is often seen in everyday conversations, especially when people are trying to get someone's",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 884,
+      "question_idx": 884,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian tradition, when shaking hands with an adult, what do you need to do?",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: The correct answer is based on the provided text, which states \"when shaking hands with an adult, what do you need to do?\" implying that the action is specific to adults. The correct answer is therefore \"shake hands with both hands\". \n\nHowever, the provided text does not explicitly state that the action is specific to adults. Therefore, the correct answer could also be \"shake hands with both hands\" as a general rule of etiquette.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 899,
+      "question_idx": 899,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In Philippine culture, what traditional courtship practice involves presenting one's love in the form of music?",
+      "prediction": "D\n\n{\"answer_choice\": \"D\"} \n\nNote: The answer is based on the traditional courtship practice in Philippine culture, which is serenading. Serenading is a traditional practice where one person sings a love song to express their feelings to the other person. This practice is often associated with the Philippines and is considered a romantic gesture. \n\nHowever, the other options are not correct because:\n\n* Singing a love song (A) is a general term and not a specific traditional practice",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 902,
+      "question_idx": 902,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What kind of food does Singapore have?",
+      "prediction": "A\n\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` \n\nNote: The answer is based on the fact that Singapore is a multicultural country with a mix of Chinese, Malay, Indian, and Western influences in its cuisine. The food scene in Singapore is known for its diversity and fusion of different flavors and ingredients. \n\nHowever, if you want to know more about the types of food in Singapore, here are some examples:\n\n* Chinese: Hainanese chicken rice, char",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 916,
+      "question_idx": 916,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What kind of dress and style is traditionally worn by Vietnamese girls, distinguishing them from other countries' styles? Is it the same as other nations?",
+      "prediction": "A\n\nNote: The answer is based on the traditional Vietnamese dress, Ao Dai, which is a distinctive and iconic part of Vietnamese culture. The other options, while traditional in their own right, are not specific to Vietnamese culture. The Ao Dai is a tight-fitting silk tunic worn over trousers, and is a symbol of Vietnamese elegance and refinement. \n\nHere is the answer in JSON format:\n\n{\"answer_choice\": \"A\"} \n\nLet me know if you'd like me to make any changes",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 918,
+      "question_idx": 918,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "How do Vietnam people typically prefer way to live as a community?",
+      "prediction": "C\nExplanation: Vietnamese people typically prefer to live in close-knit communities, often in apartments or houses in close proximity to each other. This is reflected in the country's high population density and the prevalence of communal living arrangements. (Source: various online sources, including Wikipedia and travel websites)",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 928,
+      "question_idx": 928,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, how do you address service providers based on their gender?",
+      "prediction": "B\nExplanation: In Singapore culture, it is common to address service providers with titles such as \"Sir\" or \"Madam\" as a sign of respect. This is similar to the practice in other Western cultures. (Source: \"Etiquette in Singapore\" by the Singapore Tourist Promotion Board)",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 929,
+      "question_idx": 929,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore culture, how are tables reserved in food courts?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) by placing absorbent material on the table\n(ii) by asking a waiter to reserve it\n(iii) by leaving a personal item like a book or jacket\n(iv) by having at least one person sit at the table",
+      "prediction": "D\nExplanation: In Singapore culture, tables are reserved in food courts by leaving a personal item like a book or jacket. This is a common practice to claim a table. Having at least one person sit at the table is also a way to reserve it. Placing absorbent material on the table is not a common practice. Asking a waiter to reserve a table is also not a common practice. Hence, the correct answer is D. ii, iii, iv.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 930,
+      "question_idx": 930,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singaporean culture, which syllable is added to the end of questions uttered in informal conversation to add a skeptical tone?",
+      "prediction": "C\nExplanation: In Singaporean culture, the word \"lah\" is often added to the end of questions to convey a skeptical or questioning tone. For example, \"You want to go to the movies tonight?\" becomes \"You want to go to the movies tonight lah?\" This is a common way to express doubt or uncertainty in informal conversation.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 935,
+      "question_idx": 935,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what is usually said by a friend or family member when you see them eating?",
+      "prediction": "A\n{\"answer_choice\": \"A\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 936,
+      "question_idx": 936,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what kind of gesture that student use to give respect to their teachers?",
+      "prediction": "B\n{\"answer_choice\":\"B\"}",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 956,
+      "question_idx": 956,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What do Filipinos do to make guests to feel welcomed in their country or homes?",
+      "prediction": "A\n\n```json\n{\"answer_choice\": \"A\"}\n``` \n\nNote: The answer is based on the common Filipino practice of hospitality. Filipinos are known for their warm welcome and generous hosting, often serving their guests the best food they have available. This is a reflection of their strong cultural values of respect, kindness, and generosity towards their guests. \n\nHowever, the other options are not accurate representations of common Filipino practices. Option B, \"Greeting visitors with 'mano po'\", is",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 960,
+      "question_idx": 960,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "How is \"All Saints Day\" celebrated in a culture that treats it like a feast day in the cemetery?",
+      "prediction": "A\n\nExplanation: In many Latin American countries, All Saints Day is a time for families to visit their loved ones who have passed away. They clean and decorate the graves, often with flowers, candles, and other offerings. It's a time for reflection and remembrance, rather than a celebration. This tradition is often seen as a way to honor the deceased and seek their intercession. The focus is on the family and the individual, rather than on public festivities. This is in contrast to the",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 963,
+      "question_idx": 963,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What trait most strongly defines the pronouns one would use to call a person in Vietnamese culture?",
+      "prediction": "B\n\nExplanation: In Vietnamese culture, social status is a significant factor in determining the pronouns used to address someone. For example, younger people are addressed with a more polite and respectful form of the pronoun, while older people are addressed with a more formal and deferential form. This reflects the cultural value placed on respect for elders and social hierarchy. (Source: \"Vietnamese Pronouns\" by Mark Rosenfelder)",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 967,
+      "question_idx": 967,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In a Vietnamese cultural setting, who should not be the last person to eat?",
+      "prediction": "D\nExplanation: In Vietnamese culture, the oldest person is considered the most respected and should be the last to eat. This is a sign of respect and tradition. The other options do not have a specific cultural significance in this context.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1006,
+      "question_idx": 1006,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnamese culture, what are you not supposed to do at night?",
+      "prediction": "C\n{\"answer_choice\":\"C\"} \n\nNote: The Vietnamese culture has a superstition that if you leave your shoes facing the door, it is believed that evil spirits will enter your home. Therefore, it is considered impolite to leave your shoes facing the door at night. \n\nThis superstition is rooted in the belief that the door is the entrance to the home, and leaving shoes facing the door is seen as a sign of disrespect to the spirits that are believed to reside within the home",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1014,
+      "question_idx": 1014,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, what is required to be on your identification card?",
+      "prediction": "A\nExplanation: In Indonesia, the identification card, known as the KTP (Kartu Tanda Penduduk), requires the holder to declare their religion. This is a mandatory field on the card, and it is used to identify the individual's religious affiliation. The KTP is a government-issued ID card that is used for various purposes, including identification, voting, and accessing public services. The inclusion of religion on the ID card is a reflection of Indonesia's diverse religious landscape,",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1022,
+      "question_idx": 1022,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What zodiac sign is associated with good fortune and power in Vietnamese culture?",
+      "prediction": "B\nExplanation: In Vietnamese culture, the Pig is associated with good fortune and power. The Pig is the 12th animal in the Chinese zodiac, which is also used in Vietnamese culture. The Vietnamese zodiac is similar to the Chinese zodiac, but with some differences. The Pig is considered a lucky animal in Vietnamese culture, and is often depicted in art and literature as a symbol of good fortune and prosperity. The Pig is also associated with the element of earth, which is considered a",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1028,
+      "question_idx": 1028,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What's a typical New Year's Eve dinner for a family in Vietnam?",
+      "prediction": "A\n\nExplanation: In Vietnam, a traditional New Year's Eve dinner is Banh Chung, a square-shaped cake made from glutinous rice, mung beans, and pork, wrapped in banana leaves. It's a symbol of unity and togetherness during the Lunar New Year (T\u1ebft Nguy\u00ean \u0110\u00e1n) celebrations.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1043,
+      "question_idx": 1043,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "In Vietnam, who should you not say hi to last?",
+      "prediction": "C\nExplanation: In Vietnamese culture, it is considered impolite to greet the oldest uncle, as it implies that the person being greeted is older than the oldest uncle. This is a social norm that is deeply ingrained in Vietnamese culture. Greeting the oldest uncle can be seen as a sign of disrespect, and it's generally considered more polite to avoid greeting them altogether. This is why the correct answer is C, the oldest uncle.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1061,
+      "question_idx": 1061,
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "prompt_question": "What are you expected to do when you receive a red envelope during Chinese New Year in Malaysia?",
+      "prediction": "B\n\n```json\n{\n  \"answer_choice\": \"B\"\n}\n``` \n\nNote: The answer is based on common cultural practices in Malaysia during Chinese New Year. The correct answer may vary depending on individual preferences or regional customs. \n\nHowever, in general, it is considered polite to open the red envelope in private later, as a sign of respect and gratitude for the gift. This allows the recipient to fully appreciate the gesture and express their appreciation without drawing attention to the gift. \n\nThe other",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1068,
+      "question_idx": 1068,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesia, what activity does it called for helping each other without payment or voluntary calculation?",
+      "prediction": "A\n\nExplanation: Gotong Royong is a traditional Indonesian term that refers to mutual assistance and cooperation among community members without expecting payment or compensation. It is a key aspect of Indonesian culture and is often seen in rural areas where people work together to achieve common goals. In this context, the correct answer is A. Gotong Royong. The other options, while related to helping others, do not specifically refer to the Indonesian concept of mutual assistance without payment or calculation. \n\nNote: The question is",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1069,
+      "question_idx": 1069,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesia, what do people usually do when visiting someone's house or residence?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1084,
+      "question_idx": 1084,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, which of the following is traditionally preferred?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1101,
+      "question_idx": 1101,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "At a Vietnamese family reunion, who might inquire about everyone's ages?",
+      "prediction": "C\nExplanation: In Vietnamese culture, age is not typically discussed openly, especially in formal or family settings. However, in a family reunion, both older and younger family members may inquire about everyone's ages, as it is a common practice to ask about the well-being and health of all family members. This is a way to show concern and care for one another. Therefore, the correct answer is \"Either person, regardless of age.\"",
+      "ground_truth": "C",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1135,
+      "question_idx": 1135,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "What's the quirky way someone in Singapore saves a seat at a table at a hawker center?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nNote: The question is based on a common practice in Singapore's hawker centers. The answer is not explicitly stated in the provided text, but it is a well-known practice among locals. \n\nPlease let me know if you'd like me to add more context or details. \n\nAlso, I can provide more questions like this if you'd like! \n\nLet me know if you have any other requests! \n\n(Also, I can try to",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1136,
+      "question_idx": 1136,
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "prompt_question": "In Singapore people do not eat chewing gum. Why?",
+      "prediction": "A\n{\"answer_choice\": \"A\"} \n\nExplanation: Chewing gum is banned in Singapore because it can be a choking hazard, especially for children, and can also be difficult to digest. The government has banned the sale and importation of chewing gum since 1992. \n\nNote: The provided explanation is a brief summary of the actual reason. For more information, you can search online. \n\nPlease let me know if you want me to change anything. \n\nLet me know if you want",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1147,
+      "question_idx": 1147,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, which of the following is considered the most respectful way for a younger person to address an elder during a formal family gathering?",
+      "prediction": "C\nExplanation: In Indonesian culture, using the title \u201cBapak\u201d (Mr.) or \u201cIbu\u201d (Mrs.) followed by their name, and making sure to bow slightly while greeting, is considered the most respectful way for a younger person to address an elder during a formal family gathering. This shows respect for their age and position in the family. The other options are not as formal or respectful in this context. \n\nNote: The provided answer is based on general knowledge of Indonesian culture",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1160,
+      "question_idx": 1160,
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "prompt_question": "What is expected of guests attending a wedding in Vietnam?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: In Vietnamese culture, it is customary for guests to give the newlyweds cash, known as \"l\u1ee5a\" or \"\u0111\u1ed3ng xu\", as a symbol of good luck and prosperity. This is a traditional practice in Vietnamese weddings. \n\nPlease let me know if you'd like me to add more information or clarify anything! \n\n---\n\nHowever, I must correct the previous response. The correct answer is not A, but rather B.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1183,
+      "question_idx": 1183,
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "prompt_question": "Imagine you are a foreigner in Thailand, and someone did a good job, can you pat the head of the Thai person as a sign that the job was well done?",
+      "prediction": "A\nExplanation: In Thai culture, physical contact, especially touching someone's head, is considered a sign of disrespect. It's not a common greeting or a sign of mutual respect. It's not a playful gesture either. The best answer is A.",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 1.0,
+        "exact_match": 1.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1190,
+      "question_idx": 1190,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the traditional Filipino cuisine, what is the primary fruit ingredient of a very famous condiment equivalent to ketchup?",
+      "prediction": "B\n{\"answer_choice\": \"B\"} \n\nNote: The answer is based on the traditional Filipino cuisine, specifically the famous condiment equivalent to ketchup, which is \"sili\" or chili pepper sauce. However, the question is asking for the primary fruit ingredient, not the main ingredient. In this case, the answer is tomato, which is the primary fruit ingredient of ketchup. \n\nPlease let me know if you need any further clarification or details. \n\nHowever, I must correct the",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1205,
+      "question_idx": 1205,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What eating utensils don't Filipinos traditionally use?\nRead the following statements and select the option that include all the appropriate statements for this question.\n(i) Spoon and fork\n(ii) Knife and fork\n(iii) Chopsticks\n(iv) Hands.",
+      "prediction": "C\nExplanation: Filipinos traditionally do not use the spoon and fork (i), knife and fork (ii), and chopsticks (iii) as eating utensils. They also use their hands (iv) to eat. Therefore, the correct answer is C. i, ii, iii, iv.",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1206,
+      "question_idx": 1206,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "What is the most common New Year's Eve tradition in the Philippines?",
+      "prediction": "A\n\n{\"answer_choice\": \"A\"} \n\nNote: The answer is based on a general knowledge of the Philippines' New Year's Eve traditions. The information might not be specific to every individual or region within the Philippines.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1207,
+      "question_idx": 1207,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Indonesian culture, how do people usually greet their neighbors when they pass by their homes?",
+      "prediction": "A\n```json\n{\n  \"answer_choice\": \"A\"\n}\n``` ````\nNote: The correct answer is based on general knowledge of Indonesian culture and may not be applicable to every individual or situation.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1214,
+      "question_idx": 1214,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "When does the Christmas season begin in Filipino culture?",
+      "prediction": "A\nExplanation: In Filipino culture, the Christmas season, also known as the \"Ber\" or \"Paskong Pinoy,\" typically begins on September 1st and ends on January 6th, which is the Feast of the Epiphany. However, the actual celebration and festivities start on December 1st, marking the beginning of the Christmas season in the Philippines. This is because Filipinos start preparing for Christmas as early as September, decorating their homes, buying gifts, and attending",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1215,
+      "question_idx": 1215,
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "prompt_question": "In the Philippines, what should be expected when a spoon falls to the floor?",
+      "prediction": "D\n\nExplanation: In the Philippines, it is believed that if a spoon falls to the floor, it is a sign of bad luck. This superstition is rooted in the country's cultural and religious beliefs, which emphasize the importance of cleanliness and respect for objects. The falling of a spoon is seen as a disruption of this balance, leading to misfortune. This belief is not unique to the Philippines, as similar superstitions exist in other cultures around the world.",
+      "ground_truth": "B",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1216,
+      "question_idx": 1216,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Javanese culture, how is the Islamic New Year not celebrated?",
+      "prediction": "B\n\n{\"answer_choice\": \"B\"} \n\nNote: The question is based on the assumption that the Islamic New Year is celebrated in Javanese culture, which is not the case. The Islamic New Year is not traditionally celebrated in Javanese culture, and it is not a widely observed holiday in Indonesia. The question is trying to trick the respondent into choosing an answer that is not applicable. \n\nHowever, the correct answer is B, as fireworks are often used to celebrate the Islamic New Year",
+      "ground_truth": "D",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1217,
+      "question_idx": 1217,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "What did Indonesia culture do involving hosting family and close friend in a park",
+      "prediction": "B\n\n{\"answer_choice\":\"B\"} \n\nNote: The question is about Indonesian culture, but the answer is not specific to Indonesia. The question is more about the general concept of hosting family and close friends in a park. The answer I provided is a common practice in many Western cultures, not specifically Indonesian. If you want, I can try to provide a more accurate answer based on Indonesian culture. \n\nLet me know if you want me to revise the answer. \n\nHere is the revised answer:",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    },
+    {
+      "sample_id": 1218,
+      "question_idx": 1218,
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "prompt_question": "In Borneo culture, what can the elder do to guide the future of their tribe involving reading and mystic element",
+      "prediction": "B\nExplanation: In Borneo culture, the elder can use the \"B\" option, which is \"Read tea leaves\", to guide the future of their tribe. This is a traditional method used in many cultures to gain insight and guidance from the spirits. The elder can use the tea leaves to read the future, understand the will of the spirits, and make informed decisions for the tribe. This method is deeply rooted in the mystic element and is an important part of Borneo culture",
+      "ground_truth": "A",
+      "metrics": {
+        "accuracy": 0.0,
+        "exact_match": 0.0,
+        "has_valid_format": 1.0
+      }
+    }
+  ]
+}

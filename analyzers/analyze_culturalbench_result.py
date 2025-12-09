@@ -695,6 +695,9 @@ def plot_region_detail(df, region_name):
 
 def main():
     """Main function"""
+
+    import os
+    os.makedirs('results_culturalbench/culturalbench_figures_2', exist_ok=True)
     
     results_dir = "results_culturalbench"
     

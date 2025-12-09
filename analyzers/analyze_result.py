@@ -28,7 +28,7 @@ def get_culture_display_name(code):
     """Get display name for culture (e.g., 'US (United States)')"""
     code = code.upper()
     if code in CULTURE_NAMES:
-        return f"{code} ({CULTURE_NAMES[code]})"
+        return f"{CULTURE_NAMES[code].upper()}"
     return code
 
 def load_summary_results(results_dir):
@@ -414,9 +414,12 @@ def create_detailed_table_plot(accuracy_table, format_table, samples_table):
 
 def main():
     """Main function to generate all visualizations"""
+    # Create output directory
+    import os
+    os.makedirs('results_blend/blend_figures_2', exist_ok=True)
     
     # Load results
-    results_dir = "results"
+    results_dir = "results_blend"
     
     print("\n🔍 Scanning for result files...")
     df = load_summary_results(results_dir)
@@ -453,29 +456,29 @@ def main():
     
     # Standalone accuracy chart
     fig_accuracy = plot_accuracy_by_culture(df)
-    fig_accuracy.savefig('results/accuracy_by_culture.png', dpi=300, bbox_inches='tight')
-    print("  ✓ Saved: results/accuracy_by_culture.png")
+    fig_accuracy.savefig('results_blend/blend_figures_2/accuracy_by_culture.png', dpi=300, bbox_inches='tight')
+    print("  ✓ Saved: results_blend/blend_figures_2/accuracy_by_culture.png")
     
     # Main comparison plot (other metrics)
     fig_main = plot_comparison(df)
-    fig_main.savefig('results/model_comparison.png', dpi=300, bbox_inches='tight')
-    print("  ✓ Saved: results/model_comparison.png")
+    fig_main.savefig('results_blend/blend_figures_2/model_comparison.png', dpi=300, bbox_inches='tight')
+    print("  ✓ Saved: results_blend/blend_figures_2/model_comparison.png")
     
     # Detailed table plot
     fig_tables = create_detailed_table_plot(accuracy_table, format_table, samples_table)
-    fig_tables.savefig('results/detailed_tables.png', dpi=300, bbox_inches='tight')
-    print("  ✓ Saved: results/detailed_tables.png")
+    fig_tables.savefig('results_blend/blend_figures_2/detailed_tables.png', dpi=300, bbox_inches='tight')
+    print("  ✓ Saved: results_blend/blend_figures_2/detailed_tables.png")
     
     # Export to CSV with 2 decimal places
-    accuracy_table.round(2).to_csv('results/accuracy_table.csv')
-    format_table.round(2).to_csv('results/format_table.csv')
-    df.to_csv('results/all_results_summary.csv', index=False)
+    accuracy_table.round(2).to_csv('results_blend/blend_figures_2/accuracy_table.csv')
+    format_table.round(2).to_csv('results_blend/blend_figures_2/format_table.csv')
+    df.to_csv('results_blend/blend_figures_2/all_results_summary.csv', index=False)
     print("  ✓ Saved CSV files")
     
     # Show plots
     plt.show()
     
-    print("\n✅ Analysis complete! Check the results/ directory for outputs.\n")
+    print("\n✅ Analysis complete! Check the results_blend/blend_figures_2 directory for outputs.\n")
 
 if __name__ == "__main__":
     main()

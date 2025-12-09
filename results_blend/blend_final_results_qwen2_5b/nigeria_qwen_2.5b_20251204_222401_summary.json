@@ -1,0 +1,20 @@
+{
+  "total_samples": 16317,
+  "aggregate_metrics": {
+    "accuracy": {
+      "mean": 0.5972911687197402,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exact_match": {
+      "mean": 0.5972911687197402,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "has_valid_format": {
+      "mean": 0.9989581418152846,
+      "min": 0.0,
+      "max": 1.0
+    }
+  }
+}

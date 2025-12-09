@@ -1,0 +1,52 @@
+{
+  "total_samples": 159,
+  "aggregate_metrics": {
+    "accuracy": {
+      "mean": 0.6037735849056604,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exact_match": {
+      "mean": 0.6037735849056604,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "has_valid_format": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "by_country": {
+    "Vietnam": {
+      "count": 27,
+      "accuracy": 0.5555555555555556
+    },
+    "Malaysia": {
+      "count": 11,
+      "accuracy": 0.6363636363636364
+    },
+    "Philippines": {
+      "count": 45,
+      "accuracy": 0.5777777777777777
+    },
+    "Indonesia": {
+      "count": 26,
+      "accuracy": 0.5
+    },
+    "Singapore": {
+      "count": 23,
+      "accuracy": 0.6086956521739131
+    },
+    "Thailand": {
+      "count": 27,
+      "accuracy": 0.7777777777777778
+    }
+  },
+  "by_region": {
+    "Southeast Asia": {
+      "count": 159,
+      "accuracy": 0.6037735849056604
+    }
+  }
+}

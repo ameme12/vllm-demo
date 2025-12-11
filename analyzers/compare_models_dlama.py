@@ -39,6 +39,158 @@ CULTURE_COLORS = {
     'Asian': '#2ecc71',
 }
 
+def create_country_accuracy_csv(results: Dict, metric: str = 'overlap', output_path: Path = None):
+    """
+    Create CSV file with country-level accuracy for each model.
+    
+    Format:
+    country,Llama 3.2-3B,Qwen 2.5-3B
+    China,75.5,80.2
+    India,65.3,70.1
+    ...
+    
+    Args:
+        results: Dictionary with structure {model: {dataset: data}}
+        metric: 'overlap' or 'exact_match'
+        output_path: Path to save CSV file
+    
+    Returns:
+        DataFrame with country accuracies
+    """
+    print("\n📝 Creating country-level accuracy CSV...")
+    
+    # Collect all country data
+    country_data = {}
+    
+    for model in ['Llama 3B', 'Qwen 2.5B']:
+        # Map model names to CSV column names
+        if model == 'Llama 3B':
+            csv_model_name = 'Llama 3.2-3B'
+        else:
+            csv_model_name = 'Qwen 2.5-3B'
+        
+        for dataset in ['Arab-West', 'Asia-West']:
+            if model in results and dataset in results[model]:
+                # Use the extract_summary_metrics function from your existing code
+                metrics = extract_summary_metrics(results[model][dataset])
+                by_country = metrics.get('by_country', {})
+                
+                print(f"   Processing {model} - {dataset}:")
+                print(f"      Found {len(by_country)} countries")
+                
+                for country, country_data_item in by_country.items():
+                    if country not in country_data:
+                        country_data[country] = {}
+                    
+                    # Get accuracy for this country
+                    acc = country_data_item.get(metric, 0) * 100
+                    
+                    # Store or average if country appears in multiple datasets
+                    if csv_model_name in country_data[country]:
+                        # Average with existing value
+                        existing = country_data[country][csv_model_name]
+                        country_data[country][csv_model_name] = (existing + acc) / 2
+                        print(f"      {country}: averaging {existing:.1f} and {acc:.1f} = {country_data[country][csv_model_name]:.1f}")
+                    else:
+                        country_data[country][csv_model_name] = acc
+                        print(f"      {country}: {acc:.1f}%")
+    
+    # Create DataFrame
+    rows = []
+    for country in sorted(country_data.keys()):
+        row = {'country': country}
+        row['Llama 3.2-3B'] = country_data[country].get('Llama 3.2-3B', None)
+        row['Qwen 2.5-3B'] = country_data[country].get('Qwen 2.5-3B', None)
+        rows.append(row)
+    
+    df = pd.DataFrame(rows)
+    
+    # Save to CSV
+    if output_path:
+        df.to_csv(output_path, index=False, float_format='%.2f')
+        print(f"\n✓ Saved country accuracy CSV to: {output_path}")
+        print(f"   Total countries: {len(df)}")
+        print(f"\nPreview:")
+        print(df.head(10).to_string(index=False))
+    
+    return df
+
+
+def plot_country_accuracy_comparison(results: Dict, metric: str = 'overlap'):
+    """
+    Create bar chart comparing country-level accuracy for both models
+    """
+    # Get country data
+    country_data = {}
+    
+    for model in ['Llama 3B', 'Qwen 2.5B']:
+        csv_model_name = 'Llama 3.2-3B' if model == 'Llama 3B' else 'Qwen 2.5-3B'
+        
+        for dataset in ['Arab-West', 'Asia-West']:
+            if model in results and dataset in results[model]:
+                metrics = extract_summary_metrics(results[model][dataset])
+                by_country = metrics.get('by_country', {})
+                
+                for country, country_data_item in by_country.items():
+                    if country not in country_data:
+                        country_data[country] = {}
+                    
+                    acc = country_data_item.get(metric, 0) * 100
+                    
+                    if csv_model_name in country_data[country]:
+                        existing = country_data[country][csv_model_name]
+                        country_data[country][csv_model_name] = (existing + acc) / 2
+                    else:
+                        country_data[country][csv_model_name] = acc
+    
+    if not country_data:
+        print("⚠️  No country data available for comparison")
+        return None
+    
+    # Create figure
+    countries = sorted(country_data.keys())
+    llama_accs = [country_data[c].get('Llama 3.2-3B', 0) for c in countries]
+    qwen_accs = [country_data[c].get('Qwen 2.5-3B', 0) for c in countries]
+    
+    # Use MODEL_COLORS from your existing code
+    MODEL_COLORS = {
+        'Llama 3B': '#e74c3c',
+        'Qwen 2.5B': '#3498db',
+    }
+    
+    fig, ax = plt.subplots(figsize=(max(14, len(countries) * 0.6), 8))
+    
+    x = np.arange(len(countries))
+    width = 0.35
+    
+    bars1 = ax.bar(x - width/2, llama_accs, width, label='Llama 3.2-3B',
+                   color=MODEL_COLORS['Llama 3B'], alpha=0.8, edgecolor='black', linewidth=1)
+    bars2 = ax.bar(x + width/2, qwen_accs, width, label='Qwen 2.5-3B',
+                   color=MODEL_COLORS['Qwen 2.5B'], alpha=0.8, edgecolor='black', linewidth=1)
+    
+    # Add value labels
+    for bars in [bars1, bars2]:
+        for bar in bars:
+            height = bar.get_height()
+            if height > 0:
+                ax.text(bar.get_x() + bar.get_width()/2., height + 1,
+                       f'{height:.1f}%',
+                       ha='center', va='bottom', fontsize=9, fontweight='bold')
+    
+    ax.set_xlabel('Country', fontsize=13, fontweight='bold')
+    ax.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold')
+    ax.set_title(f'Country-Level Accuracy Comparison\nMetric: {metric.capitalize()}',
+                fontsize=15, fontweight='bold', pad=20)
+    ax.set_xticks(x)
+    ax.set_xticklabels(countries, rotation=45, ha='right', fontsize=10)
+    ax.legend(fontsize=12, loc='upper right')
+    ax.grid(axis='y', alpha=0.3, linestyle='--')
+    ax.set_ylim(0, 105)
+    ax.set_facecolor('#f8f9fa')
+    
+    plt.tight_layout()
+    return fig
+
 
 def load_summary_file(file_path: Path) -> Dict:
     """Load a DLAMA summary JSON file"""
@@ -716,6 +868,19 @@ if __name__ == "__main__":
     fig6.savefig(output_dir / f'6_predicate_sample_breakdown{metric}.png',
                  dpi=300, bbox_inches='tight')
     plt.close(fig6)
+
+    # 7. Create country-level accuracy CSV
+    print("   7. Creating country accuracy CSV...")
+    df_country = create_country_accuracy_csv(results, metric, 
+                                            output_path=output_dir / 'dlama_accuracy_by_country.csv')
+
+    # 8. Country accuracy comparison chart
+    print("   8. Country accuracy comparison chart...")
+    fig8 = plot_country_accuracy_comparison(results, metric)
+    if fig8:
+        fig8.savefig(output_dir / f'7_country_accuracy_comparison_{metric}.png',
+                    dpi=300, bbox_inches='tight')
+        plt.close(fig8)
     
     print(f"\n✅ Complete! All files saved to: {output_dir}/")
     print(f"\nGenerated files:")

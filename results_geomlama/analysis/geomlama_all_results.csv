@@ -1,0 +1,13 @@
+model,language,with_country,country,region,exact_match,overlap,num_samples,file
+Llama 3B,english,True,China,East Asia,55.2,59.199999999999996,125,geomlama_english_llama_3b_summary.json
+Llama 3B,english,True,India,South Asia,55.2,58.4,125,geomlama_english_llama_3b_summary.json
+Llama 3B,english,True,Iran,Middle East/West Asia,36.0,40.0,125,geomlama_english_llama_3b_summary.json
+Llama 3B,english,True,Kenya,Africa,44.0,47.199999999999996,125,geomlama_english_llama_3b_summary.json
+Llama 3B,english,True,OVERALL,ALL,47.04,49.919999999999995,625,geomlama_english_llama_3b_summary.json
+Llama 3B,english,True,United States,North America,44.800000000000004,44.800000000000004,125,geomlama_english_llama_3b_summary.json
+Qwen 2.5B,english,True,China,East Asia,55.2,59.199999999999996,125,geomlama_english_qwen2_5b_summary.json
+Qwen 2.5B,english,True,India,South Asia,62.4,66.4,125,geomlama_english_qwen2_5b_summary.json
+Qwen 2.5B,english,True,Iran,Middle East/West Asia,48.8,52.0,125,geomlama_english_qwen2_5b_summary.json
+Qwen 2.5B,english,True,Kenya,Africa,58.4,61.6,125,geomlama_english_qwen2_5b_summary.json
+Qwen 2.5B,english,True,OVERALL,ALL,58.879999999999995,61.760000000000005,625,geomlama_english_qwen2_5b_summary.json
+Qwen 2.5B,english,True,United States,North America,69.6,69.6,125,geomlama_english_qwen2_5b_summary.json

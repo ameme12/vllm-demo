@@ -10,3 +10,6 @@ scratch/
 .python-version
 slurm-*.outdata/CARROT-Task/
 tasks/__pycache__/
+
+repos/GeoMLAMA/
+

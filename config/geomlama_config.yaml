@@ -2,11 +2,11 @@
 # Evaluates geographical/cultural bias in language models
 # Follows original GeoMLAMA evaluation methodology
 
-experiment_name: "geomlama_english_all_qwen2_5b"
+experiment_name: "geomlama_english_llama_3b"
 
 # Model configuration
 model:
-  name: Qwen/Qwen2.5-3B-Instruct 
+  name: "meta-llama/Llama-3.2-3B-Instruct" 
   
   # vLLM settings
   tensor_parallel_size: 1
@@ -95,7 +95,7 @@ evaluation:
 
 # Output settings
 output:
-  results_dir: "results/geomlama"
+  results_dir: "results_geomlama"
 
 # ============================================================================
 # WHAT YOU'LL GET:

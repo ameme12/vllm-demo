@@ -1,0 +1,7 @@
+Country 1,Country 2,Pearson r,p-value,Significant,n
+China,Iran,0.9528,0.0033,**,6
+Iran,United States,0.6991,0.1222,,6
+India,United States,0.5716,0.2359,,6
+India,Iran,0.5610,0.2468,,6
+China,United States,0.5525,0.2555,,6
+China,India,0.5378,0.2710,,6

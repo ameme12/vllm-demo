@@ -1,0 +1,9 @@
+model,Llama 3B,Qwen 2.5B
+language,english,english
+with_country,True,True
+region,,
+Africa,44.0,58.4
+East Asia,55.2,55.2
+Middle East/West Asia,36.0,48.8
+North America,44.8,69.6
+South Asia,55.2,62.4

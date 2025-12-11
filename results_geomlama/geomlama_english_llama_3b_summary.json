@@ -2,55 +2,55 @@
   "total_samples": 625,
   "aggregate_metrics": {
     "exact_match": {
-      "mean": 0.0,
+      "mean": 0.4704,
       "count": 625
     },
     "overlap": {
-      "mean": 0.2096,
+      "mean": 0.4992,
       "count": 625
     }
   },
   "by_country": {
     "United States": {
       "count": 125,
-      "exact_match": 0.0,
-      "overlap": 0.216
+      "exact_match": 0.448,
+      "overlap": 0.448
     },
     "China": {
       "count": 125,
-      "exact_match": 0.0,
-      "overlap": 0.296
+      "exact_match": 0.552,
+      "overlap": 0.592
     },
     "India": {
       "count": 125,
-      "exact_match": 0.0,
-      "overlap": 0.168
+      "exact_match": 0.552,
+      "overlap": 0.584
     },
     "Iran": {
       "count": 125,
-      "exact_match": 0.0,
-      "overlap": 0.168
+      "exact_match": 0.36,
+      "overlap": 0.4
     },
     "Kenya": {
       "count": 125,
-      "exact_match": 0.0,
-      "overlap": 0.2
+      "exact_match": 0.44,
+      "overlap": 0.472
     }
   },
   "country_raw_stats": {
     "exact_match_counts": [
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      56.0,
+      69.0,
+      69.0,
+      45.0,
+      55.0
     ],
     "overlap_counts": [
-      27.0,
-      37.0,
-      21.0,
-      21.0,
-      25.0
+      56.0,
+      74.0,
+      73.0,
+      50.0,
+      59.0
     ],
     "total_counts": [
       125,
@@ -63,43 +63,43 @@
   "by_concept": {
     "0": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.48
+      "exact_match": 0.36,
+      "overlap": 0.36
     },
     "1": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.2
+      "exact_match": 0.44,
+      "overlap": 0.44
     },
     "2": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.32
+      "exact_match": 0.92,
+      "overlap": 0.92
     },
     "3": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.36
+      "exact_match": 0.2,
+      "overlap": 0.92
     },
     "4": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.64
+      "exact_match": 1.0,
+      "overlap": 1.0
     },
     "5": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.0
+      "exact_match": 0.2,
+      "overlap": 0.2
     },
     "6": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.04
+      "exact_match": 0.8,
+      "overlap": 0.8
     },
     "7": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.0
+      "exact_match": 0.2,
+      "overlap": 0.2
     },
     "8": {
       "count": 25,
@@ -108,83 +108,83 @@
     },
     "9": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.08
+      "exact_match": 0.8,
+      "overlap": 0.8
     },
     "10": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.24
+      "exact_match": 0.8,
+      "overlap": 0.8
     },
     "11": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.0
+      "exact_match": 0.8,
+      "overlap": 0.8
     },
     "12": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.32
+      "exact_match": 1.0,
+      "overlap": 1.0
     },
     "13": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.24
+      "exact_match": 0.4,
+      "overlap": 0.4
     },
     "14": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.16
+      "exact_match": 0.2,
+      "overlap": 0.2
     },
     "15": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.2
+      "exact_match": 0.4,
+      "overlap": 0.4
     },
     "16": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.0
+      "exact_match": 1.0,
+      "overlap": 1.0
     },
     "17": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.2
+      "exact_match": 0.4,
+      "overlap": 0.4
     },
     "18": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.0
+      "exact_match": 0.8,
+      "overlap": 0.8
     },
     "19": {
       "count": 25,
       "exact_match": 0.0,
-      "overlap": 0.08
+      "overlap": 0.0
     },
     "20": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.28
+      "exact_match": 0.04,
+      "overlap": 0.04
     },
     "21": {
       "count": 25,
       "exact_match": 0.0,
-      "overlap": 0.04
+      "overlap": 0.0
     },
     "22": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.72
+      "exact_match": 0.6,
+      "overlap": 0.6
     },
     "23": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.56
+      "exact_match": 0.2,
+      "overlap": 0.2
     },
     "24": {
       "count": 25,
-      "exact_match": 0.0,
-      "overlap": 0.08
+      "exact_match": 0.2,
+      "overlap": 0.2
     }
   }
 }

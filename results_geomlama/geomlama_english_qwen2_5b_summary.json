@@ -1,0 +1,190 @@
+{
+  "total_samples": 625,
+  "aggregate_metrics": {
+    "exact_match": {
+      "mean": 0.5888,
+      "count": 625
+    },
+    "overlap": {
+      "mean": 0.6176,
+      "count": 625
+    }
+  },
+  "by_country": {
+    "United States": {
+      "count": 125,
+      "exact_match": 0.696,
+      "overlap": 0.696
+    },
+    "China": {
+      "count": 125,
+      "exact_match": 0.552,
+      "overlap": 0.592
+    },
+    "India": {
+      "count": 125,
+      "exact_match": 0.624,
+      "overlap": 0.664
+    },
+    "Iran": {
+      "count": 125,
+      "exact_match": 0.488,
+      "overlap": 0.52
+    },
+    "Kenya": {
+      "count": 125,
+      "exact_match": 0.584,
+      "overlap": 0.616
+    }
+  },
+  "country_raw_stats": {
+    "exact_match_counts": [
+      87.0,
+      69.0,
+      78.0,
+      61.0,
+      73.0
+    ],
+    "overlap_counts": [
+      87.0,
+      74.0,
+      83.0,
+      65.0,
+      77.0
+    ],
+    "total_counts": [
+      125,
+      125,
+      125,
+      125,
+      125
+    ]
+  },
+  "by_concept": {
+    "0": {
+      "count": 25,
+      "exact_match": 0.56,
+      "overlap": 0.56
+    },
+    "1": {
+      "count": 25,
+      "exact_match": 0.44,
+      "overlap": 0.44
+    },
+    "2": {
+      "count": 25,
+      "exact_match": 0.84,
+      "overlap": 0.84
+    },
+    "3": {
+      "count": 25,
+      "exact_match": 0.28,
+      "overlap": 1.0
+    },
+    "4": {
+      "count": 25,
+      "exact_match": 1.0,
+      "overlap": 1.0
+    },
+    "5": {
+      "count": 25,
+      "exact_match": 0.4,
+      "overlap": 0.4
+    },
+    "6": {
+      "count": 25,
+      "exact_match": 0.36,
+      "overlap": 0.36
+    },
+    "7": {
+      "count": 25,
+      "exact_match": 0.24,
+      "overlap": 0.24
+    },
+    "8": {
+      "count": 25,
+      "exact_match": 0.28,
+      "overlap": 0.28
+    },
+    "9": {
+      "count": 25,
+      "exact_match": 0.8,
+      "overlap": 0.8
+    },
+    "10": {
+      "count": 25,
+      "exact_match": 0.64,
+      "overlap": 0.64
+    },
+    "11": {
+      "count": 25,
+      "exact_match": 0.92,
+      "overlap": 0.92
+    },
+    "12": {
+      "count": 25,
+      "exact_match": 0.52,
+      "overlap": 0.52
+    },
+    "13": {
+      "count": 25,
+      "exact_match": 0.4,
+      "overlap": 0.4
+    },
+    "14": {
+      "count": 25,
+      "exact_match": 0.2,
+      "overlap": 0.2
+    },
+    "15": {
+      "count": 25,
+      "exact_match": 0.6,
+      "overlap": 0.6
+    },
+    "16": {
+      "count": 25,
+      "exact_match": 0.8,
+      "overlap": 0.8
+    },
+    "17": {
+      "count": 25,
+      "exact_match": 0.32,
+      "overlap": 0.32
+    },
+    "18": {
+      "count": 25,
+      "exact_match": 0.56,
+      "overlap": 0.56
+    },
+    "19": {
+      "count": 25,
+      "exact_match": 0.8,
+      "overlap": 0.8
+    },
+    "20": {
+      "count": 25,
+      "exact_match": 0.8,
+      "overlap": 0.8
+    },
+    "21": {
+      "count": 25,
+      "exact_match": 0.8,
+      "overlap": 0.8
+    },
+    "22": {
+      "count": 25,
+      "exact_match": 0.6,
+      "overlap": 0.6
+    },
+    "23": {
+      "count": 25,
+      "exact_match": 0.6,
+      "overlap": 0.6
+    },
+    "24": {
+      "count": 25,
+      "exact_match": 0.96,
+      "overlap": 0.96
+    }
+  }
+}

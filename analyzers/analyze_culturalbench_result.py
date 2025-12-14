@@ -254,7 +254,7 @@ def plot_country_accuracy_table(df):
     country_pivot = country_pivot.sort_values(['Region', country_pivot.columns[0]], ascending=[True, False])
     
     # Create figure (larger for many countries)
-    fig, ax = plt.subplots(figsize=(14, max(12, len(country_pivot) * 0.4)))
+    fig, ax = plt.subplots(figsize=(16, max(12, len(country_pivot) * 0.4)))
     ax.axis('tight')
     ax.axis('off')
     
@@ -294,7 +294,7 @@ def plot_country_accuracy_table(df):
                     bbox=[0, 0, 1, 1])
     
     table.auto_set_font_size(False)
-    table.set_fontsize(9)
+    table.set_fontsize(14)
     table.scale(1, 1.8)
     
     # Style header
@@ -326,7 +326,7 @@ def plot_country_accuracy_table(df):
     return fig
 
 def plot_accuracy_by_region_chart(df):
-    """Create bar chart of accuracy by region"""
+    """Create bar chart of accuracy by region with larger fonts for ACL paper"""
     
     plt.style.use('seaborn-v0_8-darkgrid')
     colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
@@ -336,7 +336,7 @@ def plot_accuracy_by_region_chart(df):
     if region_df.empty:
         return None
     
-    fig, ax = plt.subplots(figsize=(14, 8))
+    fig, ax = plt.subplots(figsize=(18, 10))
     
     region_data = region_df.groupby(['region', 'model'])['accuracy'].mean().unstack()
     region_data = region_data.sort_values(by=region_data.columns[0], ascending=False)
@@ -349,24 +349,26 @@ def plot_accuracy_by_region_chart(df):
         offset = width * (i - len(models)/2 + 0.5)
         bars = ax.bar(x + offset, region_data[model], width, 
                       label=model, alpha=0.85, color=colors[i],
-                      edgecolor='black', linewidth=0.5)
+                      edgecolor='black', linewidth=1.2)
         
         for bar in bars:
             height = bar.get_height()
             if not np.isnan(height):
-                ax.text(bar.get_x() + bar.get_width()/2., height + 1,
-                       f'{height:.1f}%',
-                       ha='center', va='bottom', fontsize=10, fontweight='bold')
+                ax.text(bar.get_x() + bar.get_width()/2., height + 2,
+                       f'{height:.0f}%',
+                       ha='center', va='bottom', fontsize=18, fontweight='bold')
     
-    ax.set_title('CulturalBench Accuracy by Region', 
-                 fontsize=16, fontweight='bold', pad=20)
-    ax.set_xlabel('Region', fontsize=13, fontweight='bold')
-    ax.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold')
+    ax.set_title('CulturalBench: Accuracy by Region\nLlama 3.2-3B vs Qwen 2.5-3B', 
+                 fontsize=26, fontweight='bold', pad=25)
+    ax.set_xlabel('Region', fontsize=22, fontweight='bold')
+    ax.set_ylabel('Accuracy (%)', fontsize=22, fontweight='bold')
     ax.set_xticks(x)
-    ax.set_xticklabels(region_data.index, rotation=45, ha='right', fontsize=10)
-    ax.legend(loc='upper right', fontsize=12, framealpha=0.9)
-    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=0.8)
-    ax.axhline(y=25, color='red', linestyle='--', linewidth=2.5, 
+    ax.set_xticklabels(region_data.index, rotation=45, ha='right', fontsize=20)
+    ax.tick_params(axis='y', labelsize=18)
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.25), ncol=len(models), 
+              fontsize=20, framealpha=0.9)
+    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=1.2)
+    ax.axhline(y=25, color='red', linestyle='--', linewidth=3, 
                label='Random Baseline (25%)', alpha=0.7)
     ax.set_ylim(0, 105)
     ax.set_facecolor('#f8f9fa')
@@ -612,7 +614,7 @@ def print_summary_report(df):
                   f"({country_df['accuracy'].min():.2f}%)")
 
 def plot_region_detail(df, region_name):
-    """Create detailed bar plot for a specific region showing all countries in that region"""
+    """Create detailed bar plot for a specific region showing all countries in that region with larger fonts for ACL paper"""
     
     plt.style.use('seaborn-v0_8-darkgrid')
     colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
@@ -634,7 +636,7 @@ def plot_region_detail(df, region_name):
     samples_pivot = samples_pivot.reindex(country_pivot.index)
     
     # Create figure
-    fig, ax = plt.subplots(figsize=(12, max(6, len(country_pivot) * 0.5)))
+    fig, ax = plt.subplots(figsize=(14, max(8, len(country_pivot) * 0.6)))
     
     x = np.arange(len(country_pivot))
     width = 0.35
@@ -644,51 +646,53 @@ def plot_region_detail(df, region_name):
         offset = width * (i - len(models)/2 + 0.5)
         bars = ax.barh(x + offset, country_pivot[model], width, 
                       label=model, alpha=0.85, color=colors[i],
-                      edgecolor='black', linewidth=0.5)
+                      edgecolor='black', linewidth=0.8)
         
-        # Add accuracy labels only (no sample counts on bars)
+        # Add accuracy labels
         for j, bar in enumerate(bars):
             width_val = bar.get_width()
             
             if not np.isnan(width_val):
                 # Accuracy percentage
-                ax.text(width_val + 1, bar.get_y() + bar.get_height()/2.,
-                       f'{width_val:.1f}%',
-                       ha='left', va='center', fontsize=9, fontweight='bold')
+                ax.text(width_val + 1.5, bar.get_y() + bar.get_height()/2.,
+                       f'{width_val:.0f}%',
+                       ha='left', va='center', fontsize=14, fontweight='bold')
     
-    ax.set_title(f'{region_name} - CulturalBench Evaluation', 
-                 fontsize=16, fontweight='bold', pad=20)
-    ax.set_ylabel('Country', fontsize=13, fontweight='bold')
-    ax.set_xlabel('Accuracy (%)', fontsize=13, fontweight='bold')
+    ax.set_title(f'CulturalBench: {region_name}\nLlama 3.2-3B vs Qwen 2.5-3B', 
+                 fontsize=24, fontweight='bold', pad=20)
+    ax.set_ylabel('Country', fontsize=20, fontweight='bold')
+    ax.set_xlabel('Accuracy (%)', fontsize=20, fontweight='bold')
     ax.set_yticks(x)
-    ax.set_yticklabels(country_pivot.index, fontsize=11)
-    ax.legend(loc='upper right', fontsize=11, framealpha=0.9)  # Changed to upper right
-    ax.grid(axis='x', alpha=0.4, linestyle='--', linewidth=0.8)
-    ax.axvline(x=25, color='red', linestyle='--', linewidth=2, 
+    ax.set_yticklabels(country_pivot.index, fontsize=16)
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=len(models),
+              fontsize=18, framealpha=0.9)
+    ax.grid(axis='x', alpha=0.4, linestyle='--', linewidth=1.2)
+    ax.axvline(x=25, color='red', linestyle='--', linewidth=2.5, 
                label='Random (25%)', alpha=0.7)
     ax.set_xlim(0, 105)
     ax.set_facecolor('#f8f9fa')
+    ax.tick_params(axis='x', labelsize=16)
     
     # Add country count in TOP RIGHT corner (below legend)
     num_countries = len(country_pivot)
     ax.text(0.98, 0.75, f'Countries: {num_countries}',
             transform=ax.transAxes,
-            fontsize=11,
+            fontsize=14,
             verticalalignment='top',
             horizontalalignment='right',
             fontweight='bold',
-            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7, pad=0.5))
+            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7, pad=0.6))
     
     # Add total samples in BOTTOM RIGHT corner
     total_samples = region_df.groupby('model')['num_samples'].sum()
     sample_text = f'Total samples: {total_samples.iloc[0]:,}'
     ax.text(0.98, 0.02, sample_text,
             transform=ax.transAxes,
-            fontsize=11,
+            fontsize=14,
             verticalalignment='bottom',
             horizontalalignment='right',
             fontweight='bold',
-            bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.7, pad=0.5))
+            bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.7, pad=0.6))
     
     plt.tight_layout()
     return fig

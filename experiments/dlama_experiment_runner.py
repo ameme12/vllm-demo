@@ -1,6 +1,7 @@
 """
 Experiment Runner for DLAMA Task Evaluation
 Orchestrates the entire evaluation pipeline using VLLMInferenceEngine
+Supports both string-based and LLM judge evaluation methods
 """
 
 from pathlib import Path
@@ -34,8 +35,13 @@ class DLAMAExperimentRunner:
         self.results_dir = Path(self.config.get('output', {}).get('results_dir', 'results/dlama'))
         self.results_dir.mkdir(parents=True, exist_ok=True)
         
+        # Check if we should use LLM judge
+        self.use_llm_judge = self.config.get('evaluation', {}).get('use_llm_judge', False)
+        self.judge_engine = None
+        
         print(f"📋 Loaded config from: {config_path}")
         print(f"📁 Results will be saved to: {self.results_dir}")
+        print(f"🔍 LLM Judge: {'Enabled' if self.use_llm_judge else 'Disabled'}")
     
     def _load_config(self) -> Dict[str, Any]:
         """Load YAML configuration file"""
@@ -69,6 +75,34 @@ class DLAMAExperimentRunner:
         # Initialize engine
         engine = VLLMInferenceEngine(vllm_config)
         
+        return engine
+    
+    def _load_judge_model(self) -> VLLMInferenceEngine:
+        """Load the judge model (can be same or different from main model)"""
+        judge_config = self.config.get('evaluation', {}).get('judge_model', {})
+        
+        # If no judge model specified, return None (will reuse main engine)
+        if not judge_config or not judge_config.get('name'):
+            print("⚖️  Using main model as judge")
+            return None
+        
+        print(f"\n⚖️  Loading judge model: {judge_config['name']}")
+        
+        vllm_config = VLLMConfig(
+            model_name=judge_config['name'],
+            tensor_parallel_size=judge_config.get('tensor_parallel_size', 1),
+            gpu_memory_utilization=judge_config.get('gpu_memory_utilization', 0.5),
+            max_model_len=judge_config.get('max_model_len', None),
+            trust_remote_code=judge_config.get('trust_remote_code', True),
+            dtype=judge_config.get('dtype', 'auto'),
+            quantization=judge_config.get('quantization', None),
+            swap_space=judge_config.get('swap_space', 4),
+            enforce_eager=judge_config.get('enforce_eager', False),
+            max_num_seqs=judge_config.get('max_num_seqs', 256),
+            seed=judge_config.get('seed', 42)
+        )
+        
+        engine = VLLMInferenceEngine(vllm_config)
         return engine
     
     def _get_generation_params(self) -> Dict[str, Any]:
@@ -114,6 +148,12 @@ class DLAMAExperimentRunner:
         # Load model and task
         engine = self._load_model()
         task = self._load_task()
+        
+        # Load judge model if using LLM judge
+        if self.use_llm_judge:
+            self.judge_engine = self._load_judge_model()
+            if self.judge_engine is None:
+                self.judge_engine = engine  # Use main engine as judge
         
         # Get evaluation settings
         eval_config = self.config.get('evaluation', {})
@@ -188,12 +228,21 @@ class DLAMAExperimentRunner:
                 **gen_params
             )
             
-            # Evaluate responses - THIS IS THE KEY PART
+            # Evaluate responses
             for idx, (sample, prompt, prediction) in enumerate(zip(batch_samples, batch_prompts, predictions)):
                 prediction = prediction.strip()
                 
-                # Evaluate
+                # Original string-based evaluation
                 metrics = task.evaluate_response(prediction, sample)
+                
+                # LLM judge evaluation (if enabled)
+                if self.use_llm_judge:
+                    judge_metrics = task.evaluate_response_with_llm(
+                        prediction, 
+                        sample, 
+                        self.judge_engine
+                    )
+                    metrics.update(judge_metrics)
                 
                 # Store result
                 result = {
@@ -204,7 +253,7 @@ class DLAMAExperimentRunner:
                     'correct_answer': sample['correct_answer'],
                     'culture': sample['culture'],
                     'country': sample['country_names'][0] if sample['country_names'] else 'Unknown',
-                    'prompt': prompt,  # Use the prompt from the zip, not the variable
+                    'prompt': prompt,
                     'prediction': prediction,
                     'extracted_answer': task._extract_answer(prediction),
                     'metrics': metrics
@@ -255,69 +304,97 @@ class DLAMAExperimentRunner:
             'aggregate_metrics': {}
         }
         
-        # Calculate average for each metric
+        # Calculate average for each metric (now includes llm_judge_correct if enabled)
         metric_keys = all_metrics[0].keys()
         for key in metric_keys:
-            values = [m[key] for m in all_metrics]
-            summary['aggregate_metrics'][key] = {
-                'mean': sum(values) / len(values),
-                'count': len(values)
-            }
+            # Skip text fields
+            if key in ['llm_judge_reasoning', 'judge_raw_response']:
+                continue
+            
+            values = [m[key] for m in all_metrics if key in m]
+            if values:
+                summary['aggregate_metrics'][key] = {
+                    'mean': sum(values) / len(values),
+                    'count': len(values)
+                }
         
         # Breakdown by culture
         cultures = {}
         for r in results:
             culture = r['culture']
             if culture not in cultures:
-                cultures[culture] = {'exact_match': [], 'overlap': []}
+                cultures[culture] = {}
+                # Initialize all metric keys
+                for key in metric_keys:
+                    if key not in ['llm_judge_reasoning', 'judge_raw_response']:
+                        cultures[culture][key] = []
             
-            cultures[culture]['exact_match'].append(r['metrics']['exact_match'])
-            cultures[culture]['overlap'].append(r['metrics']['overlap'])
+            # Add all metrics
+            for key in metric_keys:
+                if key not in ['llm_judge_reasoning', 'judge_raw_response']:
+                    cultures[culture][key].append(r['metrics'][key])
         
         summary['by_culture'] = {}
-        for culture, metrics in cultures.items():
+        for culture, metrics_dict in cultures.items():
             summary['by_culture'][culture] = {
-                'count': len(metrics['exact_match']),
-                'exact_match': sum(metrics['exact_match']) / len(metrics['exact_match']),
-                'overlap': sum(metrics['overlap']) / len(metrics['overlap'])
+                'count': len(metrics_dict['exact_match'])  # Use any metric for count
             }
+            # Add all metrics
+            for key, values in metrics_dict.items():
+                if values:
+                    summary['by_culture'][culture][key] = sum(values) / len(values)
         
-        # ===== NEW: Breakdown by country =====
+        # Breakdown by country
         countries = {}
         for r in results:
             country = r['country']
             if country not in countries:
-                countries[country] = {'exact_match': [], 'overlap': []}
+                countries[country] = {}
+                # Initialize all metric keys
+                for key in metric_keys:
+                    if key not in ['llm_judge_reasoning', 'judge_raw_response']:
+                        countries[country][key] = []
             
-            countries[country]['exact_match'].append(r['metrics']['exact_match'])
-            countries[country]['overlap'].append(r['metrics']['overlap'])
+            # Add all metrics
+            for key in metric_keys:
+                if key not in ['llm_judge_reasoning', 'judge_raw_response']:
+                    countries[country][key].append(r['metrics'][key])
         
         summary['by_country'] = {}
-        for country, metrics in countries.items():
+        for country, metrics_dict in countries.items():
             summary['by_country'][country] = {
-                'count': len(metrics['exact_match']),
-                'exact_match': sum(metrics['exact_match']) / len(metrics['exact_match']),
-                'overlap': sum(metrics['overlap']) / len(metrics['overlap'])
+                'count': len(metrics_dict['exact_match'])  # Use any metric for count
             }
-        # ===== END NEW =====
+            # Add all metrics
+            for key, values in metrics_dict.items():
+                if values:
+                    summary['by_country'][country][key] = sum(values) / len(values)
         
         # Breakdown by predicate
         predicates = {}
         for r in results:
             pred = r['predicate_code']
             if pred not in predicates:
-                predicates[pred] = {'exact_match': [], 'overlap': []}
+                predicates[pred] = {}
+                # Initialize all metric keys
+                for key in metric_keys:
+                    if key not in ['llm_judge_reasoning', 'judge_raw_response']:
+                        predicates[pred][key] = []
             
-            predicates[pred]['exact_match'].append(r['metrics']['exact_match'])
-            predicates[pred]['overlap'].append(r['metrics']['overlap'])
+            # Add all metrics
+            for key in metric_keys:
+                if key not in ['llm_judge_reasoning', 'judge_raw_response']:
+                    predicates[pred][key].append(r['metrics'][key])
         
         summary['by_predicate'] = {}
-        for pred, metrics in predicates.items():
+        for pred, metrics_dict in predicates.items():
             summary['by_predicate'][pred] = {
-                'count': len(metrics['exact_match']),
-                'exact_match': sum(metrics['exact_match']) / len(metrics['exact_match']),
-                'overlap': sum(metrics['overlap']) / len(metrics['overlap'])
+                'count': len(metrics_dict['exact_match'])  # Use any metric for count
             }
+            # Add all metrics
+            for key, values in metrics_dict.items():
+                if values:
+                    summary['by_predicate'][pred][key] = sum(values) / len(values)
         
         return summary
     
@@ -337,25 +414,25 @@ class DLAMAExperimentRunner:
         print(f"\n By Culture:")
         for culture, stats in summary['by_culture'].items():
             print(f"  {culture} (n={stats['count']}):")
-            print(f"    Exact Match: {stats['exact_match']:.4f}")
-            print(f"    Overlap: {stats['overlap']:.4f}")
+            for metric, value in stats.items():
+                if metric != 'count':
+                    print(f"    {metric}: {value:.4f}")
         
-        # ===== NEW: Print country breakdown =====
-        print(f"\n By Country:")
+        print(f"\n By Country (Top 10 by sample count):")
         # Sort by sample count (descending)
         sorted_countries = sorted(
             summary['by_country'].items(),
             key=lambda x: x[1]['count'],
             reverse=True
-        )
+        )[:10]
         
         for country, stats in sorted_countries:
             print(f"  {country} (n={stats['count']}):")
-            print(f"    Exact Match: {stats['exact_match']:.4f}")
-            print(f"    Overlap: {stats['overlap']:.4f}")
-        # ===== END NEW =====
+            for metric, value in stats.items():
+                if metric != 'count':
+                    print(f"    {metric}: {value:.4f}")
         
-        print(f"\n Top 5 Predicates:")
+        print(f"\n Top 5 Predicates by sample count:")
         sorted_preds = sorted(
             summary['by_predicate'].items(),
             key=lambda x: x[1]['count'],
@@ -364,8 +441,25 @@ class DLAMAExperimentRunner:
         
         for pred, stats in sorted_preds:
             print(f"  {pred} (n={stats['count']}):")
-            print(f"    Exact Match: {stats['exact_match']:.4f}")
-            print(f"    Overlap: {stats['overlap']:.4f}")
+            for metric, value in stats.items():
+                if metric != 'count':
+                    print(f"    {metric}: {value:.4f}")
+        
+        # If LLM judge was used, compare metrics
+        if 'llm_judge_correct' in summary['aggregate_metrics']:
+            print(f"\n{'='*70}")
+            print("🔍 STRING MATCHING vs LLM JUDGE COMPARISON")
+            print(f"{'='*70}")
+            
+            exact_match = summary['aggregate_metrics'].get('exact_match', {}).get('mean', 0)
+            overlap = summary['aggregate_metrics'].get('overlap', {}).get('mean', 0)
+            llm_judge = summary['aggregate_metrics'].get('llm_judge_correct', {}).get('mean', 0)
+            
+            print(f"  Exact Match:        {exact_match:.4f}")
+            print(f"  Overlap:            {overlap:.4f}")
+            print(f"  LLM Judge:          {llm_judge:.4f}")
+            print(f"\n  Difference (LLM Judge - Exact Match): {llm_judge - exact_match:+.4f}")
+            print(f"  Difference (LLM Judge - Overlap):     {llm_judge - overlap:+.4f}")
         
         print(f"{'='*70}")
 
@@ -389,5 +483,5 @@ if __name__ == "__main__":
         runner = DLAMAExperimentRunner(config_path)
         runner.run_all_experiments()
     else:
-        print(f"Config file not found: {config_path}")
+        print(f"❌ Config file not found: {config_path}")
         print("Please create a config file first.")

@@ -1,87 +1,39 @@
-# DLAMA Evaluation Configuration with VLLMInferenceEngine
-# Example: Native language evaluation for Asian countries
+experiment_name: "dlama_arab_west_qwen2_5b"
 
-experiment_name: dlama_arab_llama3b
-
-task:
-  name: dlama_cultural_knowledge
-  type: dlama
-  config:
-    predicate: null  # null for all, or specific like "P103" for native language
-    culture: Arab-West  # "Arab-West", "Asia-West", "South America-West", or null for all
-     # Country name or null for all countries
-
-# Model configuration (matches VLLMConfig)
 model:
-  name: "meta-llama/Llama-3.2-3B-Instruct" #Qwen/Qwen2.5-3B-Instruct   # HuggingFace model name
-  
-  # vLLM Engine Configuration
-  tensor_parallel_size: 1  # Number of GPUs to use
-  gpu_memory_utilization: 0.9  # Fraction of GPU memory to use
-  max_model_len: null  # Maximum sequence length (null for model default)
-  trust_remote_code: true  # Trust remote code in model
-  dtype: auto  # auto, half, float16, bfloat16, float, float32
-  quantization: null  # awq, gptq, squeezellm, fp8
-  swap_space: 4  # CPU swap space in GiB
-  enforce_eager: false  # Disable CUDA graph
-  max_num_seqs: 256  # Max sequences per iteration
-  seed: 42  # Random seed
-  
-  # Generation Parameters
-  temperature: 0.0  # 0 for deterministic
-  max_tokens: 50  # Maximum tokens to generate (short answers)
-  top_p: 1.0  # Nucleus sampling
-  top_k: -1  # Top-k sampling (-1 to disable)
-  presence_penalty: 0.0  # Presence penalty
-  frequency_penalty: 0.0  # Frequency penalty
-  stop: null  # Stop sequences (e.g., ["\n", "."])
+  name: "Qwen/Qwen2.5-3B-Instruct"
+  temperature: 0.0      
+  max_tokens: 50        
+  tensor_parallel_size: 1           
+  gpu_memory_utilization: 0.55
+  trust_remote_code: true
+  dtype: "auto"
+  seed: 42                          
 
 evaluation:
-  num_samples: -1  # -1 for all samples, or specific number for testing
-  batch_size: 32  # Batch size for inference
+  num_samples: -1
+  batch_size: 16
+  use_llm_judge: true
+  
+  judge_model:
+    name: "allenai/OLMo-2-1124-7B-Instruct"  # Smaller - fits in quota
+    tensor_parallel_size: 1
+    gpu_memory_utilization: 0.35
+    max_model_len: 2048
+    trust_remote_code: true
+    dtype: "auto"
+    quantization: null
+    swap_space: 4
+    enforce_eager: false
+    max_num_seqs: 64
+    seed: 42
 
-# Output settings
+task:
+  name: "DLAMA-v1"
+  config:
+    predicate: null
+    culture: "Arab-West"
+    country: null
+
 output:
-  results_dir: results_dlama
-  save_predictions: true
-  verbose: true
-
-# Notes on available options:
-# 
-# Predicates (20 total):
-#   P17 - Country
-#   P19 - Place of birth
-#   P20 - Place of death
-#   P27 - Country of citizenship
-#   P30 - Continent
-#   P36 - Capital
-#   P37 - Official language
-#   P47 - Shares border with
-#   P103 - Native language
-#   P106 - Occupation
-#   P136 - Genre
-#   P190 - Sister city
-#   P264 - Record label
-#   P364 - Original language of work
-#   P449 - Original network
-#   P495 - Country of origin
-#   P530 - Diplomatic relation
-#   P1303 - Instrument
-#   P1376 - Capital of
-#   P1412 - Languages spoken
-#
-# Cultures:
-#   - Arab-West (Arab vs Western comparison)
-#   - Asia-West (Asian vs Western comparison)
-#   - South America-West (South American vs Western comparison)
-#
-# Countries (46 total):
-#   Western: Andorra, Australia, Austria, Belgium, Canada, France, Germany, 
-#            Ireland, Italy, Liechtenstein, Luxembourg, Monaco, Netherlands, 
-#            New Zealand, Portugal, San Marino, Spain, Switzerland, UK, USA
-#   Asian: China, Hong Kong, Indonesia, Japan, Macau, Malaysia, Mongolia, 
-#          Myanmar, North Korea, Philippines, Singapore, South Korea, Taiwan, 
-#          Thailand, Vietnam
-#   South American: Argentina, Bolivia, Chile, Colombia, Ecuador, Paraguay, 
-#                   Peru, Uruguay, Venezuela
-#   African: Cameroon, Nigeria
+  results_dir: "results_dlama"

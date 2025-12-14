@@ -1,5 +1,5 @@
 from pathlib import Path
-from experiments.geomlama_experiment_runner import GeoMLAMAExperimentRunner  
+from experiments.dlama_experiment_runner import DLAMAExperimentRunner  
 import torch
 
 def main():
@@ -28,7 +28,7 @@ def main():
     print(f"GPU Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
     
     # Run experiments
-    runner = GeoMLAMAExperimentRunner(Path(args.config))
+    runner = DLAMAExperimentRunner(Path(args.config))
     runner.run_all_experiments()
     
     print("\n✅ All experiments completed!")

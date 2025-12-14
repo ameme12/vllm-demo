@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Tuple
 from tasks.base_task import BaseTask
 import json
 import re 
@@ -39,27 +39,27 @@ PREDICATE_DESCRIPTIONS = {
 }
 
 place_relation_predicates = [
-        "P17",
-        "P19",
-        "P20",
-        "P27",
-        #     "P30", # Continent
-        "P36",
-        "P47",
-        "P131",
-        "P159",
-        "P190",  #  Sister City
-        "P276",
-        "P463",
-        "P495",
-        "P530",  # Diplomatic relation
-        "P740",
-        "P937",
-        "P1001",
-        "P1376",
-    ]
+    "P17",
+    "P19",
+    "P20",
+    "P27",
+    #     "P30", # Continent
+    "P36",
+    "P47",
+    "P131",
+    "P159",
+    "P190",  #  Sister City
+    "P276",
+    "P463",
+    "P495",
+    "P530",  # Diplomatic relation
+    "P740",
+    "P937",
+    "P1001",
+    "P1376",
+]
 
-    # Predicates having persons as subjects or objects
+# Predicates having persons as subjects or objects
 person_relation_predicates = [
     "P39",
     "P101",
@@ -107,7 +107,6 @@ WIKIDATA_COUNTRIES = {
     "Q30": "USA",
 
     #Arab countries
-
     "Q79": "Egypt",
     "Q237": "Bahrain",
     "Q1016": "Comoros",
@@ -166,12 +165,11 @@ WIKIDATA_COUNTRIES = {
 }
 
 
-
 class DLAMATask(BaseTask):
     '''
     DLAMA-v1 Task - Simplified version for LLama 3B and Qwen 2.5B evaluation.
 
-        @inproceedings{keleg-magdy-2023-dlama,
+    @inproceedings{keleg-magdy-2023-dlama,
         title = "{DLAMA}: A Framework for Curating Culturally Diverse Facts for Probing the Knowledge of Pretrained Language Models",
         author = "Keleg, Amr  and
         Magdy, Walid",
@@ -186,38 +184,36 @@ class DLAMATask(BaseTask):
         url = "https://aclanthology.org/2023.findings-acl.389/",
         doi = "10.18653/v1/2023.findings-acl.389",
         pages = "6245--6266",
-        abstract = "A few benchmarking datasets have been released to evaluate the factual knowledge of pretrained language models. These benchmarks (e.g., LAMA, and ParaRel) are mainly developed in English and later are translated to form new multilingual versions (e.g., mLAMA, and mParaRel). Results on these multilingual benchmarks suggest that using English prompts to recall the facts from multilingual models usually yields significantly better and more consistent performance than using non-English prompts. Our analysis shows that mLAMA is biased toward facts from Western countries, which might affect the fairness of probing models. We propose a new framework for curating factual triples from Wikidata that are culturally diverse. A new benchmark DLAMA-v1 is built of factual triples from three pairs of contrasting cultures having a total of 78,259 triples from 20 relation predicates. The three pairs comprise facts representing the (Arab and Western), (Asian and Western), and (South American and Western) countries respectively. Having a more balanced benchmark (DLAMA-v1) supports that mBERT performs better on Western facts than non-Western ones, while monolingual Arabic, English, and Korean models tend to perform better on their culturally proximate facts. Moreover, both monolingual and multilingual models tend to make a prediction that is culturally or geographically relevant to the correct label, even if the prediction is wrong."
     }
 
-    # DLAMA-v1 is a culturally diverse factual knowledge benchmark built from Wikidata.
-    # It contains ~78k culturally grounded factual triples covering 3 major cultural pairs:
-    #   • Arab vs Western
-    #   • Asian vs Western
-    #   • South American vs Western
-    #
-    # Each example is structured as a Wikidata triple:
-    #       (subject, relation, object)
-    # representing a culturally relevant fact (e.g., "Japan – national dish – sushi").
-    #
-    # The benchmark is used to test whether language models recall culturally specific facts.
-    #
-    # PROMPT FORMAT:
-    # DLAMA uses a cloze-style (fill-in-the-blank) prompt similar to LAMA-style probing.
-    # For each triple, a natural-language template is provided with the object removed.
-    # Example:
-    #     "The national dish of Japan is [MASK]."
-    #
-    # For open-ended evaluation, the [MASK] is replaced with a direct question instead:
-    #     "What is the national dish of Japan?"
-    #
-    # MODEL EVALUATION:
-    # 1. The model generates an answer to the cultural fact.
-    # 2. Accuracy is computed by checking if the generated answer matches
-    #    or contains the correct object (possibly using an LLM-as-judge).
-    #
-    # DLAMA-v1 helps evaluate whether LLMs perform differently across cultures,
-    # and whether they recall facts from Western vs non-Western regions equally well.
+    DLAMA-v1 is a culturally diverse factual knowledge benchmark built from Wikidata.
+    It contains ~78k culturally grounded factual triples covering 3 major cultural pairs:
+      • Arab vs Western
+      • Asian vs Western
+      • South American vs Western
 
+    Each example is structured as a Wikidata triple:
+          (subject, relation, object)
+    representing a culturally relevant fact (e.g., "Japan – national dish – sushi").
+
+    The benchmark is used to test whether language models recall culturally specific facts.
+
+    PROMPT FORMAT:
+    DLAMA uses a cloze-style (fill-in-the-blank) prompt similar to LAMA-style probing.
+    For each triple, a natural-language template is provided with the object removed.
+    Example:
+        "The national dish of Japan is [MASK]."
+
+    For open-ended evaluation, the [MASK] is replaced with a direct question instead:
+        "What is the national dish of Japan?"
+
+    MODEL EVALUATION:
+    1. The model generates an answer to the cultural fact.
+    2. Accuracy is computed by checking if the generated answer matches
+       or contains the correct object (string matching or LLM-as-judge).
+
+    DLAMA-v1 helps evaluate whether LLMs perform differently across cultures,
+    and whether they recall facts from Western vs non-Western regions equally well.
     '''
 
     def __init__(self, name: str, dataset_path: Path, config: Dict[str, Any]):
@@ -313,15 +309,15 @@ class DLAMATask(BaseTask):
         self.dataset = all_data
         return all_data
 
-    def get_all_country_names(self, country_field) -> str:
+    def get_all_country_names(self, country_field) -> List[str]:
         """
-        Extract country name from country field.
+        Extract country names from country field.
         
         Args:
             country_field: Can be a string (Wikidata code) or list of codes
             
         Returns:
-            Human-readable country name
+            List of human-readable country names
         """
         # Handle list format - take first element
         if isinstance(country_field, list):
@@ -332,11 +328,7 @@ class DLAMATask(BaseTask):
         # Map all codes to names
         return [WIKIDATA_COUNTRIES.get(code, "Unknown Country") for code in country_codes]
 
-
-
-
     def _convert_sample(self, item: Dict[str, Any]) -> Dict[str, Any]:
-        
         '''
         Convert raw dataset item to standardized format.
     
@@ -368,7 +360,6 @@ class DLAMATask(BaseTask):
             'WESTERN': 'Western',
             'ARAB': 'Arab',
             'SOUTH': 'South_American'
-
         }
         culture = culture_mapping.get(culture_code, culture_code) 
 
@@ -393,7 +384,6 @@ class DLAMATask(BaseTask):
             'obj_uri': obj_uri,
             'uuid': uuid,
         }
-        
 
     def prepare_prompts(self, sample: Dict) -> str:
         '''
@@ -429,12 +419,9 @@ class DLAMATask(BaseTask):
         
         return prompt
 
-
-
-
     def evaluate_response(self, prediction: str, sample: Dict[str, Any]) -> Dict[str, float]:
         '''
-        Evaluate model prediction against ground truth answer(s).
+        Evaluate model prediction against ground truth answer(s) using string matching.
 
         Uses two metrics from original DLAMA benchmark:
         1. Exact match: prediction is one of the correct answers
@@ -468,55 +455,242 @@ class DLAMATask(BaseTask):
             'exact_match': exact_match,
             'overlap': overlap,
         }
+
+    def evaluate_response_with_llm(
+        self, 
+        prediction: str, 
+        sample: Dict[str, Any],
+        judge_engine  # VLLMInferenceEngine instance
+    ) -> Dict[str, Any]:
+        '''
+        Evaluate model prediction using an LLM judge.
+        
+        Args:
+            prediction: Model's generated answer
+            sample: Sample dict with 'correct_answer' field
+            judge_engine: VLLMInferenceEngine instance for the judge model
+            
+        Returns:
+            Dict with 'llm_judge_correct' score (0.0 or 1.0), 'llm_judge_reasoning', 
+            and 'judge_raw_response'
+        '''
+        
+        obj_labels = sample['correct_answer']
+        if not isinstance(obj_labels, list):
+            obj_labels = [obj_labels]
+        
+        # Create judge prompt
+        judge_prompt = self._create_judge_prompt(prediction, obj_labels, sample)
+        
+        # Get judge's response using generate_batch with single prompt
+        try:
+            judge_responses = judge_engine.generate_batch(
+                prompts=[judge_prompt],
+                temperature=0.0,
+                max_tokens=150,
+                top_p=1.0,
+                top_k=-1,
+                stop=None
+            )
+            judge_response = judge_responses[0] if judge_responses else ""
+        except Exception as e:
+            print(f"⚠️  Warning: Judge evaluation failed: {e}")
+            judge_response = "ERROR: Judge evaluation failed"
+        
+        # Parse judge's response
+        is_correct, reasoning = self._parse_judge_response(judge_response)
+        
+        return {
+            'llm_judge_correct': 1.0 if is_correct else 0.0,
+            'llm_judge_reasoning': reasoning,
+            'judge_raw_response': judge_response.strip() if judge_response else ""
+        }
+
+    def _create_judge_prompt(
+        self, 
+        prediction: str, 
+        correct_answers: List[str],
+        sample: Dict[str, Any]
+    ) -> str:
+        '''
+        Create a prompt for the LLM judge to evaluate if the prediction is correct.
+        
+        Improved to handle:
+        - Dialectal variations (Moroccan Arabic = Arabic)
+        - Hedging language ("without context", "likely", etc.)
+        - Focus on actual answer, not model's uncertainty
+        '''
+        
+        correct_answers_str = ", ".join([f'"{ans}"' for ans in correct_answers])
+        question_context = sample['template'].replace('[X]', sample['subject']).replace('[Y]', '').strip()
+        
+        prompt = f"""You are a factual answer evaluator. Determine if the model gave the correct answer.
+
+    Question: {question_context}
+
+    Correct Answer(s): {correct_answers_str}
+
+    Model's Response: "{prediction}"
+
+    TASK: Extract the actual answer from the model's response and check if it's correct.
+
+    CRITICAL RULES:
+
+    1. FOCUS ON THE ANSWER GIVEN, NOT THE REASONING
+    - If model says "Arabic" anywhere, that's the answer
+    - Ignore phrases like "without context", "it's likely", "probably"
+    - Ignore explanations - just extract the answer
+
+    2. ACCEPT DIALECTAL VARIATIONS OF LANGUAGES
+    - "Moroccan Arabic", "Egyptian Arabic", "Tunisian Arabic", "Lebanese Arabic" → ALL equal "Arabic" ✓
+    - "American English", "British English" → equal "English" ✓
+    - "Quebec French" → equals "French" ✓
+    
+    3. ACCEPT SYNONYMS AND ALTERNATIVE FORMS
+    - "USA" = "United States" = "America" ✓
+    - "Japanese" = "Japan" (when referring to language) ✓
+    - "Dutch" = "Netherlands" (when referring to language) ✓
+
+    4. REJECT ONLY WHEN FACTUALLY WRONG
+    - "Arabic" when answer is "Dutch" ✗
+    - "French" when answer is "Arabic" ✗
+    - "Morocco" when answer is "Netherlands" ✗
+    - "I don't know" or no answer given ✗
+
+    EXAMPLES:
+
+    Example 1:
+    Question: The native language of Khalid Abdulrahman is?
+    Correct: "Arabic"
+    Model says: "Arabic\n\nKhalid Abdulrahman is a name, and without context..."
+    VERDICT: TRUE (model said Arabic, ignore the hedging)
+
+    Example 2:
+    Question: The native language of Mohammed VI is?
+    Correct: "Arabic"
+    Model says: "Moroccan Arabic (Darija)"
+    VERDICT: TRUE (Moroccan Arabic is a dialect of Arabic)
+
+    Example 3:
+    Question: The native language of Hakim Ziyech is?
+    Correct: "Dutch"
+    Model says: "Moroccan Arabic"
+    VERDICT: FALSE (Arabic ≠ Dutch, completely different language)
+
+    Example 4:
+    Question: The native language of Riyad Mahrez is?
+    Correct: "French"
+    Model says: "Arabic"
+    VERDICT: FALSE (Arabic ≠ French)
+
+    Example 5:
+    Question: The native language of Mohamed Salah is?
+    Correct: "Arabic", "Egyptian Arabic"
+    Model says: "Egyptian Arabic"
+    VERDICT: TRUE (exact match with one of the correct answers)
+
+    Now evaluate:
+
+    Respond EXACTLY in this format:
+    VERDICT: [TRUE or FALSE]
+    REASONING: [One brief sentence]
+
+    Your response:"""
+        
+        return prompt
+
+    def _parse_judge_response(self, response: str) -> Tuple[bool, str]:
+        '''
+        Parse the judge's response to extract verdict and reasoning.
+        
+        Args:
+            response: Raw response from judge model
+            
+        Returns:
+            Tuple of (is_correct: bool, reasoning: str)
+        '''
+        response = response.strip()
+        
+        # Initialize defaults
+        is_correct = False
+        reasoning = ""
+        
+        # Look for VERDICT line
+        verdict_match = re.search(r'VERDICT:\s*(TRUE|FALSE)', response, re.IGNORECASE)
+        if verdict_match:
+            verdict = verdict_match.group(1).upper()
+            is_correct = (verdict == "TRUE")
+        else:
+            # Fallback: check if response contains "true" or "false"
+            response_lower = response.lower()
+            if "verdict: true" in response_lower or response_lower.startswith("true"):
+                is_correct = True
+            elif "verdict: false" in response_lower or response_lower.startswith("false"):
+                is_correct = False
+        
+        # Look for REASONING line
+        reasoning_match = re.search(r'REASONING:\s*(.+)', response, re.IGNORECASE | re.DOTALL)
+        if reasoning_match:
+            reasoning = reasoning_match.group(1).strip()
+            # Take only the first line or sentence
+            reasoning = reasoning.split('\n')[0].strip()
+        else:
+            # If no reasoning found, use the whole response
+            reasoning = response
+        
+        return is_correct, reasoning
         
     def _extract_answer(self, prediction: str) -> str:
         """
         Extract the actual answer from model's prediction.
         
-        Handles formats like:
-        - "Japanese"
-        - "Answer: Japanese"
-        - "The answer is Japanese."
-        - Multi-line responses (takes first line after "answer is:")
+        Improved to handle:
+        - Multi-line responses
+        - Hedging language
+        - Extract just the core answer
         """
         if not prediction:
             return ""
         
         prediction = prediction.strip()
         
-        # Try to find answer after "The answer is:" or similar
+        # Try to find answer after common patterns
         patterns = [
-            r'The answer is:\s*(.+)',
-            r'answer is:\s*(.+)',
-            r'Answer:\s*(.+)',
-            r'answer:\s*(.+)',
+            r'The answer is:?\s*(.+?)(?:\n|$)',
+            r'answer is:?\s*(.+?)(?:\n|$)',
+            r'Answer:?\s*(.+?)(?:\n|$)',
+            r'^(.+?)(?:\n|$)',  # Just take first line
         ]
         
         for pattern in patterns:
             match = re.search(pattern, prediction, re.IGNORECASE)
             if match:
                 answer = match.group(1).strip()
-                # Take only first line and remove trailing period
-                answer = answer.split('\n')[0].split('.')[0].strip()
+                
+                # Clean up the answer
+                # Remove trailing periods and common prefixes
+                answer = answer.rstrip('.')
+                
+                # If answer has hedging, extract just the core answer
+                # e.g., "Arabic (though without context...)" -> "Arabic"
+                core_match = re.match(r'^([A-Za-z\s]+?)(?:\s*\(|\.|\,)', answer)
+                if core_match:
+                    answer = core_match.group(1).strip()
+                
                 return answer
         
-        # If no pattern matches, take the first line of the full response
-        lines = prediction.split('\n')
-        first_line = lines[0].strip()
-        
-        # Remove trailing periods and common prefixes
-        first_line = first_line.rstrip('.')
-        
-        return first_line
+        # Fallback: take first line
+        return prediction.split('\n')[0].strip().rstrip('.')
 
 
 def create_dlama_task(dataset_path: Path, config: Dict[str, Any]) -> DLAMATask:
     """Factory function to create DLAMA task."""
     return DLAMATask("DLAMA-v1", dataset_path, config)
 
+
 if __name__ == "__main__":
     print("\n" + "="*70)
-    print("DLAMA-v1 Task - Simplified Version")
+    print("DLAMA-v1 Task - With LLM Judge Support")
     print("="*70)
     
     # Example: Test on capitals
@@ -554,5 +728,16 @@ if __name__ == "__main__":
         ]
         
         print(f"\n{'='*70}")
-        print("Evaluation Tests:")
+        print("String-Based Evaluation Tests:")
+        print(f"{'='*70}")
+        
+        for pred in test_predictions:
+            metrics = task.evaluate_response(pred, sample)
+            print(f"\nPrediction: '{pred}'")
+            print(f"  Exact Match: {metrics['exact_match']}")
+            print(f"  Overlap: {metrics['overlap']}")
+        
+        print(f"\n{'='*70}")
+        print("Note: To test LLM judge evaluation, run the full experiment")
+        print("with use_llm_judge: true in the config file.")
         print(f"{'='*70}")

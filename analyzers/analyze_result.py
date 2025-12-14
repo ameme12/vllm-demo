@@ -153,13 +153,13 @@ def create_comparison_table(df):
     return accuracy_table, format_table, samples_table
 
 def plot_accuracy_by_culture(df):
-    """Create standalone accuracy comparison chart"""
+    """Create standalone accuracy comparison chart with larger fonts for ACL paper"""
     
     plt.style.use('seaborn-v0_8-darkgrid')
     colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
     
-    # Create figure
-    fig, ax = plt.subplots(figsize=(16, 8))
+    # Create figure with larger size
+    fig, ax = plt.subplots(figsize=(18, 10))
     
     # Prepare data
     accuracy_pivot = df.pivot(index='culture_display', columns='model', values='accuracy')
@@ -171,25 +171,28 @@ def plot_accuracy_by_culture(df):
         offset = width * (i - len(models)/2 + 0.5)
         bars = ax.bar(x + offset, accuracy_pivot[model], width, 
                       label=model, alpha=0.85, color=colors[i],
-                      edgecolor='black', linewidth=0.5)
+                      edgecolor='black', linewidth=1.2)
         
-        # Add value labels on bars
+        # Add value labels on bars with larger font (rounded to avoid overlap)
         for bar in bars:
             height = bar.get_height()
             if not np.isnan(height):
-                ax.text(bar.get_x() + bar.get_width()/2., height + 1,
-                       f'{height:.2f}%',
-                       ha='center', va='bottom', fontsize=9, fontweight='bold')
+                ax.text(bar.get_x() + bar.get_width()/2., height + 2,
+                       f'{height:.0f}%',
+                       ha='center', va='bottom', fontsize=18, fontweight='bold')
     
-    ax.set_title('Cultural Knowledge Accuracy by Culture\nLlama 3.2-3B vs Qwen 2.5-3B', 
-                 fontsize=16, fontweight='bold', pad=20)
-    ax.set_xlabel('Culture (Country)', fontsize=13, fontweight='bold')
-    ax.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold')
+    # Larger title and labels
+    ax.set_title('BLEnD: Cultural Knowledge Accuracy by Culture\nLlama 3.2-3B vs Qwen 2.5-3B', 
+                 fontsize=26, fontweight='bold', pad=25)
+    ax.set_xlabel('Culture (Country)', fontsize=22, fontweight='bold')
+    ax.set_ylabel('Accuracy (%)', fontsize=22, fontweight='bold')
     ax.set_xticks(x)
-    ax.set_xticklabels(accuracy_pivot.index, rotation=45, ha='right', fontsize=10)
-    ax.legend(loc='upper right', fontsize=12, framealpha=0.9)
-    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=0.8)
-    ax.axhline(y=25, color='red', linestyle='--', linewidth=2.5, 
+    ax.set_xticklabels(accuracy_pivot.index, rotation=45, ha='right', fontsize=18)
+    ax.tick_params(axis='y', labelsize=18)
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.30), ncol=len(models), 
+              fontsize=20, framealpha=0.9)
+    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=1.2)
+    ax.axhline(y=25, color='red', linestyle='--', linewidth=3, 
                label='Random Baseline (25%)', alpha=0.7)
     ax.set_ylim(0, 105)
     
@@ -243,19 +246,19 @@ def print_summary_report(df):
     print("\n" + "="*80 + "\n")
 
 def plot_comparison(df):
-    """Create comprehensive visualization comparing models across cultures"""
+    """Create comprehensive visualization comparing models across cultures with larger fonts"""
     
     # Set style
     plt.style.use('seaborn-v0_8-darkgrid')
     colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
     
-    # Create figure with subplots (now without the top accuracy chart)
-    fig = plt.figure(figsize=(18, 10))
-    gs = fig.add_gridspec(2, 2, hspace=0.35, wspace=0.3)
+    # Create figure with subplots
+    fig = plt.figure(figsize=(20, 12))
+    gs = fig.add_gridspec(2, 2, hspace=0.4, wspace=0.35)
     
-    # Main title
-    fig.suptitle('BLEnD Cultural Knowledge Evaluation: Llama vs Qwen', 
-                 fontsize=18, fontweight='bold', y=0.98)
+    # Main title with larger font
+    fig.suptitle('BLEnD: Cultural Knowledge Evaluation - Llama vs Qwen', 
+                 fontsize=26, fontweight='bold', y=0.98)
     
     # 1. Overall model comparison
     ax1 = fig.add_subplot(gs[0, 0])
@@ -263,18 +266,19 @@ def plot_comparison(df):
     bars = ax1.barh(range(len(avg_by_model)), avg_by_model.values, 
                     color=colors[:len(avg_by_model)], alpha=0.8)
     
-    # Add value labels
+    # Add value labels with larger font
     for i, (bar, val) in enumerate(zip(bars, avg_by_model.values)):
-        ax1.text(val + 1, i, f'{val:.2f}%', 
-                va='center', fontsize=11, fontweight='bold')
+        ax1.text(val + 1.5, i, f'{val:.2f}%', 
+                va='center', fontsize=16, fontweight='bold')
     
     ax1.set_yticks(range(len(avg_by_model)))
-    ax1.set_yticklabels(avg_by_model.index, fontsize=11)
-    ax1.set_xlabel('Average Accuracy (%)', fontsize=12, fontweight='bold')
+    ax1.set_yticklabels(avg_by_model.index, fontsize=16)
+    ax1.set_xlabel('Average Accuracy (%)', fontsize=18, fontweight='bold')
     ax1.set_title('Overall Performance (Avg Across Cultures)', 
-                  fontsize=14, fontweight='bold', pad=10)
+                  fontsize=20, fontweight='bold', pad=15)
     ax1.grid(axis='x', alpha=0.3, linestyle='--')
     ax1.set_xlim(0, 100)
+    ax1.tick_params(axis='x', labelsize=14)
     
     # 2. Valid format comparison
     ax2 = fig.add_subplot(gs[0, 1])
@@ -283,18 +287,19 @@ def plot_comparison(df):
                     color=['#2ecc71', '#27ae60'][:len(format_by_model)], alpha=0.8)
     
     for i, (bar, val) in enumerate(zip(bars, format_by_model.values)):
-        ax2.text(val - 5, i, f'{val:.2f}%', 
-                va='center', ha='right', fontsize=11, 
+        ax2.text(val - 6, i, f'{val:.2f}%', 
+                va='center', ha='right', fontsize=16, 
                 fontweight='bold', color='white')
     
     ax2.set_yticks(range(len(format_by_model)))
-    ax2.set_yticklabels(format_by_model.index, fontsize=11)
-    ax2.set_xlabel('Valid Format (%)', fontsize=12, fontweight='bold')
+    ax2.set_yticklabels(format_by_model.index, fontsize=16)
+    ax2.set_xlabel('Valid Format (%)', fontsize=18, fontweight='bold')
     ax2.set_title('Response Format Compliance', 
-                  fontsize=14, fontweight='bold', pad=10)
+                  fontsize=20, fontweight='bold', pad=15)
     ax2.grid(axis='x', alpha=0.3, linestyle='--')
     ax2.set_xlim(0, 105)
-    ax2.axvline(x=100, color='green', linestyle='--', linewidth=2, alpha=0.5)
+    ax2.axvline(x=100, color='green', linestyle='--', linewidth=2.5, alpha=0.5)
+    ax2.tick_params(axis='x', labelsize=14)
     
     # 3. Sample size per culture
     ax3 = fig.add_subplot(gs[1, 0])
@@ -303,15 +308,16 @@ def plot_comparison(df):
                     color='#9b59b6', alpha=0.7)
     
     for i, (bar, val) in enumerate(zip(bars, samples_by_culture.values)):
-        ax3.text(val + 200, i, f'{val:,}', 
-                va='center', fontsize=8)
+        ax3.text(val + 250, i, f'{val:,}', 
+                va='center', fontsize=12)
     
     ax3.set_yticks(range(len(samples_by_culture)))
-    ax3.set_yticklabels(samples_by_culture.index, fontsize=9)
-    ax3.set_xlabel('Number of Samples', fontsize=12, fontweight='bold')
+    ax3.set_yticklabels(samples_by_culture.index, fontsize=14)
+    ax3.set_xlabel('Number of Samples', fontsize=18, fontweight='bold')
     ax3.set_title('Dataset Size by Culture', 
-                  fontsize=14, fontweight='bold', pad=10)
+                  fontsize=20, fontweight='bold', pad=15)
     ax3.grid(axis='x', alpha=0.3, linestyle='--')
+    ax3.tick_params(axis='x', labelsize=14)
     
     # 4. Head-to-head comparison
     ax4 = fig.add_subplot(gs[1, 1])
@@ -326,41 +332,42 @@ def plot_comparison(df):
         common = df1.index.intersection(df2.index)
         
         if len(common) > 0:
-            ax4.scatter(df1[common], df2[common], s=200, alpha=0.6, 
-                       color='#e74c3c', edgecolors='black', linewidth=1.5)
+            ax4.scatter(df1[common], df2[common], s=250, alpha=0.6, 
+                       color='#e74c3c', edgecolors='black', linewidth=2)
             
-            # Add culture labels
+            # Add culture labels with larger font
             for culture in common:
                 country_name = CULTURE_NAMES.get(culture, culture)
                 ax4.annotate(f"{culture}\n{country_name}", (df1[culture], df2[culture]),
                            xytext=(5, 5), textcoords='offset points',
-                           fontsize=7, fontweight='bold')
+                           fontsize=11, fontweight='bold')
             
             # Add diagonal line (equal performance)
             max_val = max(df1[common].max(), df2[common].max())
             min_val = min(df1[common].min(), df2[common].min())
             ax4.plot([min_val, max_val], [min_val, max_val], 
-                    'k--', alpha=0.5, linewidth=2, label='Equal Performance')
+                    'k--', alpha=0.5, linewidth=2.5, label='Equal Performance')
             
-            ax4.set_xlabel(f'{model1} Accuracy (%)', fontsize=12, fontweight='bold')
-            ax4.set_ylabel(f'{model2} Accuracy (%)', fontsize=12, fontweight='bold')
+            ax4.set_xlabel(f'{model1} Accuracy (%)', fontsize=18, fontweight='bold')
+            ax4.set_ylabel(f'{model2} Accuracy (%)', fontsize=18, fontweight='bold')
             ax4.set_title('Head-to-Head Comparison', 
-                         fontsize=14, fontweight='bold', pad=10)
+                         fontsize=20, fontweight='bold', pad=15)
             ax4.grid(alpha=0.3, linestyle='--')
-            ax4.legend(fontsize=10)
+            ax4.legend(fontsize=16)
             ax4.set_aspect('equal')
+            ax4.tick_params(axis='both', labelsize=14)
     else:
         ax4.text(0.5, 0.5, 'Need 2+ models for comparison', 
-                ha='center', va='center', fontsize=12)
+                ha='center', va='center', fontsize=16)
         ax4.axis('off')
     
     return fig
 
 def create_detailed_table_plot(accuracy_table, format_table, samples_table):
-    """Create detailed table visualization"""
+    """Create detailed table visualization with larger fonts"""
     
-    fig, axes = plt.subplots(1, 3, figsize=(22, 10))
-    fig.suptitle('Detailed Results Tables', fontsize=16, fontweight='bold')
+    fig, axes = plt.subplots(1, 3, figsize=(26, 12))
+    fig.suptitle('BLEnD: Detailed Results Tables', fontsize=22, fontweight='bold', y=0.96)
     
     tables_data = [
         (accuracy_table, 'Accuracy (%)', '#3498db', axes[0]),
@@ -383,23 +390,23 @@ def create_detailed_table_plot(accuracy_table, format_table, samples_table):
                 elif 'Sample' in title:
                     row.append(f"{int(val):,}")
                 else:
-                    row.append(f"{val:.2f}%")  # Changed from .1f to .2f
+                    row.append(f"{val:.2f}%")
             data.append(row)
         
-        # Create table
+        # Create table with larger font
         table = ax.table(cellText=data,
                         colLabels=['Culture (Country)'] + list(table_df.columns),
                         cellLoc='center',
                         loc='center',
                         bbox=[0, 0, 1, 1])
         table.auto_set_font_size(False)
-        table.set_fontsize(8)
-        table.scale(1, 2.2)
+        table.set_fontsize(12)  # Increased from 8 to 12
+        table.scale(1, 2.5)  # Increased row height
         
-        # Style header
+        # Style header with larger font
         for i in range(len(table_df.columns) + 1):
             table[(0, i)].set_facecolor(color)
-            table[(0, i)].set_text_props(weight='bold', color='white')
+            table[(0, i)].set_text_props(weight='bold', color='white', fontsize=14)
         
         # Alternate row colors
         for i in range(1, len(data) + 1):
@@ -407,7 +414,7 @@ def create_detailed_table_plot(accuracy_table, format_table, samples_table):
                 if i % 2 == 0:
                     table[(i, j)].set_facecolor('#f8f9fa')
         
-        ax.set_title(title, fontsize=14, pad=20, fontweight='bold')
+        ax.set_title(title, fontsize=20, pad=20, fontweight='bold')
     
     plt.tight_layout()
     return fig

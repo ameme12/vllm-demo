@@ -1,7 +1,8 @@
 """
-Experiment Runner for DLAMA Task Evaluation
+Experiment Runner for DLAMA Task Evaluation with Checkpointing
 Orchestrates the entire evaluation pipeline using VLLMInferenceEngine
 Supports both string-based and LLM judge evaluation methods
+Includes automatic checkpointing for resumable evaluation
 """
 
 from pathlib import Path
@@ -21,7 +22,7 @@ from tasks.dlama_task import create_dlama_task
 
 
 class DLAMAExperimentRunner:
-    """Runs DLAMA experiments based on YAML configuration"""
+    """Runs DLAMA experiments based on YAML configuration with automatic checkpointing"""
     
     def __init__(self, config_path: Path):
         """
@@ -39,9 +40,13 @@ class DLAMAExperimentRunner:
         self.use_llm_judge = self.config.get('evaluation', {}).get('use_llm_judge', False)
         self.judge_engine = None
         
+        # Checkpoint frequency (how many batches between checkpoints)
+        self.checkpoint_frequency = self.config.get('evaluation', {}).get('checkpoint_frequency', 10)
+        
         print(f"📋 Loaded config from: {config_path}")
         print(f"📁 Results will be saved to: {self.results_dir}")
         print(f"🔍 LLM Judge: {'Enabled' if self.use_llm_judge else 'Disabled'}")
+        print(f"💾 Checkpoint frequency: Every {self.checkpoint_frequency} batches")
     
     def _load_config(self) -> Dict[str, Any]:
         """Load YAML configuration file"""
@@ -171,10 +176,10 @@ class DLAMAExperimentRunner:
         # Get generation parameters
         gen_params = self._get_generation_params()
         
-        # Run evaluation
+        # Run evaluation (with automatic checkpointing)
         results = self._evaluate_task(task, dataset, engine, gen_params, batch_size)
         
-        # Save results
+        # Save final results (only called once at the end)
         self._save_results(experiment_name, results, task)
         
         # Print summary
@@ -189,7 +194,7 @@ class DLAMAExperimentRunner:
         batch_size: int
     ):
         """
-        Evaluate the model on the task.
+        Evaluate the model on the task with automatic checkpointing.
         
         Args:
             task: DLAMA task instance
@@ -201,70 +206,169 @@ class DLAMAExperimentRunner:
         Returns:
             List of results dictionaries
         """
-        results = []
+        experiment_name = self.config.get('experiment_name', 'dlama_experiment')
+        checkpoint_file = self.results_dir / f"{experiment_name}_checkpoint.json"
+        
+        # Load checkpoint if exists
+        if checkpoint_file.exists():
+            print(f"\n📥 RESUMING from checkpoint: {checkpoint_file}")
+            with open(checkpoint_file, 'r') as f:
+                checkpoint_data = json.load(f)
+                results = checkpoint_data.get('results', [])
+                start_idx = checkpoint_data.get('next_index', 0)
+                completed_batches = checkpoint_data.get('completed_batches', 0)
+            print(f"   ✅ Already completed: {len(results)}/{len(dataset)} samples")
+            print(f"   ⏭️  Resuming from index: {start_idx}")
+        else:
+            results = []
+            start_idx = 0
+            completed_batches = 0
+            print(f"\n🆕 Starting new evaluation")
         
         print(f"\n⚙️  Running inference (batch_size={batch_size})...")
+        print(f"   Total samples: {len(dataset)}")
+        print(f"   Remaining: {len(dataset) - start_idx}")
         print(f"   Generation params: {gen_params}")
         
-        # Process in batches
-        for i in tqdm(range(0, len(dataset), batch_size), desc="Processing batches"):
-            batch_end = min(i + batch_size, len(dataset))
-            batch_items = dataset[i:batch_end]
-            
-            # Convert samples and prepare prompts
-            batch_samples = []
-            batch_prompts = []
-            
-            for item in batch_items:
-                sample = task._convert_sample(item)
-                prompt = task.prepare_prompts(sample)
+        try:
+            # Process in batches
+            for i in tqdm(range(start_idx, len(dataset), batch_size), 
+                          desc="Processing batches",
+                          initial=completed_batches):
+                batch_end = min(i + batch_size, len(dataset))
+                batch_items = dataset[i:batch_end]
                 
-                batch_samples.append(sample)
-                batch_prompts.append(prompt)
-            
-            # Generate responses using VLLMInferenceEngine
-            predictions = engine.generate_batch(
-                prompts=batch_prompts,
-                **gen_params
-            )
-            
-            # Evaluate responses
-            for idx, (sample, prompt, prediction) in enumerate(zip(batch_samples, batch_prompts, predictions)):
-                prediction = prediction.strip()
+                # Convert samples and prepare prompts
+                batch_samples = []
+                batch_prompts = []
                 
-                # Original string-based evaluation
-                metrics = task.evaluate_response(prediction, sample)
+                for item in batch_items:
+                    sample = task._convert_sample(item)
+                    prompt = task.prepare_prompts(sample)
+                    
+                    batch_samples.append(sample)
+                    batch_prompts.append(prompt)
                 
-                # LLM judge evaluation (if enabled)
-                if self.use_llm_judge:
-                    judge_metrics = task.evaluate_response_with_llm(
-                        prediction, 
-                        sample, 
-                        self.judge_engine
+                # Generate responses using VLLMInferenceEngine
+                predictions = engine.generate_batch(
+                    prompts=batch_prompts,
+                    **gen_params
+                )
+                
+                # Evaluate responses
+                batch_results = []
+                for idx, (sample, prompt, prediction) in enumerate(zip(batch_samples, batch_prompts, predictions)):
+                    prediction = prediction.strip()
+                    
+                    # Original string-based evaluation
+                    metrics = task.evaluate_response(prediction, sample)
+                    
+                    # LLM judge evaluation (if enabled)
+                    if self.use_llm_judge:
+                        judge_metrics = task.evaluate_response_with_llm(
+                            prediction, 
+                            sample, 
+                            self.judge_engine
+                        )
+                        metrics.update(judge_metrics)
+                    
+                    # Store result
+                    result = {
+                        'sample_id': sample.get('uuid', 'unknown'),
+                        'subject': sample['subject'],
+                        'predicate': sample['pred_description'],
+                        'predicate_code': sample['predicate'],
+                        'correct_answer': sample['correct_answer'],
+                        'culture': sample['culture'],
+                        'country': sample['country_names'][0] if sample['country_names'] else 'Unknown',
+                        'prompt': prompt,
+                        'prediction': prediction,
+                        'extracted_answer': task._extract_answer(prediction),
+                        'metrics': metrics
+                    }
+                    
+                    batch_results.append(result)
+                
+                # Add batch results
+                results.extend(batch_results)
+                completed_batches += 1
+                
+                # Save checkpoint every N batches
+                if completed_batches % self.checkpoint_frequency == 0:
+                    self._save_checkpoint(
+                        checkpoint_file, 
+                        results, 
+                        batch_end, 
+                        completed_batches,
+                        experiment_name
                     )
-                    metrics.update(judge_metrics)
+                    print(f"\n💾 Checkpoint saved: {len(results)}/{len(dataset)} samples completed")
+            
+            # Evaluation complete - delete checkpoint
+            if checkpoint_file.exists():
+                checkpoint_file.unlink()
+                print(f"\n🗑️  Checkpoint deleted (evaluation complete)")
                 
-                # Store result
-                result = {
-                    'sample_id': sample.get('uuid', 'unknown'),
-                    'subject': sample['subject'],
-                    'predicate': sample['pred_description'],
-                    'predicate_code': sample['predicate'],
-                    'correct_answer': sample['correct_answer'],
-                    'culture': sample['culture'],
-                    'country': sample['country_names'][0] if sample['country_names'] else 'Unknown',
-                    'prompt': prompt,
-                    'prediction': prediction,
-                    'extracted_answer': task._extract_answer(prediction),
-                    'metrics': metrics
-                }
-                
-                results.append(result)
+        except (KeyboardInterrupt, Exception) as e:
+            # Save checkpoint on interruption or error
+            print(f"\n⚠️  Interrupted: {type(e).__name__}")
+            current_idx = i if 'i' in locals() else start_idx
+            self._save_checkpoint(
+                checkpoint_file, 
+                results, 
+                current_idx,
+                completed_batches,
+                experiment_name
+            )
+            print(f"💾 Emergency checkpoint saved at {len(results)}/{len(dataset)} samples")
+            print(f"🔄 Rerun with same config to resume from checkpoint")
+            raise
         
         return results
     
+    def _save_checkpoint(
+        self, 
+        checkpoint_file: Path, 
+        results: List[Dict], 
+        next_index: int, 
+        completed_batches: int,
+        experiment_name: str
+    ):
+        """
+        Save checkpoint to JSON file (for resuming evaluation).
+        
+        Args:
+            checkpoint_file: Path to checkpoint file
+            results: List of results so far
+            next_index: Index to resume from
+            completed_batches: Number of batches completed
+            experiment_name: Name of experiment
+        """
+        checkpoint_data = {
+            'experiment_name': experiment_name,
+            'results': results,
+            'next_index': next_index,
+            'completed_batches': completed_batches,
+            'total_completed': len(results),
+            'timestamp': datetime.now().isoformat(),
+            'checkpoint_version': '1.0'
+        }
+        
+        # Atomic write: write to temp file, then rename
+        temp_file = checkpoint_file.with_suffix('.tmp')
+        with open(temp_file, 'w') as f:
+            json.dump(checkpoint_data, f, indent=2)
+        temp_file.replace(checkpoint_file)
+    
     def _save_results(self, experiment_name: str, results: List[Dict], task):
-        """Save results to JSON file"""
+        """
+        Save final results to JSON file (permanent output).
+        
+        Args:
+            experiment_name: Name of experiment
+            results: List of all results
+            task: Task instance
+        """
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         output_data = {
@@ -468,7 +572,7 @@ if __name__ == "__main__":
     
     import argparse
     
-    parser = argparse.ArgumentParser(description="Run DLAMA evaluation experiment")
+    parser = argparse.ArgumentParser(description="Run DLAMA evaluation experiment with checkpointing")
     parser.add_argument(
         "--config",
         type=str,

@@ -1,4 +1,4 @@
-experiment_name: "dlama_arab_west_qwen2_5b"
+experiment_name: "dlama_asia_west_qwen2_5b"
 
 model:
   name: "Qwen/Qwen2.5-3B-Instruct"
@@ -11,12 +11,12 @@ model:
   seed: 42                          
 
 evaluation:
-  num_samples: -1
+  num_samples: -1  # Changed to -1 to evaluate all filtered samples
   batch_size: 16
   use_llm_judge: true
   
   judge_model:
-    name: "allenai/OLMo-2-1124-7B-Instruct"  # Smaller - fits in quota
+    name: "allenai/OLMo-2-1124-7B-Instruct"
     tensor_parallel_size: 1
     gpu_memory_utilization: 0.35
     max_model_len: 2048
@@ -32,8 +32,14 @@ task:
   name: "DLAMA-v1"
   config:
     predicate: null
-    culture: "Arab-West"
-    country: null
+    culture: "Asia-West"
+    countries:  # NEW: List of 6 countries to evaluate
+      - "China"
+      - "Indonesia"
+      - "South Korea"
+      - "Spain"
+      - "United States"
+      - "United Kingdom"
 
 output:
   results_dir: "results_dlama"

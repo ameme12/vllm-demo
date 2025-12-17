@@ -158,8 +158,8 @@ def plot_accuracy_by_culture(df):
     plt.style.use('seaborn-v0_8-darkgrid')
     colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12']
     
-    # Create figure with larger size
-    fig, ax = plt.subplots(figsize=(18, 10))
+    # Create figure with 4x larger size (doubled again from 36x20)
+    fig, ax = plt.subplots(figsize=(72, 40))
     
     # Prepare data
     accuracy_pivot = df.pivot(index='culture_display', columns='model', values='accuracy')
@@ -171,28 +171,20 @@ def plot_accuracy_by_culture(df):
         offset = width * (i - len(models)/2 + 0.5)
         bars = ax.bar(x + offset, accuracy_pivot[model], width, 
                       label=model, alpha=0.85, color=colors[i],
-                      edgecolor='black', linewidth=1.2)
-        
-        # Add value labels on bars with larger font (rounded to avoid overlap)
-        for bar in bars:
-            height = bar.get_height()
-            if not np.isnan(height):
-                ax.text(bar.get_x() + bar.get_width()/2., height + 2,
-                       f'{height:.0f}%',
-                       ha='center', va='bottom', fontsize=18, fontweight='bold')
+                      edgecolor='black', linewidth=4.8)
     
-    # Larger title and labels
+    # Even larger title and labels (doubled again)
     ax.set_title('BLEnD: Cultural Knowledge Accuracy by Culture\nLlama 3.2-3B vs Qwen 2.5-3B', 
-                 fontsize=26, fontweight='bold', pad=25)
-    ax.set_xlabel('Culture (Country)', fontsize=22, fontweight='bold')
-    ax.set_ylabel('Accuracy (%)', fontsize=22, fontweight='bold')
+                 fontsize=104, fontweight='bold', pad=100)
+    ax.set_xlabel('Culture (Country)', fontsize=88, fontweight='bold')
+    ax.set_ylabel('Accuracy (%)', fontsize=88, fontweight='bold')
     ax.set_xticks(x)
-    ax.set_xticklabels(accuracy_pivot.index, rotation=45, ha='right', fontsize=18)
-    ax.tick_params(axis='y', labelsize=18)
+    ax.set_xticklabels(accuracy_pivot.index, rotation=45, ha='right', fontsize=72)
+    ax.tick_params(axis='y', labelsize=72)
     ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.30), ncol=len(models), 
-              fontsize=20, framealpha=0.9)
-    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=1.2)
-    ax.axhline(y=25, color='red', linestyle='--', linewidth=3, 
+              fontsize=80, framealpha=0.9)
+    ax.grid(axis='y', alpha=0.4, linestyle='--', linewidth=4.8)
+    ax.axhline(y=25, color='red', linestyle='--', linewidth=12, 
                label='Random Baseline (25%)', alpha=0.7)
     ax.set_ylim(0, 105)
     

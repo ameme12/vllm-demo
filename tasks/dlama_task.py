@@ -103,8 +103,8 @@ WIKIDATA_COUNTRIES = {
     "Q238": "San Marino",
     "Q29": "Spain",
     "Q39": "Switzerland",
-    "Q145": "UK",
-    "Q30": "USA",
+    "Q145": "United Kingdom",  # Changed from "UK"
+    "Q30": "United States",     # Changed from "USA"
 
     #Arab countries
     "Q79": "Egypt",
@@ -221,7 +221,11 @@ class DLAMATask(BaseTask):
 
         self.predicate = config.get("predicate", None)
         self.culture = config.get("culture", None)
-        self.country = config.get("country", None)
+        
+        # NEW: Support both single country and multiple countries
+        self.countries = config.get("countries", None)
+        if self.countries and not isinstance(self.countries, list):
+            self.countries = [self.countries]
         
         # Validate
         if self.predicate and self.predicate not in PREDICATE_TEMPLATES:
@@ -229,18 +233,20 @@ class DLAMATask(BaseTask):
         if self.culture and self.culture not in CULTURAL_REGIONS:
             raise ValueError(f"Invalid culture: {self.culture}")
 
-        if self.country and self.country not in WIKIDATA_COUNTRIES.values():
+        if self.countries:
             available_countries = sorted(set(WIKIDATA_COUNTRIES.values()))
-            raise ValueError(
-                f"Invalid country: {self.country}\n"
-                f"Available countries: {available_countries}"
-            )
+            for country in self.countries:
+                if country not in available_countries:
+                    raise ValueError(
+                        f"Invalid country: {country}\n"
+                        f"Available countries: {available_countries}"
+                    )
         
         self.dataset = None
 
     def load_dataset(self) -> List[Dict[str, Any]]:
         '''
-        Load DLAMA-v1 dataset from HuggingFace
+        Load DLAMA-v1 dataset from HuggingFace with streaming for faster filtering
         '''
         try:
             from datasets import load_dataset
@@ -248,16 +254,14 @@ class DLAMATask(BaseTask):
             raise ImportError("Please install the 'datasets' library to load DLAMA-v1 dataset.")
 
         print(f"\n{'='*60}")
-        print(f"Loading DLAMA-v1 Dataset")
+        print(f"Loading DLAMA-v1 Dataset (Streaming Mode)")
         print(f"{'='*60}")
         print(f"Predicate: {self.predicate or 'All'}")
         print(f"Culture: {self.culture or 'All'}")
-        print(f"Country: {self.country or 'All'}")
+        print(f"Countries: {self.countries or 'All'}")
 
-        # Determine which configuration(s) to load based on culture filter
-        # Configurations: "Arab-West", "Asia-West", "South America-West"
+        # Determine which configuration(s) to load
         configs_to_load = []
-
         if self.culture:
             configs_to_load = [self.culture]
         else:
@@ -265,37 +269,55 @@ class DLAMATask(BaseTask):
         
         print(f"Loading configurations: {configs_to_load}")
 
+        # Create set of valid Wikidata codes for fast lookup
+        valid_codes = set()
+        if self.countries:
+            for code, name in WIKIDATA_COUNTRIES.items():
+                if name in self.countries:
+                    valid_codes.add(code)
+            print(f"Target Wikidata codes: {valid_codes}")
+
         # Collect all data from configs
         all_data = []
 
         for config_name in configs_to_load:
             try:
-                print(f"\n  Loading {config_name}...")
-                ds = load_dataset("AMR-KELEG/DLAMA-v1", config_name)
+                print(f"\n  Loading {config_name} (streaming)...")
                 
-                # Use the english translations
+                # Load with streaming=True for faster filtering
+                ds = load_dataset("AMR-KELEG/DLAMA-v1", config_name, streaming=True)
                 ds_split = ds['en']
                 
-                print(f"    Loaded {len(ds_split)} raw samples")
-            
-                # Convert to list and filter in Python (easier than HF filter with lists)
-                samples = list(ds_split)
+                # Filter during streaming
+                count = 0
+                filtered_count = 0
                 
-                # Filter by country if specified
-                if self.country:
-                    filtered_samples = []
-                    for sample in samples:
-                        # Get all countries for this sample
-                        country_names = self.get_all_country_names(sample['country'])
-                        # Include if ANY country matches
-                        if self.country in country_names:
-                            filtered_samples.append(sample)
-                    samples = filtered_samples
-                    print(f"    After country filter: {len(samples)} samples")
+                for example in ds_split:
+                    count += 1
+                    
+                    # Show progress every 1000 samples
+                    if count % 1000 == 0:
+                        print(f"    Processed {count} samples, kept {filtered_count}...")
+                    
+                    # Apply country filter
+                    if self.countries:
+                        country_field = example['country']
+                        
+                        # Handle both list and single string
+                        if isinstance(country_field, list):
+                            country_codes = country_field
+                        else:
+                            country_codes = [country_field]
+                        
+                        # Check if ANY code matches
+                        if any(code in valid_codes for code in country_codes):
+                            all_data.append(example)
+                            filtered_count += 1
+                    else:
+                        all_data.append(example)
+                        filtered_count += 1
                 
-                
-                # Add to collection
-                all_data.extend(samples)
+                print(f"    Processed {count} samples, kept {filtered_count}")
                 
             except Exception as e:
                 print(f"    ⚠ Error loading configuration {config_name}: {e}")
@@ -690,54 +712,37 @@ def create_dlama_task(dataset_path: Path, config: Dict[str, Any]) -> DLAMATask:
 
 if __name__ == "__main__":
     print("\n" + "="*70)
-    print("DLAMA-v1 Task - With LLM Judge Support")
+    print("DLAMA-v1 Task - Multiple Countries Test")
     print("="*70)
     
-    # Example: Test on capitals
+    # Test with your 6 countries
     config = {
-        "predicate": "P36",
-        "culture": "Asia-West",
-        "country": "Japan",
+        "predicate": None,
+        "culture": None,
+        "countries": [
+            "China",
+            "Indonesia",
+            "South Korea",
+            "Spain",
+            "United States",
+            "United Kingdom"
+        ]
     }
     
     task = create_dlama_task(Path("."), config)
     task.load_dataset()
 
-    if len(task.dataset) > 0:
-        # Test one sample
-        item = task.dataset[0]
+    print(f"\n{'='*70}")
+    print(f"Total samples loaded: {len(task.dataset)}")
+    
+    # Count samples per country
+    country_counts = {}
+    for item in task.dataset:
         sample = task._convert_sample(item)
-        prompt = task.prepare_prompts(sample)
-        
-        print(f"\nSample:")
-        print(f"  Subject: {sample['subject']}")
-        print(f"  Predicate: {sample['pred_description']}")
-        print(f"  Correct Answers: {sample['correct_answer']}")
-        print(f"\nPrompt:")
-        print(f"  {prompt}")
-        
-        # Test various model predictions
-        test_predictions = [
-            "Japanese",                           # Exact match
-            "The answer is: Japanese",            # With prefix
-            "Japanese language",                  # Contains correct answer
-            "The native language is Japanese.",   # In sentence
-            "JAPANESE",                           # Different case
-            "chinese",                            # Wrong answer
-            "Japan",                              # Related but wrong
-        ]
-        
-        print(f"\n{'='*70}")
-        print("String-Based Evaluation Tests:")
-        print(f"{'='*70}")
-        
-        for pred in test_predictions:
-            metrics = task.evaluate_response(pred, sample)
-            print(f"\nPrediction: '{pred}'")
-            print(f"  Exact Match: {metrics['exact_match']}")
-            print(f"  Overlap: {metrics['overlap']}")
-        
-        print(f"\n{'='*70}")
-        print("Note: To test LLM judge evaluation, run the full experiment")
-        print("with use_llm_judge: true in the config file.")
-        print(f"{'='*70}")
+        for country in sample['country_names']:
+            country_counts[country] = country_counts.get(country, 0) + 1
+    
+    print(f"\nSamples per country:")
+    for country in sorted(country_counts.keys()):
+        print(f"  {country}: {country_counts[country]}")
+    print(f"{'='*70}")

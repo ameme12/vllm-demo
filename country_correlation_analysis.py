@@ -269,8 +269,8 @@ class CountryCorrelationAnalyzer:
                     corr_matrix[i, j] = np.nan
                     pval_matrix[i, j] = np.nan
         
-        # Create figure
-        cell_size = 0.5
+        # Create figure - 4x larger
+        cell_size = 2.0  # Increased from 0.5 to 2.0 (4x larger)
         fig_width = max(14, n * cell_size + 3)
         fig_height = max(12, n * cell_size + 2)
         
@@ -307,8 +307,8 @@ class CountryCorrelationAnalyzer:
                 else:
                     annot_labels[i, j] = ''
         
-        # Adjust font size based on matrix size
-        annot_fontsize = 6 if n > 30 else 7 if n > 20 else 8
+        # Adjust font size based on matrix size (larger for bigger plot)
+        annot_fontsize = 12 if n > 30 else 14 if n > 20 else 16
         
         # Plot heatmap
         sns.heatmap(
@@ -320,26 +320,26 @@ class CountryCorrelationAnalyzer:
             vmin=-1,
             vmax=1,
             cbar_kws={'label': 'Pearson Correlation (r)'},
-            linewidths=0.5,
+            linewidths=1.0,  # Increased from 0.5
             linecolor='lightgray',
             ax=ax,
             annot_kws={'fontsize': annot_fontsize}
         )
         
-        # Styling
-        ax.set_xlabel('Country', fontsize=12, fontweight='bold')
-        ax.set_ylabel('Country', fontsize=12, fontweight='bold')
+        # Styling with larger fonts
+        ax.set_xlabel('Country', fontsize=24, fontweight='bold')  # Increased from 12
+        ax.set_ylabel('Country', fontsize=24, fontweight='bold')  # Increased from 12
         
         ax.set_title(
             f'Country Correlation Matrix\n'
             f'Model: {model}\n'
             f'({", ".join(benchmarks_with_model)}, {len(benchmarks_with_model)} benchmarks)',
-            fontsize=14, fontweight='bold', pad=20
+            fontsize=28, fontweight='bold', pad=40  # Increased from 14
         )
         
-        # Rotate labels
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right', fontsize=8)
-        ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=8)
+        # Rotate labels with larger fonts
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right', fontsize=16)  # Increased from 8
+        ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=16)  # Increased from 8
         
         plt.tight_layout()
         
@@ -459,8 +459,8 @@ class CountryCorrelationAnalyzer:
                     corr_matrix[i, j] = np.nan
                     pval_matrix[i, j] = np.nan
         
-        # Create figure
-        cell_size = 0.5
+        # Create figure - 4x larger
+        cell_size = 2.0  # Increased from 0.5 to 2.0 (4x larger)
         fig_width = max(14, n * cell_size + 3)
         fig_height = max(12, n * cell_size + 2)
         
@@ -497,8 +497,8 @@ class CountryCorrelationAnalyzer:
                 else:
                     annot_labels[i, j] = ''
         
-        # Adjust font size based on matrix size
-        annot_fontsize = 7 if n > 30 else 8 if n > 20 else 9
+        # Adjust font size based on matrix size (larger for bigger plot)
+        annot_fontsize = 14 if n > 30 else 16 if n > 20 else 18
         
         # Plot heatmap
         sns.heatmap(
@@ -510,26 +510,26 @@ class CountryCorrelationAnalyzer:
             vmin=-1,
             vmax=1,
             cbar_kws={'label': 'Pearson Correlation (r)'},
-            linewidths=0.5,
+            linewidths=1.0,  # Increased from 0.5
             linecolor='lightgray',
             ax=ax,
             annot_kws={'fontsize': annot_fontsize}
         )
         
-        # Styling
-        ax.set_xlabel('Country', fontsize=12, fontweight='bold')
-        ax.set_ylabel('Country', fontsize=12, fontweight='bold')
+        # Styling with larger fonts
+        ax.set_xlabel('Country', fontsize=24, fontweight='bold')  # Increased from 12
+        ax.set_ylabel('Country', fontsize=24, fontweight='bold')  # Increased from 12
         
         ax.set_title(
             f'Country Correlation Matrix Across Benchmarks\n'
             f'{", ".join(benchmark_names)}\n'
             f'(Pearson r of model accuracies, {len(common_models)} models × {len(benchmark_names)} benchmarks)',
-            fontsize=14, fontweight='bold', pad=20
+            fontsize=28, fontweight='bold', pad=40  # Increased from 14
         )
         
-        # Rotate labels
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right', fontsize=9)
-        ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=9)
+        # Rotate labels with larger fonts
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right', fontsize=18)  # Increased from 9
+        ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=18)  # Increased from 9
         
         plt.tight_layout()
         

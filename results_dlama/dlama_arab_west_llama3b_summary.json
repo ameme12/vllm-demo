@@ -1,0 +1,389 @@
+{
+  "total_samples": 24535,
+  "aggregate_metrics": {
+    "exact_match": {
+      "mean": 0.2042388424699409,
+      "count": 24535
+    },
+    "overlap": {
+      "mean": 0.2745058080293458,
+      "count": 24535
+    },
+    "llm_judge_correct": {
+      "mean": 0.21442836763806808,
+      "count": 24535
+    }
+  },
+  "by_culture": {
+    "Arab": {
+      "count": 10946,
+      "exact_match": 0.2204458249588891,
+      "overlap": 0.26046044217065595,
+      "llm_judge_correct": 0.28942079298373835
+    },
+    "Western": {
+      "count": 13589,
+      "exact_match": 0.1911840459194937,
+      "overlap": 0.28581941276032086,
+      "llm_judge_correct": 0.15402163514607403
+    }
+  },
+  "by_country": {
+    "Syria": {
+      "count": 944,
+      "exact_match": 0.3644067796610169,
+      "overlap": 0.3961864406779661,
+      "llm_judge_correct": 0.4332627118644068
+    },
+    "Unknown Country": {
+      "count": 4161,
+      "exact_match": 0.17399663542417687,
+      "overlap": 0.22086037010334053,
+      "llm_judge_correct": 0.23624128815188655
+    },
+    "Egypt": {
+      "count": 2873,
+      "exact_match": 0.29063696484510965,
+      "overlap": 0.3282283327532196,
+      "llm_judge_correct": 0.3720849286460146
+    },
+    "South Sudan": {
+      "count": 596,
+      "exact_match": 0.2214765100671141,
+      "overlap": 0.25671140939597314,
+      "llm_judge_correct": 0.28859060402684567
+    },
+    "Kuwait": {
+      "count": 1291,
+      "exact_match": 0.14717273431448488,
+      "overlap": 0.17815646785437644,
+      "llm_judge_correct": 0.19287374128582493
+    },
+    "Iraq": {
+      "count": 168,
+      "exact_match": 0.15476190476190477,
+      "overlap": 0.22023809523809523,
+      "llm_judge_correct": 0.27380952380952384
+    },
+    "Jordan": {
+      "count": 216,
+      "exact_match": 0.2222222222222222,
+      "overlap": 0.25462962962962965,
+      "llm_judge_correct": 0.2962962962962963
+    },
+    "Tunisia": {
+      "count": 192,
+      "exact_match": 0.17708333333333334,
+      "overlap": 0.21875,
+      "llm_judge_correct": 0.2708333333333333
+    },
+    "Comoros": {
+      "count": 127,
+      "exact_match": 0.23622047244094488,
+      "overlap": 0.25984251968503935,
+      "llm_judge_correct": 0.25984251968503935
+    },
+    "Morocco": {
+      "count": 44,
+      "exact_match": 0.29545454545454547,
+      "overlap": 0.36363636363636365,
+      "llm_judge_correct": 0.38636363636363635
+    },
+    "Libya": {
+      "count": 60,
+      "exact_match": 0.18333333333333332,
+      "overlap": 0.26666666666666666,
+      "llm_judge_correct": 0.35
+    },
+    "UAE": {
+      "count": 152,
+      "exact_match": 0.23684210526315788,
+      "overlap": 0.27631578947368424,
+      "llm_judge_correct": 0.3157894736842105
+    },
+    "France": {
+      "count": 1725,
+      "exact_match": 0.2255072463768116,
+      "overlap": 0.3426086956521739,
+      "llm_judge_correct": 0.12521739130434784
+    },
+    "UK": {
+      "count": 1856,
+      "exact_match": 0.16109913793103448,
+      "overlap": 0.26023706896551724,
+      "llm_judge_correct": 0.13254310344827586
+    },
+    "USA": {
+      "count": 7226,
+      "exact_match": 0.1927760863548298,
+      "overlap": 0.28092997508995293,
+      "llm_judge_correct": 0.16136174923885968
+    },
+    "Spain": {
+      "count": 430,
+      "exact_match": 0.2651162790697674,
+      "overlap": 0.3511627906976744,
+      "llm_judge_correct": 0.23255813953488372
+    },
+    "Portugal": {
+      "count": 68,
+      "exact_match": 0.29411764705882354,
+      "overlap": 0.3088235294117647,
+      "llm_judge_correct": 0.2647058823529412
+    },
+    "Italy": {
+      "count": 508,
+      "exact_match": 0.1732283464566929,
+      "overlap": 0.27755905511811024,
+      "llm_judge_correct": 0.16535433070866143
+    },
+    "Switzerland": {
+      "count": 95,
+      "exact_match": 0.11578947368421053,
+      "overlap": 0.24210526315789474,
+      "llm_judge_correct": 0.12631578947368421
+    },
+    "Canada": {
+      "count": 444,
+      "exact_match": 0.11936936936936937,
+      "overlap": 0.23648648648648649,
+      "llm_judge_correct": 0.15765765765765766
+    },
+    "Australia": {
+      "count": 204,
+      "exact_match": 0.0784313725490196,
+      "overlap": 0.2107843137254902,
+      "llm_judge_correct": 0.12745098039215685
+    },
+    "Belgium": {
+      "count": 102,
+      "exact_match": 0.13725490196078433,
+      "overlap": 0.18627450980392157,
+      "llm_judge_correct": 0.0784313725490196
+    },
+    "Germany": {
+      "count": 789,
+      "exact_match": 0.18631178707224336,
+      "overlap": 0.25475285171102663,
+      "llm_judge_correct": 0.14195183776932827
+    },
+    "Ireland": {
+      "count": 77,
+      "exact_match": 0.1038961038961039,
+      "overlap": 0.15584415584415584,
+      "llm_judge_correct": 0.07792207792207792
+    },
+    "Austria": {
+      "count": 57,
+      "exact_match": 0.22807017543859648,
+      "overlap": 0.3508771929824561,
+      "llm_judge_correct": 0.2807017543859649
+    },
+    "New Zealand": {
+      "count": 37,
+      "exact_match": 0.08108108108108109,
+      "overlap": 0.13513513513513514,
+      "llm_judge_correct": 0.16216216216216217
+    },
+    "Netherlands": {
+      "count": 39,
+      "exact_match": 0.05128205128205128,
+      "overlap": 0.1282051282051282,
+      "llm_judge_correct": 0.05128205128205128
+    },
+    "Monaco": {
+      "count": 8,
+      "exact_match": 0.375,
+      "overlap": 0.5,
+      "llm_judge_correct": 0.125
+    },
+    "Liechtenstein": {
+      "count": 6,
+      "exact_match": 0.6666666666666666,
+      "overlap": 0.8333333333333334,
+      "llm_judge_correct": 0.3333333333333333
+    },
+    "Andorra": {
+      "count": 6,
+      "exact_match": 0.6666666666666666,
+      "overlap": 1.0,
+      "llm_judge_correct": 0.5
+    },
+    "San Marino": {
+      "count": 6,
+      "exact_match": 0.5,
+      "overlap": 0.8333333333333334,
+      "llm_judge_correct": 0.0
+    },
+    "Brazil": {
+      "count": 4,
+      "exact_match": 0.0,
+      "overlap": 0.0,
+      "llm_judge_correct": 0.0
+    },
+    "Lebanon": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 0.0,
+      "llm_judge_correct": 0.0
+    },
+    "China": {
+      "count": 3,
+      "exact_match": 0.0,
+      "overlap": 0.0,
+      "llm_judge_correct": 0.0
+    },
+    "Mauritania": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 0.0,
+      "llm_judge_correct": 1.0
+    },
+    "Luxembourg": {
+      "count": 10,
+      "exact_match": 0.3,
+      "overlap": 0.4,
+      "llm_judge_correct": 0.2
+    },
+    "Japan": {
+      "count": 7,
+      "exact_match": 0.14285714285714285,
+      "overlap": 0.14285714285714285,
+      "llm_judge_correct": 0.14285714285714285
+    },
+    "Cameroon": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 0.0,
+      "llm_judge_correct": 0.0
+    },
+    "Somalia": {
+      "count": 1,
+      "exact_match": 0.0,
+      "overlap": 0.0,
+      "llm_judge_correct": 0.0
+    }
+  },
+  "by_predicate": {
+    "P103": {
+      "count": 2000,
+      "exact_match": 0.765,
+      "overlap": 0.8025,
+      "llm_judge_correct": 0.5155
+    },
+    "P106": {
+      "count": 2000,
+      "exact_match": 0.015,
+      "overlap": 0.2435,
+      "llm_judge_correct": 0.0595
+    },
+    "P1303": {
+      "count": 2000,
+      "exact_match": 0.0195,
+      "overlap": 0.0955,
+      "llm_judge_correct": 0.0395
+    },
+    "P136": {
+      "count": 1452,
+      "exact_match": 0.0027548209366391185,
+      "overlap": 0.03856749311294766,
+      "llm_judge_correct": 0.05922865013774105
+    },
+    "P1376": {
+      "count": 50,
+      "exact_match": 0.7,
+      "overlap": 0.8,
+      "llm_judge_correct": 0.58
+    },
+    "P1412": {
+      "count": 2000,
+      "exact_match": 0.408,
+      "overlap": 0.4515,
+      "llm_judge_correct": 0.377
+    },
+    "P17": {
+      "count": 2000,
+      "exact_match": 0.3235,
+      "overlap": 0.368,
+      "llm_judge_correct": 0.4035
+    },
+    "P190": {
+      "count": 535,
+      "exact_match": 0.0,
+      "overlap": 0.009345794392523364,
+      "llm_judge_correct": 0.0
+    },
+    "P19": {
+      "count": 2000,
+      "exact_match": 0.0805,
+      "overlap": 0.262,
+      "llm_judge_correct": 0.162
+    },
+    "P20": {
+      "count": 2000,
+      "exact_match": 0.0105,
+      "overlap": 0.051,
+      "llm_judge_correct": 0.1065
+    },
+    "P264": {
+      "count": 1166,
+      "exact_match": 0.13036020583190394,
+      "overlap": 0.18782161234991424,
+      "llm_judge_correct": 0.11234991423670669
+    },
+    "P27": {
+      "count": 2000,
+      "exact_match": 0.0085,
+      "overlap": 0.058,
+      "llm_judge_correct": 0.2805
+    },
+    "P30": {
+      "count": 41,
+      "exact_match": 0.6341463414634146,
+      "overlap": 0.7073170731707317,
+      "llm_judge_correct": 0.36585365853658536
+    },
+    "P364": {
+      "count": 2000,
+      "exact_match": 0.606,
+      "overlap": 0.654,
+      "llm_judge_correct": 0.329
+    },
+    "P36": {
+      "count": 41,
+      "exact_match": 0.7073170731707317,
+      "overlap": 0.8780487804878049,
+      "llm_judge_correct": 0.8536585365853658
+    },
+    "P37": {
+      "count": 41,
+      "exact_match": 0.9024390243902439,
+      "overlap": 0.9512195121951219,
+      "llm_judge_correct": 0.5365853658536586
+    },
+    "P449": {
+      "count": 1127,
+      "exact_match": 0.19787045252883761,
+      "overlap": 0.2440106477373558,
+      "llm_judge_correct": 0.2005323868677906
+    },
+    "P47": {
+      "count": 41,
+      "exact_match": 0.5609756097560976,
+      "overlap": 0.8048780487804879,
+      "llm_judge_correct": 0.4634146341463415
+    },
+    "P495": {
+      "count": 2000,
+      "exact_match": 0.004,
+      "overlap": 0.014,
+      "llm_judge_correct": 0.0725
+    },
+    "P530": {
+      "count": 41,
+      "exact_match": 0.024390243902439025,
+      "overlap": 0.07317073170731707,
+      "llm_judge_correct": 0.17073170731707318
+    }
+  }
+}

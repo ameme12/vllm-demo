@@ -369,8 +369,8 @@ def main():
     benchmark_files = {
         'CulturalBench': csv_dir / 'culturalbench' / 'culturalbench_accuracy_by_country.csv',
         'BLEND': csv_dir / 'blend' / 'blend_accuracy_by_country.csv',
-        'GeoMLAMA': csv_dir / 'geomlama' / 'geomlama_accuracy_by_country.csv',
-        #'DLAMA': csv_dir / 'dlama' / 'dlama_accuracy_by_country.csv',
+        #'GeoMLAMA': csv_dir / 'geomlama' / 'geomlama_accuracy_by_country.csv',
+        'DLAMA': csv_dir / 'dlama' / 'dlama_accuracy_by_country.csv',
     }
     
     # Load benchmarks

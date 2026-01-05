@@ -233,19 +233,13 @@ If you use this code or experimental design, please cite:
 
 ---
 
-## 📄 License
-
-[Add your license here - e.g., MIT, Apache 2.0]
-
----
-
 ## 🤝 Acknowledgments
 
 This work was conducted at:
 - **McGill University**
 - **MILA - Quebec AI Institute**
 
-Special thanks to [advisors, collaborators, funding sources].
+Special thanks to Golnoosh Farnadi my supervisor at the EQUAL LAB.
 
 ---
 
@@ -253,7 +247,7 @@ Special thanks to [advisors, collaborators, funding sources].
 
 **Ameline Ramesan**  
 McGill University & MILA  
-Email: [your.email@mail.mcgill.ca]  
+Email: [ameline.ramesan@mail.mcgill.ca]  
 GitHub: [@ameme12](https://github.com/ameme12)
 
 ---

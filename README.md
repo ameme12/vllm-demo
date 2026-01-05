@@ -12,7 +12,7 @@ This repository contains the experimental evaluation pipeline for the research p
 
 > **Cross-Benchmark Analysis of Cultural Commonsense Knowledge in Language Models**  
 > *Ameline Ramesan, McGill University & MILA*
-> 📄 [Read the paper (PDF)](https://github.com/ameme12/vllm-demo/blob/main/Commonsense_knowledge_cultural_benchmarks_cross_examination%20(22).pdf)
+> 📄 [Read the paper (PDF)](https://github.com/ameme12/vllm-demo/blob/main/Commonsense-knowledge-cultural-benchmarks-analysis-in-LLMs.pdf)
 
 The framework enables systematic, reproducible evaluation of cultural commonsense knowledge in large language models (LLMs) and supports cross-benchmark correlation analysis to study whether cultural benchmarks measure overlapping or distinct constructs.
 
